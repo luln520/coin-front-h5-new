@@ -55,13 +55,11 @@ export default function Login() {
   }, []);
   return (
     <div className="page">
-      <TopBar4
-        title={""}
-        isBack={() => {
-          navigate("/homecenter");
-        }}
+      <PageLogin
+        companyData={companyData}
+        doLogin={doLogin}
+        nologinmsg={nologinmsg}
       />
-      <PageLogin companyData={companyData} doLogin={doLogin} nologinmsg={nologinmsg} />
     </div>
   );
 }

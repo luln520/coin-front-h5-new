@@ -2,52 +2,13 @@ import React, { Component, useEffect } from "react";
 import pako from "pako";
 //BrowserRouter没有#   HashRouter 有#
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import ScrollToTop from "../components/scrollToTop";
-import Address from "../pages/address";
-import ChangePassword from "../pages/changePassword";
-import ChangePayPassword from "../pages/changePayPassword";
-import Chat from "../pages/chat";
-import Extract from "../pages/extract";
-import Help from "../pages/help";
-import HelpInfo from "../pages/helpInfo";
-import Idcard from "../pages/idcard";
-import IdcardCenter from "../pages/idcardCenter";
-import LockUp from "../pages/lockUp";
-import LockUpCenter from "../pages/lockUpCenter";
-import LockUpInfo from "../pages/lockUpInfo";
-import LockUpOrder from "../pages/lockUpOrder";
-import Login from "../pages/login";
-import Market from "../pages/market";
-import MarketOrderInfo from "../pages/marketOrderInfo";
-import My from "../pages/my";
-import News from "../pages/news";
-import NewsInfo from "../pages/newsInfo";
-import Noice from "../pages/noice";
-import Property from "../pages/property";
-import Recharge from "../pages/recharge";
-import Register from "../pages/register";
-import Setting from "../pages/setting";
-import Trade from "../pages/trade";
-import TradingRecord from "../pages/tradingRecord";
-import Lever from "../pages/lever";
 import { useState, createContext, useContext } from "react";
+import Login from "../pages/login";
+import ScrollToTop from "../components/scrollToTop";
 import { homeApi } from "../api/home-api";
-import Downland from "../pages/download";
-import DownlandInfo from "../pages/downloadInfo";
-import ReloadPassword from "../pages/reloadPassword";
-import SecurityCenter from "../pages/securityCenter";
-import C2CckInfo from "../pages/c2cckinfo";
-import C2CckList from "../pages/c2cckList";
-import C2CckImage from "../pages/c2cckImage";
-import C2Ctx from "../pages/c2ctx";
-import C2CtkList from "../pages/c2ctkList";
-import MurmurChat from "../pages/murmurChat";
 import { onlineApi } from "../api/online-api";
-import JYJL from "../pages/jyjlCenter";
-import JYJLLever from "../pages/jyjlLever";
-import JYJLTrade from "../pages/jyjlTrade";
-import RechargeList from "../pages/rechargelist";
-import ExtractList from "../pages/extractlist";
+import ChangeLine from "../pages/changeLine";
+//全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
 export const LoginMsgContext = createContext([] as any[]);
@@ -203,150 +164,11 @@ export default function AppRouter() {
               <ScrollToTop>
                 <Routes>
                   <Route path="/login" element={<Login />}></Route>
-                  <Route path="/register" element={<Register />}></Route>
-                  <Route
-                    path="/reloadPassword"
-                    element={<ReloadPassword />}
-                  ></Route>
-                  <Route path="/homecenter" element={<News />}></Route>
-                  <Route path="/" element={<News />}></Route>
-                  <Route path="/mycenter" element={getElement(<My />)}></Route>
-                  <Route
-                    path="/propertycenter"
-                    element={getElement(<Property />)}
-                  ></Route>
-                  <Route
-                    path="/trade/:name"
-                    element={getElement(<Trade />)}
-                  ></Route>
-                  <Route
-                    path="/lever/:name"
-                    element={getElement(<Lever />)}
-                  ></Route>
-                  <Route
-                    path="/market"
-                    element={getElement(<Market />)}
-                  ></Route>
-                  <Route
-                    path="/newInfo/:id"
-                    element={getElement(<NewsInfo />)}
-                  ></Route>
-                  <Route
-                    path="/idcard"
-                    element={getElement(<Idcard />)}
-                  ></Route>
-                  <Route
-                    path="/idcardCenter"
-                    element={getElement(<IdcardCenter />)}
-                  ></Route>
-                  <Route
-                    path="/setting"
-                    element={getElement(<Setting />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckList"
-                    element={getElement(<C2CckList />)}
-                  ></Route>
-                  <Route
-                    path="/c2ctkList"
-                    element={getElement(<C2CtkList />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckinfo/:orderNo"
-                    element={getElement(<C2CckInfo />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckimage/:orderNo"
-                    element={getElement(<C2CckImage />)}
-                  ></Route>
-                  <Route
-                    path="/c2ctx/:currencyId"
-                    element={getElement(<C2Ctx />)}
-                  ></Route>
-                  <Route path="/download" element={<Downland />}></Route>
-                  <Route
-                    path="/downloadInfo"
-                    element={<DownlandInfo />}
-                  ></Route>
-                  <Route
-                    path="/changePassword"
-                    element={getElement(<ChangePassword />)}
-                  ></Route>
-                  <Route
-                    path="/changePayPassword"
-                    element={getElement(<ChangePayPassword />)}
-                  ></Route>
-                  <Route path="/help" element={getElement(<Help />)}></Route>
-                  <Route path="/jyjl" element={getElement(<JYJL />)}></Route>
-                  <Route
-                    path="/jyjlLever"
-                    element={getElement(<JYJLLever />)}
-                  ></Route>
-                  <Route
-                    path="/jyjlTrade"
-                    element={getElement(<JYJLTrade />)}
-                  ></Route>
-                  <Route
-                    path="/helpInfo/:id"
-                    element={getElement(<HelpInfo />)}
-                  ></Route>
-                  <Route path="/noice" element={getElement(<Noice />)}></Route>
-                  <Route path="/chat" element={getElement(<Chat />)}></Route>
-                  <Route path="/murmurChat" element={<MurmurChat />}></Route>
-                  <Route
-                    path="/lockUpCenter"
-                    element={getElement(<LockUpCenter />)}
-                  ></Route>
-                  <Route
-                    path="/lockUp"
-                    element={getElement(<LockUp />)}
-                  ></Route>
-                  <Route
-                    path="/lockUpInfo/:id"
-                    element={getElement(<LockUpInfo />)}
-                  ></Route>
-                  <Route
-                    path="/lockUpOrder"
-                    element={getElement(<LockUpOrder />)}
-                  ></Route>
-                  <Route
-                    path="/marketOrderInfo/:id"
-                    element={getElement(<MarketOrderInfo />)}
-                  ></Route>
-                  <Route
-                    path="/recharge/:id"
-                    element={getElement(<Recharge />)}
-                  ></Route>
-                  <Route
-                    path="/rechargelist"
-                    element={getElement(<RechargeList />)}
-                  ></Route>
-                  <Route
-                    path="/securitycenter"
-                    element={getElement(<SecurityCenter />)}
-                  ></Route>
-
-                  <Route
-                    path="/extract/:id"
-                    element={getElement(<Extract />)}
-                  ></Route>
-                   <Route
-                    path="/extractlist"
-                    element={getElement(<ExtractList />)}
-                  ></Route>
-                  <Route
-                    path="/tradingRecord/:type"
-                    element={getElement(<TradingRecord />)}
-                  ></Route>
-                  <Route
-                    path="/address"
-                    element={getElement(<Address />)}
-                  ></Route>
-
-                  {/* 40 4 */}
+                  <Route path="/changeline" element={<ChangeLine />}></Route>
+                  {/* 404 */}
                   <Route
                     path="*"
-                    element={getElement(<Navigate to="/homecenter" />)}
+                    element={getElement(<Navigate to="/login" />)}
                   ></Route>
                 </Routes>
               </ScrollToTop>

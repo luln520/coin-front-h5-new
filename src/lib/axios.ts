@@ -81,7 +81,8 @@ smartAxios.interceptors.request.use(
       }
     } else {
       //判断是否需要跳转
-      if (!outPath.includes(window.location.pathname)) {
+      // if (!outPath.includes(window.location.pathname)) {
+      if (false) {
         Toast.show({
           content: 'Please login',
           duration: 1000,

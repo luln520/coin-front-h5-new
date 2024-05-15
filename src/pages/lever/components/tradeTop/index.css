@@ -1,0 +1,211 @@
+.levertradeInfo-1 {
+  display: flex;
+  padding: 0px 2.13333vw;
+  height: 30.9333vw;
+  margin: 3vw;
+  border-radius: 1.33333vw;
+  background: #fff;
+}
+
+.levertradeInfo-2 {
+  display: flex;
+  width: 100%;
+}
+
+.levertradeInfo-3-1 {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #23c363;
+}
+
+.levertradeInfo-3 {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fb376f;
+  max-width: 60%;
+}
+
+.levertradeInfo-4 {
+  margin-bottom: 3.73333vw;
+  font-size: 8vw;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.levertradeInfo-5 {
+  margin-bottom: 4vw;
+  font-size: 3.5vw;
+  line-height: 1;
+  text-align: center;
+}
+
+.levertradeInfo-6 {
+  font-size: 3.3vw;
+  display: flex;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.levertradeInfo-7 {
+  margin-right: 4vw;
+  text-align: center;
+}
+
+.levertradeInfo-9 {
+  padding: 4vw 0px;
+  display: flex;
+  margin-left: 2vw;
+  width: 45.3333vw;
+  flex-wrap: wrap;
+}
+
+.levertradeInfo-10 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100%;
+  height: 100%;
+}
+
+.levertradeInfo-11 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-13 {
+  font-size: 3vw;
+  color: #858a8f;
+}
+
+.levertradeInfo-14 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-15 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-16 {
+  font-size: 3.3vw;
+  color: #858a8f;
+}
+
+.levertradeInfo-17 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-18 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-19 {
+  font-size: 3.3vw;
+  color: #858a8f;
+}
+
+.levertradeInfo-20 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-21 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-22 {
+  font-size: 3.3vw;
+  color: #858a8f;
+}
+
+.levertradeInfo-23 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-24 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-25 {
+  font-size: 3.3vw;
+  color: #858a8f;
+}
+
+.levertradeInfo-26 {
+  display: flex;
+  align-items: center;
+}
+
+.levertradeInfo-27 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.33333vw;
+  width: 4.8vw;
+  height: 4.8vw;
+  border-radius: 1.33333vw;
+  color: var(--boutton-background-color);
+  font-size: 3.2vw;
+  background: #edeff5;
+}
+
+.levertradeInfo-28 {
+  font-size: 3.3vw;
+  color: #858a8f;
+}

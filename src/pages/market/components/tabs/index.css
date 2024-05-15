@@ -1,0 +1,217 @@
+.tabs-1:focus {
+  outline: 0px;
+}
+
+.tabs-1 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  overflow: hidden;
+  height: 44px;
+  position: sticky;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  /* top: 46px; */
+}
+
+.tabs-2:focus {
+  outline: 0px;
+  border-color: rgb(255, 255, 255);
+}
+
+.tabs-2 {
+  box-sizing: initial;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: flex;
+  background-color: var(--boutton-background-color);
+  user-select: none;
+  height: 100%;
+  padding-bottom: 15px;
+  border-color: rgb(255, 255, 255);
+}
+
+.tabs-3:focus {
+  outline: 0px;
+}
+
+.tabs-3 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px 4px;
+  border: 0px;
+  outline: 0px;
+  font-size: 1rem;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: white;
+  line-height: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.tabs-4:focus {
+  outline: 0px;
+}
+
+.tabs-4 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tabs-5:focus {
+  outline: 0px;
+}
+
+.tabs-5 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px 4px;
+  border: 0px;
+  outline: 0px;
+  font-size: 1rem;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: rgb(100, 101, 102);
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.tabs-6:focus {
+  outline: 0px;
+}
+
+.tabs-6 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tabs-7:focus {
+  outline: 0px;
+}
+
+.tabs-7 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px 4px;
+  border: 0px;
+  outline: 0px;
+  font-size: 1rem;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: white;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.tabs-8:focus {
+  outline: 0px;
+}
+
+.tabs-8 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tabs-9:focus {
+  outline: 0px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(71.5px) translateX(-50%);
+  transition-duration: 0.3s;
+}
+
+.tabs-9 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+  z-index: 1;
+  width: 40px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  transform: translateX(71.5px) translateX(-50%);
+  transition-duration: 0.3s;
+}

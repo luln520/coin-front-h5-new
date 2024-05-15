@@ -1,0 +1,105 @@
+.rechargeCenter-1:focus {
+  outline: 0px;
+}
+
+.rechargeCenter-1 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.rechargeCenter-2:focus {
+  outline: 0px;
+}
+
+.rechargeCenter-2 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.rechargeCenter-3 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.rechargeCenter-19 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 1rem;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Alibaba PuHuiTi";
+  font-style: normal;
+  font-weight: 700;
+  text-align: start;
+  padding-top: 1rem;
+  color: rgb(51, 51, 51);
+  padding-left: 1rem;
+  padding-bottom: 0.62rem;
+  display: flex;
+}
+
+.rechargeCenter-20 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: start;
+}
+
+.rechargeCenter-21 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.rechargeCenter-22 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}

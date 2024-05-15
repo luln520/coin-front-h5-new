@@ -1,0 +1,591 @@
+.levermingxi-1:focus {
+  outline: 0px;
+}
+
+.levermingxi-1 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background-color: #fff;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 30vh;
+}
+
+.levermingxi-2:focus {
+  outline: 0px;
+}
+
+.levermingxi-2:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.levermingxi-2 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-3:focus {
+  outline: 0px;
+}
+
+.levermingxi-3:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.levermingxi-3 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0.8rem 1.33333rem;
+  border: 0px;
+  outline: 0px;
+  font-size: 1.6rem;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  line-height: 1.6rem;
+  border-bottom: 0.02667rem solid rgb(229, 229, 229);
+}
+
+.levermingxi-4:focus {
+  outline: 0px;
+  text-align: left;
+}
+
+.levermingxi-4 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+  text-align: left;
+}
+
+.levermingxi-5 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-6 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(20, 185, 92);
+}
+
+.levermingxi-7:focus {
+  outline: 0px;
+  width: 1.5rem;
+  height: 1rem;
+}
+
+.levermingxi-7 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1rem;
+}
+
+.levermingxi-8:focus {
+  outline: 0px;
+}
+
+.levermingxi-8 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  border-style: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.levermingxi-9 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-10 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 2rem;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(128, 128, 128);
+  margin-top: 10px;
+}
+
+.levermingxi-11:focus {
+  outline: 0px;
+}
+
+.levermingxi-11 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+}
+
+.levermingxi-12 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(246, 24, 91);
+}
+
+.levermingxi-13:focus {
+  outline: 0px;
+}
+
+.levermingxi-13 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 0.8rem;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+  color: grey;
+  text-align: right;
+}
+
+.levermingxi-14 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-15 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-16 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-17 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-18 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-19 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-20 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-21 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-22 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-23:focus {
+  outline: 0px;
+}
+
+.levermingxi-23:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.levermingxi-23 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0.8rem 1.33333rem;
+  border: 0px;
+  outline: 0px;
+  font-size: 1.6rem;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  line-height: 1.6rem;
+  border-bottom: 0.02667rem solid rgb(229, 229, 229);
+}
+
+.levermingxi-24:focus {
+  outline: 0px;
+  text-align: left;
+}
+
+.levermingxi-24 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+  text-align: left;
+}
+
+.levermingxi-25 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-26 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(246, 24, 91);
+}
+
+.levermingxi-27:focus {
+  outline: 0px;
+  width: 1.5rem;
+  height: 1rem;
+}
+
+.levermingxi-27 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1rem;
+}
+
+.levermingxi-28:focus {
+  outline: 0px;
+}
+
+.levermingxi-28 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  border-style: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.levermingxi-29 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-30 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 2rem;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(128, 128, 128);
+  margin-top: 10px;
+}
+
+.levermingxi-31:focus {
+  outline: 0px;
+}
+
+.levermingxi-31 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+}
+
+.levermingxi-32 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: rgb(246, 24, 91);
+}
+
+.levermingxi-33:focus {
+  outline: 0px;
+}
+
+.levermingxi-33 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 0.8rem;
+  vertical-align: baseline;
+  background: transparent;
+  float: left;
+  min-height: 1px;
+  width: 33.3333%;
+  color: grey;
+  text-align: right;
+}
+
+.levermingxi-34 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-35 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-36 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-37 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-38 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-39 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-40 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-41 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.levermingxi-42 {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.levermingxi-43:focus {
+  outline: 0px;
+  margin: 20px;
+}
+
+.levermingxi-43:after {
+  display: table;
+  clear: both;
+  content: "";
+  margin: 20px;
+}
+
+.levermingxi-43 {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 20px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-align: center;
+}

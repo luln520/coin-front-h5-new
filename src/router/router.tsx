@@ -184,7 +184,7 @@ export default function AppRouter() {
                   {/* 404 */}
                   <Route
                     path="*"
-                    element={getElement(<Navigate to="/login" />)}
+                    element={<Navigate to="/login" />}
                   ></Route>
                 </Routes>
               </ScrollToTop>

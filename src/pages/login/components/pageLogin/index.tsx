@@ -43,7 +43,12 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                 </div>
               </div>
               <div className="loginboxnew-10">
-                <div className="loginboxnew-11">
+                <div
+                  className="loginboxnew-11"
+                  onClick={() => {
+                    navigate("/chatcenter");
+                  }}
+                >
                   <div className="loginboxnew-12"></div>
                   <img
                     src="https://www.btexure.vip/static/img/kf.png"
@@ -90,37 +95,58 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                   </div>
                 </div>
                 <div className="loginboxnew-29">
-                  <div className="loginboxnew-30">忘記密碼?</div>
+                  <div
+                    className="loginboxnew-30"
+                    onClick={() => {
+                      navigate("/chatcenter");
+                    }}
+                  >
+                    忘記密碼?
+                  </div>
                 </div>
                 <div className="loginboxnew-31">原始密碼錯誤</div>
-                <div className="loginboxnew-32">
-                  <div
-                    data-v-5c660135=""
-                    app-parameter=""
-                    send-message-title=""
-                    send-message-path="sendMessagePath"
-                    lang="en"
-                    data-name=""
-                    session-from=""
-                    send-message-img=""
-                    className="loginboxnew-33"
-                  >
-                    登錄
-                  </div>
+                <div
+                  className="loginboxnew-32"
+                  onClick={() => {
+                    navigate("/homecenter");
+                  }}
+                >
+                  <div className="loginboxnew-33">登錄</div>
                 </div>
                 <div className="loginboxnew-34">
                   <div className="loginboxnew-35">
-                    <div className="loginboxnew-36">立即註冊</div>
+                    <div
+                      className="loginboxnew-36"
+                      onClick={() => {
+                        navigate("/register");
+                      }}
+                    >
+                      立即註冊
+                    </div>
                   </div>
                 </div>
               </div>
               <div className="loginboxnew-37">
                 <div className="loginboxnew-38">
-                  <div className="loginboxnew-39">切換線路</div>
+                  <div
+                    className="loginboxnew-39"
+                    onClick={() => {
+                      navigate("/changeline");
+                    }}
+                  >
+                    切換線路
+                  </div>
                   <div className="loginboxnew-40">
                     <span className="loginboxnew-41">/</span>
                   </div>
-                  <div className="loginboxnew-42">切換語言</div>
+                  <div
+                    className="loginboxnew-42"
+                    onClick={() => {
+                      navigate("/changelanguage");
+                    }}
+                  >
+                    切換語言
+                  </div>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@ export default function PageRegister({
 }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const [isPhone, setIsPhone] = useState(false);
+  const [isPhone, setIsPhone] = useState(true);
   const [area, setArea] = useState({} as any);
   const [passwordType1, setPasswordType1] = useState(true);
   const [passwordType2, setPasswordType2] = useState(true);

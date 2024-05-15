@@ -67,6 +67,7 @@ i18n.use(LanguageDetector)
         }
     });
 //初始化语言
+localStorage.setItem("i18n", "zh")
 const lan = localStorage.getItem("i18n") ? i18n.changeLanguage(localStorage.getItem("i18n")) : i18n.changeLanguage(localStorage.setItem("i18n", "en"));
 export const languages = {
     // 英语

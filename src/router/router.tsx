@@ -11,6 +11,9 @@ import ChangeLine from "../pages/changeLine";
 import ChangeLanguage from "../pages/changelanguage";
 import ChatCenter from "../pages/chatcenter";
 import Register from "../pages/register";
+import HomeCenter from "../pages/homecenter";
+import My from "../pages/my";
+import Property from "../pages/property";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -168,7 +171,10 @@ export default function AppRouter() {
                 <Routes>
                   <Route path="/login" element={<Login />}></Route>
                   <Route path="/register" element={<Register />}></Route>
+                  <Route path="/homecenter" element={<HomeCenter />}></Route>
+                  <Route path="/mycenter" element={<My />}></Route>
                   <Route path="/changeline" element={<ChangeLine />}></Route>
+                  <Route path="/propertycenter" element={<Property />}></Route>
                   <Route
                     path="/changelanguage"
                     element={<ChangeLanguage />}

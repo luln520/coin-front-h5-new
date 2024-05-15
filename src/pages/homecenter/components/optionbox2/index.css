@@ -1,0 +1,184 @@
+.optionbox2-1 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 0px 10px;
+  background: transparent;
+}
+
+.optionbox2-2 {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin: 10px 0px 10px 5px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 182px;
+  height: 93px;
+  background: url("https://www.btexure.vip/static/img/11.7faa6a17.png") 0% 0% /
+    100% 100%;
+  margin-right: 5px;
+}
+
+.optionbox2-3 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.optionbox2-4 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.optionbox2-5 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+}
+
+.optionbox2-6 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.optionbox2-7 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 50%;
+}
+
+.optionbox2-8 {
+  -webkit-tap-highlight-color: transparent;
+  flex-wrap: nowrap;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+.optionbox2-9 {
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.optionbox2-10 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.btexure.vip/static/ICON/home/13.png");
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.optionbox2-11 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.optionbox2-12 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  font-size: 15px;
+  color: rgb(61, 41, 209);
+  text-align: center;
+}
+
+.optionbox2-13 {
+  -webkit-tap-highlight-color: transparent;
+  flex-wrap: nowrap;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+.optionbox2-14 {
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  width: 18px;
+  height: 22px;
+  padding-left: 3px;
+}
+
+.optionbox2-15 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.btexure.vip/static/ICON/home/14.png");
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.optionbox2-16 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+
+.optionbox2-17 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  font-size: 15px;
+  color: rgb(61, 41, 209);
+  text-align: center;
+  box-sizing: border-box;
+}

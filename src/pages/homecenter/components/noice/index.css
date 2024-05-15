@@ -1,0 +1,171 @@
+.homenotice-1 {
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 95%;
+    height: 40px;
+    margin: 10px auto;
+    background: rgb(255, 255, 255);
+    border-radius: 27px;
+    opacity: 0.8;
+    line-height: 40px;
+    position: relative;
+  }
+  
+  .homenotice-2 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 12px;
+    line-height: inherit;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 60px;
+    height: 40px;
+  }
+  
+  .homenotice-3 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+  }
+  
+  .homenotice-4 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.btexure.vip/static/ICON/4.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .homenotice-5 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+  }
+  
+  .homenotice-6 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    font-size: 12px;
+    line-height: inherit;
+    box-sizing: border-box;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 45px;
+    right: 30px;
+  }
+  
+  .homenotice-7 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    padding: inherit;
+    height: 40px;
+  }
+  
+  .homenotice-8 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0px);
+  }
+  
+  .homenotice-9 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    inset: 0px;
+  }
+  
+  .homenotice-10 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    will-change: transform;
+    width: 100%;
+    height: 100%;
+    transform: translate(0px, 0%) translateZ(0px);
+  }
+  
+  .homenotice-11 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    overflow: hidden;
+    will-change: transform;
+    cursor: grab;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(0px, 0%) translateZ(0px);
+  }
+  
+  .homenotice-12 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    line-height: inherit;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  
+  .homenotice-13 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    height: auto;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-kerning: auto;
+    font-optical-sizing: auto;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    width: 50px;
+    line-height: 40px;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+  }
+  
+  .homenotice-13:before {
+    content: "";
+  }
+  

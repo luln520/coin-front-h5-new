@@ -1,0 +1,126 @@
+.optionbox-1 {
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    background-image: linear-gradient(
+      0deg,
+      rgb(255, 255, 255),
+      rgba(255, 255, 255, 0.3)
+    );
+    box-shadow: rgba(3, 3, 3, 0.05) 0px 2px 5px 0px;
+    border-radius: 16px;
+    width: 364px;
+    margin: auto;
+  }
+  
+  .optionbox-2 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    height: auto;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0px;
+  }
+  
+  .optionbox-3 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 31px;
+    width: 31px;
+  }
+  
+  .optionbox-4 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.btexure.vip/static/ICON/1.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .optionbox-5 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+  }
+  
+  .optionbox-6 {
+    -webkit-tap-highlight-color: transparent;
+    margin: 0px;
+    color: rgb(33, 62, 88);
+    font-weight: 700;
+  }
+  
+  .optionbox-7 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    height: auto;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0px;
+  }
+  
+  .optionbox-8 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 31px;
+    width: 31px;
+  }
+  
+  .optionbox-9 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.btexure.vip/static/ICON/3.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .optionbox-10 {
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+  }
+  
+  .optionbox-11 {
+    -webkit-tap-highlight-color: transparent;
+    margin: 0px;
+    color: rgb(33, 62, 88);
+    font-weight: 700;
+  }
+  

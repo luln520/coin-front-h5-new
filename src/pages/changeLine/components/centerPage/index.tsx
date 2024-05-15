@@ -13,9 +13,9 @@ export default function CenterPage() {
   const { t: translate } = useTranslation();
 
   return (
-    <div class="xhxl-1">
-      <div class="xhxl-2">線路 1[926ms]</div>
-      <div class="xhxl-5">線路 2[-ms]</div>
+    <div className="xhxl-1">
+      <div className="xhxl-2">線路 1[926ms]</div>
+      <div className="xhxl-5">線路 2[-ms]</div>
     </div>
   );
 }

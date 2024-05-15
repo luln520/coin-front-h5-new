@@ -7,7 +7,7 @@ import TopBar from "../../components/topBar";
 import { getText } from "../../utils/util";
 import CenterPage from "./components/centerPage";
 
-export default function ChangeLine() {
+export default function ChangeLanguage() {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   return (
@@ -17,7 +17,7 @@ export default function ChangeLine() {
         backgroundColor: "#f7f6fb",
       }}
     >
-      <TopBar title={translate(getText("切換線路"))} isBack={true} />
+      <TopBar title={translate(getText("語言選擇"))} isBack={true} />
       <CenterPage />
     </div>
   );

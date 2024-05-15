@@ -8,6 +8,9 @@ import ScrollToTop from "../components/scrollToTop";
 import { homeApi } from "../api/home-api";
 import { onlineApi } from "../api/online-api";
 import ChangeLine from "../pages/changeLine";
+import ChangeLanguage from "../pages/changelanguage";
+import ChatCenter from "../pages/chatcenter";
+import Register from "../pages/register";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -164,7 +167,14 @@ export default function AppRouter() {
               <ScrollToTop>
                 <Routes>
                   <Route path="/login" element={<Login />}></Route>
+                  <Route path="/register" element={<Register />}></Route>
                   <Route path="/changeline" element={<ChangeLine />}></Route>
+                  <Route
+                    path="/changelanguage"
+                    element={<ChangeLanguage />}
+                  ></Route>
+                  <Route path="/chatcenter" element={<ChatCenter />}></Route>
+
                   {/* 404 */}
                   <Route
                     path="*"

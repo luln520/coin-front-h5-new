@@ -12,7 +12,12 @@ export default function Optionbox2({ loginmsg }) {
   const companySkin = localStorage.getItem("companySkin");
   return (
     <div className="optionbox2-1">
-      <div className="optionbox2-2">
+      <div
+        className="optionbox2-2"
+        onClick={() => {
+          navigate("/rechargelist");
+        }}
+      >
         <div className="optionbox2-3">
           <span className="optionbox2-4">快捷充幣</span>
           <p className="optionbox2-5">支持</p>
@@ -31,7 +36,12 @@ export default function Optionbox2({ loginmsg }) {
           </div>
           <p className="optionbox2-12">期貨交易</p>
         </div>
-        <div className="optionbox2-13">
+        <div
+          className="optionbox2-13"
+          onClick={() => {
+            navigate("/helplist");
+          }}
+        >
           <div className="optionbox2-14">
             <div className="optionbox2-15"></div>
             <img

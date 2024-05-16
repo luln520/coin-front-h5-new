@@ -15,9 +15,14 @@ export default function CenterPage() {
   return (
     <div class="extractlist-1">
       <div class="extractlist-2">
-        <div data-v-5bb30e94="" class="extractlist-3"></div>
+        <div class="extractlist-3"></div>
         <div class="extractlist-4">
-          <div class="extractlist-5">
+          <div
+            class="extractlist-5"
+            onClick={() => {
+              navigate("/extract");
+            }}
+          >
             <div class="extractlist-6">
               <div class="extractlist-7">
                 <div class="extractlist-8">

@@ -14,18 +14,12 @@ export default function Noice({ content }) {
     return <span key={"contentStrSpan" + Math.random()}>{contentStr}</span>;
   };
   return (
-    // <div>
-    //   <NoticeBar
-    //     content={getContent()}
-    //     style={{
-    //       backgroundColor: "transparent",
-    //       color: "#999999",
-    //       borderColor: "transparent",
-    //     }}
-    //   />
-    // </div>
-
-    <div className="homenotice-1">
+    <div
+      className="homenotice-1"
+      onClick={() => {
+        navigate("/noiceInfo");
+      }}
+    >
       <div className="homenotice-2">
         <div className="homenotice-3">
           <div className="homenotice-4"></div>

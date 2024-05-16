@@ -12,7 +12,12 @@ export default function Optionbox({ loginmsg }) {
   const companySkin = localStorage.getItem("companySkin");
   return (
     <div className="optionbox-1">
-      <div className="optionbox-2">
+      <div
+        className="optionbox-2"
+        onClick={() => {
+          navigate("/chatcenter");
+        }}
+      >
         <div className="optionbox-3">
           <div className="optionbox-4"></div>
           <img
@@ -23,7 +28,12 @@ export default function Optionbox({ loginmsg }) {
         </div>
         <p className="optionbox-6">在線客服</p>
       </div>
-      <div className="optionbox-7">
+      <div
+        className="optionbox-7"
+        onClick={() => {
+          navigate("/changelanguage");
+        }}
+      >
         <div className="optionbox-8">
           <div className="optionbox-9"></div>
           <img

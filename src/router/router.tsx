@@ -187,6 +187,7 @@ export default function AppRouter() {
                     element={<ChangeLanguage />}
                   ></Route>
                   <Route path="/chatcenter" element={<ChatCenter />}></Route>
+                  {/*  */}
                   <Route path="/noiceInfo" element={<NoiceInfo />}></Route>
                   <Route path="/extractlist" element={<ExtractList />}></Route>
                   <Route path="/extract" element={<Extract />}></Route>

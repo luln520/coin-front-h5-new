@@ -30,7 +30,12 @@ export default function CenterPage() {
         </div>
         <p class="rechargelist-9">請選擇以下充值通道</p>
         <div class="rechargelist-10">
-          <div class="rechargelist-11">
+          <div
+            class="rechargelist-11"
+            onClick={() => {
+              navigate("/recharge");
+            }}
+          >
             <div class="rechargelist-12">
               <div class="rechargelist-13">
                 <div class="rechargelist-14">

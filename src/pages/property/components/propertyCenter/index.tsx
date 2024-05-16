@@ -30,7 +30,12 @@ export default function PropertyCenter({
         </div>
       </div>
       <div className="propertycenter-9">
-        <div className="propertycenter-10">
+        <div
+          className="propertycenter-10"
+          onClick={() => {
+            navigate("/rechargelist");
+          }}
+        >
           <div className="propertycenter-11">
             <div className="propertycenter-12"></div>
             <img
@@ -51,7 +56,12 @@ export default function PropertyCenter({
             <div className="propertycenter-20">入金</div>
           </p>
         </div>
-        <div className="propertycenter-21">
+        <div
+          className="propertycenter-21"
+          onClick={() => {
+            navigate("/extractlist");
+          }}
+        >
           <div className="propertycenter-22">
             <div className="propertycenter-23"></div>
             <img

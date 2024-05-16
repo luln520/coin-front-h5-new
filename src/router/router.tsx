@@ -14,6 +14,13 @@ import Register from "../pages/register";
 import HomeCenter from "../pages/homecenter";
 import My from "../pages/my";
 import Property from "../pages/property";
+import NoiceInfo from "../pages/noiceInfo";
+import RechargeList from "../pages/rechargelist";
+import Recharge from "../pages/recharge";
+import HelpList from "../pages/helplist";
+import HelpInfo from "../pages/helpinfo";
+import ExtractList from "../pages/extractlist";
+import Extract from "../pages/extract";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -180,12 +187,19 @@ export default function AppRouter() {
                     element={<ChangeLanguage />}
                   ></Route>
                   <Route path="/chatcenter" element={<ChatCenter />}></Route>
+                  <Route path="/noiceInfo" element={<NoiceInfo />}></Route>
+                  <Route path="/extractlist" element={<ExtractList />}></Route>
+                  <Route path="/extract" element={<Extract />}></Route>
+                  <Route
+                    path="/rechargelist"
+                    element={<RechargeList />}
+                  ></Route>
+                  <Route path="/recharge" element={<Recharge />}></Route>
+                  <Route path="/helplist" element={<HelpList />}></Route>
+                  <Route path="/helpinfo" element={<HelpInfo />}></Route>
 
                   {/* 404 */}
-                  <Route
-                    path="*"
-                    element={<Navigate to="/login" />}
-                  ></Route>
+                  <Route path="*" element={<Navigate to="/login" />}></Route>
                 </Routes>
               </ScrollToTop>
             </BrowserRouter>

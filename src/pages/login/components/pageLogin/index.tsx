@@ -65,11 +65,11 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                       <div className="loginboxnew-19">
                         <div className="loginboxnew-20"></div>
                         <input
-                          maxlength="140"
-                          step=""
-                          enterkeyhint="done"
-                          autocomplete="off"
-                          type=""
+                          
+                          
+                          
+                          
+                          
                           className="loginboxnew-21"
                         />
                       </div>
@@ -83,10 +83,10 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                       <div className="loginboxnew-26">
                         <div className="loginboxnew-27"></div>
                         <input
-                          maxlength="140"
-                          step=""
-                          enterkeyhint="done"
-                          autocomplete="off"
+                          
+                          
+                          
+                          
                           type="password"
                           className="loginboxnew-28"
                         />

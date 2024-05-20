@@ -129,11 +129,8 @@ export default function PageRegister({
                   <div class="registercenter-17">
                     <div class="registercenter-18">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-20"
                         placeholder="請輸入手機號碼"
                       />
@@ -144,11 +141,8 @@ export default function PageRegister({
                   <div class="registercenter-22">
                     <div class="registercenter-23">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-25"
                         placeholder="請輸入驗證碼"
                       />
@@ -177,10 +171,8 @@ export default function PageRegister({
                   <div class="registercenter-36">
                     <div class="registercenter-37">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
+                        
+                        
                         type="password"
                         class="registercenter-39"
                         placeholder="請輸入密碼"
@@ -200,10 +192,8 @@ export default function PageRegister({
                   <div class="registercenter-44">
                     <div class="registercenter-45">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
+                        
+                        
                         type="password"
                         class="registercenter-47"
                         placeholder="請輸入密碼"
@@ -223,11 +213,8 @@ export default function PageRegister({
                   <div class="registercenter-52">
                     <div class="registercenter-53">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-55"
                         placeholder="請輸入邀請碼(必填)"
                       />
@@ -245,11 +232,8 @@ export default function PageRegister({
                   <div class="registercenter-17-1">
                     <div class="registercenter-18">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-20"
                         placeholder="請輸入郵件地址"
                       />
@@ -260,11 +244,8 @@ export default function PageRegister({
                   <div class="registercenter-22">
                     <div class="registercenter-23">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-25"
                         placeholder="請輸入驗證碼"
                       />
@@ -293,10 +274,8 @@ export default function PageRegister({
                   <div class="registercenter-36">
                     <div class="registercenter-37">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
+                        
+                        
                         type="password"
                         class="registercenter-39"
                         placeholder="請輸入密碼"
@@ -316,10 +295,8 @@ export default function PageRegister({
                   <div class="registercenter-44">
                     <div class="registercenter-45">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
+                        
+                        
                         type="password"
                         class="registercenter-47"
                         placeholder="請輸入密碼"
@@ -339,11 +316,8 @@ export default function PageRegister({
                   <div class="registercenter-52">
                     <div class="registercenter-53">
                       <input
-                        maxlength="140"
-                        step=""
-                        enterkeyhint="done"
-                        autocomplete="off"
-                        type=""
+                        
+                        
                         class="registercenter-55"
                         placeholder="請輸入邀請碼(必填)"
                       />

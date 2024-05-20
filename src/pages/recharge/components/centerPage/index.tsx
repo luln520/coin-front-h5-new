@@ -50,14 +50,7 @@ export default function CenterPage() {
                 <div class="recharge-22">
                   <div class="recharge-23">
                     <div class="recharge-24"></div>
-                    <input
-                      maxlength="140"
-                      step="0.000000000000000001"
-                      enterkeyhint="done"
-                      autocomplete="off"
-                      type="number"
-                      class="recharge-25"
-                    />
+                    <input type="number" class="recharge-25" />
                   </div>
                 </div>
               </li>

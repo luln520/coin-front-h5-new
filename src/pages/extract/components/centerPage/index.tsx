@@ -63,14 +63,7 @@ export default function CenterPage() {
                 >
                   <div class="extract-28">
                     <div class="extract-29">請輸入提幣地址</div>
-                    <input
-                      maxlength="140"
-                      step=""
-                      enterkeyhint="done"
-                      autocomplete="off"
-                      type=""
-                      class="extract-30"
-                    />
+                    <input class="extract-30" />
                   </div>
                 </div>
               </li>
@@ -80,10 +73,6 @@ export default function CenterPage() {
                   <div class="extract-34">
                     <div class="extract-35">請輸入提幣數量</div>
                     <input
-                      maxlength="140"
-                      step="0.000000000000000001"
-                      enterkeyhint="done"
-                      autocomplete="off"
                       type="number"
                       class="extract-36"
                     />
@@ -98,14 +87,7 @@ export default function CenterPage() {
                 <div class="extract-41">
                   <div class="extract-42">
                     <div class="extract-43">請輸入提現密碼</div>
-                    <input
-                      maxlength="140"
-                      step=""
-                      enterkeyhint="done"
-                      autocomplete="off"
-                      type="password"
-                      class="extract-44"
-                    />
+                    <input type="password" class="extract-44" />
                   </div>
                 </div>
               </li>

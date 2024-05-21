@@ -213,8 +213,6 @@ export default function PageRegister({
                   <div class="registercenter-52">
                     <div class="registercenter-53">
                       <input
-                        
-                        
                         class="registercenter-55"
                         placeholder="請輸入邀請碼(必填)"
                       />
@@ -329,6 +327,7 @@ export default function PageRegister({
           )}
           {/* 提交 */}
           <div class="registercenter-14">
+          <div className="loginboxnew-31">无效邀请碼錯誤</div>
             <ul class="registercenter-15">
               <li class="registercenter-57">
                 <div class="registercenter-58">立即註冊</div>

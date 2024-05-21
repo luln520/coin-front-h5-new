@@ -18,9 +18,14 @@ import NoiceInfo from "../pages/noiceInfo";
 import RechargeList from "../pages/rechargelist";
 import Recharge from "../pages/recharge";
 import HelpList from "../pages/helplist";
-import HelpInfo from "../pages/helpinfo";
+import HelpInfo from "../pages/helpInfo";
 import ExtractList from "../pages/extractlist";
 import Extract from "../pages/extract";
+import RechargeOrderList from "../pages/rechargeorderlist";
+import LockUp from "../pages/lockUp";
+import LockUpInfo from "../pages/lockUpInfo";
+import LockUpOrder from "../pages/lockUpOrder";
+import LockUpCenter from "../pages/lockUpCenter";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -195,9 +200,23 @@ export default function AppRouter() {
                     path="/rechargelist"
                     element={<RechargeList />}
                   ></Route>
+                  <Route
+                    path="/rechargeorderlist"
+                    element={<RechargeOrderList />}
+                  ></Route>
                   <Route path="/recharge" element={<Recharge />}></Route>
                   <Route path="/helplist" element={<HelpList />}></Route>
-                  <Route path="/helpinfo" element={<HelpInfo />}></Route>
+                  <Route path="/helpinfo/:id" element={<HelpInfo />}></Route>
+                  <Route
+                    path="/lockUpCenter"
+                    element={<LockUpCenter />}
+                  ></Route>
+                  <Route path="/lockUp" element={<LockUp />}></Route>
+                  <Route
+                    path="/lockUpInfo/:id"
+                    element={<LockUpInfo />}
+                  ></Route>
+                  <Route path="/lockUpOrder" element={<LockUpOrder />}></Route>
 
                   {/* 404 */}
                   <Route path="*" element={<Navigate to="/login" />}></Route>

@@ -8,7 +8,7 @@ import TopBar2 from "../../components/topBar2";
 import { getText } from "../../utils/util";
 import CenterPage from "./components/centerPage";
 
-export default function RechargeList() {
+export default function RechargeOrderList() {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   return (
@@ -19,12 +19,8 @@ export default function RechargeList() {
       }}
     >
       <TopBar2
-        title={translate(getText("入金"))}
+        title={translate(getText("充值明细"))}
         isBack={true}
-        mini={"充值明细"}
-        miniClick={() => {
-          navigate("/rechargeorderlist");
-        }}
       />
       <CenterPage />
     </div>

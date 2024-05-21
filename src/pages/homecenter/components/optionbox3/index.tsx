@@ -18,6 +18,9 @@ export default function Optionbox3({ loginmsg }) {
           src="https://kmadmin.lpyrmgck.online/banner/20220324030143175182.png"
           draggable="true"
           className="optionbox3-4"
+          onClick={() => {
+            navigate("/lockUpCenter");
+          }}
         />
       </div>
     </div>

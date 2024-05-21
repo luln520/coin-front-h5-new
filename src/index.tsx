@@ -57,14 +57,13 @@ async function getUserInfo() {
 }
 
 //公司 记载完成后再渲染页面
-// initCompany()
-//   .then(() => {
-//     root.render(<AppRouter></AppRouter>);
-//   })
-//   .catch(() => {
-//     root.render(<AppRouter></AppRouter>);
-//   });
-root.render(<AppRouter></AppRouter>);
+initCompany()
+  .then(() => {
+    root.render(<AppRouter></AppRouter>);
+  })
+  .catch(() => {
+    root.render(<AppRouter></AppRouter>);
+  });
 //指纹
 fingerMake();
 //有效登陆判断

@@ -18,7 +18,7 @@ export default function BottomBar({ index }) {
         <div
           className="bottomBar-4"
           onClick={() => {
-            navigate("homecenter");
+            navigate("/homecenter");
           }}
         >
           <div className="bottomBar-5">
@@ -31,7 +31,12 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-8">首頁</div>
           </div>
         </div>
-        <div className="bottomBar-9">
+        <div
+          className="bottomBar-9"
+          onClick={() => {
+            navigate("/quotation");
+          }}
+        >
           <div className="bottomBar-10">
             <div className="bottomBar-11">
               <img
@@ -42,7 +47,12 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-13">行情</div>
           </div>
         </div>
-        <div className="bottomBar-14">
+        <div
+          className="bottomBar-14"
+          onClick={() => {
+            navigate("/market");
+          }}
+        >
           <div className="bottomBar-15">
             <div className="bottomBar-16">
               <img

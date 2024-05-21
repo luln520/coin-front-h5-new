@@ -28,6 +28,10 @@
   overflow: auto hidden;
 }
 
+.zixunlist-3::-webkit-scrollbar{
+  display: none;
+}
+
 .zixunlist-4 {
   margin: 0px;
   -webkit-tap-highlight-color: transparent;

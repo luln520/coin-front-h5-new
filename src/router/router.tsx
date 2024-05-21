@@ -26,6 +26,8 @@ import LockUp from "../pages/lockUp";
 import LockUpInfo from "../pages/lockUpInfo";
 import LockUpOrder from "../pages/lockUpOrder";
 import LockUpCenter from "../pages/lockUpCenter";
+import QuotationCenter from "../pages/quotation";
+import MarketCenter from "../pages/market";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -217,7 +219,8 @@ export default function AppRouter() {
                     element={<LockUpInfo />}
                   ></Route>
                   <Route path="/lockUpOrder" element={<LockUpOrder />}></Route>
-
+                  <Route path="/quotation" element={<QuotationCenter />}></Route>
+                  <Route path="/market" element={<MarketCenter />}></Route>
                   {/* 404 */}
                   <Route path="*" element={<Navigate to="/login" />}></Route>
                 </Routes>

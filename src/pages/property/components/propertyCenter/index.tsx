@@ -24,7 +24,7 @@ export default function PropertyCenter({
           <div data-v-5bb30e94="" className="propertycenter-4"></div>
           <p className="propertycenter-5">資產</p>
           <h1 className="propertycenter-6">
-            {userInfo?.usdt.toFixed(2)}
+            {userInfo?.usdt?.toFixed(2)}
             <span className="propertycenter-7">USDT</span>
           </h1>
           <div className="propertycenter-8"></div>
@@ -135,9 +135,9 @@ export default function PropertyCenter({
               <div className="propertycenter-62">折合(USDT)</div>
             </div>
             <div className="propertycenter-63">
-              <div className="propertycenter-64">{userInfo?.usdt.toFixed(2)}</div>
+              <div className="propertycenter-64">{userInfo?.usdt?.toFixed(2)}</div>
               <div className="propertycenter-65">0.00</div>
-              <div className="propertycenter-66">{userInfo?.usdt.toFixed(2)}</div>
+              <div className="propertycenter-66">{userInfo?.usdt?.toFixed(2)}</div>
             </div>
           </div>
         </li>

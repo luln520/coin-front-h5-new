@@ -11,7 +11,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
   const { t: translate } = useTranslation();
   const [name, setName] = useState("");
   const [type, setType] = useState(1);
-  const getNodes = () => {
+  const getZFNodes = () => {
     const nodes = [];
     let coinListDataTemp = coinListData;
     for (const key in coinListDataTemp) {
@@ -22,58 +22,71 @@ export default function CoinList({ coinListData, ctmarketlist }) {
       }
       nodes.push(
         <div
+          className="homecoinlist-6"
           key={key}
-          className="listHome-10"
           onClick={() => {
             navigate(`/trade/${key}`);
           }}
         >
-          <div className="listHome-11">
-            <div className="listHome-12">
-              <img alt="" src={getLogo(key)} className="listHome-13" />
+          <div className="homecoinlist-7">
+            <div className="homecoinlist-8">
+              <img src={getLogo(key)} className="homecoinlist-10" />
             </div>
-          </div>
-          <div className="listHome-14">
-            <span className="listHome-15"> {key.toUpperCase()}/USDT </span>
-          </div>
-          <div className="listHome-16">
-            <span className="listHome-17">
-              <b className="listHome-18">
-                <span key={"marketlistclosea" + key}>
-                  {coinListData[key]?.close}
-                </span>
-                <span key={"marketlistcloseb" + key}>
-                  {!coinListData[key]?.close && "--"}
-                </span>
-              </b>
-            </span>
-          </div>
-          <div className="listHome-19">
-            <button
+            <h1 className="homecoinlist-11">
+              {key.toUpperCase()}
+              <span className="homecoinlist-12">/USDT</span>
+            </h1>
+            <p className="homecoinlist-13">{coinListData[key]?.close}</p>
+            <p
               className={
                 coinListData[key]?.close < coinListData[key]?.open
-                  ? "listHome-20"
-                  : "listHome-59"
+                  ? "homecoinlist-383"
+                  : "homecoinlist-14"
               }
             >
-              <div className="listHome-21">
-                <span className="listHome-22">
-                  <span key={"marketlistopena" + key}>
-                    {coinListData[key]?.close &&
-                      (
-                        ((coinListData[key]?.close - coinListData[key]?.open) /
-                          coinListData[key]?.open) *
-                        100
-                      ).toFixed(2)}
-                  </span>
-                  <span key={"marketlistopenb" + key}>
-                    {coinListData[key]?.close ? "" : "0.00"}
-                  </span>
-                  %
-                </span>
-              </div>
-            </button>
+              {coinListData[key]?.close < coinListData[key]?.open ? "" : "+"}
+              {coinListData[key]?.close &&
+                (
+                  ((coinListData[key]?.close - coinListData[key]?.open) /
+                    coinListData[key]?.open) *
+                  100
+                ).toFixed(2)}
+              %
+            </p>
           </div>
+        </div>
+      );
+    }
+    return nodes;
+  };
+
+  const getCGNodes = () => {
+    const nodes = [];
+    let coinListDataTemp = coinListData;
+    for (const key in coinListDataTemp) {
+      if (name) {
+        if (name.toLowerCase() !== key) {
+          continue;
+        }
+      }
+      nodes.push(
+        <div
+          class="jiaoyiliang-3"
+          key={key}
+          onClick={() => {
+            navigate(`/trade/${key}`);
+          }}
+        >
+          <div class="jiaoyiliang-4">
+            <div class="jiaoyiliang-5"></div>
+            <img src={getLogo(key)} class="jiaoyiliang-6" />
+          </div>
+          <h1 class="jiaoyiliang-7">
+            {key.toUpperCase()}
+            <span class="jiaoyiliang-8">/USDT</span>
+          </h1>
+          <p class="jiaoyiliang-9">{coinListData[key]?.close}</p>
+          <p class="jiaoyiliang-10">{(coinListData[key]?.vol/10000).toFixed(2)}萬</p>
         </div>
       );
     }
@@ -94,7 +107,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
     <div className="homecoinlist-1">
       <div className="homecoinlist-2">
         <div
-          className="homecoinlist-3"
+          className={type == 1 ? "homecoinlist-3" : "homecoinlist-4"}
           onClick={() => {
             setType(1);
           }}
@@ -102,7 +115,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
           漲幅榜
         </div>
         <div
-          className="homecoinlist-4"
+          className={type == 2 ? "homecoinlist-3" : "homecoinlist-4"}
           onClick={() => {
             setType(2);
           }}
@@ -110,53 +123,16 @@ export default function CoinList({ coinListData, ctmarketlist }) {
           成交量
         </div>
       </div>
-      {type == 1 && (
-        <div className="homecoinlist-5">
-          <div className="homecoinlist-6">
-            <div className="homecoinlist-7">
-              <div className="homecoinlist-8">
-                <div className="homecoinlist-9"></div>
-                <img
-                  src="https://kmadmin.lpyrmgck.online//banner/20221119004215305150.png"
-                  
-                  className="homecoinlist-10"
-                />
-              </div>
-              <h1 className="homecoinlist-11">
-                SOL<span className="homecoinlist-12">/USDT</span>
-              </h1>
-              <p className="homecoinlist-13">152.4801</p>
-              <p className="homecoinlist-14">+6.66%</p>
-            </div>
-          </div>
-          <div className="homecoinlist-375">
-            <div className="homecoinlist-376">
-              <div className="homecoinlist-377">
-                <div className="homecoinlist-378"></div>
-                <img
-                  src="https://kmadmin.lpyrmgck.online//banner/2022111900430822647.png"
-                  
-                  className="homecoinlist-379"
-                />
-              </div>
-              <h1 className="homecoinlist-380">
-                VSYS<span className="homecoinlist-381">/USDT</span>
-              </h1>
-              <p className="homecoinlist-382">0.0008</p>
-              <p className="homecoinlist-383">-7.85%</p>
-            </div>
-          </div>
-        </div>
-      )}
+      {type == 1 && <div className="homecoinlist-5">{getZFNodes()}</div>}
       {type == 2 && (
         <div class="jiaoyiliang-1">
           <div class="jiaoyiliang-2">
+            {getCGNodes()}
             <div class="jiaoyiliang-3">
               <div class="jiaoyiliang-4">
                 <div class="jiaoyiliang-5"></div>
                 <img
                   src="https://kmadmin.lpyrmgck.online//banner/20211127013814171401.png"
-                  
                   class="jiaoyiliang-6"
                 />
               </div>

@@ -15,8 +15,7 @@ export default function QuotationCenter() {
   const prarm = useParams();
   const [userCoinInfo, setuserCoinInfo] = useState({});
   const { t: translate } = useTranslation();
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div
       className="page"
@@ -31,7 +30,7 @@ export default function QuotationCenter() {
           height: "50px",
         }}
       ></div>
-      <BottomBar index={1} />
+      <BottomBar index={2} />
     </div>
   );
 }

@@ -23,12 +23,22 @@ export default function BottomBar({ index }) {
         >
           <div className="bottomBar-5">
             <div className="bottomBar-6">
-              <img
-                src="https://www.btexure.vip/static/ICON/home/2.png"
-                className="bottomBar-7"
-              />
+              {index == 1 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/2.png"
+                  className="bottomBar-7"
+                />
+              )}
+              {index != 1 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/1.png"
+                  className="bottomBar-7"
+                />
+              )}
             </div>
-            <div className="bottomBar-8">首頁</div>
+            <div className={index == 1 ? "bottomBar-8" : "bottomBar-13"}>
+              首頁
+            </div>
           </div>
         </div>
         <div
@@ -39,28 +49,48 @@ export default function BottomBar({ index }) {
         >
           <div className="bottomBar-10">
             <div className="bottomBar-11">
-              <img
-                src="https://www.btexure.vip/static/ICON/home/3.png"
-                className="bottomBar-12"
-              />
+              {index == 2 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/4.png"
+                  className="bottomBar-7"
+                />
+              )}
+              {index != 2 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/3.png"
+                  className="bottomBar-12"
+                />
+              )}
             </div>
-            <div className="bottomBar-13">行情</div>
+            <div className={index == 2 ? "bottomBar-8" : "bottomBar-13"}>
+              行情
+            </div>
           </div>
         </div>
         <div
           className="bottomBar-14"
           onClick={() => {
-            navigate("/market");
+            navigate("/trade/btc");
           }}
         >
           <div className="bottomBar-15">
             <div className="bottomBar-16">
-              <img
-                src="https://www.btexure.vip/static/ICON/home/5.png"
-                className="bottomBar-17"
-              />
+              {index == 3 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/6.png"
+                  className="bottomBar-17"
+                />
+              )}
+              {index != 3 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/5.png"
+                  className="bottomBar-17"
+                />
+              )}
             </div>
-            <div className="bottomBar-18">交易</div>
+            <div className={index == 3 ? "bottomBar-8" : "bottomBar-13"}>
+              交易
+            </div>
           </div>
         </div>
         <div
@@ -71,12 +101,22 @@ export default function BottomBar({ index }) {
         >
           <div className="bottomBar-20">
             <div className="bottomBar-21">
-              <img
-                src="https://www.btexure.vip/static/ICON/home/15.png"
-                className="bottomBar-22"
-              />
+              {index == 4 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/16.png"
+                  className="bottomBar-17"
+                />
+              )}
+              {index != 4 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/15.png"
+                  className="bottomBar-17"
+                />
+              )}
             </div>
-            <div className="bottomBar-23">資產</div>
+            <div className={index == 4 ? "bottomBar-8" : "bottomBar-13"}>
+              資產
+            </div>
           </div>
         </div>
         <div
@@ -87,12 +127,22 @@ export default function BottomBar({ index }) {
         >
           <div className="bottomBar-25">
             <div className="bottomBar-26">
-              <img
-                src="https://www.btexure.vip/static/ICON/home/9.png"
-                className="bottomBar-27"
-              />
+              {index == 5 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/10.png"
+                  className="bottomBar-17"
+                />
+              )}
+              {index != 5 && (
+                <img
+                  src="https://www.btexure.vip/static/ICON/home/9.png"
+                  className="bottomBar-27"
+                />
+              )}
             </div>
-            <div className="bottomBar-28">我的</div>
+            <div className={index == 5 ? "bottomBar-8" : "bottomBar-13"}>
+              我的
+            </div>
           </div>
         </div>
       </div>

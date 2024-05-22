@@ -184,19 +184,10 @@ export default function AppRouter() {
               <ScrollToTop>
                 <Routes>
                   <Route path="/login" element={<Login />}></Route>
-                  <Route
-                    path="/register"
-                    element={<Register />}
-                  ></Route>
-                  <Route
-                    path="/homecenter"
-                    element={<HomeCenter />}
-                  ></Route>
+                  <Route path="/register" element={<Register />}></Route>
+                  <Route path="/homecenter" element={<HomeCenter />}></Route>
                   <Route path="/mycenter" element={getElement(<My />)}></Route>
-                  <Route
-                    path="/changeline"
-                    element={<ChangeLine />}
-                  ></Route>
+                  <Route path="/changeline" element={<ChangeLine />}></Route>
                   <Route
                     path="/propertycenter"
                     element={getElement(<Property />)}
@@ -205,10 +196,7 @@ export default function AppRouter() {
                     path="/changelanguage"
                     element={<ChangeLanguage />}
                   ></Route>
-                  <Route
-                    path="/chatcenter"
-                    element={<ChatCenter />}
-                  ></Route>
+                  <Route path="/chatcenter" element={<ChatCenter />}></Route>
                   {/*  */}
                   <Route
                     path="/noiceInfo"
@@ -263,7 +251,7 @@ export default function AppRouter() {
                     element={getElement(<QuotationCenter />)}
                   ></Route>
                   <Route
-                    path="/market"
+                    path="/trade/:name"
                     element={getElement(<MarketCenter />)}
                   ></Route>
                   {/* 404 */}

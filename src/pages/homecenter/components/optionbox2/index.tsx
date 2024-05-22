@@ -25,12 +25,15 @@ export default function Optionbox2({ loginmsg }) {
         </div>
       </div>
       <div className="optionbox2-7">
-        <div className="optionbox2-8">
+        <div
+          className="optionbox2-8"
+          onClick={() => {
+            navigate(`/trade/btc`);
+          }}
+        >
           <div className="optionbox2-9">
-            <div className="optionbox2-10"></div>
             <img
               src="https://www.btexure.vip/static/ICON/home/13.png"
-              
               className="optionbox2-11"
             />
           </div>
@@ -46,7 +49,6 @@ export default function Optionbox2({ loginmsg }) {
             <div className="optionbox2-15"></div>
             <img
               src="https://www.btexure.vip/static/ICON/home/14.png"
-              
               className="optionbox2-16"
             />
           </div>

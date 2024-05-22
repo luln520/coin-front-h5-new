@@ -32,7 +32,7 @@ export default function MarketCenter() {
         }}
       ></div>
       <TopBuy />
-      <BottomBar index={1} />
+      <BottomBar index={3} />
     </div>
   );
 }

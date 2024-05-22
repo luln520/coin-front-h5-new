@@ -78,7 +78,6 @@ export default function CoinList({ coinListData, ctmarketlist }) {
           }}
         >
           <div class="jiaoyiliang-4">
-            <div class="jiaoyiliang-5"></div>
             <img src={getLogo(key)} class="jiaoyiliang-6" />
           </div>
           <h1 class="jiaoyiliang-7">
@@ -86,7 +85,9 @@ export default function CoinList({ coinListData, ctmarketlist }) {
             <span class="jiaoyiliang-8">/USDT</span>
           </h1>
           <p class="jiaoyiliang-9">{coinListData[key]?.close}</p>
-          <p class="jiaoyiliang-10">{(coinListData[key]?.vol/10000).toFixed(2)}萬</p>
+          <p class="jiaoyiliang-10">
+            {(coinListData[key]?.vol / 10000).toFixed(2)}萬
+          </p>
         </div>
       );
     }
@@ -126,23 +127,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
       {type == 1 && <div className="homecoinlist-5">{getZFNodes()}</div>}
       {type == 2 && (
         <div class="jiaoyiliang-1">
-          <div class="jiaoyiliang-2">
-            {getCGNodes()}
-            <div class="jiaoyiliang-3">
-              <div class="jiaoyiliang-4">
-                <div class="jiaoyiliang-5"></div>
-                <img
-                  src="https://kmadmin.lpyrmgck.online//banner/20211127013814171401.png"
-                  class="jiaoyiliang-6"
-                />
-              </div>
-              <h1 class="jiaoyiliang-7">
-                SHIB<span class="jiaoyiliang-8">/USDT</span>
-              </h1>
-              <p class="jiaoyiliang-9">0.00002575</p>
-              <p class="jiaoyiliang-10">2469.56萬</p>
-            </div>
-          </div>
+          <div class="jiaoyiliang-2">{getCGNodes()}</div>
         </div>
       )}
     </div>

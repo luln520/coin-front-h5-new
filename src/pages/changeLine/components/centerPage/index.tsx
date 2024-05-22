@@ -11,11 +11,29 @@ import { useState } from "react";
 export default function CenterPage() {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
+  const line = localStorage.getItem("line");
+  const changeline = (linenum) => {
+    localStorage.setItem("line", linenum);
+  };
 
   return (
     <div className="xhxl-1">
-      <div className="xhxl-2">線路 1[926ms]</div>
-      <div className="xhxl-5">線路 2[-ms]</div>
+      <div
+        className={line == 1 ? "xhxl-2" : "xhxl-5"}
+        onClick={() => {
+          changeline(1);
+        }}
+      >
+        線路 1[926ms]
+      </div>
+      <div
+        className={line == 2 ? "xhxl-2" : "xhxl-5"}
+        onClick={() => {
+          changeline(2);
+        }}
+      >
+        線路 2[-ms]
+      </div>
     </div>
   );
 }

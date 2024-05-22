@@ -184,45 +184,93 @@ export default function AppRouter() {
               <ScrollToTop>
                 <Routes>
                   <Route path="/login" element={<Login />}></Route>
-                  <Route path="/register" element={<Register />}></Route>
-                  <Route path="/homecenter" element={<HomeCenter />}></Route>
-                  <Route path="/mycenter" element={<My />}></Route>
-                  <Route path="/changeline" element={<ChangeLine />}></Route>
-                  <Route path="/propertycenter" element={<Property />}></Route>
+                  <Route
+                    path="/register"
+                    element={<Register />}
+                  ></Route>
+                  <Route
+                    path="/homecenter"
+                    element={<HomeCenter />}
+                  ></Route>
+                  <Route path="/mycenter" element={getElement(<My />)}></Route>
+                  <Route
+                    path="/changeline"
+                    element={<ChangeLine />}
+                  ></Route>
+                  <Route
+                    path="/propertycenter"
+                    element={getElement(<Property />)}
+                  ></Route>
                   <Route
                     path="/changelanguage"
                     element={<ChangeLanguage />}
                   ></Route>
-                  <Route path="/chatcenter" element={<ChatCenter />}></Route>
+                  <Route
+                    path="/chatcenter"
+                    element={<ChatCenter />}
+                  ></Route>
                   {/*  */}
-                  <Route path="/noiceInfo" element={<NoiceInfo />}></Route>
-                  <Route path="/extractlist" element={<ExtractList />}></Route>
-                  <Route path="/extract" element={<Extract />}></Route>
+                  <Route
+                    path="/noiceInfo"
+                    element={getElement(<NoiceInfo />)}
+                  ></Route>
+                  <Route
+                    path="/extractlist"
+                    element={getElement(<ExtractList />)}
+                  ></Route>
+                  <Route
+                    path="/extract"
+                    element={getElement(<Extract />)}
+                  ></Route>
                   <Route
                     path="/rechargelist"
-                    element={<RechargeList />}
+                    element={getElement(<RechargeList />)}
                   ></Route>
                   <Route
                     path="/rechargeorderlist"
-                    element={<RechargeOrderList />}
+                    element={getElement(<RechargeOrderList />)}
                   ></Route>
-                  <Route path="/recharge" element={<Recharge />}></Route>
-                  <Route path="/helplist" element={<HelpList />}></Route>
-                  <Route path="/helpinfo/:id" element={<HelpInfo />}></Route>
+                  <Route
+                    path="/recharge"
+                    element={getElement(<Recharge />)}
+                  ></Route>
+                  <Route
+                    path="/helplist"
+                    element={getElement(<HelpList />)}
+                  ></Route>
+                  <Route
+                    path="/helpinfo/:id"
+                    element={getElement(<HelpInfo />)}
+                  ></Route>
                   <Route
                     path="/lockUpCenter"
-                    element={<LockUpCenter />}
+                    element={getElement(<LockUpCenter />)}
                   ></Route>
-                  <Route path="/lockUp" element={<LockUp />}></Route>
+                  <Route
+                    path="/lockUp"
+                    element={getElement(<LockUp />)}
+                  ></Route>
                   <Route
                     path="/lockUpInfo/:id"
-                    element={<LockUpInfo />}
+                    element={getElement(<LockUpInfo />)}
                   ></Route>
-                  <Route path="/lockUpOrder" element={<LockUpOrder />}></Route>
-                  <Route path="/quotation" element={<QuotationCenter />}></Route>
-                  <Route path="/market" element={<MarketCenter />}></Route>
+                  <Route
+                    path="/lockUpOrder"
+                    element={getElement(<LockUpOrder />)}
+                  ></Route>
+                  <Route
+                    path="/quotation"
+                    element={getElement(<QuotationCenter />)}
+                  ></Route>
+                  <Route
+                    path="/market"
+                    element={getElement(<MarketCenter />)}
+                  ></Route>
                   {/* 404 */}
-                  <Route path="*" element={<Navigate to="/login" />}></Route>
+                  <Route
+                    path="*"
+                    element={getElement(<Navigate to="/homecenter" />)}
+                  ></Route>
                 </Routes>
               </ScrollToTop>
             </BrowserRouter>

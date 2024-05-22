@@ -14,10 +14,11 @@ export default function PageRegister({
   show60,
   setShow60,
   companyData,
+  registerMsg,
 }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const [isPhone, setIsPhone] = useState(true);
+  const [isPhone, setIsPhone] = useState(false);
   const [area, setArea] = useState({} as any);
   const [passwordType1, setPasswordType1] = useState(true);
   const [passwordType2, setPasswordType2] = useState(true);
@@ -95,133 +96,43 @@ export default function PageRegister({
           <div class="registercenter-4"></div>
           <div class="registercenter-5">
             <div
-              class={isPhone ? "registercenter-6" : "registercenter-8"}
-              onClick={() => {
-                setIsPhone(true);
-              }}
-            >
-              <span class="registercenter-7">手機註冊</span>
-            </div>
-            <div
               class={!isPhone ? "registercenter-6" : "registercenter-8"}
               onClick={() => {
                 setIsPhone(false);
+                setPasswordType1(true);
+                setPasswordType2(true);
+                setPasswordType3(true);
+                setPasswordType4(true);
+                changeType(2);
               }}
             >
               <span class="registercenter-9">郵箱註冊</span>
             </div>
-          </div>
-          <div class="registercenter-10">
-            <div class="registercenter-11">
-              <div class="registercenter-12"></div>
-              <img
-                src="https://www.btexure.vip/static/img/kf.png"
-                
-                class="registercenter-13"
-              />
+            <div
+              class={isPhone ? "registercenter-6" : "registercenter-8"}
+              onClick={() => {
+                setIsPhone(true);
+                setPasswordType1(true);
+                setPasswordType2(true);
+                setPasswordType3(true);
+                setPasswordType4(true);
+                changeType(1);
+              }}
+            >
+              <span class="registercenter-7">手機註冊</span>
             </div>
           </div>
-          {/* 手机 */}
-          {isPhone && (
-            <div class="registercenter-14">
-              <ul class="registercenter-15">
-                <li class="registercenter-16">
-                  <div class="registercenter-17">
-                    <div class="registercenter-18">
-                      <input
-                        
-                        
-                        class="registercenter-20"
-                        placeholder="請輸入手機號碼"
-                      />
-                    </div>
-                  </div>
-                </li>
-                <li class="registercenter-21">
-                  <div class="registercenter-22">
-                    <div class="registercenter-23">
-                      <input
-                        
-                        
-                        class="registercenter-25"
-                        placeholder="請輸入驗證碼"
-                      />
-                    </div>
-                  </div>
-                  <div class="registercenter-26">
-                    <div canvas-id="imgcanvas" class="registercenter-27">
-                      <canvas
-                        width="360"
-                        height="135"
-                        class="registercenter-28"
-                      ></canvas>
-                      <div class="registercenter-29"></div>
-                      <div class="registercenter-30">
-                        <div class="registercenter-31">
-                          <div class="registercenter-32"></div>
-                        </div>
-                        <div class="registercenter-33">
-                          <div class="registercenter-34"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="registercenter-35">
-                  <div class="registercenter-36">
-                    <div class="registercenter-37">
-                      <input
-                        
-                        
-                        type="password"
-                        class="registercenter-39"
-                        placeholder="請輸入密碼"
-                      />
-                    </div>
-                  </div>
-                  <div class="registercenter-40">
-                    <div class="registercenter-41"></div>
-                    <img
-                      src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      
-                      class="registercenter-42"
-                    />
-                  </div>
-                </li>
-                <li class="registercenter-43">
-                  <div class="registercenter-44">
-                    <div class="registercenter-45">
-                      <input
-                        
-                        
-                        type="password"
-                        class="registercenter-47"
-                        placeholder="請輸入密碼"
-                      />
-                    </div>
-                  </div>
-                  <div class="registercenter-48">
-                    <div class="registercenter-49"></div>
-                    <img
-                      src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      
-                      class="registercenter-50"
-                    />
-                  </div>
-                </li>
-                <li class="registercenter-51">
-                  <div class="registercenter-52">
-                    <div class="registercenter-53">
-                      <input
-                        class="registercenter-55"
-                        placeholder="請輸入邀請碼(必填)"
-                      />
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          )}
+          <div
+            class="registercenter-10"
+            onClick={() => {
+              navigate("/chatcenter");
+            }}
+          >
+            <img
+              src="https://www.btexure.vip/static/img/kf.png"
+              class="registercenter-13"
+            />
+          </div>
           {/* 邮箱 */}
           {!isPhone && (
             <div class="registercenter-14">
@@ -230,10 +141,12 @@ export default function PageRegister({
                   <div class="registercenter-17-1">
                     <div class="registercenter-18">
                       <input
-                        
-                        
+                        type="text"
+                        name="username"
+                        value={sendData.username}
+                        placeholder={translate(getText("請輸入您的電子郵件"))}
+                        onChange={updateSendData}
                         class="registercenter-20"
-                        placeholder="請輸入郵件地址"
                       />
                     </div>
                   </div>
@@ -242,29 +155,35 @@ export default function PageRegister({
                   <div class="registercenter-22">
                     <div class="registercenter-23">
                       <input
-                        
-                        
+                        type="text"
+                        name="regcode"
+                        value={sendData.regcode}
+                        placeholder={translate(getText("請輸入驗證碼"))}
+                        onChange={updateSendData}
                         class="registercenter-25"
-                        placeholder="請輸入驗證碼"
                       />
                     </div>
                   </div>
                   <div class="registercenter-26">
-                    <div canvas-id="imgcanvas" class="registercenter-27">
-                      <canvas
-                        width="360"
-                        height="135"
-                        class="registercenter-28"
-                      ></canvas>
-                      <div class="registercenter-29"></div>
-                      <div class="registercenter-30">
-                        <div class="registercenter-31">
-                          <div class="registercenter-32"></div>
+                    <div class="registercenter-27">
+                      <button
+                        className="register-34"
+                        onClick={() => {
+                          if (show60) {
+                            return;
+                          }
+                          const data = { ...sendData };
+                          data.area = area?.internationalAreaCode;
+                          sendSMS(data);
+                        }}
+                      >
+                        <div className="register-35">
+                          <span className="register-36">
+                            {!show60 && translate(getText("發送驗證碼"))}
+                            {show60 && `${time}s`}
+                          </span>
                         </div>
-                        <div class="registercenter-33">
-                          <div class="registercenter-34"></div>
-                        </div>
-                      </div>
+                      </button>
                     </div>
                   </div>
                 </li>
@@ -272,19 +191,25 @@ export default function PageRegister({
                   <div class="registercenter-36">
                     <div class="registercenter-37">
                       <input
-                        
-                        
-                        type="password"
+                        type={passwordType1 && "password"}
+                        name="password"
+                        value={sendData.password}
+                        placeholder={translate(getText("請輸入密碼"))}
+                        onChange={updateSendData}
                         class="registercenter-39"
-                        placeholder="請輸入密碼"
                       />
                     </div>
                   </div>
                   <div class="registercenter-40">
-                    <div class="registercenter-41"></div>
                     <img
-                      src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      
+                      onClick={() => {
+                        setPasswordType1(!passwordType1);
+                      }}
+                      src={
+                        passwordType1
+                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
+                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                      }
                       class="registercenter-42"
                     />
                   </div>
@@ -293,45 +218,256 @@ export default function PageRegister({
                   <div class="registercenter-44">
                     <div class="registercenter-45">
                       <input
-                        
-                        
-                        type="password"
+                        type={passwordType2 && "password"}
+                        name="repassword"
+                        value={sendData.repassword}
+                        placeholder={translate(getText("請輸入密碼"))}
+                        onChange={updateSendData}
                         class="registercenter-47"
-                        placeholder="請輸入密碼"
                       />
                     </div>
                   </div>
                   <div class="registercenter-48">
-                    <div class="registercenter-49"></div>
                     <img
-                      src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      
-                      class="registercenter-50"
+                      onClick={() => {
+                        setPasswordType2(!passwordType2);
+                      }}
+                      src={
+                        passwordType2
+                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
+                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                      }
+                      class="registercenter-42"
                     />
                   </div>
                 </li>
-                <li class="registercenter-51">
-                  <div class="registercenter-52">
-                    <div class="registercenter-53">
+                {inviteType == 1 && (
+                  <li class="registercenter-51">
+                    <div class="registercenter-52">
+                      <div class="registercenter-53">
+                        <input
+                          class="registercenter-55"
+                          type="text"
+                          name="invit"
+                          value={sendData.invit}
+                          placeholder={translate(getText("請輸入邀請碼"))}
+                          onChange={updateSendData}
+                        />
+                      </div>
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </div>
+          )}
+          {/* 手机 */}
+          {isPhone && (
+            <div class="registercenter-14">
+              <ul class="registercenter-15">
+                <li class="registercenter-16">
+                  <div class="registercenter-17">
+                    <div
+                      style={{
+                        height: "30px",
+                        marginTop: "-10px",
+                        marginLeft: "-10px",
+                        width: "70px",
+                        float: "left",
+                      }}
+                    >
+                      <Dropdown ref={dropdownRef} closeOnClickAway={true}>
+                        <Dropdown.Item
+                          key="sorter"
+                          title={`+ ${area && area?.internationalAreaCode}`}
+                        >
+                          <div
+                            style={{
+                              padding: "12px 20px",
+                              height: "300px",
+                              overflow: "hidden",
+                              overflowY: "scroll",
+                            }}
+                          >
+                            {areas.map((data) => (
+                              <div
+                                key={data.id}
+                                onClick={() => {
+                                  setArea(data);
+                                  dropdownRef.current?.close();
+                                }}
+                              >
+                                {localStorage.getItem("i18n") == "zh"
+                                  ? data.nameZh
+                                  : data.nameEn}
+                                <span
+                                  style={{
+                                    float: "right",
+                                    marginRight: "30px",
+                                  }}
+                                >
+                                  +{data.internationalAreaCode}
+                                </span>
+                                <Divider />
+                              </div>
+                            ))}
+                          </div>
+                        </Dropdown.Item>
+                      </Dropdown>
+                    </div>
+                    <div
+                      class="registercenter-18"
+                      style={{
+                        float: "left",
+                      }}
+                    >
                       <input
-                        
-                        
-                        class="registercenter-55"
-                        placeholder="請輸入邀請碼(必填)"
+                        class="registercenter-20"
+                        type="text"
+                        name="username"
+                        value={sendData.username}
+                        placeholder={translate(getText("請輸入電話號碼"))}
+                        onChange={updateSendData}
                       />
                     </div>
                   </div>
                 </li>
+                <li class="registercenter-21">
+                  <div class="registercenter-22">
+                    <div class="registercenter-23">
+                      <input
+                        class="registercenter-25"
+                        type="text"
+                        name="regcode"
+                        value={sendData.regcode}
+                        placeholder={translate(getText("請輸入驗證碼"))}
+                        onChange={updateSendData}
+                      />
+                    </div>
+                  </div>
+                  <div class="registercenter-26">
+                    <div class="registercenter-27">
+                      <button
+                        className="registerPhone-25"
+                        onClick={() => {
+                          if (show60) {
+                            return;
+                          }
+                          const data = { ...sendData };
+                          if (data.type === 1) {
+                            data.area = area?.internationalAreaCode;
+                          }
+                          sendSMS(data);
+                        }}
+                      >
+                        <div className="registerPhone-26">
+                          <span className="registerPhone-27">
+                            {!show60 && translate(getText("發送驗證碼"))}
+                            {show60 && `${time}s`}
+                          </span>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="registercenter-35">
+                  <div class="registercenter-36">
+                    <div class="registercenter-37">
+                      <input
+                        class="registercenter-39"
+                        type={passwordType3 && "password"}
+                        name="password"
+                        value={sendData.password}
+                        placeholder={translate(getText("請輸入密碼"))}
+                        onChange={updateSendData}
+                      />
+                    </div>
+                  </div>
+                  <div class="registercenter-40">
+                    <img
+                      onClick={() => {
+                        setPasswordType3(!passwordType3);
+                      }}
+                      src={
+                        passwordType3
+                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
+                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                      }
+                      class="registercenter-42"
+                    />
+                  </div>
+                </li>
+                <li class="registercenter-43">
+                  <div class="registercenter-44">
+                    <div class="registercenter-45">
+                      <input
+                        class="registercenter-47"
+                        type={passwordType4 && "password"}
+                        name="repassword"
+                        value={sendData.repassword}
+                        placeholder={translate(getText("請輸入密碼"))}
+                        onChange={updateSendData}
+                      />
+                    </div>
+                  </div>
+                  <div class="registercenter-48">
+                    <img
+                      onClick={() => {
+                        setPasswordType4(!passwordType4);
+                      }}
+                      src={
+                        passwordType4
+                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
+                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                      }
+                      class="registercenter-42"
+                    />
+                  </div>
+                </li>
+                {inviteType == 1 && (
+                  <li class="registercenter-51">
+                    <div class="registercenter-52">
+                      <div class="registercenter-53">
+                        <input
+                          type="text"
+                          name="invit"
+                          value={sendData.invit}
+                          placeholder={translate(getText("請輸入邀請碼"))}
+                          onChange={updateSendData}
+                          class="registercenter-55"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                )}
               </ul>
             </div>
           )}
+
           {/* 提交 */}
           <div class="registercenter-14">
-          <div className="loginboxnew-31">无效邀请碼錯誤</div>
+            <div className="loginboxnew-31">{registerMsg}</div>
             <ul class="registercenter-15">
               <li class="registercenter-57">
-                <div class="registercenter-58">立即註冊</div>
-                <div class="registercenter-59">登錄</div>
+                <div
+                  class="registercenter-58"
+                  onClick={() => {
+                    const data = { ...sendData };
+                    if (data.type === 1) {
+                      data.area = area?.internationalAreaCode;
+                    }
+                    doRegister(data);
+                  }}
+                >
+                  立即註冊
+                </div>
+                <div
+                  class="registercenter-59"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  登錄
+                </div>
               </li>
             </ul>
           </div>

@@ -67,7 +67,7 @@ initCompany()
 //指纹
 fingerMake();
 //有效登陆判断
-// getUserInfo();
-// setInterval(() => {
-//   getUserInfo();
-// }, 30000);
+getUserInfo();
+setInterval(() => {
+  getUserInfo();
+}, 30000);

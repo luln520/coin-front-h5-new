@@ -19,6 +19,8 @@ export default function Register() {
   const [areas, setAreas] = useState([] as any[]);
   const [show60, setShow60] = useState(false);
   const [companyData, setCompanyData] = useState({} as any);
+  const [registerMsg, setregisterMsg] = useState("");
+
   //执行登录
   const doRegister = async (sendData) => {
     if (isDo) {
@@ -27,27 +29,19 @@ export default function Register() {
       isDo = true;
     }
     try {
+      setregisterMsg("");
       if (sendData.username && sendData.password) {
         const data = await userApi.register(sendData);
         if (data.ok) {
-          Toast.show({
-            content: translate(getText("註冊成功")),
-            duration: 1000,
-          });
+          setregisterMsg(translate(getText("註冊成功")));
           setTimeout(() => {
             navigate("/login");
           }, 1000);
         } else {
-          Toast.show({
-            content: data.msg,
-            duration: 1000,
-          });
+          setregisterMsg(data.msg);
         }
       } else {
-        Toast.show({
-          content: translate(getText("請填寫完整信息")),
-          duration: 1000,
-        });
+        setregisterMsg(translate(getText("請填寫完整信息")));
       }
     } catch (error) {
     } finally {
@@ -100,6 +94,7 @@ export default function Register() {
         show60={show60}
         setShow60={setShow60}
         companyData={companyData}
+        registerMsg={registerMsg}
       />
     </div>
   );

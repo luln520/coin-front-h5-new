@@ -118,7 +118,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
                 <div className="homecoinlist-9"></div>
                 <img
                   src="https://kmadmin.lpyrmgck.online//banner/20221119004215305150.png"
-                  draggable="true"
+                  
                   className="homecoinlist-10"
                 />
               </div>
@@ -135,7 +135,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
                 <div className="homecoinlist-378"></div>
                 <img
                   src="https://kmadmin.lpyrmgck.online//banner/2022111900430822647.png"
-                  draggable="true"
+                  
                   className="homecoinlist-379"
                 />
               </div>
@@ -156,7 +156,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
                 <div class="jiaoyiliang-5"></div>
                 <img
                   src="https://kmadmin.lpyrmgck.online//banner/20211127013814171401.png"
-                  draggable="true"
+                  
                   class="jiaoyiliang-6"
                 />
               </div>

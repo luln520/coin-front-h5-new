@@ -30,7 +30,7 @@ export default function Optionbox2({ loginmsg }) {
             <div className="optionbox2-10"></div>
             <img
               src="https://www.btexure.vip/static/ICON/home/13.png"
-              draggable="true"
+              
               className="optionbox2-11"
             />
           </div>
@@ -46,7 +46,7 @@ export default function Optionbox2({ loginmsg }) {
             <div className="optionbox2-15"></div>
             <img
               src="https://www.btexure.vip/static/ICON/home/14.png"
-              draggable="true"
+              
               className="optionbox2-16"
             />
           </div>

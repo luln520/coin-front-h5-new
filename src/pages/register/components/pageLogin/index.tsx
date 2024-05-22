@@ -116,7 +116,7 @@ export default function PageRegister({
               <div class="registercenter-12"></div>
               <img
                 src="https://www.btexure.vip/static/img/kf.png"
-                draggable="true"
+                
                 class="registercenter-13"
               />
             </div>
@@ -183,7 +183,7 @@ export default function PageRegister({
                     <div class="registercenter-41"></div>
                     <img
                       src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      draggable="true"
+                      
                       class="registercenter-42"
                     />
                   </div>
@@ -204,7 +204,7 @@ export default function PageRegister({
                     <div class="registercenter-49"></div>
                     <img
                       src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      draggable="true"
+                      
                       class="registercenter-50"
                     />
                   </div>
@@ -284,7 +284,7 @@ export default function PageRegister({
                     <div class="registercenter-41"></div>
                     <img
                       src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      draggable="true"
+                      
                       class="registercenter-42"
                     />
                   </div>
@@ -305,7 +305,7 @@ export default function PageRegister({
                     <div class="registercenter-49"></div>
                     <img
                       src="https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                      draggable="true"
+                      
                       class="registercenter-50"
                     />
                   </div>

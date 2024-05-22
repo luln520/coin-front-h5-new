@@ -14,7 +14,12 @@ import { getText } from "../../../../utils/util";
 import { imageConfig } from "../../../../config/config";
 import { Badge } from "antd";
 
-export default function PageLogin({ doLogin, companyData, nologinmsg }) {
+export default function PageLogin({
+  doLogin,
+  companyData,
+  nologinmsg,
+  loginmsg,
+}) {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   const { t: translate } = useTranslation();
@@ -36,8 +41,10 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                 <div className="loginboxnew-7">
                   <div className="loginboxnew-8"></div>
                   <img
-                    src="https://www.btexhq.vip/logo/titleicon.png"
-                    draggable="true"
+                    src={
+                      imageConfig.baseImageUrl + companyData?.companyLogoName
+                    }
+                    
                     className="loginboxnew-9"
                   />
                 </div>
@@ -52,7 +59,7 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                   <div className="loginboxnew-12"></div>
                   <img
                     src="https://www.btexure.vip/static/img/kf.png"
-                    draggable="true"
+                    
                     className="loginboxnew-13"
                   />
                 </div>
@@ -65,12 +72,15 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                       <div className="loginboxnew-19">
                         <div className="loginboxnew-20"></div>
                         <input
-                          
-                          
-                          
-                          
-                          
                           className="loginboxnew-21"
+                          type="text"
+                          value={loginData.username}
+                          onChange={(e) => {
+                            setLoginData({
+                              ...loginData,
+                              username: e.target.value,
+                            });
+                          }}
                         />
                       </div>
                     </div>
@@ -83,12 +93,15 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                       <div className="loginboxnew-26">
                         <div className="loginboxnew-27"></div>
                         <input
-                          
-                          
-                          
-                          
                           type="password"
                           className="loginboxnew-28"
+                          value={loginData.password}
+                          onChange={(e) => {
+                            setLoginData({
+                              ...loginData,
+                              password: e.target.value,
+                            });
+                          }}
                         />
                       </div>
                     </div>
@@ -104,11 +117,11 @@ export default function PageLogin({ doLogin, companyData, nologinmsg }) {
                     忘記密碼?
                   </div>
                 </div>
-                <div className="loginboxnew-31">原始密碼錯誤</div>
+                <div className="loginboxnew-31">{loginmsg}</div>
                 <div
                   className="loginboxnew-32"
                   onClick={() => {
-                    navigate("/homecenter");
+                    doLogin(loginData);
                   }}
                 >
                   <div className="loginboxnew-33">登錄</div>

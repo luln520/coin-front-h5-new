@@ -23,7 +23,6 @@ export default function CenterPage() {
                   <div class="extract-8"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20221119005649563175.png"
-                    draggable="true"
                     class="extract-9"
                   />
                   <div class="extract-10">
@@ -72,10 +71,7 @@ export default function CenterPage() {
                 <div class="extract-33">
                   <div class="extract-34">
                     <div class="extract-35">請輸入提幣數量</div>
-                    <input
-                      type="number"
-                      class="extract-36"
-                    />
+                    <input type="number" class="extract-36" />
                   </div>
                 </div>
                 <div class="extract-37">
@@ -93,12 +89,7 @@ export default function CenterPage() {
               </li>
               <li class="extract-45">
                 <p class="extract-46">手續費</p>
-                <div class="extract-47">
-                  手續費 5
-                  <div class="extract-48">
-                    <span class="extract-49">%</span>
-                  </div>
-                </div>
+                <div class="extract-47">手續費 5%</div>
               </li>
             </ul>
             <div class="extract-50">

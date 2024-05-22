@@ -25,7 +25,7 @@ export default function Noice({ content }) {
           <div className="homenotice-4"></div>
           <img
             src="https://www.btexure.vip/static/ICON/4.png"
-            draggable="true"
+            
             className="homenotice-5"
           />
         </div>

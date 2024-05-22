@@ -35,7 +35,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-21"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004437653366.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-22"
                                     />
                                   </div>
@@ -76,7 +76,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-41"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004437653366.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-42"
                                     />
                                   </div>
@@ -105,7 +105,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-55"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/202111270137343593.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-56"
                                     />
                                   </div>
@@ -134,7 +134,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-69"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013745390439.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-70"
                                     />
                                   </div>
@@ -165,7 +165,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-83"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013833686228.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-84"
                                     />
                                   </div>
@@ -194,7 +194,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-97"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013814171401.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-98"
                                     />
                                   </div>
@@ -227,7 +227,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-111"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013824077235.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-112"
                                     />
                                   </div>
@@ -260,7 +260,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-125"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014417290247.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-126"
                                     />
                                   </div>
@@ -293,7 +293,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-139"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013755405246.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-140"
                                     />
                                   </div>
@@ -324,7 +324,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-153"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013805593219.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-154"
                                     />
                                   </div>
@@ -353,7 +353,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-167"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/2021112701384317069.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-168"
                                     />
                                   </div>
@@ -384,7 +384,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-181"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004215305150.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-182"
                                     />
                                   </div>
@@ -415,7 +415,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-195"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004225102251.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-196"
                                     />
                                   </div>
@@ -446,7 +446,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-209"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127013854701372.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-210"
                                     />
                                   </div>
@@ -477,7 +477,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-223"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014139449158.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-224"
                                     />
                                   </div>
@@ -506,7 +506,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-237"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014151214325.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-238"
                                     />
                                   </div>
@@ -537,7 +537,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-251"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014206589469.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-252"
                                     />
                                   </div>
@@ -568,7 +568,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-265"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004235148154.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-266"
                                     />
                                   </div>
@@ -597,7 +597,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-279"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014230167341.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-280"
                                     />
                                   </div>
@@ -626,7 +626,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-293"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014245963218.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-294"
                                     />
                                   </div>
@@ -657,7 +657,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-307"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004250445424.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-308"
                                     />
                                   </div>
@@ -688,7 +688,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-321"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004259226133.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-322"
                                     />
                                   </div>
@@ -717,7 +717,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-335"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014319182441.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-336"
                                     />
                                   </div>
@@ -750,7 +750,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-349"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/2022111900430822647.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-350"
                                     />
                                   </div>
@@ -781,7 +781,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-363"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004316413355.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-364"
                                     />
                                   </div>
@@ -812,7 +812,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-377"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127014406743498.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-378"
                                     />
                                   </div>
@@ -841,7 +841,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-391"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211127113422628417.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-392"
                                     />
                                   </div>
@@ -872,7 +872,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-405"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004325960153.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-406"
                                     />
                                   </div>
@@ -903,7 +903,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-419"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20221119004354428355.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-420"
                                     />
                                   </div>
@@ -934,7 +934,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-433"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011040149366.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-434"
                                     />
                                   </div>
@@ -965,7 +965,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-447"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/2021121600452738617.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-448"
                                     />
                                   </div>
@@ -994,7 +994,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-461"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004601510398.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-462"
                                     />
                                   </div>
@@ -1023,7 +1023,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-475"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011120726353.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-476"
                                     />
                                   </div>
@@ -1054,7 +1054,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-489"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004552620218.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-490"
                                     />
                                   </div>
@@ -1083,7 +1083,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-503"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004542214278.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-504"
                                     />
                                   </div>
@@ -1112,7 +1112,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-517"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011216334128.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-518"
                                     />
                                   </div>
@@ -1143,7 +1143,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-531"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011301849483.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-532"
                                     />
                                   </div>
@@ -1174,7 +1174,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-545"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/20211216004518136300.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-546"
                                     />
                                   </div>
@@ -1203,7 +1203,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-559"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011345785465.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-560"
                                     />
                                   </div>
@@ -1232,7 +1232,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-573"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/2021121601150534668.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-574"
                                     />
                                   </div>
@@ -1261,7 +1261,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-587"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online//banner/2021121600450926138.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-588"
                                     />
                                   </div>
@@ -1290,7 +1290,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-601"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/20211216011853122109.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-602"
                                     />
                                   </div>
@@ -1319,7 +1319,7 @@ export default function CenterPage({}) {
                                     <div class="quotationcenter-615"></div>
                                     <img
                                       src="https://kmadmin.lpyrmgck.online/banner/2021121601195193348.png"
-                                      draggable="true"
+                                      
                                       class="quotationcenter-616"
                                     />
                                   </div>

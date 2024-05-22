@@ -42,7 +42,7 @@ export default function CenterPage() {
                   <div class="rechargelist-15"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/2023011000551209516.png"
-                    draggable="true"
+                    
                     class="rechargelist-16"
                   />
                   <div class="rechargelist-17">
@@ -73,7 +73,7 @@ export default function CenterPage() {
                   <div class="rechargelist-32"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20230110005530751199.png"
-                    draggable="true"
+                    
                     class="rechargelist-33"
                   />
                   <div class="rechargelist-34">
@@ -104,7 +104,7 @@ export default function CenterPage() {
                   <div class="rechargelist-49"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20230110005553953116.png"
-                    draggable="true"
+                    
                     class="rechargelist-50"
                   />
                   <div class="rechargelist-51">
@@ -135,7 +135,7 @@ export default function CenterPage() {
                   <div class="rechargelist-66"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20230110005612031318.png"
-                    draggable="true"
+                    
                     class="rechargelist-67"
                   />
                   <div class="rechargelist-68">
@@ -166,7 +166,7 @@ export default function CenterPage() {
                   <div class="rechargelist-83"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20230110005634530104.png"
-                    draggable="true"
+                    
                     class="rechargelist-84"
                   />
                   <div class="rechargelist-85">

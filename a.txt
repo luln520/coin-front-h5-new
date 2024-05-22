@@ -1,1 +1,2 @@
 uni-\S*(?=\s|>)
+background-image:\s*url\("http[^"]*"\);

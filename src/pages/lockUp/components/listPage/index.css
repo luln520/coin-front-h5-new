@@ -129,7 +129,7 @@
   border-color: rgb(0, 0, 0);
   border-radius: inherit;
   transform: translate(-50%, -50%);
-  opacity: 0;
+  
   content: " ";
 }
 

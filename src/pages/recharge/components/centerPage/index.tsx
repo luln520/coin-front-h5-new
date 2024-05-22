@@ -20,7 +20,7 @@ export default function CenterPage() {
             <div class="recharge-5"></div>
             <img
               src="https://kmadmin.lpyrmgck.online/banner/20240326190254593292.png"
-              draggable="true"
+              
               class="recharge-6"
             />
           </div>
@@ -58,10 +58,9 @@ export default function CenterPage() {
                 <p class="recharge-27">上傳支付詳情截圖</p>
                 <div class="recharge-28">
                   <div class="recharge-29">
-                    <div class="recharge-30"></div>
                     <img
-                      src="/static/img/img-add.png"
-                      draggable="true"
+                      src="https://www.btexure.vip/static/img/img-add.png"
+                      
                       class="recharge-31"
                     />
                   </div>

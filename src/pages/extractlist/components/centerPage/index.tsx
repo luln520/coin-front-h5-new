@@ -29,7 +29,7 @@ export default function CenterPage() {
                   <div class="extractlist-9"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20221119005649563175.png"
-                    draggable="true"
+                    
                     class="extractlist-10"
                   />
                 </div>
@@ -52,7 +52,7 @@ export default function CenterPage() {
                   <div class="extractlist-21"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20221119005703704222.png"
-                    draggable="true"
+                    
                     class="extractlist-22"
                   />
                 </div>
@@ -75,7 +75,7 @@ export default function CenterPage() {
                   <div class="extractlist-33"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20221119005717735296.png"
-                    draggable="true"
+                    
                     class="extractlist-34"
                   />
                 </div>
@@ -98,7 +98,7 @@ export default function CenterPage() {
                   <div class="extractlist-45"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20231019204241721398.png"
-                    draggable="true"
+                    
                     class="extractlist-46"
                   />
                 </div>
@@ -121,7 +121,7 @@ export default function CenterPage() {
                   <div class="extractlist-57"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20210826114245225109.png"
-                    draggable="true"
+                    
                     class="extractlist-58"
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function CenterPage() {
                   <div class="extractlist-69"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20220324032205664378.png"
-                    draggable="true"
+                    
                     class="extractlist-70"
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function CenterPage() {
                   <div class="extractlist-81"></div>
                   <img
                     src="https://kmadmin.lpyrmgck.online/banner/20240216074328978161.png"
-                    draggable="true"
+                    
                     class="extractlist-82"
                   />
                 </div>

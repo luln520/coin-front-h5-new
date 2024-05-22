@@ -39,8 +39,8 @@ export default function PropertyCenter({
           <div className="propertycenter-11">
             <div className="propertycenter-12"></div>
             <img
-              src="/static/ICON/20.png"
-              draggable="true"
+              src="https://www.btexure.vip/static/ICON/20.png"
+              
               className="propertycenter-13"
             />
             <div className="propertycenter-14">
@@ -65,8 +65,8 @@ export default function PropertyCenter({
           <div className="propertycenter-22">
             <div className="propertycenter-23"></div>
             <img
-              src="/static/ICON/21.png"
-              draggable="true"
+              src="https://www.btexure.vip/static/ICON/21.png"
+              
               className="propertycenter-24"
             />
             <div className="propertycenter-25">
@@ -86,8 +86,8 @@ export default function PropertyCenter({
           <div className="propertycenter-33">
             <div className="propertycenter-34"></div>
             <img
-              src="/static/ICON/22.png"
-              draggable="true"
+              src="https://www.btexure.vip/static/ICON/22.png"
+              
               className="propertycenter-35"
             />
             <div className="propertycenter-36">

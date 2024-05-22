@@ -22,10 +22,8 @@ export default function Noice({ content }) {
     >
       <div className="homenotice-2">
         <div className="homenotice-3">
-          <div className="homenotice-4"></div>
           <img
             src="https://www.btexure.vip/static/ICON/4.png"
-            
             className="homenotice-5"
           />
         </div>
@@ -36,9 +34,7 @@ export default function Noice({ content }) {
             <div className="homenotice-9">
               <div className="homenotice-10">
                 <div className="homenotice-11">
-                  <div className="homenotice-12">
-                    上架10種語言，合約交易，極速交易，理財產品，10檔交易行情
-                  </div>
+                  <div className="homenotice-12">{getContent()}</div>
                 </div>
               </div>
             </div>

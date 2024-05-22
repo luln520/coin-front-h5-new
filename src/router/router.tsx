@@ -207,7 +207,7 @@ export default function AppRouter() {
                     element={getElement(<ExtractList />)}
                   ></Route>
                   <Route
-                    path="/extract"
+                    path="/extract/:id"
                     element={getElement(<Extract />)}
                   ></Route>
                   <Route
@@ -219,7 +219,7 @@ export default function AppRouter() {
                     element={getElement(<RechargeOrderList />)}
                   ></Route>
                   <Route
-                    path="/recharge"
+                    path="/recharge/:id"
                     element={getElement(<Recharge />)}
                   ></Route>
                   <Route

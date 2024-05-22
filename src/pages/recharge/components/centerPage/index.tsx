@@ -6,23 +6,75 @@ import { Cell, Dialog } from "react-vant";
 import "./index.css";
 import { Button } from "antd";
 import { Toast } from "antd-mobile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import QRCode from "qrcodejs2";
 
-export default function CenterPage() {
+export default function CenterPage({
+  coinList,
+  sendRecharge,
+  use,
+  setUse,
+  coinPriceData,
+}) {
   const navigate = useNavigate();
+  const [addrId, setAddrId] = useState(0);
+  const [img, setImg] = useState("");
+  const [num, setNum] = useState("");
   const { t: translate } = useTranslation();
+  let qrcode = null;
 
+  //上传
+  const handleChange = (info) => {
+    if (info.file.status === "done") {
+      if (info.file.response && info.file.response.ok) {
+        Toast.show({
+          content: `${info.file.name} ${translate(getText("上傳成功"))}`,
+        });
+        const data = info.file.response;
+        setImg(data.data);
+      } else {
+        Toast.show({ content: translate(getText("上传失败")) });
+      }
+    } else if (info.file.status === "error") {
+      Toast.show({ content: translate(getText("上传失败")) });
+    }
+  };
+
+  const creatQrCode = () => {
+    let text = use?.czaddress;
+    document.getElementById("qrcode").innerHTML = "";
+    qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: text, //二维码内容字符串
+      width: 100, //图像宽度
+      height: 100, //图像高度
+      colorDark: "#000000", //二维码前景色
+      colorLight: "#ffffff", //二维码背景色
+      correctLevel: QRCode.CorrectLevel.H, //容错级别
+    });
+  };
+
+  const handleCopy = (value) => {
+    if (copy(value)) {
+      Toast.show({ content: translate(getText("成功")) });
+    }
+  };
+  useEffect(() => {
+    creatQrCode();
+  }, [use]);
   return (
     <div class="recharge-1">
       <div class="recharge-2">
         <div class="recharge-3">
           <div class="recharge-4">
-            <div class="recharge-5"></div>
-            <img
-              src="https://kmadmin.lpyrmgck.online/banner/20240326190254593292.png"
-              
-              class="recharge-6"
-            />
+            <div className="qrcodeDiv">
+              <div className="qrcodeiconDiv">
+                <div className="qrcodeiconDiv1"></div>
+                <div className="qrcodeiconDiv2"></div>
+                <div className="qrcodeiconDiv3"></div>
+                <div className="qrcodeiconDiv4"></div>
+                <div id="qrcode" className="rechargeCenterInfo-4"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="recharge-7">
@@ -34,9 +86,7 @@ export default function CenterPage() {
             <p class="recharge-12">
               <br class="recharge-13" />
             </p>
-            <p class="recharge-14">
-              0x8e020e0f7b5De15A97e5A44BfC9071c30F631eE7
-            </p>
+            <p class="recharge-14">{use?.czaddress}</p>
           </div>
           <div class="recharge-15">
             <div class="recharge-16">複製地址</div>
@@ -60,7 +110,6 @@ export default function CenterPage() {
                   <div class="recharge-29">
                     <img
                       src="https://www.btexure.vip/static/img/img-add.png"
-                      
                       class="recharge-31"
                     />
                   </div>

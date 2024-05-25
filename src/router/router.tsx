@@ -32,6 +32,7 @@ import JieKuan from "../pages/jiekuan";
 import Chat from "../pages/chat";
 import SecurityCenter from "../pages/securityCenter";
 import ChangePassword from "../pages/changePassword";
+import Setting from "../pages/setting";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -229,6 +230,10 @@ export default function AppRouter() {
                   <Route
                     path="/rechargeorderlist"
                     element={getElement(<RechargeOrderList />)}
+                  ></Route>
+                   <Route
+                    path="/setting"
+                    element={getElement(<Setting />)}
                   ></Route>
                   <Route
                     path="/recharge/:id"

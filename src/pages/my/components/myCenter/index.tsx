@@ -32,7 +32,9 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-9">
             <div className="mycenter-10">
-              <span className="mycenter-11"></span>
+              <span className="mycenter-11" onClick={()=>{
+                navigate("/setting");
+              }}></span>
             </div>
           </div>
           <div className="mycenter-12">

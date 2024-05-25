@@ -100,48 +100,67 @@ export default function CenterPage({
               </li> */}
               <li class="extract-25">
                 <p class="extract-26">提幣地址</p>
-                <div
-                  onpaste="return false"
-                  oncontextmenu="return false"
-                  oncopy="return false"
-                  oncut="return false"
-                  class="extract-27"
-                >
+                <div class="extract-27">
                   <div class="extract-28">
-                    <div class="extract-29">請輸入提幣地址</div>
-                    <input class="extract-30" />
+                    <input
+                      class="extract-30"
+                      placeholder="請輸入提幣地址"
+                      value={address}
+                      onChange={(e) => {
+                        setAddress(e.target.value);
+                      }}
+                    />
                   </div>
                 </div>
               </li>
               <li class="extract-31">
-                <p class="extract-32">提幣數量</p>
+                <p class="extract-32">提幣數量(USDT)</p>
                 <div class="extract-33">
                   <div class="extract-34">
-                    <div class="extract-35">請輸入提幣數量</div>
-                    <input type="number" class="extract-36" />
+                    <input
+                      type="number"
+                      class="extract-36"
+                      placeholder="請輸入提幣數量"
+                      type="number"
+                      id="usdtmoney"
+                      name="usdtmoney"
+                      autocomplete="off"
+                      style={{
+                        height: "43px",
+                      }}
+                      value={num}
+                      onChange={(e) => {
+                        if (e.target.value === "") {
+                          setNum("");
+                        }
+                        if (/^[0-9]+(\.[0-9]{0,5})?$/.test(e.target.value)) {
+                          setNum(e.target.value);
+                        }
+                      }}
+                    />
                   </div>
                 </div>
                 <div class="extract-37">
                   <span class="extract-38">可用:{userInfo?.usdt} USDT</span>
                 </div>
               </li>
-              <li class="extract-39">
-                <p class="extract-40">提現密碼</p>
-                <div class="extract-41">
-                  <div class="extract-42">
-                    <div class="extract-43">請輸入提現密碼</div>
-                    <input type="password" class="extract-44" />
-                  </div>
-                </div>
-              </li>
-              {/* <li class="extract-45">
-                <p class="extract-46">手續費</p>
-                <div class="extract-47">手續費 5%</div>
-              </li> */}
             </ul>
             <div class="extract-50">
-              <div class="extract-51">預計到賬數量：{num}USDT</div>
-              <div class="extract-52">提交</div>
+              <div class="extract-51">
+                預計到賬數量：
+                {`${num / coinPriceData?.close}` == "NaN"
+                  ? num
+                  : (num / coinPriceData?.close).toFixed(6)}{" "}
+                {use?.name?.toUpperCase()}
+              </div>
+              <div
+                class="extract-52"
+                onClick={() => {
+                  callBack();
+                }}
+              >
+                提交
+              </div>
             </div>
           </div>
         </div>

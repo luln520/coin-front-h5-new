@@ -40,7 +40,7 @@ export default function ExtractList() {
         isBack={true}
         mini={"提现明细"}
         miniClick={() => {
-          navigate("/extractlist");
+          navigate("/extractorderlist");
         }}
       />
       <CenterPage coinList={coinList}/>

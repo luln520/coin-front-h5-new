@@ -28,6 +28,7 @@ import LockUpOrder from "../pages/lockUpOrder";
 import LockUpCenter from "../pages/lockUpCenter";
 import QuotationCenter from "../pages/quotation";
 import MarketCenter from "../pages/market";
+import JieKuan from "../pages/jiekuan";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -254,6 +255,7 @@ export default function AppRouter() {
                     path="/trade/:name"
                     element={getElement(<MarketCenter />)}
                   ></Route>
+                  <Route path="/borrowmoney" element={getElement(<JieKuan />)}></Route>
                   {/* 404 */}
                   <Route
                     path="*"

@@ -22,7 +22,9 @@ export default function CenterPage() {
       <div className="chatcenter-19">
         <div className="chatcenter-20">
           <div className="chatcenter-21">
-            <div className="chatcenter-22">
+            <div className="chatcenter-22" onClick={()=>{
+              navigate("/chat");
+            }}>
               <div className="chatcenter-23">
                 <span className="chatcenter-24">在線客服</span>
               </div>

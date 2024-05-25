@@ -29,6 +29,9 @@ import LockUpCenter from "../pages/lockUpCenter";
 import QuotationCenter from "../pages/quotation";
 import MarketCenter from "../pages/market";
 import JieKuan from "../pages/jiekuan";
+import Chat from "../pages/chat";
+import SecurityCenter from "../pages/securityCenter";
+import ChangePassword from "../pages/changePassword";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -198,7 +201,15 @@ export default function AppRouter() {
                     element={<ChangeLanguage />}
                   ></Route>
                   <Route path="/chatcenter" element={<ChatCenter />}></Route>
-                  {/*  */}
+                  <Route path="/chat" element={getElement(<Chat />)}></Route>
+                  <Route
+                    path="/securitycenter"
+                    element={getElement(<SecurityCenter />)}
+                  ></Route>
+                  <Route
+                    path="/changePassword"
+                    element={getElement(<ChangePassword />)}
+                  ></Route>
                   <Route
                     path="/noiceInfo"
                     element={getElement(<NoiceInfo />)}

@@ -107,7 +107,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-61"></div>
         </div>
-        <div className="mycenter-41">
+        <div
+          className="mycenter-41"
+          onClick={() => {
+            navigate("/securitycenter");
+          }}
+        >
           <div className="mycenter-42">
             <div className="mycenter-43">
               <img
@@ -144,7 +149,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-121"></div>
         </div>
-        <div className="mycenter-112">
+        <div
+          className="mycenter-112"
+          onClick={() => {
+            navigate("/chatcenter");
+          }}
+        >
           <div className="mycenter-113">
             <div className="mycenter-114">
               <img
@@ -163,7 +173,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           <div className="mycenter-121"></div>
         </div>
 
-        <div className="mycenter-122">
+        <div
+          className="mycenter-122"
+          onClick={() => {
+            navigate("/helplist");
+          }}
+        >
           <div className="mycenter-123">
             <div className="mycenter-124">
               <img
@@ -198,9 +213,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             />
           </div>
         </div>
-        <div className="mycenter-92" onClick={()=>{
-          navigate("/borrowmoney");
-        }}>
+        <div
+          className="mycenter-92"
+          onClick={() => {
+            navigate("/borrowmoney");
+          }}
+        >
           <div className="mycenter-93">
             <div className="mycenter-94">
               <div className="mycenter-95"></div>

@@ -1,6 +1,45 @@
 
 import { imageConfig } from '../config/config';
 import zhJson from '../i18n/locales/zh.json'
+
+export const format00Time = (seconds) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    const formattedHours = hours.toString().padStart(2, '0');
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+    const formattedSeconds = secs.toString().padStart(2, '0');
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+export const convertToSeconds = (input) => {
+    // 解析输入的字符串
+    const match = input.match(/^(\d+)([a-zA-Z]+)$/);
+    if (!match) {
+        return 0;
+    }
+    const value = parseInt(match[1]);
+    const unit = match[2];
+    // 将不同单位转换为秒
+    switch (unit.toLowerCase()) {
+        case "s":
+            return value;
+        case "m":
+            return value * 60;
+        case "h":
+            return value * 3600;
+        case "day":
+            return value * 86400;
+        case "week":
+            return value * 604800;
+        case "mon":
+            return value * 2592000; // 这里假设1个月是30天
+        case "year":
+            return value * 31536000; // 这里假设1年是365天
+        default:
+            return 0;
+    }
+}
 export const convertTimestampToDateTime = (timestamp) => {
     // 创建一个新的Date对象，将时间戳作为参数传递
     var date = new Date(timestamp);

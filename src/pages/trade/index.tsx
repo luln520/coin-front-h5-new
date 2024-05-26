@@ -1,4 +1,4 @@
-import { Toast } from "antd-mobile";
+import { CenterPopup, Toast } from "antd-mobile";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
@@ -10,13 +10,14 @@ import { kuangjiApi } from "../../api/kuangm-api";
 import { userApi } from "../../api/user-api";
 import BottomBar from "../../components/bottomBar";
 import { WSContext } from "../../router/router";
-import { getText } from "../../utils/util";
+import { convertToSeconds, getText } from "../../utils/util";
 import KineCenter from "./components/kinecenter";
 import CoinPopup from "./components/coinpopup";
 import TopBar from "./components/topbar";
 import TopBuy from "./components/topbuy";
 import TopText from "./components/topText";
 import OrderPopup from "./components/orderpopup";
+import DaoJiShi from "./components/daojishi";
 
 export default function Trade() {
   const uid = localStorage.getItem("uid");
@@ -122,6 +123,7 @@ export default function Trade() {
       //开始倒计时
       // setChangeDaoJiShi(true);
       setIndex(1);
+      setIsShowOrder(false);
       setVisible(true);
     } else {
       Toast.show({ content: data.msg });
@@ -174,7 +176,7 @@ export default function Trade() {
       />
       <KineCenter timeindex={timeindex} settimeindex={settimeindex} />
 
-      <TopBuy setIsShowOrder={setIsShowOrder} />
+      <TopBuy setIsShowOrder={setIsShowOrder} setType={setType} />
       <div
         style={{
           height: "50px",
@@ -190,12 +192,41 @@ export default function Trade() {
       />
       {/* 订单底部弹框 */}
       <OrderPopup
+        type={type}
+        setyqsy={setyqsy}
+        setType={setType}
+        userInfo={userInfo}
+        hysetInfo={hysetInfo}
+        buyCoin={buyCoin}
         isShowOrder={isShowOrder}
         setIsShowOrder={setIsShowOrder}
+        nowTab={nowTab}
         coinListData={coinListData}
         ctmarketlist={ctmarketlist}
         index={1}
       />
+
+       {/* 倒计时 */}
+       <CenterPopup
+        visible={visible}
+        destroyOnClose={true}
+        onMaskClick={() => {
+          setVisible(false);
+        }}
+      >
+        <DaoJiShi
+          userInfo={userInfoData}
+          yqsy={yqsy}
+          setVisible={setVisible}
+          coinListData={coinListData}
+          daojis={daojishi}
+          nowTab={nowTab}
+          sendData={sendData}
+          hysetInfo={hysetInfo}
+          companyData={companyData}
+          successOrderNo={successOrderNo}
+        />
+      </CenterPopup>
       <BottomBar index={3} />
     </div>
   );

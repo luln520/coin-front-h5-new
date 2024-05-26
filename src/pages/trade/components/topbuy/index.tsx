@@ -5,7 +5,7 @@ import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function TopBuy({ setIsShowOrder }) {
+export default function TopBuy({ setIsShowOrder, setType }) {
   const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const { t: translate } = useTranslation();
@@ -16,6 +16,7 @@ export default function TopBuy({ setIsShowOrder }) {
           class="marketbuydiv-3"
           onClick={() => {
             setIsShowOrder(true);
+            setType(1);
           }}
         >
           買多
@@ -24,6 +25,7 @@ export default function TopBuy({ setIsShowOrder }) {
           class="marketbuydiv-4"
           onClick={() => {
             setIsShowOrder(true);
+            setType(2);
           }}
         >
           買空

@@ -81,7 +81,7 @@ export default function CoinPopup({
         setIsShowCoin(false);
       }}
       position="left"
-      bodyStyle={{ width: "220px", backgroundColor: "#f5f5f5" }}
+      bodyStyle={{ backgroundColor: "#f5f5f5" }}
     >
       <div class="coinPopupTopTitle-1">
         <div class="coinPopupTopTitle-2">

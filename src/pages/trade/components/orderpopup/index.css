@@ -123,6 +123,12 @@
   color: rgb(28, 173, 144) !important;
 }
 
+.orderPopup-13-1 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(205, 78, 101) !important;
+}
+
 .orderPopup-14 {
   margin: 0px;
   -webkit-tap-highlight-color: transparent;

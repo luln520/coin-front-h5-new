@@ -1,79 +1,73 @@
 import { useNavigate } from "react-router-dom";
-import { Popup, Space, Button } from "antd-mobile";
+import { Popup, Space, Button, Toast } from "antd-mobile";
 import "./index.css";
 import { useTranslation } from "react-i18next";
 import { getText } from "../../../../utils/util";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "../../../../components/search";
 import { imageConfig } from "../../../../config/config";
 
 export default function OrderPopup({
+  nowTab,
+  type,
+  setType,
   isShowOrder,
   setIsShowOrder,
   coinListData,
   index,
   ctmarketlist,
+  userInfo,
+  buyCoin,
+  hysetInfo,
+  setyqsy,
 }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const [popIndex, setPopIndex] = useState(index);
-  const [name, setName] = useState("");
-  const toPage = (name) => {
-    const uri = popIndex == 1 ? "trade" : "lever";
-    navigate(`/${uri}/${name}`);
-    setIsShowOrder(false);
-  };
+  const [type2, setType2] = useState(1);
+  const [num, setNum] = useState("");
+  const [hyTimes, setHyTimes] = useState([]);
+  const [hyTzeds, setHyTzeds] = useState([]);
+  const [hyYkbls, setHyYkbls] = useState([]);
+  let [minNum, setminNum] = useState(100);
+  const [cykbl, setcykbl] = useState(100);
+  const [isUse, setIsUse] = useState(true);
+  //加载节点
   const getNodes = () => {
+    if (!hyTimes) {
+      return "";
+    }
     const nodes = [];
-    let coinListDataTemp = coinListData;
-    for (const key in coinListDataTemp) {
-      if (name) {
-        if (name.toLowerCase() !== key) {
-          continue;
-        }
-      }
-      nodes.push(
-        <li
-          class="coinPopupTopTitle-30"
+    for (let index = 0; index < hyTimes.length; index++) {
+      let hyTime = hyTimes[index];
+      let hyTzed = hyTzeds[index];
+      let cykbl = hyYkbls[index];
+      const node = (
+        <div
+          class={type2 === index + 1 ? "orderPopup-22" : "orderPopup-25"}
           onClick={() => {
-            toPage(key);
+            setType2(index + 1);
+            setminNum(hyTzed);
+            // setNum(hyTzed);
+            setcykbl(cykbl);
           }}
         >
-          <div class="coinPopupTopTitle-31">
-            <div class="coinPopupTopTitle-32">
-              <span class="coinPopupTopTitle-33">
-                {key.toUpperCase()}
-                <small class="coinPopupTopTitle-34">/USDT</small>
-              </span>
-            </div>
-          </div>
-          <div class="coinPopupTopTitle-35">
-            <span
-              class={
-                coinListData[key]?.close > coinListData[key]?.open
-                  ? "coinPopupTopTitle-36"
-                  : "coinPopupTopTitle-78"
-              }
-            >
-              {coinListData[key]?.close}
-            </span>
-          </div>
-        </li>
+          <div class="orderPopup-23">{hyTime}</div>
+          <div class="orderPopup-24">{cykbl}%</div>
+        </div>
       );
+      nodes.push(node);
     }
     return nodes;
   };
 
-  const getLogo = (name) => {
-    let logo = "";
-    for (const ctmarket of ctmarketlist) {
-      if (name == ctmarket.coinname) {
-        logo = imageConfig.baseImageUrl + ctmarket.logo;
-        break;
-      }
-    }
-    return logo;
-  };
+  useEffect(() => {
+    setHyTimes(hysetInfo.hyTime);
+    setHyTzeds(hysetInfo.hyTzed);
+    setHyYkbls(hysetInfo.hyYkbl);
+    setcykbl(hysetInfo.hyYkbl ? hysetInfo.hyYkbl[0] : 100);
+    // setNum(hysetInfo.hyTzed ? hysetInfo.hyTzed[0] : 100);
+    setminNum(hysetInfo.hyTzed ? hysetInfo.hyTzed[0] : 100);
+  }, [hysetInfo]);
   return (
     <Popup
       visible={isShowOrder}
@@ -89,7 +83,7 @@ export default function OrderPopup({
           <div
             class="orderPopup-4"
             onClick={() => {
-              etIsShowOrder(false);
+              setIsShowOrder(false);
             }}
           ></div>
         </div>
@@ -98,44 +92,24 @@ export default function OrderPopup({
             <div class="orderPopup-7">
               <p class="orderPopup-8">名稱</p>
               <p class="orderPopup-9">
-                BTC<span class="orderPopup-10">/USDT</span>
+                {nowTab?.toUpperCase()}
+                <span class="orderPopup-10">/USDT</span>
               </p>
             </div>
             <div class="orderPopup-11">
               <p class="orderPopup-12">方向</p>
-              <p class="orderPopup-13">買多</p>
+              <p class={type==1?"orderPopup-13":"orderPopup-13-1"} >{type == 1 ? "買多" : "買空"}</p>
             </div>
             <div class="orderPopup-14">
               <p class="orderPopup-15">現價</p>
-              <p class="orderPopup-16">68843.78</p>
+              <p class="orderPopup-16">{coinListData[nowTab]?.close}</p>
             </div>
           </div>
           <div class="orderPopup-17">
             <div class="orderPopup-18">
               <div class="orderPopup-19">
                 <div class="orderPopup-20">
-                  <div class="orderPopup-21">
-                    <div class="orderPopup-22">
-                      <div class="orderPopup-23">60秒</div>
-                      <div class="orderPopup-24">80.0%</div>
-                    </div>
-                    <div class="orderPopup-25">
-                      <div class="orderPopup-26">90秒</div>
-                      <div class="orderPopup-27">83.0%</div>
-                    </div>
-                    <div class="orderPopup-28">
-                      <div class="orderPopup-29">120秒</div>
-                      <div class="orderPopup-30">88.0%</div>
-                    </div>
-                    <div class="orderPopup-31">
-                      <div class="orderPopup-32">300秒</div>
-                      <div class="orderPopup-33">93.0%</div>
-                    </div>
-                    <div class="orderPopup-34">
-                      <div class="orderPopup-35">600秒</div>
-                      <div class="orderPopup-36">97.0%</div>
-                    </div>
-                  </div>
+                  <div class="orderPopup-21">{getNodes()}</div>
                 </div>
               </div>
             </div>
@@ -148,26 +122,59 @@ export default function OrderPopup({
             </div>
             <div class="orderPopup-41">
               <div class="orderPopup-42">
-                <div data-v-5117ac91="" class="orderPopup-43">
-                  最少10起買
-                </div>
                 <input
-                  maxlength="140"
-                  step="0.000000000000000001"
-                  enterkeyhint="done"
-                  autocomplete="off"
-                  type="number"
+                  placeholder="最少10起買"
                   class="orderPopup-44"
+                  type="number"
+                  min={minNum}
+                  name="num"
+                  value={num}
+                  onChange={(e) => {
+                    setNum(parseInt(e.target.value));
+                    setTimeout(() => {
+                      if (e.target.value && cykbl) {
+                        setyqsy(parseInt(e.target.value) * cykbl * 0.01);
+                      } else {
+                        setyqsy(0);
+                      }
+                    }, 0);
+                  }}
                 />
               </div>
             </div>
             <div class="orderPopup-45">
-              <p class="orderPopup-46">可用餘額:3287774.57</p>
+              <p class="orderPopup-46">可用餘額:{userInfo?.usdt}</p>
               {/* <p class="orderPopup-47">手續費:0%</p> */}
             </div>
           </div>
           <div class="orderPopup-48">
-            <div class="orderPopup-49">確認下單</div>
+            <div
+              class="orderPopup-49"
+              onClick={() => {
+                if (num < minNum) {
+                  Toast.show({
+                    content: `${translate(getText("最低投資額"))} ${minNum}`,
+                  });
+                  return;
+                }
+                if (!isUse) {
+                  return;
+                }
+                setIsUse(false);
+                setTimeout(() => {
+                  setIsUse(true);
+                }, 3000);
+                buyCoin({
+                  ccoinname: `${nowTab.toUpperCase()}/USDT`,
+                  ctzed: num,
+                  ctzfx: type,
+                  ctime: hyTimes[type2 - 1].toUpperCase(),
+                  cykbl,
+                });
+              }}
+            >
+              確認下單
+            </div>
           </div>
         </div>
       </div>

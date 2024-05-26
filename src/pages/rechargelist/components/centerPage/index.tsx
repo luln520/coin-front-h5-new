@@ -9,16 +9,7 @@ import { Toast } from "antd-mobile";
 import { useState } from "react";
 import { imageConfig } from "../../../../config/config";
 
-export default function CenterPage({
-  coinList,
-  userInfo,
-  qbSum,
-  setVisible,
-  setVisibleTK,
-  setVisibleTK2,
-  setVisibleCK,
-  isShowZF,
-}) {
+export default function CenterPage({ coinList }) {
   const navigate = useNavigate();
   const lan = localStorage.getItem("i18n");
   const c2ctxStatus = localStorage.getItem("c2ctxStatus");
@@ -94,20 +85,16 @@ export default function CenterPage({
           <div
             class="rechargelist-11"
             onClick={() => {
-              if (isShowZF) {
-                setVisibleTK2(true);
-              } else {
-                setVisibleCK(true);
-              }
+              navigate("/c2cckcenter");
             }}
           >
             <div class="rechargelist-12">
               <div class="rechargelist-13">
                 <div class="rechargelist-14">
-                  {/* <img
-                    src={imageConfig.baseImageUrl + data?.img}
+                  <img
+                    src="https://kmadmin.lpyrmgck.online/costIco/20220324033547378184.png"
                     class="rechargelist-16"
-                  /> */}
+                  />
                   <div class="rechargelist-17">
                     <div class="rechargelist-18">
                       <div class="rechargelist-19"></div>

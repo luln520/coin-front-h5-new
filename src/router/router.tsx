@@ -39,6 +39,7 @@ import C2CckInfo from "../pages/c2cckinfo";
 import C2CtkList from "../pages/c2ctkList";
 import C2CckList from "../pages/c2cckList";
 import ExtractOrderList from "../pages/extractorderlist";
+import C2CckCenter from "../pages/c2cckcenter";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -284,6 +285,10 @@ export default function AppRouter() {
                   <Route
                     path="/borrowmoney"
                     element={getElement(<JieKuan />)}
+                  ></Route>
+                  <Route
+                    path="/c2cckcenter"
+                    element={getElement(<C2CckCenter />)}
                   ></Route>
                   <Route
                     path="/c2cckList"

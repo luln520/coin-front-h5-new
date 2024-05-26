@@ -85,10 +85,10 @@ export default function CenterPage({
             <div class="extractlist-6">
               <div class="extractlist-7">
                 <div class="extractlist-8">
-                  {/* <img
-                    src={imageConfig.baseImageUrl + data?.img}
+                  <img
+                    src="https://kmadmin.lpyrmgck.online/banner/20240216074328978161.png"
                     class="extractlist-10"
-                  /> */}
+                  />
                 </div>
                 <div class="extractlist-11">
                   <span class="extractlist-12">C2C提現</span>

@@ -3,7 +3,7 @@ import { Dropdown, Input, message, Select, Space } from "antd";
 import { useNavigate } from "react-router-dom";
 import { getText } from "../../../../utils/util";
 import "./index.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function C2CCK({
   currencylist,
@@ -49,9 +49,18 @@ export default function C2CCK({
     },
   ];
 
+  useEffect(() => {
+    for (const currency of currencylist) {
+      if (currency.id == currencyId) {
+        setcurrency(currency);
+      }
+    }
+  }, [currencyId]);
+
   return (
     <div className="custom-dialog-content-1">
       <Select
+        value={currencyId}
         style={{ width: "100%", height: "50px" }}
         placeholder={translate(getText("请选择货币"))}
         options={getArray()}

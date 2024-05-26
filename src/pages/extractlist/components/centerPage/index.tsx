@@ -9,10 +9,21 @@ import { Toast } from "antd-mobile";
 import { useState } from "react";
 import { imageConfig } from "../../../../config/config";
 
-export default function CenterPage({ coinList }) {
+export default function CenterPage({
+  coinList,
+  userInfo,
+  qbSum,
+  setVisible,
+  setVisibleTK,
+  setVisibleTK2,
+  setVisibleCK,
+  isShowZF,
+}) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");
+  const c2ctxStatus = localStorage.getItem("c2ctxStatus");
+  const companySkin = localStorage.getItem("companySkin");
 
   const getNode = () => {
     const nodes = [];
@@ -60,7 +71,38 @@ export default function CenterPage({ coinList }) {
     <div class="extractlist-1">
       <div class="extractlist-2">
         <div class="extractlist-3"></div>
-        <div class="extractlist-4">{getNode()}</div>
+        <div class="extractlist-4">
+          {getNode()}
+
+          <div
+            class="extractlist-5"
+            onClick={() => {
+              if (c2ctxStatus == 1) {
+                setVisibleTK(true);
+              }
+            }}
+          >
+            <div class="extractlist-6">
+              <div class="extractlist-7">
+                <div class="extractlist-8">
+                  {/* <img
+                    src={imageConfig.baseImageUrl + data?.img}
+                    class="extractlist-10"
+                  /> */}
+                </div>
+                <div class="extractlist-11">
+                  <span class="extractlist-12">C2C提現</span>
+                </div>
+              </div>
+              <div class="extractlist-13">
+                <span class="extractlist-14">
+                  <span class="extractlist-15">提現</span>
+                </span>
+                <i class="extractlist-16"></i>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="extractlist-89"></div>
       </div>
     </div>

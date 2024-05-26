@@ -9,10 +9,21 @@ import { Toast } from "antd-mobile";
 import { useState } from "react";
 import { imageConfig } from "../../../../config/config";
 
-export default function CenterPage({ coinList }) {
+export default function CenterPage({
+  coinList,
+  userInfo,
+  qbSum,
+  setVisible,
+  setVisibleTK,
+  setVisibleTK2,
+  setVisibleCK,
+  isShowZF,
+}) {
   const navigate = useNavigate();
-  const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");
+  const c2ctxStatus = localStorage.getItem("c2ctxStatus");
+  const { t: translate } = useTranslation();
+  const companySkin = localStorage.getItem("companySkin");
 
   const getNode = () => {
     const nodes = [];
@@ -78,7 +89,47 @@ export default function CenterPage({ coinList }) {
           </div>
         </div>
         <p class="rechargelist-9">請選擇以下充值通道</p>
-        <div class="rechargelist-10">{getNode()}</div>
+        <div class="rechargelist-10">
+          {getNode()}
+          <div
+            class="rechargelist-11"
+            onClick={() => {
+              if (isShowZF) {
+                setVisibleTK2(true);
+              } else {
+                setVisibleCK(true);
+              }
+            }}
+          >
+            <div class="rechargelist-12">
+              <div class="rechargelist-13">
+                <div class="rechargelist-14">
+                  {/* <img
+                    src={imageConfig.baseImageUrl + data?.img}
+                    class="rechargelist-16"
+                  /> */}
+                  <div class="rechargelist-17">
+                    <div class="rechargelist-18">
+                      <div class="rechargelist-19"></div>
+                    </div>
+                    <div class="rechargelist-20">
+                      <div class="rechargelist-21"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rechargelist-22">
+                  <span class="rechargelist-23">C2C充值</span>
+                </div>
+              </div>
+              <div class="rechargelist-24">
+                <span class="rechargelist-25">
+                  <span class="rechargelist-26">前往購買</span>
+                </span>
+                <i class="rechargelist-27"></i>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="rechargelist-96"></div>
       </div>
     </div>

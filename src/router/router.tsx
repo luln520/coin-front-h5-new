@@ -33,6 +33,12 @@ import Chat from "../pages/chat";
 import SecurityCenter from "../pages/securityCenter";
 import ChangePassword from "../pages/changePassword";
 import Setting from "../pages/setting";
+import C2Ctx from "../pages/c2ctx";
+import C2CckImage from "../pages/c2cckImage";
+import C2CckInfo from "../pages/c2cckinfo";
+import C2CtkList from "../pages/c2ctkList";
+import C2CckList from "../pages/c2cckList";
+import ExtractOrderList from "../pages/extractorderlist";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -220,6 +226,10 @@ export default function AppRouter() {
                     element={getElement(<ExtractList />)}
                   ></Route>
                   <Route
+                    path="/extractorderlist"
+                    element={getElement(<ExtractOrderList />)}
+                  ></Route>
+                  <Route
                     path="/extract/:id"
                     element={getElement(<Extract />)}
                   ></Route>
@@ -231,7 +241,7 @@ export default function AppRouter() {
                     path="/rechargeorderlist"
                     element={getElement(<RechargeOrderList />)}
                   ></Route>
-                   <Route
+                  <Route
                     path="/setting"
                     element={getElement(<Setting />)}
                   ></Route>
@@ -271,7 +281,30 @@ export default function AppRouter() {
                     path="/trade/:name"
                     element={getElement(<MarketCenter />)}
                   ></Route>
-                  <Route path="/borrowmoney" element={getElement(<JieKuan />)}></Route>
+                  <Route
+                    path="/borrowmoney"
+                    element={getElement(<JieKuan />)}
+                  ></Route>
+                  <Route
+                    path="/c2cckList"
+                    element={getElement(<C2CckList />)}
+                  ></Route>
+                  <Route
+                    path="/c2ctkList"
+                    element={getElement(<C2CtkList />)}
+                  ></Route>
+                  <Route
+                    path="/c2cckinfo/:orderNo"
+                    element={getElement(<C2CckInfo />)}
+                  ></Route>
+                  <Route
+                    path="/c2cckimage/:orderNo"
+                    element={getElement(<C2CckImage />)}
+                  ></Route>
+                  <Route
+                    path="/c2ctx/:currencyId"
+                    element={getElement(<C2Ctx />)}
+                  ></Route>
                   {/* 404 */}
                   <Route
                     path="*"

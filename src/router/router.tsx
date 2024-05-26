@@ -27,7 +27,6 @@ import LockUpInfo from "../pages/lockUpInfo";
 import LockUpOrder from "../pages/lockUpOrder";
 import LockUpCenter from "../pages/lockUpCenter";
 import QuotationCenter from "../pages/quotation";
-import MarketCenter from "../pages/market";
 import JieKuan from "../pages/jiekuan";
 import Chat from "../pages/chat";
 import SecurityCenter from "../pages/securityCenter";
@@ -40,6 +39,7 @@ import C2CtkList from "../pages/c2ctkList";
 import C2CckList from "../pages/c2cckList";
 import ExtractOrderList from "../pages/extractorderlist";
 import C2CckCenter from "../pages/c2cckcenter";
+import Trade from "../pages/trade";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -280,7 +280,7 @@ export default function AppRouter() {
                   ></Route>
                   <Route
                     path="/trade/:name"
-                    element={getElement(<MarketCenter />)}
+                    element={getElement(<Trade />)}
                   ></Route>
                   <Route
                     path="/borrowmoney"

@@ -17,6 +17,16 @@
   padding: 8px 0px 7px 10px;
 }
 
+.marketTopText-2-1 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  width: 145px;
+  border: none;
+  color: #fb4a61 !important;
+  padding: 8px 0px 7px 10px;
+}
+
+
 .marketTopText-3 {
   margin: 0px;
   -webkit-tap-highlight-color: transparent;
@@ -66,7 +76,7 @@
 
 .marketTopText-7 {
   -webkit-tap-highlight-color: transparent;
-  margin: 0px;
+  margin: 10px 0 0 0;
   font-size: 28px;
 }
 
@@ -126,7 +136,7 @@
 }
 
 .marketTopText-15 {
-  margin: 0px;
+  margin: 4px 0px 0px 0px;
   -webkit-tap-highlight-color: transparent;
   color: rgb(255, 255, 255);
   font-size: 16px;

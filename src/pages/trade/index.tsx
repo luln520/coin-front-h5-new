@@ -11,19 +11,23 @@ import { userApi } from "../../api/user-api";
 import BottomBar from "../../components/bottomBar";
 import { WSContext } from "../../router/router";
 import { getText } from "../../utils/util";
-import CoinPopup from "./components/popup";
+import KineCenter from "./components/kinecenter";
+import CoinPopup from "./components/coinpopup";
 import TopBar from "./components/topbar";
 import TopBuy from "./components/topbuy";
 import TopText from "./components/topText";
+import OrderPopup from "./components/orderpopup";
 
-export default function MarketCenter() {
+export default function Trade() {
   const uid = localStorage.getItem("uid");
   const { t: translate } = useTranslation();
   // const [changeDaoJiShi, setChangeDaoJiShi] = useState(false);
   const [daojishi, setDaojis] = useState(60);
+  const [timeindex, settimeindex] = useState(1);
   const [sendData, setSendData] = useState({});
   const [index, setIndex] = useState(3);
-  const [isShow, setIsShow] = useState(false);
+  const [isShowCoin, setIsShowCoin] = useState(false);
+  const [isShowOrder, setIsShowOrder] = useState(false);
   const [nowTab, setNowTab] = useState("");
   const [successOrderNo, setsuccessOrderNo] = useState("");
   const [hysetInfo, setHysetInfo] = useState({});
@@ -163,17 +167,31 @@ export default function MarketCenter() {
       }}
     >
       <TopBar />
-      <TopText setIsShow={setIsShow} nowTab={nowTab} />
+      <TopText
+        setIsShowCoin={setIsShowCoin}
+        nowTab={nowTab}
+        coinListData={coinListData}
+      />
+      <KineCenter timeindex={timeindex} settimeindex={settimeindex} />
+
+      <TopBuy setIsShowOrder={setIsShowOrder} />
       <div
         style={{
           height: "50px",
         }}
       ></div>
-      <TopBuy />
-      {/* 弹出框 */}
+      {/* 左边弹框  */}
       <CoinPopup
-        isShow={isShow}
-        setIsShow={setIsShow}
+        isShowCoin={isShowCoin}
+        setIsShowCoin={setIsShowCoin}
+        coinListData={coinListData}
+        ctmarketlist={ctmarketlist}
+        index={1}
+      />
+      {/* 订单底部弹框 */}
+      <OrderPopup
+        isShowOrder={isShowOrder}
+        setIsShowOrder={setIsShowOrder}
         coinListData={coinListData}
         ctmarketlist={ctmarketlist}
         index={1}

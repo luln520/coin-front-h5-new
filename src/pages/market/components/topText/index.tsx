@@ -5,14 +5,16 @@ import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function TopText({}) {
+export default function TopText({ setIsShow, nowTab }) {
   const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const { t: translate } = useTranslation();
   return (
     <div  class="marketTopText-1">
       <div  class="marketTopText-2">
-        <div  class="marketTopText-3">
+        <div  class="marketTopText-3" onClick={()=>{
+          setIsShow(true);
+        }}>
           <p  class="marketTopText-4">
             BTC
             <span  class="marketTopText-5">

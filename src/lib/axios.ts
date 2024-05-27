@@ -5,9 +5,8 @@ import { Toast } from 'antd-mobile';
 //基础请求地址
 const hostname = window.location.hostname;
 const apiUrlMap = {
-  "localhost": "https://1.gqjys.co",//"http://127.0.0.1:1084",
-  '206.238.199.169': "http://206.238.199.169:1024",
-  '192.168.101.114': "http://206.238.199.169:1024",
+  "localhost": "https://2.gqjys.co",//"http://127.0.0.1:1084",
+  '206.238.199.169': "https://2.gqjys.co",
 }
 export const BASE_API_URL = apiUrlMap[hostname] ? apiUrlMap[hostname] : '';
 export const BASE_IMG_URL = BASE_API_URL.replace(":1024", '');

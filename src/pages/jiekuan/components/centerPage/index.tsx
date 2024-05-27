@@ -44,7 +44,7 @@ export default function CenterPage() {
         <div className="jiekuanInputBorderDiv">
           <img
             className="jiekuanInputiconimg"
-            src="https://1.gqjys.co/imgs/upload/f5644127e8fb4edc95a3ab721e4d2bb6.png"
+            src="https://2.gqjys.co/imgs/upload/f5644127e8fb4edc95a3ab721e4d2bb6.png"
           ></img>
           <div className="jiekuanInputFont">USDT</div>
           <RightOutlined className="jiekuanInputicon2" />
@@ -61,7 +61,7 @@ export default function CenterPage() {
         <div className="jiekuanInputBorderDiv">
           <img
             className="jiekuanInputiconimg"
-            src="https://1.gqjys.co/imgs/upload/edd99b47b3894bea9030695d4da68120.png"
+            src="https://2.gqjys.co/imgs/upload/edd99b47b3894bea9030695d4da68120.png"
           ></img>
           <div className="jiekuanInputFont">BTC</div>
           <RightOutlined className="jiekuanInputicon2" />

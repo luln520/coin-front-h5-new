@@ -146,8 +146,11 @@ export function changeCompanyData(companyData) {
     //标签
     document.getElementsByTagName("title")[0].innerText = companyData?.companyName;
     // icon
-    let favicon = document.getElementById("favicon") as HTMLLinkElement;
-    favicon.href = imageConfig.baseImageUrl + companyData?.companyLogo;
+    for (let index = 0; index <= 4; index++) {
+        let favicon = document.getElementById("favicon" + index) as HTMLLinkElement;
+        favicon.href = imageConfig.baseImageUrl + companyData?.companyLogo;
+    }
+
     //颜色
     const colors = ['#2b9bc0', '#0ead98', '#f0b90a'];
     document

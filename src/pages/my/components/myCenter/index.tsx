@@ -32,9 +32,14 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-9">
             <div className="mycenter-10">
-              <span className="mycenter-11" onClick={()=>{
-                navigate("/setting");
-              }}></span>
+              <span
+                className="mycenter-11"
+                onClick={() => {
+                  navigate("/setting");
+                }}
+              >
+                
+              </span>
             </div>
           </div>
           <div className="mycenter-12">
@@ -72,7 +77,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
         </div>
       </div>
       <div className="mycenter-29">
-        <div className="mycenter-30">
+        <div
+          className="mycenter-30"
+          onClick={() => {
+            navigate("/idcard");
+          }}
+        >
           <div className="mycenter-31">
             <div className="mycenter-32">
               <img
@@ -91,7 +101,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-40"></div>
         </div>
-        <div className="mycenter-52">
+        <div
+          className="mycenter-52"
+          onClick={() => {
+            navigate("/jyjl");
+          }}
+        >
           <div className="mycenter-53">
             <div className="mycenter-54">
               <img
@@ -198,7 +213,9 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
         </div>
 
-        <div className="mycenter-131">
+        <div className="mycenter-131" onClick={() => {
+            navigate("/setting");
+          }}>
           <div className="mycenter-132">
             <div className="mycenter-133">
               <img

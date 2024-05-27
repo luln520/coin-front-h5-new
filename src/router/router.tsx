@@ -40,6 +40,12 @@ import C2CckList from "../pages/c2cckList";
 import ExtractOrderList from "../pages/extractorderlist";
 import C2CckCenter from "../pages/c2cckcenter";
 import Trade from "../pages/trade";
+import Idcard from "../pages/idcard";
+import IdCard from "../pages/idcard";
+import JYJL from "../pages/jyjlCenter";
+import JYJLLever from "../pages/jyjlLever";
+import JYJLTrade from "../pages/jyjlTrade";
+import MarketOrderInfo from "../pages/marketOrderInfo";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -309,6 +315,23 @@ export default function AppRouter() {
                   <Route
                     path="/c2ctx/:currencyId"
                     element={getElement(<C2Ctx />)}
+                  ></Route>
+                  <Route
+                    path="/idcard"
+                    element={getElement(<IdCard />)}
+                  ></Route>
+                  <Route path="/jyjl" element={getElement(<JYJL />)}></Route>
+                  <Route
+                    path="/jyjlLever"
+                    element={getElement(<JYJLLever />)}
+                  ></Route>
+                  <Route
+                    path="/jyjlTrade"
+                    element={getElement(<JYJLTrade />)}
+                  ></Route>
+                   <Route
+                    path="/marketOrderInfo/:id"
+                    element={getElement(<MarketOrderInfo />)}
                   ></Route>
                   {/* 404 */}
                   <Route

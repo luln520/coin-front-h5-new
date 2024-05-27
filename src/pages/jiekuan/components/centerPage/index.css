@@ -23,7 +23,7 @@
   margin-top: 8px;
   height: 30px;
   padding: 0 6px;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .jiekuanInputFontDiv {
-  font-size: 16px;
+  font-size: 14px;
   color: #91979D;
 }
 
@@ -49,23 +49,24 @@
   padding: 14px;
   border-radius: 5px;
   margin-top: 6px;
-  height: 28px;
+  height: 26px;
 }
 
 .jiekuanInputFont {
   float: left;
-  line-height: 24px;
+  line-height: 26px;
   min-width: 3rem;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .jiekuanInputTagFont {
   background-color: var(--boutton-background-color);
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 3px;
-  padding: 2px 3px;
+  padding: 3px 3px;
   margin-left: 10px;
+  line-height: 24px;
   font-weight: 600;
 }
 
@@ -85,18 +86,18 @@
 
 .jiekuanInputcenterFont {
   color: #8f97a13f;
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 30px;
 }
 
 .jiekuanInputcenterFontnum {
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 10px;
 }
 
 .jiekuanInputcenterFontnumMax {
   float: right;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--boutton-background-color);
 }
 
@@ -116,13 +117,13 @@
 
 .jiekuanmxleftDiv {
   color: #91979D;
-  font-size: 16px;
+  font-size: 13px;
   height: 38px;
   line-height: 38px;
 }
 
 .jiekuanmxrightDiv {
-  font-size: 16px;
+  font-size: 13px;
   height: 38px;
   line-height: 38px;
   float: right;
@@ -143,14 +144,14 @@
 .jiekuanbottomCenterDiv {}
 
 .jiekuanbottomCenteragreeDiv {
-  font-size: 13px;
+  font-size: 12px;
   margin-left: 36px;
 }
 
 .jiekuanbottomCenteragreexyDiv {
   margin-left: 36px;
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--boutton-background-color);
 }
 
@@ -160,7 +161,7 @@
   height: 50px;
   text-align: center;
   line-height: 50px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   background-color: var(--boutton-background-color);
 }
@@ -175,7 +176,7 @@
   padding: 0px;
   border: 0px;
   outline: 0px;
-  font-size: 20px;
+  font-size: 18px;
   vertical-align: baseline;
   background: transparent;
   -webkit-box-flex: 0;

@@ -29,7 +29,7 @@ export default function LockUpOrder() {
     <div
       className="page"
       style={{
-        backgroundColor: "#e3e6ea",
+        backgroundColor: "rgb(247, 247, 247)",
       }}
     >
       <TopBar title={translate(getText("委託訂單"))} isBack={true} />

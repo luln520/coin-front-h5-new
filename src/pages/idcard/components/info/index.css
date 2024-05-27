@@ -381,6 +381,7 @@
   text-align: center;
   border-radius: 10px;
   width: 182px;
+  height: 128px;
   background-image: url("https://www.btexure.vip/static/ICON/center/1.png");
   background-size: 100% 100%;
 }
@@ -390,9 +391,14 @@
   overflow: hidden;
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 100%;
   height: 60px;
   margin: 20px 30px 0px;
+}
+
+.idcard-28-1 {
+  display: flex;
+  justify-content: center;
 }
 
 .idcard-29 {
@@ -409,14 +415,9 @@
   margin: 0px;
   -webkit-tap-highlight-color: transparent;
   max-width: 100%;
-  width: 100%;
-  height: 100%;
+  height: 128px;
   user-select: none;
   display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
 }
 
 .idcard-31 {

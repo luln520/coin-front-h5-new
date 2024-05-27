@@ -64,61 +64,123 @@ export default function Info({ userInfo, sendAuth }) {
             <ul class="idcard-5">
               <div class="idcard-6">
                 <div class="idcard-7">證件類型：</div>
-                <div class="idcard-8"></div>
-                <div class="idcard-9">
-                  <div class="idcard-10">
-                    <div class="idcard-11">
-                      <div class="idcard-12"></div>
-                      <input disabled="disabled" class="idcard-13" />
-                    </div>
-                  </div>
-                  <div class="idcard-14">
-                    <div class="idcard-15">
-                      <div class="idcard-16">
-                        <div class="idcard-17">
-                          <span class="idcard-18"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Select
+                  defaultValue={rztype}
+                  value={rztype}
+                  style={{ width: "100%", height: "40px" }}
+                  options={[
+                    { value: 1, label: translate(getText(`护照`)) },
+                    { value: 2, label: translate(getText(`驾驶证`)) },
+                    { value: 3, label: "SSN" },
+                    { value: 4, label: translate(getText(`身份ID`)) },
+                  ]}
+                  onChange={(val) => {
+                    setRztype(val);
+                  }}
+                />
               </div>
               <li class="idcard-19">
                 <p class="idcard-20">姓名</p>
                 <div class="idcard-21">
                   <div class="idcard-22">
-                    <input class="idcard-24" placeholder="請輸入姓名" />
+                    <input
+                      class="idcard-24"
+                      type="text"
+                      placeholder={translate(getText("請輸入您的真實姓名"))}
+                      value={realName}
+                      onChange={(e) => {
+                        setRealName(e.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+              </li>
+              <li class="idcard-19">
+                <p class="idcard-20">聯繫電話</p>
+                <div class="idcard-21">
+                  <div class="idcard-22">
+                    <input
+                      class="idcard-24"
+                      type="text"
+                      placeholder={translate(getText("請填寫聯繫電話"))}
+                      value={phone}
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                      }}
+                    />
                   </div>
                 </div>
               </li>
               <p class="idcard-25">證件照</p>
               <li class="idcard-26">
-                <div class="idcard-27">
-                  <div class="idcard-28">
-                    <div class="idcard-29"></div>
-                    <img
-                      src="https://www.btexure.vip/static/img/img-add.png"
-                      draggable="true"
-                      class="idcard-30"
-                    />
+                <Upload
+                  name="file"
+                  accept="image/*"
+                  showUploadList={false}
+                  action={imageConfig.uploadUrl}
+                  onChange={handleChange}
+                >
+                  <div
+                    class="idcard-27"
+                    onClick={() => {
+                      preview("cardzm");
+                    }}
+                  >
+                    {cardzm && (
+                      <div class="idcard-28-1">
+                        <img
+                          src={imageConfig.baseImageUrl + cardzm}
+                          class="idcard-30"
+                        />
+                      </div>
+                    )}
+                    {!cardzm && (
+                      <div class="idcard-28">
+                        <img
+                          src="https://www.btexure.vip/static/img/img-add.png"
+                          class="idcard-30"
+                        />
+                      </div>
+                    )}
+                    {!cardzm && <p class="idcard-31">證件正面照片</p>}
                   </div>
-                  <p class="idcard-31">證件正面照片</p>
-                </div>
+                </Upload>
               </li>
               <li class="idcard-32">
-                <div class="idcard-33">
-                  <div class="idcard-34">
-                    <div class="idcard-35"></div>
-                    <img
-                      src="https://www.btexure.vip/static/img/img-add.png"
-                      draggable="true"
-                      class="idcard-36"
-                    />
+                <Upload
+                  name="file"
+                  accept="image/*"
+                  showUploadList={false}
+                  action={imageConfig.uploadUrl}
+                  onChange={handleChange}
+                >
+                  <div
+                    class="idcard-27"
+                    onClick={() => {
+                      preview("cardfm");
+                    }}
+                  >
+                    {cardfm && (
+                      <div class="idcard-28-1">
+                        <img
+                          src={imageConfig.baseImageUrl + cardfm}
+                          class="idcard-30"
+                        />
+                      </div>
+                    )}
+                    {!cardfm && (
+                      <div class="idcard-28">
+                        <img
+                          src="https://www.btexure.vip/static/img/img-add.png"
+                          class="idcard-30"
+                        />
+                      </div>
+                    )}
+                    {!cardfm && <p class="idcard-31">證件反面照片</p>}
                   </div>
-                  <p class="idcard-37">證件反面照片</p>
-                </div>
+                </Upload>
               </li>
-              <li class="idcard-38">
+              {/* <li class="idcard-38">
                 <div class="idcard-39">
                   <div class="idcard-40">
                     <div class="idcard-41"></div>
@@ -130,17 +192,35 @@ export default function Info({ userInfo, sendAuth }) {
                   </div>
                   <p class="idcard-43">證件手持照片</p>
                 </div>
-              </li>
+              </li> */}
             </ul>
             <div class="idcard-44">
-              <div class="idcard-45">提交</div>
+              <div
+                class="idcard-45"
+                onClick={() => {
+                  if (userInfo?.rzstatus === 2) {
+                    return;
+                  }
+                  sendAuth({
+                    ...userInfo,
+                    realName,
+                    cardzm,
+                    cardfm,
+                    rztype,
+                    phone,
+                  });
+                  reloadData();
+                }}
+              >
+                提交
+              </div>
             </div>
           </div>
         </div>
         <div class="idcard-46">
-          <div data-v-01dfbd2e="" class="idcard-47">
-            <div data-v-01dfbd2e="" id="_top" class="idcard-48">
-              <div data-v-01dfbd2e="" id="rtf475" class="idcard-49">
+          <div class="idcard-47">
+            <div id="_top" class="idcard-48">
+              <div id="rtf475" class="idcard-49">
                 <div class="idcard-50">
                   <p class="idcard-51">
                     提交身份證正反面

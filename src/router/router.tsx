@@ -46,6 +46,7 @@ import JYJL from "../pages/jyjlCenter";
 import JYJLLever from "../pages/jyjlLever";
 import JYJLTrade from "../pages/jyjlTrade";
 import MarketOrderInfo from "../pages/marketOrderInfo";
+import Noice from "../pages/noice";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -329,14 +330,15 @@ export default function AppRouter() {
                     path="/jyjlTrade"
                     element={getElement(<JYJLTrade />)}
                   ></Route>
-                   <Route
+                  <Route
                     path="/marketOrderInfo/:id"
                     element={getElement(<MarketOrderInfo />)}
                   ></Route>
+                  <Route path="/noice" element={getElement(<Noice />)}></Route>
                   {/* 404 */}
                   <Route
                     path="*"
-                    element={getElement(<Navigate to="/homecenter" />)}
+                    element={<Navigate to="/homecenter" />}
                   ></Route>
                 </Routes>
               </ScrollToTop>

@@ -14,6 +14,7 @@ export default function CenterPage() {
   const line = localStorage.getItem("line");
   const changeline = (linenum) => {
     localStorage.setItem("line", linenum);
+    navigate(-1);
   };
 
   return (

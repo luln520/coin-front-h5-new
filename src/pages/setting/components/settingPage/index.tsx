@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function SettingPage() {
+export default function SettingPage({ userInfo }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   return (
@@ -16,7 +16,7 @@ export default function SettingPage() {
                 <p class="setting-7">暱稱</p>
               </div>
               <div class="setting-8">
-                <p class="setting-9">IbiTGh</p>
+                <p class="setting-9">{userInfo?.userCode}</p>
                 <div class="setting-10">
                   <div class="setting-11"></div>
                   <img
@@ -32,7 +32,7 @@ export default function SettingPage() {
                 <p class="setting-15">賬號</p>
               </div>
               <div class="setting-16">
-                <p class="setting-17">zhangyu@gmail.com</p>
+                <p class="setting-17">{userInfo?.username}</p>
                 <div class="setting-18">
                   <div class="setting-19"></div>
                   <img
@@ -46,7 +46,7 @@ export default function SettingPage() {
           </div>
         </div>
         <div class="setting-21">
-          <div class="setting-22">
+          {/* <div class="setting-22">
             <div class="setting-23">
               <div class="setting-24">
                 <p class="setting-25">設置提現密碼</p>
@@ -78,16 +78,21 @@ export default function SettingPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div class="setting-38">
           <div class="setting-39">
-            <div class="setting-40">
+            <div
+              class="setting-40"
+              onClick={() => {
+                navigate("/changelanguage");
+              }}
+            >
               <div class="setting-41">
                 <p class="setting-42">語言切換</p>
               </div>
               <div class="setting-43">
-                <p class="setting-44">中文繁體</p>
+                {/* <p class="setting-44">中文繁體</p> */}
                 <div class="setting-45">
                   <div class="setting-46"></div>
                   <img
@@ -99,12 +104,17 @@ export default function SettingPage() {
               </div>
               <div class="setting-48"></div>
             </div>
-            <div class="setting-49">
+            <div
+              class="setting-49"
+              onClick={() => {
+                navigate("/changeline");
+              }}
+            >
               <div class="setting-50">
                 <p class="setting-51">切換線路</p>
               </div>
               <div class="setting-52">
-                <p class="setting-53">線路1</p>
+                {/* <p class="setting-53">線路1</p> */}
                 <div class="setting-54">
                   <div class="setting-55"></div>
                   <img

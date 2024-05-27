@@ -153,7 +153,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           <div className="mycenter-51"></div>
         </div>
 
-        <div className="mycenter-112">
+        <div
+          className="mycenter-112"
+          onClick={() => {
+            navigate("/noice");
+          }}
+        >
           <div className="mycenter-113">
             <div className="mycenter-114">
               <img
@@ -161,7 +166,15 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-116"
               />
             </div>
-            <p className="mycenter-117">留言列表</p>
+            <p className="mycenter-117">
+              留言列表
+              <Badge
+                count={loginmsg?.noticeCount ? loginmsg?.noticeCount : 0}
+                offset={[8, 0]}
+              >
+                &nbsp;
+              </Badge>
+            </p>
           </div>
           <div className="mycenter-118">
             <img
@@ -184,7 +197,11 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-116"
               />
             </div>
-            <p className="mycenter-117">在線客服</p>
+            <p className="mycenter-117">
+              <Badge count={loginmsg?.userCount} offset={[10, 0]}>
+                {translate(getText("在線客服"))}&nbsp;&nbsp;
+              </Badge>
+            </p>
           </div>
           <div className="mycenter-118">
             <img

@@ -78,8 +78,8 @@ export default function CenterPage({
   };
   const getZXNodes = () => {
     const nodes = [];
-    let coinListDataTemp = collectlist;
-    for (const key in coinListDataTemp) {
+    for (const data of collectlist) {
+      const key = data.coinname;
       nodes.push(
         <li
           class="quotationcenter-37"

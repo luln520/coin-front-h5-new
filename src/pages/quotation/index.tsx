@@ -32,10 +32,9 @@ export default function QuotationCenter() {
   };
 
   const loadcollectlistData = async () => {
-    const data = await collectApi.list({ pageNum: 1, pageSize: 100 });
+    const data = await collectApi.list({ uid, pageNum: 1, pageSize: 100 });
     if (data.ok) {
-      const list = data.data.records;
-      setcollectlist(list);
+      setcollectlist(data.data);
     }
   };
   useEffect(() => {
@@ -50,7 +49,11 @@ export default function QuotationCenter() {
       }}
     >
       <TopBar title={translate(getText("行情"))} isBack={false} />
-      <CenterPage coinListData={coinListData} ctmarketlist={ctmarketlist} collectlist={collectlist} />
+      <CenterPage
+        coinListData={coinListData}
+        ctmarketlist={ctmarketlist}
+        collectlist={collectlist}
+      />
       <div
         style={{
           height: "50px",

@@ -18,6 +18,7 @@ import TopBuy from "./components/topbuy";
 import TopText from "./components/topText";
 import OrderPopup from "./components/orderpopup";
 import DaoJiShi from "./components/daojishi";
+import { collectApi } from "../../api/collect-api";
 
 export default function Trade() {
   const uid = localStorage.getItem("uid");
@@ -38,6 +39,7 @@ export default function Trade() {
   const [coinListData, setCoinListData] = useContext(WSContext);
   const [userInfoData, setUserInfoData] = useState({});
   const [hyorders, sethyorders] = useState([] as any[]);
+  const [iscollect, setiscollect] = useState(false);
   let timer: any;
   const [companyData, setCompanyData] = useState({} as any);
   //贸易
@@ -75,6 +77,33 @@ export default function Trade() {
       list.sort((d, e) => d.sort - e.sort);
       setCtmarketlist(list);
     }
+  };
+
+  const loadiscollectData = async () => {
+    const data = await collectApi.sel({ uid, coinname: param.name });
+    if (data.ok) {
+      if (data.data) {
+        setiscollect(true);
+      } else {
+        setiscollect(false);
+      }
+    }
+  };
+
+  const collectAdd = async () => {
+    const data = await collectApi.add({ uid, coinname: param.name });
+    if (data.ok) {
+      Toast.show(translate(getText("添加自选成功")));
+    }
+    loadiscollectData();
+  };
+
+  const collectDel = async () => {
+    const data = await collectApi.del({ uid, coinname: param.name });
+    if (data.ok) {
+      Toast.show(translate(getText("取消自选成功")));
+    }
+    loadiscollectData();
   };
 
   //加载数 据
@@ -134,6 +163,7 @@ export default function Trade() {
   const loadData = async () => {
     loadUserCoinData();
     loadhyorderData();
+    loadiscollectData();
   };
   useEffect(() => {
     initCompany();
@@ -168,7 +198,12 @@ export default function Trade() {
         backgroundColor: "#1b1d23",
       }}
     >
-      <TopBar />
+      <TopBar
+        coinname={param.name}
+        iscollect={iscollect}
+        collectAdd={collectAdd}
+        collectDel={collectDel}
+      />
       <TopText
         setIsShowCoin={setIsShowCoin}
         nowTab={nowTab}
@@ -206,8 +241,8 @@ export default function Trade() {
         index={1}
       />
 
-       {/* 倒计时 */}
-       <CenterPopup
+      {/* 倒计时 */}
+      <CenterPopup
         visible={visible}
         destroyOnClose={true}
         onMaskClick={() => {

@@ -179,15 +179,47 @@
   font-size: 20px;
   font-weight: normal;
   top: 0px;
-  color: rgb(255, 185, 0);
 }
+
+.marketTopBar-11-1 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  font-style: normal;
+  font-variant: normal;
+  font-kerning: auto;
+  font-optical-sizing: auto;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  font-stretch: normal;
+  line-height: 1;
+  font-family: uicon-iconfont;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  font-size: 20px;
+  font-weight: normal;
+  top: 0px;
+}
+
 
 .marketTopBar-11:before {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  content: "";
+  content: "\e65f";
+  color: white;
 }
+
+.marketTopBar-11-1:before {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  content: "\e669";
+  color: rgb(255, 185, 0);
+}
+
 
 .marketTopBar-12 {
   margin: 0px;

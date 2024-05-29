@@ -47,6 +47,7 @@ import JYJLLever from "../pages/jyjlLever";
 import JYJLTrade from "../pages/jyjlTrade";
 import MarketOrderInfo from "../pages/marketOrderInfo";
 import Noice from "../pages/noice";
+import MurmurChat from "../pages/murmurChat";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -217,6 +218,7 @@ export default function AppRouter() {
                   ></Route>
                   <Route path="/chatcenter" element={<ChatCenter />}></Route>
                   <Route path="/chat" element={getElement(<Chat />)}></Route>
+                  <Route path="/murmurchat" element={<MurmurChat />}></Route>
                   <Route
                     path="/securitycenter"
                     element={getElement(<SecurityCenter />)}

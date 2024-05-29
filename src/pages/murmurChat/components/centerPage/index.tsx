@@ -132,9 +132,7 @@ export default function CenterPage({ sendMsg, listData }) {
     }
     //滚动
     if (length < listData.length) {
-      setTimeout(() => {
-        scrollDiv();
-      }, 1000);
+      scrollDiv();
       setLength(listData.length);
     }
     return nodes;

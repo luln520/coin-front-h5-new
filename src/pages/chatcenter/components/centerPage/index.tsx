@@ -11,6 +11,7 @@ import { useState } from "react";
 export default function CenterPage() {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
+  const uid = localStorage.getItem("uid");
 
   return (
     <>
@@ -22,9 +23,16 @@ export default function CenterPage() {
       <div className="chatcenter-19">
         <div className="chatcenter-20">
           <div className="chatcenter-21">
-            <div className="chatcenter-22" onClick={()=>{
-              navigate("/chat");
-            }}>
+            <div
+              className="chatcenter-22"
+              onClick={() => {
+                if (uid) {
+                  navigate("/chat");
+                } else {
+                  navigate("/murmurchat");
+                }
+              }}
+            >
               <div className="chatcenter-23">
                 <span className="chatcenter-24">在線客服</span>
               </div>

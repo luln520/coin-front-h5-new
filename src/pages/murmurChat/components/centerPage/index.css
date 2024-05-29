@@ -256,8 +256,6 @@
     -webkit-box-flex: 1;
     flex: 1 1 0%;
     padding-bottom: 16px;
-    max-height: 90vh;
-    overflow-y: scroll;
 }
 
 .servererCenterInfo-22 {

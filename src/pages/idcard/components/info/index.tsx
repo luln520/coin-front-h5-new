@@ -136,10 +136,10 @@ export default function Info({ userInfo, sendAuth }) {
                     )}
                     {!cardzm && (
                       <div class="idcard-28">
-                        <img
+                        {/* <img
                           src="https://www.btexure.vip/static/img/img-add.png"
                           class="idcard-30"
-                        />
+                        /> */}
                       </div>
                     )}
                     {!cardzm && <p class="idcard-31">證件正面照片</p>}
@@ -170,10 +170,10 @@ export default function Info({ userInfo, sendAuth }) {
                     )}
                     {!cardfm && (
                       <div class="idcard-28">
-                        <img
+                        {/* <img
                           src="https://www.btexure.vip/static/img/img-add.png"
                           class="idcard-30"
-                        />
+                        /> */}
                       </div>
                     )}
                     {!cardfm && <p class="idcard-31">證件反面照片</p>}

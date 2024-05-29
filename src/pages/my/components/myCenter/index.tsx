@@ -26,7 +26,14 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           <div className="mycenter-5">
             <div className="mycenter-6">
               <div className="mycenter-7">
-                <span className="mycenter-8"></span>
+                <span
+                  className="mycenter-8"
+                  onClick={() => {
+                    navigate("/noice");
+                  }}
+                >
+                  
+                </span>
               </div>
             </div>
           </div>

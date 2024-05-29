@@ -18,8 +18,8 @@ export default function Center({ userInfo }) {
       <div
         className="infocard-2"
         onClick={() => {
-          if (!userInfo?.rzstatus == 2) {
-            navigate("/idcardCenter");
+          if (!(userInfo?.rzstatus == 2)) {
+            navigate("/idcard");
           }
         }}
       >
@@ -76,8 +76,8 @@ export default function Center({ userInfo }) {
       <div
         className="infocard-16"
         onClick={() => {
-          if (!userInfo?.rzstatus == 2) {
-            navigate("/idcardCenter");
+          if (!(userInfo?.rzstatus == 2)) {
+            navigate("/idcard");
           }
         }}
       >
@@ -118,7 +118,11 @@ export default function Center({ userInfo }) {
         }}
       >
         <div className="infocard-23">
-          <img src="/securityCenter/password.png" alt="" className="infocard-24" />
+          <img
+            src="/securityCenter/password.png"
+            alt=""
+            className="infocard-24"
+          />
         </div>
         <div className="infocard-25">{translate(getText("更改密碼"))}</div>
         <div className="infocard-26">

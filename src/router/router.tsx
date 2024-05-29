@@ -51,6 +51,7 @@ import MurmurChat from "../pages/murmurChat";
 import Address from "../pages/addressAdd";
 import AddressAdd from "../pages/addressAdd";
 import AddressList from "../pages/addresslist";
+import Lever from "../pages/lever";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -347,6 +348,10 @@ export default function AppRouter() {
                   <Route
                     path="/addresslist"
                     element={getElement(<AddressList />)}
+                  ></Route>
+                  <Route
+                    path="/lever/:name"
+                    element={getElement(<Lever />)}
                   ></Route>
                   {/* 404 */}
                   <Route

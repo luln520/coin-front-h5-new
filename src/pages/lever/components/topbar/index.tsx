@@ -18,7 +18,7 @@ export default function TopBar({
     <div class="marketTopBar-1">
       <div class="marketTopBar-2">
         <div
-          class="marketTopBar-3"
+          class="marketTopBar-4"
           onClick={() => {
             navigate(`/trade/${coinname}`);
           }}
@@ -26,7 +26,7 @@ export default function TopBar({
           合約
         </div>
         <div
-          class="marketTopBar-4"
+          class="marketTopBar-3"
           onClick={() => {
             navigate(`/lever/${coinname}`);
           }}
@@ -37,14 +37,7 @@ export default function TopBar({
       <div class="marketTopBar-6">
         <div class="marketTopBar-7">
           <i class="marketTopBar-8"></i>
-          <span
-            class="marketTopBar-9"
-            onClick={() => {
-              navigate("/jyjlTrade");
-            }}
-          >
-            持倉
-          </span>
+          <span class="marketTopBar-9">持倉</span>
         </div>
         <div class="marketTopBar-10">
           <div

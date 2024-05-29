@@ -135,7 +135,6 @@ export default function CenterPage({
           </div>
         </li>
       );
-      break;
     }
     return nodes;
   };

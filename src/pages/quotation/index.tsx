@@ -2,6 +2,7 @@ import { Toast } from "antd-mobile";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
+import { collectApi } from "../../api/collect-api";
 import { financeApi } from "../../api/finance-api";
 import { homeApi } from "../../api/home-api";
 import { kuangjiApi } from "../../api/kuangm-api";
@@ -19,6 +20,7 @@ export default function QuotationCenter() {
   const { t: translate } = useTranslation();
   const [coinListData, setCoinListData] = useContext(WSContext);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
+  const [collectlist, setcollectlist] = useState([] as any[]);
 
   const loadctmarketlistData = async () => {
     const data = await homeApi.ctmarketlist({ pageNum: 1, pageSize: 100 });
@@ -28,8 +30,17 @@ export default function QuotationCenter() {
       setCtmarketlist(list);
     }
   };
+
+  const loadcollectlistData = async () => {
+    const data = await collectApi.list({ pageNum: 1, pageSize: 100 });
+    if (data.ok) {
+      const list = data.data.records;
+      setcollectlist(list);
+    }
+  };
   useEffect(() => {
     loadctmarketlistData();
+    loadcollectlistData();
   }, []);
   return (
     <div
@@ -39,7 +50,7 @@ export default function QuotationCenter() {
       }}
     >
       <TopBar title={translate(getText("行情"))} isBack={false} />
-      <CenterPage coinListData={coinListData} ctmarketlist={ctmarketlist} />
+      <CenterPage coinListData={coinListData} ctmarketlist={ctmarketlist} collectlist={collectlist} />
       <div
         style={{
           height: "50px",

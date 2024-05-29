@@ -5,7 +5,11 @@ import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function CenterPage({ coinListData, ctmarketlist }) {
+export default function CenterPage({
+  coinListData,
+  ctmarketlist,
+  collectlist,
+}) {
   const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const { t: translate } = useTranslation();
@@ -74,7 +78,7 @@ export default function CenterPage({ coinListData, ctmarketlist }) {
   };
   const getZXNodes = () => {
     const nodes = [];
-    let coinListDataTemp = coinListData;
+    let coinListDataTemp = collectlist;
     for (const key in coinListDataTemp) {
       nodes.push(
         <li
@@ -131,7 +135,7 @@ export default function CenterPage({ coinListData, ctmarketlist }) {
           </div>
         </li>
       );
-      break
+      break;
     }
     return nodes;
   };
@@ -178,8 +182,8 @@ export default function CenterPage({ coinListData, ctmarketlist }) {
                       <div class="quotationcenter-34">
                         <div class="quotationcenter-35">
                           <ul class="quotationcenter-36">
-                            {type==2&&getUSDTNodes()}
-                            {type==1&&getZXNodes()}
+                            {type == 2 && getUSDTNodes()}
+                            {type == 1 && getZXNodes()}
                           </ul>
                         </div>
                       </div>

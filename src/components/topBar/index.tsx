@@ -33,23 +33,5 @@ export default function TopBar({ title, isBack }) {
       </div>
       <div className="topbarnew-14"></div>
     </div>
-
-    // <div className="topbar-1">
-    //   <div className="topbar-2">
-    //     <div className="topbar-3">
-    //       {isBack && (
-    //         <div
-    //           className="topbar-4"
-    //           onClick={() => {
-    //             navigate(-1);
-    //           }}
-    //         >
-    //           <i className="topbar-5"></i>
-    //         </div>
-    //       )}
-    //       <div className="topbar-6">{title}</div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }

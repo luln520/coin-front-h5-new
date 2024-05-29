@@ -12,6 +12,7 @@ import C2CCK from "./components/c2cck";
 import C2CCKTS from "./components/c2cckts";
 import C2CCKTS2 from "./components/c2cckts2";
 import { financeApi } from "../../api/finance-api";
+import TopBar2 from "../../components/topBar2";
 
 export default function C2CckCenter() {
   const navigate = useNavigate();
@@ -114,8 +115,15 @@ export default function C2CckCenter() {
   }, []);
 
   return (
-    <div className="page">
-      <TopBar title={translate(getText("C2C充值"))} isBack={true} />
+    <div className="page" >
+      <TopBar2
+        title={translate(getText("C2C充值"))}
+        isBack={true}
+        mini={"C2C充值明细"}
+        miniClick={() => {
+          navigate("/c2ccklist");
+        }}
+      />
       <CenterPage
         list={currencylist}
         setVisibleCK={setVisibleCK}

@@ -139,7 +139,7 @@ export default function ExtractList() {
         isBack={true}
         mini={"提现明细"}
         miniClick={() => {
-          navigate("/c2ctklist");
+          navigate("/extractorderlist");
         }}
       />
       <CenterPage

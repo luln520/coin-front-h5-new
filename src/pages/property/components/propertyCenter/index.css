@@ -130,7 +130,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  
+
 }
 
 .propertycenter-14 {
@@ -237,7 +237,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  
+
 }
 
 .propertycenter-25 {
@@ -340,7 +340,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  
+
 }
 
 .propertycenter-36 {
@@ -533,8 +533,8 @@
   box-sizing: border-box;
   position: absolute;
   bottom: 0px;
-  width: 20px;
-  transform: translate(87.5px, -100%);
+  width: 30px;
+  transform: translate(calc((100vw - 30px)/2));
   transition-duration: 0.5s;
   background-color: rgb(41, 121, 255);
   height: 3px;

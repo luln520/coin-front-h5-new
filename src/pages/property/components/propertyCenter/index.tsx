@@ -115,7 +115,7 @@ export default function PropertyCenter({
                       <div id="u-tab-item-0" className="propertycenter-51">
                         賬戶資產
                       </div>
-                      <div className="propertycenter-52">幣幣資產</div>
+                      {/* <div className="propertycenter-52">幣幣資產</div> */}
                       <div className="propertycenter-53"></div>
                     </div>
                   </div>

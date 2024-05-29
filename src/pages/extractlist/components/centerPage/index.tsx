@@ -74,34 +74,36 @@ export default function CenterPage({
         <div class="extractlist-4">
           {getNode()}
 
-          <div
-            class="extractlist-5"
-            onClick={() => {
-              if (c2ctxStatus == 1) {
-                setVisibleTK(true);
-              }
-            }}
-          >
-            <div class="extractlist-6">
-              <div class="extractlist-7">
-                <div class="extractlist-8">
-                  <img
-                    src="https://kmadmin.lpyrmgck.online/banner/20240216074328978161.png"
-                    class="extractlist-10"
-                  />
+          {c2ctxStatus == 1 && (
+            <div
+              class="extractlist-5"
+              onClick={() => {
+                if (c2ctxStatus == 1) {
+                  setVisibleTK(true);
+                }
+              }}
+            >
+              <div class="extractlist-6">
+                <div class="extractlist-7">
+                  <div class="extractlist-8">
+                    <img
+                      src="https://kmadmin.lpyrmgck.online/banner/20240216074328978161.png"
+                      class="extractlist-10"
+                    />
+                  </div>
+                  <div class="extractlist-11">
+                    <span class="extractlist-12">C2C提現</span>
+                  </div>
                 </div>
-                <div class="extractlist-11">
-                  <span class="extractlist-12">C2C提現</span>
+                <div class="extractlist-13">
+                  <span class="extractlist-14">
+                    <span class="extractlist-15">提現</span>
+                  </span>
+                  <i class="extractlist-16"></i>
                 </div>
-              </div>
-              <div class="extractlist-13">
-                <span class="extractlist-14">
-                  <span class="extractlist-15">提現</span>
-                </span>
-                <i class="extractlist-16"></i>
               </div>
             </div>
-          </div>
+          )}
         </div>
         <div class="extractlist-89"></div>
       </div>

@@ -81,7 +81,9 @@ export default function PropertyCenter({
             <div className="propertycenter-31">出金</div>
           </p>
         </div>
-        <div className="propertycenter-32">
+        <div className="propertycenter-32" onClick={()=>{
+          navigate("/addresslist");
+        }}>
           <div className="propertycenter-33">
             <div className="propertycenter-34"></div>
             <img
@@ -98,7 +100,7 @@ export default function PropertyCenter({
             </div>
           </div>
           <p className="propertycenter-41">
-            <div className="propertycenter-42">兌換</div>
+            <div className="propertycenter-42">地址</div>
           </p>
         </div>
       </div>

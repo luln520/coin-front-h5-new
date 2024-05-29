@@ -12,6 +12,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const inviteType = localStorage.getItem("inviteType");
+  const c2ctxStatus = localStorage.getItem("c2ctxStatus");
   const lan = localStorage.getItem("i18n");
   const handleCopy = (value) => {
     if (copy(value)) {
@@ -136,6 +137,54 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           </div>
           <div className="mycenter-61"></div>
         </div>
+        <div
+          className="mycenter-52"
+          onClick={() => {
+            navigate("/c2ccklist");
+          }}
+        >
+          <div className="mycenter-53">
+            <div className="mycenter-54">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhDMTJGMUQzRTA5OTExRUI5MkY1RjY5RjdENEY2OTkzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhDMTJGMUQ0RTA5OTExRUI5MkY1RjY5RjdENEY2OTkzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEMxMkYxRDFFMDk5MTFFQjkyRjVGNjlGN0Q0RjY5OTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEMxMkYxRDJFMDk5MTFFQjkyRjVGNjlGN0Q0RjY5OTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4CIRdLAAAFw0lEQVR42tSba2xURRTHzz7cbekuLaXFYmtrtYkiIUZbQQjVQiEBJSZQgaT4yWiISqIm4jcNGB8pISqt0qiJxogSqqAJj4DKG6kYmthAaWyjNYQgFCjb7WO7z+s5u3Ob7bqvmTv37u5J/h92Mzv3/HZeZ87MNdXP6QadrBC1EFWHmouqRpWjilAOVmYU5UJdRf2N6kGdR3WihvVwyiq5vgrUetQa1AKUJUV5BxP9bn7U90HUOdQ+1Heoy7IcNEuq53HUftQ/qO2oRWnAJjMLq2M7a3mq+4lsAG5AnUKdRK3SCJkMnuo+wZ7VkAng2ahdqOOoejDO6tkzdzEfDAFei+pFbYDM2Qbmw1o9gW2oNlQHm4EzbYXMF/LJLhvYiTqE2gTZZ+TTT6hiWcClbNw0QvYarRLHmK+agKnbHEbVQvbbQ6gjqYabOcWYpYX/Ecgde5j5bBMB/hC1FHLPljLfuYBpun8JctfI93XpxtIU4H8mFEhX2WHja2VQt8gBBQ75QZfbFYSzJ9zw+Y5rcOO6P1XxT1FnUVeivzTF2S3RGFjN60xltR3ad9eAw2nRvfkGr/lh4/p+GLoZSFX0B7aRSdill4jAkj3/Shm2qhkURdFdpXda4dkXZqXj1urY5TQW+G3Rf/3RhQWA3him2scK0nVtSyJgWrwXiwLn5ZuN5IW8vLSj4sWM7X+T1mYt4ypEXhhonM/bzLaWk8A0IFZocUAJGQus8AGvYIyDar9o1pruMbI7q+JMZTVHj+Emzf84trDR4rQmlVzNLuo2pm4PBeCLthswMRFKuz7ndAsGMbPAnmByEpgziLHQKiHhlnIM/3nRAz8f4M+6rmoqguoau6w5I5wYtMraDYWSOFCHa/S7rRUwOhJMu77iEitU3WtLWK/golBHwPMMmTVNCpeTalQlaZZWbS4BV+vdwl2/jcPW169y19n6VSXcc5+N+3lJrJqA75LSwkkcqLnfBo1POmHCk76TDqcZymZbE9YruO6XE3CR3i1Mzm96o1RqvYItPJ2AHXq3sE6hlsivnNIO00IGAws+z0fAozJaOcs3D6qNErBLBrDhmwex540QMK0XFbnXpYV+dp2AB2DqYXRGW9jnU+DY4THo6faCN0ns7fcLVT9AwBchcmqf8RYeHwvB+2/egoF+n14do4eAuzKwIY9r33/jDsMWl1igcWUB7pji75SuXPbD0UNjEAxyP+I8AVPuNqh1xySjhc+d9kD+NBO81TITZsxM5k4+lN9thS93cu3AiLGT/kL6VWc2JACGXSF4cJ4dimaYU5atXWDndZEYXWrgsRc0ZCxlrsN32FLX5fMq0Nri4q16b3SK51tUINMtPJkbS1LG6wnBB+/chr5LXBNbgDFOAg9C5Gw1o0m8VHV5JxT46D0XwnKvSUcY45RM5TbUUxmPtJT4CTrqxjtahkVgVTaIBaZE9RnRsezBrmbPM2nnjTMfEGxbixv6eoVgzzA2iO7Sqm0RdfTSBb+ULk1wsd1YAyzZ1ugPscBHIXLEyG0/7hkLR0paif/qC8D4aKQenzcEH2/TBEssv0R/YakqfTG20K+o51B5XPuuEQW6u3wYMJjC66hFYKd9cJ8n3MI93T6Y5jBBx9dj0N8rvHjQuvU0yj0ll5jg+jBdF9gDuW20P+iI/TLRmSMVbM9h2PZ4sMmAyV6FyA3WXLNTzHfgBaZQ5hnUhRyCJV/XMN+5gcluoZah/sgR2GXMZxAFVsNOuo1+PIthT0Pk4vhgqoLpXpSgqX0l6pMshN2JWo4aSqcwz31pL0Su6q4Dnd444TQ38+Vl5hvIBlaN3jKZo263MmS7UQ8wX7hM9J2HfyFyDX8JC86NMooC6fJoM/MBjAJWjdbpejZhHKSNjg6QIVZ3A9vJaZo8ZZ0tnWSqZOOK1sL5GhKDlHD7HSL3PilikvailsmgV/HolgEdvJdA/FfxbkLkQIDWUl1fxftPgAEAjiIqn5mhU/IAAAAASUVORK5CYII="
+                className="mycenter-56"
+              />
+            </div>
+            <p className="mycenter-57">C2C充值記錄</p>
+          </div>
+          <div className="mycenter-58">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAYAAACXOioTAAAD1UlEQVRIx+2WX0ybVRjGn/e09CsUKA6yZWYkkkkWVgS7AM0m/kGjRpNl0SmLu9LFyMWCGokmM8FhcOrF4h+YRjNjYoI3GJdddVtCAtOtwoQxtgEZzRIznXGCkzIY7df2PN5Y+Vo2LP289Lk6+d7k/M7znPec7wgsCobDRsl89DUQ7QCuK6jHAv7NkyJC2JQjNegfHy8sjCbeAvE6gAIAxZr6wavXpifK16+7MjAwYAumUoOCeWVA85m/IQAAEdlM4tOHt2+vtuvoH1AgUPVHTJyPApgAoC31KocYx78bGanp6OhQuYIk88OpsxfqhOxWShpIWCcOQ0nrL1MTfc3NzcmcHaV0n796hEn9oiYn01YkshGa3Xdu3FRvKzrLhGxsuHfc1MZDoIwCSAIASQWgUok6Gjp3zr/aGGWl4qkfxzaJUl0ieMTaoSSuKFGt0cjvwaampkROjqxqrK+dMiF7SYymu0Y5RX/oKl7zwH/iKKW+ocnSfGfiuAj86c44TZEn+/zVZztEtG0QAPwwOnkXdaILgicAOC2laxC2XkiaR1vq6uI5RWfVVn/VT6KcLwM4nVFaC6qD94jxOEmx7Sil78+fv0PFJQiwXkSWYoTMgMldVy9fOnmrc7bqk35/Tc2fXIzvFFFHAMSXVswygRzZcHfV88Fg0LANAoDGxi2/xhNsA6Qv4xB6AbzrXb/hud7eXoet6KzqHx0tcWnHMREJWOciMKvA3Vu31Byz5SglY7EsBiK0rEAamtJgOzoACIVC+eKe7YSSvRluYlCqm4t5H9iOLhQK5dNd3CbgmwDyLU4SoHzlydOv1NbWLtgCDQ8PF5jK3Q6wFYDHUlrQQFeRQx/IhCDjhGcFiSvjIMA9AKwtfBPE2ypWcqh2W/mirZthbOw3j6nc7QQyIVEAH8fmCru33QaSdXQnxsY8RQlHJ4Qt1jcFiBsUOSBRb9dKkLRX0EpOJBn9BMI9ANyW7poXcJ/B2KFAoCr2b/OsuEeD4XDxfGT6HVHYDSDPuvEg3ve6HYd9vtvf2FmB+vvHCzkXe08UXkiHyByI/eYaz2e+igoz2z2+JWhwMFysXbEvCO4A4LJCSP3qRZo9LRXV8dV0rFrewpfKmBf9HODTVogAERD7L9LsWekHl1XXDQ1NlmpX4iNCngVpbeEIgX1ri9xfVlZWxnK5TdSSk8vepDP5NYldGZBZUeolMzJzOFdIGuimirgouhSgNc7rFHnj56nxb7N9VmUVXd/g4LoCw9MF8ilCFgSqzWugx+fzmbCpZTfDyTNnyvOc7k5q+ca8MXPCrpP/ZVt/ATeohyQqj8W7AAAAAElFTkSuQmCC"
+              className="mycenter-60"
+            />
+          </div>
+          <div className="mycenter-61"></div>
+        </div>
+        {c2ctxStatus == 1 && (
+          <div
+            className="mycenter-52"
+            onClick={() => {
+              navigate("/c2ctklist");
+            }}
+          >
+            <div className="mycenter-53">
+              <div className="mycenter-54">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhDMTJGMUQzRTA5OTExRUI5MkY1RjY5RjdENEY2OTkzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhDMTJGMUQ0RTA5OTExRUI5MkY1RjY5RjdENEY2OTkzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEMxMkYxRDFFMDk5MTFFQjkyRjVGNjlGN0Q0RjY5OTMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEMxMkYxRDJFMDk5MTFFQjkyRjVGNjlGN0Q0RjY5OTMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4CIRdLAAAFw0lEQVR42tSba2xURRTHzz7cbekuLaXFYmtrtYkiIUZbQQjVQiEBJSZQgaT4yWiISqIm4jcNGB8pISqt0qiJxogSqqAJj4DKG6kYmthAaWyjNYQgFCjb7WO7z+s5u3Ob7bqvmTv37u5J/h92Mzv3/HZeZ87MNdXP6QadrBC1EFWHmouqRpWjilAOVmYU5UJdRf2N6kGdR3WihvVwyiq5vgrUetQa1AKUJUV5BxP9bn7U90HUOdQ+1Heoy7IcNEuq53HUftQ/qO2oRWnAJjMLq2M7a3mq+4lsAG5AnUKdRK3SCJkMnuo+wZ7VkAng2ahdqOOoejDO6tkzdzEfDAFei+pFbYDM2Qbmw1o9gW2oNlQHm4EzbYXMF/LJLhvYiTqE2gTZZ+TTT6hiWcClbNw0QvYarRLHmK+agKnbHEbVQvbbQ6gjqYabOcWYpYX/Ecgde5j5bBMB/hC1FHLPljLfuYBpun8JctfI93XpxtIU4H8mFEhX2WHja2VQt8gBBQ75QZfbFYSzJ9zw+Y5rcOO6P1XxT1FnUVeivzTF2S3RGFjN60xltR3ad9eAw2nRvfkGr/lh4/p+GLoZSFX0B7aRSdill4jAkj3/Shm2qhkURdFdpXda4dkXZqXj1urY5TQW+G3Rf/3RhQWA3him2scK0nVtSyJgWrwXiwLn5ZuN5IW8vLSj4sWM7X+T1mYt4ypEXhhonM/bzLaWk8A0IFZocUAJGQus8AGvYIyDar9o1pruMbI7q+JMZTVHj+Emzf84trDR4rQmlVzNLuo2pm4PBeCLthswMRFKuz7ndAsGMbPAnmByEpgziLHQKiHhlnIM/3nRAz8f4M+6rmoqguoau6w5I5wYtMraDYWSOFCHa/S7rRUwOhJMu77iEitU3WtLWK/golBHwPMMmTVNCpeTalQlaZZWbS4BV+vdwl2/jcPW169y19n6VSXcc5+N+3lJrJqA75LSwkkcqLnfBo1POmHCk76TDqcZymZbE9YruO6XE3CR3i1Mzm96o1RqvYItPJ2AHXq3sE6hlsivnNIO00IGAws+z0fAozJaOcs3D6qNErBLBrDhmwex540QMK0XFbnXpYV+dp2AB2DqYXRGW9jnU+DY4THo6faCN0ns7fcLVT9AwBchcmqf8RYeHwvB+2/egoF+n14do4eAuzKwIY9r33/jDsMWl1igcWUB7pji75SuXPbD0UNjEAxyP+I8AVPuNqh1xySjhc+d9kD+NBO81TITZsxM5k4+lN9thS93cu3AiLGT/kL6VWc2JACGXSF4cJ4dimaYU5atXWDndZEYXWrgsRc0ZCxlrsN32FLX5fMq0Nri4q16b3SK51tUINMtPJkbS1LG6wnBB+/chr5LXBNbgDFOAg9C5Gw1o0m8VHV5JxT46D0XwnKvSUcY45RM5TbUUxmPtJT4CTrqxjtahkVgVTaIBaZE9RnRsezBrmbPM2nnjTMfEGxbixv6eoVgzzA2iO7Sqm0RdfTSBb+ULk1wsd1YAyzZ1ugPscBHIXLEyG0/7hkLR0paif/qC8D4aKQenzcEH2/TBEssv0R/YakqfTG20K+o51B5XPuuEQW6u3wYMJjC66hFYKd9cJ8n3MI93T6Y5jBBx9dj0N8rvHjQuvU0yj0ll5jg+jBdF9gDuW20P+iI/TLRmSMVbM9h2PZ4sMmAyV6FyA3WXLNTzHfgBaZQ5hnUhRyCJV/XMN+5gcluoZah/sgR2GXMZxAFVsNOuo1+PIthT0Pk4vhgqoLpXpSgqX0l6pMshN2JWo4aSqcwz31pL0Su6q4Dnd444TQ38+Vl5hvIBlaN3jKZo263MmS7UQ8wX7hM9J2HfyFyDX8JC86NMooC6fJoM/MBjAJWjdbpejZhHKSNjg6QIVZ3A9vJaZo8ZZ0tnWSqZOOK1sL5GhKDlHD7HSL3PilikvailsmgV/HolgEdvJdA/FfxbkLkQIDWUl1fxftPgAEAjiIqn5mhU/IAAAAASUVORK5CYII="
+                  className="mycenter-56"
+                />
+              </div>
+              <p className="mycenter-57">C2C提现記錄</p>
+            </div>
+            <div className="mycenter-58">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAYAAACXOioTAAAD1UlEQVRIx+2WX0ybVRjGn/e09CsUKA6yZWYkkkkWVgS7AM0m/kGjRpNl0SmLu9LFyMWCGokmM8FhcOrF4h+YRjNjYoI3GJdddVtCAtOtwoQxtgEZzRIznXGCkzIY7df2PN5Y+Vo2LP289Lk6+d7k/M7znPec7wgsCobDRsl89DUQ7QCuK6jHAv7NkyJC2JQjNegfHy8sjCbeAvE6gAIAxZr6wavXpifK16+7MjAwYAumUoOCeWVA85m/IQAAEdlM4tOHt2+vtuvoH1AgUPVHTJyPApgAoC31KocYx78bGanp6OhQuYIk88OpsxfqhOxWShpIWCcOQ0nrL1MTfc3NzcmcHaV0n796hEn9oiYn01YkshGa3Xdu3FRvKzrLhGxsuHfc1MZDoIwCSAIASQWgUok6Gjp3zr/aGGWl4qkfxzaJUl0ieMTaoSSuKFGt0cjvwaampkROjqxqrK+dMiF7SYymu0Y5RX/oKl7zwH/iKKW+ocnSfGfiuAj86c44TZEn+/zVZztEtG0QAPwwOnkXdaILgicAOC2laxC2XkiaR1vq6uI5RWfVVn/VT6KcLwM4nVFaC6qD94jxOEmx7Sil78+fv0PFJQiwXkSWYoTMgMldVy9fOnmrc7bqk35/Tc2fXIzvFFFHAMSXVswygRzZcHfV88Fg0LANAoDGxi2/xhNsA6Qv4xB6AbzrXb/hud7eXoet6KzqHx0tcWnHMREJWOciMKvA3Vu31Byz5SglY7EsBiK0rEAamtJgOzoACIVC+eKe7YSSvRluYlCqm4t5H9iOLhQK5dNd3CbgmwDyLU4SoHzlydOv1NbWLtgCDQ8PF5jK3Q6wFYDHUlrQQFeRQx/IhCDjhGcFiSvjIMA9AKwtfBPE2ypWcqh2W/mirZthbOw3j6nc7QQyIVEAH8fmCru33QaSdXQnxsY8RQlHJ4Qt1jcFiBsUOSBRb9dKkLRX0EpOJBn9BMI9ANyW7poXcJ/B2KFAoCr2b/OsuEeD4XDxfGT6HVHYDSDPuvEg3ve6HYd9vtvf2FmB+vvHCzkXe08UXkiHyByI/eYaz2e+igoz2z2+JWhwMFysXbEvCO4A4LJCSP3qRZo9LRXV8dV0rFrewpfKmBf9HODTVogAERD7L9LsWekHl1XXDQ1NlmpX4iNCngVpbeEIgX1ri9xfVlZWxnK5TdSSk8vepDP5NYldGZBZUeolMzJzOFdIGuimirgouhSgNc7rFHnj56nxb7N9VmUVXd/g4LoCw9MF8ilCFgSqzWugx+fzmbCpZTfDyTNnyvOc7k5q+ca8MXPCrpP/ZVt/ATeohyQqj8W7AAAAAElFTkSuQmCC"
+                className="mycenter-60"
+              />
+            </div>
+            <div className="mycenter-61"></div>
+          </div>
+        )}
         <div
           className="mycenter-41"
           onClick={() => {

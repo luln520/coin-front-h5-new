@@ -15,7 +15,7 @@ const TOKEN_HEADER: string = 'x-access-token';
 const smartAxios = axios.create({
   baseURL: BASE_API_URL,
 });
-const outPath = ['/', '/login', "/download", "/reloadPassword", "/downloadInfo", "/register", '/homecenter', '/murmurchat']
+const outPath = ['/', '/login', "/download", "/reloadPassword", "/downloadInfo", "/register", '/homecenter', '/murmurchat','/chatcenter']
 
 // ================================= 请求拦截器 =================================
 

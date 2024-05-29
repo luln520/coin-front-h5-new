@@ -48,6 +48,9 @@ import JYJLTrade from "../pages/jyjlTrade";
 import MarketOrderInfo from "../pages/marketOrderInfo";
 import Noice from "../pages/noice";
 import MurmurChat from "../pages/murmurChat";
+import Address from "../pages/addressAdd";
+import AddressAdd from "../pages/addressAdd";
+import AddressList from "../pages/addresslist";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -337,6 +340,14 @@ export default function AppRouter() {
                     element={getElement(<MarketOrderInfo />)}
                   ></Route>
                   <Route path="/noice" element={getElement(<Noice />)}></Route>
+                  <Route
+                    path="/addressadd"
+                    element={getElement(<AddressAdd />)}
+                  ></Route>
+                  <Route
+                    path="/addresslist"
+                    element={getElement(<AddressList />)}
+                  ></Route>
                   {/* 404 */}
                   <Route
                     path="*"

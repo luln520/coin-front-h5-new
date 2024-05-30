@@ -12,7 +12,12 @@ export default function TopText({ setIsShowCoin, nowTab, coinListData }) {
   return (
     <div class="levertoptext-1">
       <div class="levertoptext-2">
-        <div class="levertoptext-3">
+        <div
+          class="levertoptext-3"
+          onClick={() => {
+            setIsShowCoin(true);
+          }}
+        >
           {nowTab?.toUpperCase()}/USDT<i class="levertoptext-4"></i>
         </div>
         <div class="levertoptext-5">

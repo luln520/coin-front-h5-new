@@ -1,7 +1,7 @@
 import { CenterPopup, Toast } from "antd-mobile";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { companyApi } from "../../api/company";
 import { contractApi } from "../../api/contract-api";
 import { financeApi } from "../../api/finance-api";
@@ -11,65 +11,72 @@ import { userApi } from "../../api/user-api";
 import BottomBar from "../../components/bottomBar";
 import { WSContext } from "../../router/router";
 import { convertToSeconds, getText } from "../../utils/util";
-import KineCenter from "./components/kinecenter";
+import DataList from "./components/datalist";
 import CoinPopup from "./components/coinpopup";
 import TopBar from "./components/topbar";
 import TopBuy from "./components/topbuy";
 import TopText from "./components/topText";
 import OrderPopup from "./components/orderpopup";
-import DaoJiShi from "./components/daojishi";
 import { collectApi } from "../../api/collect-api";
+import OrderList from "./components/orderlist";
+import { leverApi } from "../../api/lever-api";
 
 export default function Lever() {
-  const uid = localStorage.getItem("uid");
-  const { t: translate } = useTranslation();
-  // const [changeDaoJiShi, setChangeDaoJiShi] = useState(false);
-  const [daojishi, setDaojis] = useState(60);
-  const [timeindex, settimeindex] = useState(1);
-  const [sendData, setSendData] = useState({});
-  const [index, setIndex] = useState(3);
+  //贸易
+  const [userInfoData, setUserInfoData] = useState({});
+  const [companyData, setCompanyData] = useState({} as any);
+  const [iscollect, setiscollect] = useState(false);
+  const [orderindex, setorderindex] = useState(1);
   const [isShowCoin, setIsShowCoin] = useState(false);
   const [isShowOrder, setIsShowOrder] = useState(false);
+  ///
+  const uid = localStorage.getItem("uid");
+  const { t: translate } = useTranslation();
+  const [daojishi, setDaojis] = useState(60);
+  const [sendData, setSendData] = useState({});
+  const [isShow, setIsShow] = useState(false);
   const [nowTab, setNowTab] = useState("");
-  const [successOrderNo, setsuccessOrderNo] = useState("");
   const [hysetInfo, setHysetInfo] = useState({});
   const [userInfo, setuserInfo] = useState([] as any[]);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
+  const [leverorders, setleverorders] = useState([] as any[]);
+  const [leverSet1, setLeverSet1] = useState([] as any[]);
+  const [leverSet2, setLeverSet2] = useState([] as any[]);
+  const [leverage, setLeverage] = useState([] as any[]);
+  const location = useLocation();
   const param = useParams();
-  const [coinListData, setCoinListData] = useContext(WSContext);
-  const [userInfoData, setUserInfoData] = useState({});
-  const [hyorders, sethyorders] = useState([] as any[]);
-  const [iscollect, setiscollect] = useState(false);
   let timer: any;
-  const [companyData, setCompanyData] = useState({} as any);
+  const [hyorders, sethyorders] = useState([] as any[]);
+  const [coinListData, setCoinListData] = useContext(WSContext);
   //贸易
   const [type, setType] = useState(1);
-  //倒计时显示
-  const [visible, setVisible] = useState(false);
-  //预期收益
-  const [yqsy, setyqsy] = useState(0);
-  //初始化获取公司
-  async function initCompany() {
-    const res = await companyApi.domain();
-    if (res.ok) {
-      setCompanyData(res.data);
-    }
-  }
 
-  //用户信息
-  const loadUserInfoData = async () => {
-    const data = await userApi.userInfo();
+  //加载用户资产
+  const loadUserCoinData = async () => {
+    const data = await financeApi.userCoin({ uid });
     if (data.ok) {
-      setUserInfoData(data.data);
+      setuserInfo(data.data);
     }
   };
-  //加载数 据
-  const loadhyorderData = async () => {
-    const data = await contractApi.gethyorder({ uid });
+
+  //平仓
+  const closeorder = async (lid) => {
+    const data = await leverApi.closeorder({ uid, lid });
     if (data.ok) {
-      sethyorders(data.data);
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadData();
+  };
+  //订单信息
+  const loadLeverListData = async () => {
+    const data = await leverApi.list({ uid, pageNum: 1, pageSize: 100 });
+    if (data.ok) {
+      setleverorders(data.data.records);
     }
   };
+  //市场信息
   const loadctmarketlistData = async () => {
     const data = await homeApi.ctmarketlist({ pageNum: 1, pageSize: 100 });
     if (data.ok) {
@@ -77,6 +84,79 @@ export default function Lever() {
       list.sort((d, e) => d.sort - e.sort);
       setCtmarketlist(list);
     }
+  };
+  //设置
+  const loadhysetInfoData = async () => {
+    const data = await contractApi.hysetInfo();
+    if (data.ok) {
+      let hysetInfoT = data.data;
+      let hyTimes = hysetInfoT?.hyTime.split(",");
+      let hyTzeds = hysetInfoT?.hyTzed.split(",");
+      let hyYkbls = hysetInfoT?.hyYkbl.split(",");
+      for (let index = 0; index < hyTimes.length; index++) {
+        let hyTime = hyTimes[index];
+        let hyTzed = hyTzeds[index];
+        let hyYkbl = hyYkbls[index];
+        hyTimes[index] = parseInt(hyTime);
+        hyTzeds[index] = parseInt(hyTzed);
+        hyYkbls[index] = parseInt(hyYkbl);
+      }
+      hysetInfoT.hyTime = hyTimes;
+      hysetInfoT.hyTzed = hyTzeds;
+      hysetInfoT.hyYkbl = hyYkbls;
+      setHysetInfo(hysetInfoT);
+    }
+  };
+
+  //加载倍数
+  const getTwLeverage = async () => {
+    const data = await leverApi.getTwLeverage({
+      symbol: `${nowTab.toUpperCase()}/USDT`,
+    });
+    if (data.ok) {
+      setLeverage(data.data);
+    }
+  };
+
+  //加载上下限制
+  const getTwLeverSet = async (type) => {
+    const data = await leverApi.getTwLeverSet({
+      symbol: `${nowTab.toUpperCase()}/USDT`,
+      type,
+    });
+    if (data.ok) {
+      if (type === 1) {
+        setLeverSet1(data.data);
+      }
+      if (type === 2) {
+        setLeverSet2(data.data);
+      }
+    }
+  };
+
+  //下单
+  const buyCoin = async (dataInfo) => {
+    dataInfo.uid = uid;
+    const data = await leverApi.creatorder(dataInfo);
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadData();
+  };
+
+  const loadData = async () => {
+    loadUserCoinData();
+    loadLeverListData();
+  };
+
+  const loadSetData = async () => {
+    getTwLeverage();
+    getTwLeverSet(1);
+    getTwLeverSet(2);
+    loadhysetInfoData();
+    loadctmarketlistData();
   };
 
   const loadiscollectData = async () => {
@@ -106,80 +186,23 @@ export default function Lever() {
     loadiscollectData();
   };
 
-  //加载数 据
-  const loadUserCoinData = async () => {
-    const data = await financeApi.userCoin({ uid });
-    if (data.ok) {
-      setuserInfo(data.data);
-    }
-  };
-
-  //合约设置
-  const loadhysetInfoData = async () => {
-    const data = await contractApi.hysetInfo();
-    if (data.ok) {
-      let hysetInfoT = data.data;
-      let hyTimes = hysetInfoT?.hyTime.split(",");
-      let hyTzeds = hysetInfoT?.hyTzed.split(",");
-      let hyYkbls = hysetInfoT?.hyYkbl.split(",");
-      for (let index = 0; index < hyTimes.length; index++) {
-        let hyTime = hyTimes[index];
-        let hyTzed = hyTzeds[index];
-        let hyYkbl = hyYkbls[index];
-        hyTimes[index] = hyTime;
-        hyTzeds[index] = parseInt(hyTzed);
-        hyYkbls[index] = parseInt(hyYkbl);
-      }
-      hysetInfoT.hyTime = hyTimes;
-      hysetInfoT.hyTzed = hyTzeds;
-      hysetInfoT.hyYkbl = hyYkbls;
-      setHysetInfo(hysetInfoT);
-    }
-  };
-
-  //下单
-  const buyCoin = async (dataInfo) => {
-    dataInfo.uid = uid;
-    //时间转化
-    const time = convertToSeconds(dataInfo?.ctime);
-    setDaojis(time);
-    setSendData(dataInfo);
-    const data = await contractApi.creatorder(dataInfo);
-    if (data.ok) {
-      Toast.show({ content: data.msg });
-      //设置成功orderno
-      setsuccessOrderNo(data.data);
-      //开始倒计时
-      // setChangeDaoJiShi(true);
-      setIndex(1);
-      setIsShowOrder(false);
-      setVisible(true);
-    } else {
-      Toast.show({ content: data.msg });
-    }
-    loadData();
-  };
-
-  const loadData = async () => {
-    loadUserCoinData();
-    loadhyorderData();
-    loadiscollectData();
-  };
+  //加载当前币种
   useEffect(() => {
-    initCompany();
-    setIndex(1);
-  }, []);
-  useEffect(() => {
-    setNowTab(param.name);
+    setNowTab(param?.name);
   }, [param]);
 
+  //加载是否收藏
   useEffect(() => {
-    loadhyorderData();
-    // setChangeDaoJiShi(false);
-  }, [index]);
+    loadiscollectData();
+  }, []);
+
+  //加载数据
   useEffect(() => {
-    loadhysetInfoData();
-    loadctmarketlistData();
+    loadLeverListData();
+  }, [orderindex]);
+
+  //定时加载数据
+  useEffect(() => {
     loadData();
     timer = setInterval(() => {
       loadData();
@@ -187,9 +210,19 @@ export default function Lever() {
     return () => {
       clearInterval(timer);
     };
-  }, [nowTab]);
+  }, []);
+
+  //当前币种修改后加载设置数据
   useEffect(() => {
-    loadUserInfoData();
+    loadSetData();
+  }, [nowTab]);
+
+  useEffect(() => {
+    //判断是否弹窗
+    const pop = location.search.replace("?isPop=", "");
+    if (pop == "1") {
+      setIsShow(true);
+    }
   }, []);
   return (
     <div
@@ -209,7 +242,13 @@ export default function Lever() {
         nowTab={nowTab}
         coinListData={coinListData}
       />
-      <KineCenter timeindex={timeindex} settimeindex={settimeindex} />
+      <DataList />
+      <OrderList
+        orderindex={orderindex}
+        setorderindex={setorderindex}
+        nowTab={nowTab}
+        leverorders={leverorders}
+      />
 
       <TopBuy setIsShowOrder={setIsShowOrder} setType={setType} />
       <div
@@ -223,12 +262,12 @@ export default function Lever() {
         setIsShowCoin={setIsShowCoin}
         coinListData={coinListData}
         ctmarketlist={ctmarketlist}
-        index={1}
+        index={2}
       />
       {/* 订单底部弹框 */}
       <OrderPopup
         type={type}
-        setyqsy={setyqsy}
+        setyqsy={0}
         setType={setType}
         userInfo={userInfo}
         hysetInfo={hysetInfo}
@@ -240,28 +279,6 @@ export default function Lever() {
         ctmarketlist={ctmarketlist}
         index={1}
       />
-
-      {/* 倒计时 */}
-      <CenterPopup
-        visible={visible}
-        destroyOnClose={true}
-        onMaskClick={() => {
-          setVisible(false);
-        }}
-      >
-        <DaoJiShi
-          userInfo={userInfoData}
-          yqsy={yqsy}
-          setVisible={setVisible}
-          coinListData={coinListData}
-          daojis={daojishi}
-          nowTab={nowTab}
-          sendData={sendData}
-          hysetInfo={hysetInfo}
-          companyData={companyData}
-          successOrderNo={successOrderNo}
-        />
-      </CenterPopup>
       <BottomBar index={3} />
     </div>
   );

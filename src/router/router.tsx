@@ -52,6 +52,7 @@ import Address from "../pages/addressAdd";
 import AddressAdd from "../pages/addressAdd";
 import AddressList from "../pages/addresslist";
 import Lever from "../pages/lever";
+import JYJLLever2 from "../pages/jyjlLever2";
 //全局
 export const WSContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
@@ -331,6 +332,10 @@ export default function AppRouter() {
                   <Route
                     path="/jyjlLever"
                     element={getElement(<JYJLLever />)}
+                  ></Route>
+                  <Route
+                    path="/jyjlLever2"
+                    element={getElement(<JYJLLever2 />)}
                   ></Route>
                   <Route
                     path="/jyjlTrade"

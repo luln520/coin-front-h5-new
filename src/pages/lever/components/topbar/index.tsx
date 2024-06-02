@@ -37,7 +37,14 @@ export default function TopBar({
       <div class="marketTopBar-6">
         <div class="marketTopBar-7">
           <i class="marketTopBar-8"></i>
-          <span class="marketTopBar-9">持倉</span>
+          <span
+            class="marketTopBar-9"
+            onClick={() => {
+              navigate("/jyjlLever2");
+            }}
+          >
+            持倉
+          </span>
         </div>
         <div class="marketTopBar-10">
           <div

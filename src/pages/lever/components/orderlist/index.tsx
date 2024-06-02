@@ -17,7 +17,9 @@ export default function OrderList({
   const getArray = () => {
     const nodes = [];
     leverorders = leverorders.filter((data) => data.coinname === tab);
-    leverorders = leverorders.filter((data) => data.status === orderindex);
+    leverorders = leverorders.filter(
+      (data) => data.status === (orderindex == 1 ? 1 : 2)
+    );
     for (const data of leverorders) {
       nodes.push(
         <li class="orderlisttab-24">
@@ -31,7 +33,7 @@ export default function OrderList({
               ? translate(getText("買多"))
               : translate(getText("買空"))}
           </span>
-          <span class="orderlisttab-29">0</span>
+          {/* <span class="orderlisttab-29">0</span> */}
         </li>
       );
     }
@@ -84,7 +86,7 @@ export default function OrderList({
                     )}
                     <span class="orderlisttab-20">成交價</span>
                     <span class="orderlisttab-21">方向</span>
-                    <span class="orderlisttab-22">交易手數</span>
+                    {/* <span class="orderlisttab-22">交易手數</span> */}
                   </div>
                   <ul class="orderlisttab-23">{getArray()}</ul>
                 </div>

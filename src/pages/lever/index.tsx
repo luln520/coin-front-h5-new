@@ -20,6 +20,7 @@ import OrderPopup from "./components/orderpopup";
 import { collectApi } from "../../api/collect-api";
 import OrderList from "./components/orderlist";
 import { leverApi } from "../../api/lever-api";
+import { huobiApi } from "../../api/huobi";
 
 export default function Lever() {
   //贸易
@@ -38,6 +39,7 @@ export default function Lever() {
   const [nowTab, setNowTab] = useState("");
   const [hysetInfo, setHysetInfo] = useState({});
   const [userInfo, setuserInfo] = useState([] as any[]);
+  const [huobigetHistory, sethuobigetHistory] = useState([] as any[]);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
   const [leverorders, setleverorders] = useState([] as any[]);
   const [leverSet1, setLeverSet1] = useState([] as any[]);
@@ -76,6 +78,18 @@ export default function Lever() {
       setleverorders(data.data.records);
     }
   };
+
+  //订单信息
+  const loadhuobigetHistoryData = async () => {
+    if (!nowTab) {
+      return;
+    }
+    const data = await huobiApi.getHistory(nowTab, 20);
+    if (data) {
+      sethuobigetHistory(data.data);
+    }
+  };
+
   //市场信息
   const loadctmarketlistData = async () => {
     const data = await homeApi.ctmarketlist({ pageNum: 1, pageSize: 100 });
@@ -110,6 +124,9 @@ export default function Lever() {
 
   //加载倍数
   const getTwLeverage = async () => {
+    if (!nowTab) {
+      return;
+    }
     const data = await leverApi.getTwLeverage({
       symbol: `${nowTab.toUpperCase()}/USDT`,
     });
@@ -120,6 +137,9 @@ export default function Lever() {
 
   //加载上下限制
   const getTwLeverSet = async (type) => {
+    if (!nowTab) {
+      return;
+    }
     const data = await leverApi.getTwLeverSet({
       symbol: `${nowTab.toUpperCase()}/USDT`,
       type,
@@ -140,6 +160,7 @@ export default function Lever() {
     const data = await leverApi.creatorderNew(dataInfo);
     if (data.ok) {
       Toast.show({ content: data.msg });
+      setIsShowOrder(false);
     } else {
       Toast.show({ content: data.msg });
     }
@@ -152,6 +173,7 @@ export default function Lever() {
   };
 
   const loadSetData = async () => {
+    loadhuobigetHistoryData();
     getTwLeverage();
     getTwLeverSet(1);
     getTwLeverSet(2);
@@ -212,6 +234,16 @@ export default function Lever() {
     };
   }, []);
 
+  //定时加载数据
+  useEffect(() => {
+    timer = setInterval(() => {
+      loadhuobigetHistoryData();
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   //当前币种修改后加载设置数据
   useEffect(() => {
     loadSetData();
@@ -242,7 +274,7 @@ export default function Lever() {
         nowTab={nowTab}
         coinListData={coinListData}
       />
-      <DataList />
+      <DataList huobigetHistory={huobigetHistory} />
       <OrderList
         orderindex={orderindex}
         setorderindex={setorderindex}

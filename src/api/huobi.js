@@ -20,5 +20,17 @@ export const huobiApi = {
     }).then((res) => {
       return res?.data;
     });
+  },
+  /**
+   * 火币交易历史
+   */
+  getHistory: async (name, num) => {
+    return await smartAxios.request({
+      method: 'get',
+      url: `/market/history/trade?symbol=${name?.toLowerCase()}usdt&size=${num}`,
+      params: {},
+    }).then((res) => {
+      return res?.data;
+    });
   }
 };

@@ -126,11 +126,12 @@ export default function OrderPopup({
     const type2num = leverSet2[type2 - 1]?.num;
     setlossPrice(openprice * (1 - type1num * 0.01));
     setwinPrice(openprice * (1 + type2num * 0.01));
-  }, [type1, type2]);
+  }, [type1, type2,num]);
 
   return (
     <Popup
       visible={isShowOrder}
+      destroyOnClose={true}
       onMaskClick={() => {
         setIsShowOrder(false);
       }}
@@ -187,7 +188,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-80">
-                            {translate(getText("數量"))}
+                            {translate(getText("交易數"))}
                           </div>
                           <div class="leverOrderPopup-81">
                             <div class="leverOrderPopup-82">
@@ -450,14 +451,14 @@ export default function OrderPopup({
                 <p class="orderconfim-8">名稱</p>
                 <p class="orderconfim-9">方向</p>
                 <p class="orderconfim-10">現價</p>
-                <p class="orderconfim-11">交易手數</p>
+                <p class="orderconfim-11">交易數</p>
               </div>
               <div class="orderconfim-12">
                 <p class="orderconfim-13">
                   {nowTab?.toUpperCase()}
                   <span class="orderconfim-14">/USDT</span>
                 </p>
-                <p class="orderconfim-15">{type == 1 ? "買多" : "買空"}</p>
+                <p class={type == 1?"orderconfim-15":"orderconfim-15-1"}>{type == 1 ? "買多" : "買空"}</p>
                 <p class="orderconfim-16">{coinListData[nowTab]?.close}</p>
                 <p class="orderconfim-17">{num}</p>
               </div>

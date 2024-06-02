@@ -1413,6 +1413,12 @@
   color: rgb(28, 173, 144) !important;
 }
 
+.orderconfim-15-1 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(205, 78, 101) !important;
+}
+
 .orderconfim-16 {
   -webkit-tap-highlight-color: transparent;
   margin: 0px;

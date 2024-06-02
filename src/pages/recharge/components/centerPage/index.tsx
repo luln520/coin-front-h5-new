@@ -150,8 +150,8 @@ export default function CenterPage({
                     <p class="recharge-21">转化數量(USDT)</p>
                     <div class="recharge-22">
                       <div class="recharge-23">
-                        <div class="recharge-24"></div>
                         <input
+                          disabled
                           type="number"
                           id="usdtmoney"
                           name="usdtmoney"

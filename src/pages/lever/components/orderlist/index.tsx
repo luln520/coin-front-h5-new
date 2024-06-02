@@ -67,22 +67,6 @@ export default function OrderList({
               >
                 已平倉
               </div>
-              <div
-                class={orderindex == 4 ? "orderlisttab-6" : "orderlisttab-7"}
-                onClick={() => {
-                  setorderindex(4);
-                }}
-              >
-                已撤單
-              </div>
-              <div
-                class={orderindex == 5 ? "orderlisttab-6" : "orderlisttab-7"}
-                onClick={() => {
-                  setorderindex(5);
-                }}
-              >
-                已鎖倉
-              </div>
             </div>
           </div>
         </div>

@@ -137,7 +137,7 @@ export default function Lever() {
   //下单
   const buyCoin = async (dataInfo) => {
     dataInfo.uid = uid;
-    const data = await leverApi.creatorder(dataInfo);
+    const data = await leverApi.creatorderNew(dataInfo);
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {
@@ -266,6 +266,9 @@ export default function Lever() {
       />
       {/* 订单底部弹框 */}
       <OrderPopup
+        leverSet1={leverSet1}
+        leverSet2={leverSet2}
+        leverage={leverage}
         type={type}
         setyqsy={0}
         setType={setType}

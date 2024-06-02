@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Popup, Space, Button, Toast } from "antd-mobile";
+import { Popup, Space, Button, Toast, CenterPopup } from "antd-mobile";
 import "./index.css";
 import { useTranslation } from "react-i18next";
 import { getText } from "../../../../utils/util";
@@ -20,39 +20,89 @@ export default function OrderPopup({
   buyCoin,
   hysetInfo,
   setyqsy,
+  leverSet1,
+  leverSet2,
+  leverage,
 }) {
+  leverSet1.sort((a, b) => a.num - b.num);
+  leverSet2.sort((a, b) => a.num - b.num);
+  leverage.sort((a, b) => a.num - b.num);
+  const [type1, setType1] = useState(1);
+  const [type2, setType2] = useState(1);
+  const [leverageIndex, setLeverageIndex] = useState(1);
+  const [num, setNum] = useState("");
+  const [lossPrice, setlossPrice] = useState("");
+  const [winPrice, setwinPrice] = useState("");
+  const [boomPrice, setboomPrice] = useState(0);
+  let [minNum, setminNum] = useState(1000);
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const [type2, setType2] = useState(1);
-  const [num, setNum] = useState("");
-  const [hyTimes, setHyTimes] = useState([]);
-  const [hyTzeds, setHyTzeds] = useState([]);
-  const [hyYkbls, setHyYkbls] = useState([]);
-  let [minNum, setminNum] = useState(100);
-  const [cykbl, setcykbl] = useState(100);
   const [isUse, setIsUse] = useState(true);
-  //加载节点
-  const getNodes = () => {
-    if (!hyTimes) {
-      return "";
-    }
+  //
+  const [visible, setVisible] = useState(false);
+
+  //止盈
+  const getLeverSet2Nodes = () => {
     const nodes = [];
-    for (let index = 0; index < hyTimes.length; index++) {
-      let hyTime = hyTimes[index];
-      let hyTzed = hyTzeds[index];
-      let cykbl = hyYkbls[index];
+    for (let index = 0; index < leverSet2.length; index++) {
+      let data = leverSet2[index];
       const node = (
         <div
-          class={type2 === index + 1 ? "orderPopup-22" : "orderPopup-25"}
+          className={
+            type2 === index + 1 ? "leverOrderPopup-64" : "leverOrderPopup-61"
+          }
           onClick={() => {
             setType2(index + 1);
-            setminNum(hyTzed);
-            // setNum(hyTzed);
-            setcykbl(cykbl);
           }}
         >
-          <div class="orderPopup-23">{hyTime}</div>
-          <div class="orderPopup-24">{cykbl}%</div>
+          {data.num}%
+        </div>
+      );
+      nodes.push(node);
+    }
+    return nodes;
+  };
+
+  //止损
+  const getLeverSet1Nodes = () => {
+    const nodes = [];
+    for (let index = 0; index < leverSet1.length; index++) {
+      let data = leverSet1[index];
+      const node = (
+        <div
+          className={
+            type1 === index + 1 ? "leverOrderPopup-64" : "leverOrderPopup-61"
+          }
+          onClick={() => {
+            setType1(index + 1);
+          }}
+        >
+          {data.num}%
+        </div>
+      );
+      nodes.push(node);
+    }
+    return nodes;
+  };
+
+  //倍数
+  const getLeverageNodes = () => {
+    const nodes = [];
+    for (let index = 0; index < leverage.length; index++) {
+      let data = leverage[index];
+      const node = (
+        <div
+          className={
+            leverageIndex === index + 1
+              ? "leverOrderPopup-64"
+              : "leverOrderPopup-61"
+          }
+          onClick={() => {
+            setLeverageIndex(index + 1);
+            setminNum(data.min ? data.min : 0);
+          }}
+        >
+          {data.num}
         </div>
       );
       nodes.push(node);
@@ -61,13 +111,23 @@ export default function OrderPopup({
   };
 
   useEffect(() => {
-    setHyTimes(hysetInfo.hyTime);
-    setHyTzeds(hysetInfo.hyTzed);
-    setHyYkbls(hysetInfo.hyYkbl);
-    setcykbl(hysetInfo.hyYkbl ? hysetInfo.hyYkbl[0] : 100);
-    // setNum(hysetInfo.hyTzed ? hysetInfo.hyTzed[0] : 100);
-    setminNum(hysetInfo.hyTzed ? hysetInfo.hyTzed[0] : 100);
-  }, [hysetInfo]);
+    setminNum(
+      leverage && leverage.length > 0
+        ? leverage[0]?.min
+          ? leverage[0]?.min
+          : 0
+        : 100
+    );
+  }, [leverage]);
+
+  useEffect(() => {
+    const openprice = coinListData[nowTab]?.open;
+    const type1num = leverSet1[type1 - 1]?.num;
+    const type2num = leverSet2[type2 - 1]?.num;
+    setlossPrice(openprice * (1 - type1num * 0.01));
+    setwinPrice(openprice * (1 + type2num * 0.01));
+  }, [type1, type2]);
+
   return (
     <Popup
       visible={isShowOrder}
@@ -75,7 +135,7 @@ export default function OrderPopup({
         setIsShowOrder(false);
       }}
       position="bottom"
-      bodyStyle={{ width: "100vw", backgroundColor: "#f5f5f5" }}
+      bodyStyle={{ width: "100vw", height: "90vh", backgroundColor: "#f5f5f5" }}
     >
       <div class="leverOrderPopup-1">
         <div class="leverOrderPopup-2">
@@ -126,63 +186,104 @@ export default function OrderPopup({
                               買空
                             </div>
                           </div>
-                          <div class="leverOrderPopup-20">
-                            <div class="leverOrderPopup-21">
-                              <div class="leverOrderPopup-22">
-                                <div class="leverOrderPopup-23">交易手數</div>
-                              </div>
-                              <div class="leverOrderPopup-24">
-                                <div class="leverOrderPopup-25">1</div>
-                                <div class="leverOrderPopup-26">5</div>
-                                <div class="leverOrderPopup-27">10</div>
-                                <div class="leverOrderPopup-28">20</div>
-                              </div>
-                              <div class="leverOrderPopup-29">
-                                <div class="leverOrderPopup-30">
-                                  <div class="leverOrderPopup-31">
-                                    <div class="leverOrderPopup-32">
-                                      <span class="leverOrderPopup-33">-</span>
-                                    </div>
-                                  </div>
-                                  <div class="leverOrderPopup-34">
-                                    <div class="leverOrderPopup-35">
-                                      <div class="leverOrderPopup-36"></div>
-                                      <input
-                                        maxlength="140"
-                                        step="0.000000000000000001"
-                                        enterkeyhint="done"
-                                        autocomplete="off"
-                                        type="number"
-                                        class="leverOrderPopup-37"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div class="leverOrderPopup-38">
-                                    <div class="leverOrderPopup-39">
-                                      <span class="leverOrderPopup-40">+</span>
-                                    </div>
-                                  </div>
+                          <div class="leverOrderPopup-80">
+                            {translate(getText("數量"))}
+                          </div>
+                          <div class="leverOrderPopup-81">
+                            <div class="leverOrderPopup-82">
+                              <div class="leverOrderPopup-83">
+                                <div class="leverOrderPopup-84">
+                                  <span
+                                    class="leverOrderPopup-85"
+                                    onClick={() => {
+                                      setNum(num - 0.1);
+                                    }}
+                                  >
+                                    -
+                                  </span>
                                 </div>
+                              </div>
+                              <div class="leverOrderPopup-86">
+                                <div class="leverOrderPopup-87">
+                                  <div class="leverOrderPopup-88"></div>
+                                  <input
+                                    maxlength="140"
+                                    enterkeyhint="done"
+                                    autocomplete="off"
+                                    type="number"
+                                    min={minNum}
+                                    class="leverOrderPopup-89"
+                                    value={num}
+                                    onChange={(e) => {
+                                      setNum(parseInt(e.target.value));
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                              <div class="leverOrderPopup-90">
+                                <div class="leverOrderPopup-91">
+                                  <span
+                                    class="leverOrderPopup-92"
+                                    onClick={() => {
+                                      setNum(num + 0.1);
+                                    }}
+                                  >
+                                    +
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-53">
+                            <div class="leverOrderPopup-54">
+                              {translate(getText("止盈"))}
+                            </div>
+                            <div class="leverOrderPopup-55">
+                              <div class="leverOrderPopup-56"></div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-57">
+                            <div class="leverOrderPopup-58">
+                              <div class="leverOrderPopup-59">
+                                {leverSet2 && getLeverSet2Nodes()}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-53">
+                            <div class="leverOrderPopup-54">
+                              {translate(getText("止损"))}
+                            </div>
+                            <div class="leverOrderPopup-55">
+                              <div class="leverOrderPopup-56"></div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-57">
+                            <div class="leverOrderPopup-58">
+                              <div class="leverOrderPopup-59">
+                                {leverSet1 && getLeverSet1Nodes()}
                               </div>
                             </div>
                           </div>
                           <div class="leverOrderPopup-41">
                             <div class="leverOrderPopup-42">
-                              <div class="leverOrderPopup-43">
-                                <div class="leverOrderPopup-44">
-                                  佔用保證金:
-                                </div>
-                                <div class="leverOrderPopup-45">674.1386</div>
-                              </div>
                               <div class="leverOrderPopup-46">
                                 <div class="leverOrderPopup-47">手續費:</div>
-                                <div class="leverOrderPopup-48">0</div>
+                                <div class="leverOrderPopup-48">
+                                  {hysetInfo?.hySxf}
+                                </div>
                               </div>
                               <div class="leverOrderPopup-49">
                                 <div class="leverOrderPopup-50">可用餘額:</div>
-                                <div class="leverOrderPopup-51">3287764.57</div>
+                                <div class="leverOrderPopup-51">
+                                  {userInfo?.usdt} USDT
+                                </div>
                               </div>
-                              <div class="leverOrderPopup-52"></div>
+                              <div class="leverOrderPopup-49">
+                                <div class="leverOrderPopup-50">
+                                  {translate(getText("最低投資額"))}:
+                                </div>
+                                <div class="leverOrderPopup-51">{minNum}</div>
+                              </div>
                             </div>
                           </div>
                           <div class="leverOrderPopup-53">
@@ -194,11 +295,7 @@ export default function OrderPopup({
                           <div class="leverOrderPopup-57">
                             <div class="leverOrderPopup-58">
                               <div class="leverOrderPopup-59">
-                                <div class="leverOrderPopup-60">5</div>
-                                <div class="leverOrderPopup-61">10</div>
-                                <div class="leverOrderPopup-62">15</div>
-                                <div class="leverOrderPopup-63">20</div>
-                                <div class="leverOrderPopup-64">100</div>
+                                {leverage && getLeverageNodes()}
                               </div>
                             </div>
                           </div>
@@ -208,7 +305,14 @@ export default function OrderPopup({
                               <div class="leverOrderPopup-68">
                                 <div class="leverOrderPopup-69">
                                   <div class="leverOrderPopup-70">
-                                    <span class="leverOrderPopup-71">-</span>
+                                    <span
+                                      class="leverOrderPopup-71"
+                                      onClick={() => {
+                                        setlossPrice(lossPrice - 0.1);
+                                      }}
+                                    >
+                                      -
+                                    </span>
                                   </div>
                                 </div>
                                 <div class="leverOrderPopup-72">
@@ -221,12 +325,23 @@ export default function OrderPopup({
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-75"
+                                      value={lossPrice}
+                                      onChange={(e) => {
+                                        setlossPrice(e.target.value);
+                                      }}
                                     />
                                   </div>
                                 </div>
                                 <div class="leverOrderPopup-76">
                                   <div class="leverOrderPopup-77">
-                                    <span class="leverOrderPopup-78">+</span>
+                                    <span
+                                      class="leverOrderPopup-78"
+                                      onClick={() => {
+                                        setlossPrice(lossPrice + 0.1);
+                                      }}
+                                    >
+                                      +
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -238,7 +353,14 @@ export default function OrderPopup({
                               <div class="leverOrderPopup-82">
                                 <div class="leverOrderPopup-83">
                                   <div class="leverOrderPopup-84">
-                                    <span class="leverOrderPopup-85">-</span>
+                                    <span
+                                      class="leverOrderPopup-85"
+                                      onClick={() => {
+                                        setwinPrice(winPrice - 0.1);
+                                      }}
+                                    >
+                                      -
+                                    </span>
                                   </div>
                                 </div>
                                 <div class="leverOrderPopup-86">
@@ -246,17 +368,27 @@ export default function OrderPopup({
                                     <div class="leverOrderPopup-88"></div>
                                     <input
                                       maxlength="140"
-                                      step="0.000000000000000001"
                                       enterkeyhint="done"
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-89"
+                                      value={winPrice}
+                                      onChange={(e) => {
+                                        setwinPrice(e.target.value);
+                                      }}
                                     />
                                   </div>
                                 </div>
                                 <div class="leverOrderPopup-90">
                                   <div class="leverOrderPopup-91">
-                                    <span class="leverOrderPopup-92">+</span>
+                                    <span
+                                      class="leverOrderPopup-92"
+                                      onClick={() => {
+                                        setwinPrice(winPrice + 0.1);
+                                      }}
+                                    >
+                                      +
+                                    </span>
                                   </div>
                                 </div>
                               </div>
@@ -271,6 +403,22 @@ export default function OrderPopup({
                               ? "leverOrderPopup-94"
                               : "leverOrderPopup-94-1"
                           }
+                          onClick={() => {
+                            if (num < minNum) {
+                              Toast.show({
+                                content: `${translate("trade.min")} ${minNum}`,
+                              });
+                              return;
+                            }
+                            if (!isUse) {
+                              return;
+                            }
+                            setIsUse(false);
+                            setTimeout(() => {
+                              setIsUse(true);
+                            }, 3000);
+                            setVisible(true);
+                          }}
                         >
                           {type == 1 ? "買多" : "買空"}
                         </div>
@@ -283,6 +431,75 @@ export default function OrderPopup({
           </div>
         </div>
       </div>
+      {/* 确认框 */}
+      <CenterPopup
+        visible={visible}
+        destroyOnClose={true}
+        onMaskClick={() => {
+          setVisible(false);
+        }}
+      >
+        <div class="orderconfim-1">
+          <div class="orderconfim-2">
+            <p class="orderconfim-3">訂單確認</p>
+            <div class="orderconfim-4"></div>
+          </div>
+          <div class="orderconfim-5">
+            <div class="orderconfim-6">
+              <div class="orderconfim-7">
+                <p class="orderconfim-8">名稱</p>
+                <p class="orderconfim-9">方向</p>
+                <p class="orderconfim-10">現價</p>
+                <p class="orderconfim-11">交易手數</p>
+              </div>
+              <div class="orderconfim-12">
+                <p class="orderconfim-13">
+                  {nowTab?.toUpperCase()}
+                  <span class="orderconfim-14">/USDT</span>
+                </p>
+                <p class="orderconfim-15">{type == 1 ? "買多" : "買空"}</p>
+                <p class="orderconfim-16">{coinListData[nowTab]?.close}</p>
+                <p class="orderconfim-17">{num}</p>
+              </div>
+            </div>
+            <div class="orderconfim-18">
+              <div class="orderconfim-19">
+                <p class="orderconfim-20">可用餘額:{userInfo?.usdt}</p>
+                <p class="orderconfim-21">手續費:{hysetInfo?.hySxf}</p>
+              </div>
+            </div>
+            <div class="orderconfim-22">
+              <div
+                class="orderconfim-23"
+                onClick={() => {
+                  buyCoin({
+                    ccoinname: `${nowTab.toUpperCase()}/USDT`,
+                    win: leverSet2[type2 - 1]?.num,
+                    loss: leverSet1[type1 - 1]?.num,
+                    fold: leverage[leverageIndex - 1]?.num,
+                    hyzd: type,
+                    num: num,
+                    ploss:
+                      leverSet2[type2 - 1]?.num *
+                      leverage[leverageIndex - 1]?.num *
+                      num *
+                      0.01,
+                    premium: hysetInfo?.hySxf,
+                    lossPrice,
+                    winPrice,
+                    boomPrice,
+                  });
+                  setTimeout(() => {
+                    setVisible(false);
+                  }, 1000);
+                }}
+              >
+                確認下單
+              </div>
+            </div>
+          </div>
+        </div>
+      </CenterPopup>
     </Popup>
   );
 }

@@ -19,7 +19,6 @@ export default function CenterPage({ coinListData, leverorders, closeorder }) {
     );
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];
-      console.info(data);
       const node = (
         <li class="leverorderlistItem1-4">
           <div class="leverorderlistItem1-5">

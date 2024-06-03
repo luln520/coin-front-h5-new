@@ -128,7 +128,7 @@
   display: block;
   min-height: 165px;
   padding-bottom: 71px;
-  height: 309px;
+  background-color: rgb(27, 29, 35);
 }
 
 .orderlisttab-12 {
@@ -739,5 +739,1174 @@
   margin: 0px;
   -webkit-tap-highlight-color: transparent;
   width: 20%;
+  text-align: center;
+}
+
+
+.leverorderlistTopBar-1 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  font-size: 12px;
+  line-height: inherit;
+  box-sizing: border-box;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.leverorderlistTopBar-2 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  font-weight: bold;
+  color: rgb(41, 121, 255);
+}
+
+.leverorderlistTopBar-3 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  color: rgb(48, 49, 51);
+}
+
+.leverorderlistTopBar-4 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  color: rgb(48, 49, 51);
+}
+
+.leverorderlistTopBar-5 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  color: rgb(48, 49, 51);
+}
+
+.leverorderlistTopBar-6 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  color: rgb(48, 49, 51);
+}
+
+.leverorderlistTopBar-7 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition-property: background-color, color;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  padding: 0px 16px;
+  flex: 1 1 auto;
+  width: auto;
+  color: rgb(48, 49, 51);
+}
+
+.leverorderlistTopBar-8 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  font-size: 12px;
+  line-height: inherit;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  width: 22px;
+  transform: translate(21px, -100%);
+  transition-duration: 0.5s;
+  background-color: rgb(41, 121, 255);
+  height: 3px;
+  border-radius: 3px;
+}
+
+
+.leverorderlistItem11-1 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  color: rgb(48, 49, 51);
+  font-size: 15px;
+}
+
+.leverorderlistItem11-2 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  font-size: 12px;
+  line-height: inherit;
+  box-sizing: border-box;
+}
+
+.leverorderlistItem11-2:before {
+  left: 0px;
+  right: 0px;
+  height: 1px;
+  transform: scaleY(0.5);
+  background-color: rgb(200, 199, 204);
+  position: fixed;
+  top: 44px;
+  z-index: 3001;
+}
+
+.leverorderlistItem11-3 {
+  -webkit-tap-highlight-color: transparent;
+  list-style-type: none;
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+}
+
+.leverorderlistItem11-4 {
+  -webkit-tap-highlight-color: transparent;
+  list-style-type: none;
+  margin: 0px;
+  background: rgb(26, 23, 23);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 11px;
+  padding: 11px;
+  color: rgb(130, 130, 131);
+}
+
+.leverorderlistItem11-5 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* background: rgb(255, 255, 255); */
+  padding: 0px 1px;
+}
+
+.leverorderlistItem11-6 {
+  -webkit-tap-highlight-color: transparent;
+  height: 100px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 75%;
+  min-height: 100px;
+  overflow: hidden;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-7 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-8 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 0px;
+}
+
+.leverorderlistItem11-9 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-10 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-11 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-12 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-13 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-14 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-15 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-16 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 0px;
+}
+
+.leverorderlistItem11-17 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-18 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-19 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-20 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-21 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-22 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-23 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-24 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 0px;
+}
+
+.leverorderlistItem11-25 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-26 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-27 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-28 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-29 {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 24%;
+  min-height: 130px;
+  overflow: hidden;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-30 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  /* background-color: rgb(255, 255, 255); */
+  padding: 0px;
+}
+
+.leverorderlistItem11-31 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-32 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(28, 173, 144) !important;
+}
+
+.leverorderlistItem11-32-1 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(205, 78, 101) !important;
+}
+
+.leverorderlistItem11-33 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-34 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-35 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-36 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-37 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-38 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-39 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-40 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-41 {
+  -webkit-tap-highlight-color: transparent;
+  list-style-type: none;
+  margin: 0px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 11px;
+  padding: 11px;
+}
+
+.leverorderlistItem11-42 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: rgb(255, 255, 255);
+  padding: 0px 1px;
+}
+
+.leverorderlistItem11-43 {
+  -webkit-tap-highlight-color: transparent;
+  height: 100px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 75%;
+  min-height: 100px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-44 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-45 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-46 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-47 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-48 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-49 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-50 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-51 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-52 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-53 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-54 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-55 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-56 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-57 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-58 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-59 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-60 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-61 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-62 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-63 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-64 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-65 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-66 {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 24%;
+  min-height: 130px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-67 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-68 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-69 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(205, 78, 101) !important;
+}
+
+.leverorderlistItem11-70 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-71 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-72 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-73 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-74 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-75 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-76 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-77 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-78 {
+  -webkit-tap-highlight-color: transparent;
+  list-style-type: none;
+  margin: 0px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 11px;
+  padding: 11px;
+}
+
+.leverorderlistItem11-79 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: rgb(255, 255, 255);
+  padding: 0px 1px;
+}
+
+.leverorderlistItem11-80 {
+  -webkit-tap-highlight-color: transparent;
+  height: 100px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 75%;
+  min-height: 100px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-81 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-82 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-83 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-84 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-85 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-86 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-87 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-88 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-89 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-90 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-91 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-92 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-93 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-94 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-95 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-96 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-97 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leverorderlistItem11-98 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-99 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-100 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-101 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-102 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+}
+
+.leverorderlistItem11-103 {
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 24%;
+  min-height: 130px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  padding: 1px;
+  margin: 1px 0px 1px 1px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.leverorderlistItem11-104 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+}
+
+.leverorderlistItem11-105 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  font-weight: 700;
+  color: rgb(199, 203, 206);
+  min-height: 20px;
+}
+
+.leverorderlistItem11-106 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  color: rgb(28, 173, 144) !important;
+}
+
+.leverorderlistItem11-107 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-108 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-109 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-110 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-111 {
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.leverorderlistItem11-112 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-113 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
+  text-align: center;
+}
+
+.leverorderlistItem11-114 {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  background: rgb(205, 78, 101);
+  height: 28px;
+  width: 99px;
+  line-height: 28px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border-radius: 500px;
+  border: none;
   text-align: center;
 }

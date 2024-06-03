@@ -293,6 +293,8 @@ export default function Lever() {
       />
       <DataList huobigetHistory={huobigetHistory} />
       <OrderList
+        closeorder={closeorder}
+        coinListData={coinListData}
         orderindex={orderindex}
         setorderindex={setorderindex}
         nowTab={nowTab}

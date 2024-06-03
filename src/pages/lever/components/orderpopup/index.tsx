@@ -532,7 +532,7 @@ export default function OrderPopup({
                 <p class="orderconfim-8">名稱</p>
                 <p class="orderconfim-9">方向</p>
                 <p class="orderconfim-10">現價</p>
-                <p class="orderconfim-11">交易數</p>
+                <p class="orderconfim-11">数量</p>
               </div>
               <div class="orderconfim-12">
                 <p class="orderconfim-13">

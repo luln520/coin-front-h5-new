@@ -18,7 +18,7 @@ export default function DataList({ huobigetHistory }) {
       nodes.push(
         <div class="leverDataBox-9">
           <div class="leverDataBox-10">
-            <span class="leverDataBox-11">{data.amount}</span>
+            <span class="leverDataBox-11">{data.amount?.toFixed(5)}</span>
           </div>
           <div class="leverDataBox-12">
             <span class="leverDataBox-13">{data.price}</span>

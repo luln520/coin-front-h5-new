@@ -124,9 +124,14 @@ export default function OrderPopup({
     const openprice = coinListData[nowTab]?.open;
     const type1num = leverSet1[type1 - 1]?.num;
     const type2num = leverSet2[type2 - 1]?.num;
-    setlossPrice(openprice * (1 - type1num * 0.01));
-    setwinPrice(openprice * (1 + type2num * 0.01));
-  }, [type1, type2,num]);
+    if (type == 1) {
+      setlossPrice(openprice * (1 - type1num * 0.01));
+      setwinPrice(openprice * (1 + type2num * 0.01));
+    } else {
+      setwinPrice(openprice * (1 - type1num * 0.01));
+      setlossPrice(openprice * (1 + type2num * 0.01));
+    }
+  }, [type, type1, type2, num]);
 
   return (
     <Popup
@@ -458,7 +463,9 @@ export default function OrderPopup({
                   {nowTab?.toUpperCase()}
                   <span class="orderconfim-14">/USDT</span>
                 </p>
-                <p class={type == 1?"orderconfim-15":"orderconfim-15-1"}>{type == 1 ? "買多" : "買空"}</p>
+                <p class={type == 1 ? "orderconfim-15" : "orderconfim-15-1"}>
+                  {type == 1 ? "買多" : "買空"}
+                </p>
                 <p class="orderconfim-16">{coinListData[nowTab]?.close}</p>
                 <p class="orderconfim-17">{num}</p>
               </div>

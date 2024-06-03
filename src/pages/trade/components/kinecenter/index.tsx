@@ -33,10 +33,10 @@ export default function KineCenter({ timeindex, settimeindex }) {
         {/* k线图 */}
         <div id="kline" class="kinecenter-12"></div>
       </div>
-      <div class="kinecenter-13">
+      {/* <div class="kinecenter-13">
         <div class="kinecenter-14">實时數據</div>
         <div class="kinecenter-15">實时成交</div>
-      </div>
+      </div> */}
     </div>
   );
 }

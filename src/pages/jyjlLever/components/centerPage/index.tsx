@@ -110,7 +110,7 @@ export default function CenterPage({ leverorders, closeorder }) {
               <div className="hyjyjl-9">
                 <span className="hyjyjl-10">
                   <span className="hyjyjl-11">
-                    {data.num.toFixed(2)}
+                    {data.num?.toFixed(2)}
                     <span className="hyjyjl-12">
                       <span className="hyjyjl-13">USDT</span>
                     </span>

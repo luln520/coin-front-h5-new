@@ -31,6 +31,7 @@ export default function OrderPopup({
   const [type2, setType2] = useState(1);
   const [leverageIndex, setLeverageIndex] = useState(1);
   const [num, setNum] = useState("");
+  const [bsnum, setbsNum] = useState("");
   const [lossPrice, setlossPrice] = useState("");
   const [winPrice, setwinPrice] = useState("");
   const [boomPrice, setboomPrice] = useState(0);
@@ -118,20 +119,48 @@ export default function OrderPopup({
           : 0
         : 100
     );
+    setbsNum(leverage[0]?.num);
   }, [leverage]);
 
   useEffect(() => {
-    const openprice = coinListData[nowTab]?.open;
-    const type1num = leverSet1[type1 - 1]?.num;
-    const type2num = leverSet2[type2 - 1]?.num;
-    if (type == 1) {
-      setlossPrice(openprice * (1 - type1num * 0.01));
-      setwinPrice(openprice * (1 + type2num * 0.01));
-    } else {
-      setwinPrice(openprice * (1 - type1num * 0.01));
-      setlossPrice(openprice * (1 + type2num * 0.01));
+    setbsNum(leverage[leverageIndex - 1]?.num);
+  }, [leverageIndex]);
+
+  useEffect(() => {
+    //判断下标
+    let ishave = false;
+    for (let index = 0; index < leverage.length; index++) {
+      let data = leverage[index];
+      if (data.num == bsnum) {
+        ishave = true;
+        setLeverageIndex(index + 1);
+      }
     }
-  }, [type, type1, type2, num]);
+    //判断是否有
+    if (!ishave) {
+      setLeverageIndex(0);
+    }
+    //判断大小
+    if (bsnum <= 0) {
+      setbsNum("");
+    }
+    if (bsnum >= 200) {
+      setbsNum(200);
+    }
+  }, [bsnum]);
+
+  // useEffect(() => {
+  //   const openprice = coinListData[nowTab]?.open;
+  //   const type1num = leverSet1[type1 - 1]?.num;
+  //   const type2num = leverSet2[type2 - 1]?.num;
+  //   if (type == 1) {
+  //     setlossPrice(openprice * (1 - type1num * 0.01));
+  //     setwinPrice(openprice * (1 + type2num * 0.01));
+  //   } else {
+  //     setwinPrice(openprice * (1 - type1num * 0.01));
+  //     setlossPrice(openprice * (1 + type2num * 0.01));
+  //   }
+  // }, [type, type1, type2, num]);
 
   return (
     <Popup
@@ -193,7 +222,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-80">
-                            {translate(getText("交易數"))}
+                            {translate(getText("数量"))}
                           </div>
                           <div class="leverOrderPopup-81">
                             <div class="leverOrderPopup-82">
@@ -302,6 +331,53 @@ export default function OrderPopup({
                             <div class="leverOrderPopup-58">
                               <div class="leverOrderPopup-59">
                                 {leverage && getLeverageNodes()}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-65">
+                            <div class="leverOrderPopup-67">
+                              <div class="leverOrderPopup-68">
+                                <div class="leverOrderPopup-69">
+                                  <div class="leverOrderPopup-70">
+                                    <span
+                                      class="leverOrderPopup-71"
+                                      onClick={() => {
+                                        setbsNum(bsnum - 1);
+                                      }}
+                                    >
+                                      -
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="leverOrderPopup-72">
+                                  <div class="leverOrderPopup-73">
+                                    <div class="leverOrderPopup-74"></div>
+                                    <input
+                                      maxlength="140"
+                                      step="0.000000000000000001"
+                                      enterkeyhint="done"
+                                      autocomplete="off"
+                                      type="number"
+                                      class="leverOrderPopup-75"
+                                      value={bsnum}
+                                      onChange={(e) => {
+                                        setbsNum(e.target.value);
+                                      }}
+                                    />
+                                  </div>
+                                </div>
+                                <div class="leverOrderPopup-76">
+                                  <div class="leverOrderPopup-77">
+                                    <span
+                                      class="leverOrderPopup-78"
+                                      onClick={() => {
+                                        setbsNum(bsnum + 1);
+                                      }}
+                                    >
+                                      +
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -484,12 +560,12 @@ export default function OrderPopup({
                     ccoinname: `${nowTab.toUpperCase()}/USDT`,
                     win: leverSet2[type2 - 1]?.num,
                     loss: leverSet1[type1 - 1]?.num,
-                    fold: leverage[leverageIndex - 1]?.num,
+                    fold: bsnum,
                     hyzd: type,
                     num: num,
                     ploss:
                       leverSet2[type2 - 1]?.num *
-                      leverage[leverageIndex - 1]?.num *
+                      bsnum *
                       num *
                       0.01,
                     premium: hysetInfo?.hySxf,

@@ -124,15 +124,32 @@ export default function Lever() {
 
   //加载倍数
   const getTwLeverage = async () => {
-    if (!nowTab) {
-      return;
-    }
-    const data = await leverApi.getTwLeverage({
-      symbol: `${nowTab.toUpperCase()}/USDT`,
-    });
-    if (data.ok) {
-      setLeverage(data.data);
-    }
+    // if (!nowTab) {
+    //   return;
+    // }
+    // const data = await leverApi.getTwLeverage({
+    //   symbol: `${nowTab.toUpperCase()}/USDT`,
+    // });
+    // if (data.ok) {
+    //setLeverage(data.data);
+    setLeverage([
+      {
+        num: 3,
+      },
+      {
+        num: 5,
+      },
+      {
+        num: 10,
+      },
+      {
+        num: 20,
+      },
+      {
+        num: 50,
+      },
+    ]);
+    // }
   };
 
   //加载上下限制

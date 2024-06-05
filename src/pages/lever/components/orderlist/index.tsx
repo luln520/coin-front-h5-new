@@ -182,7 +182,7 @@ export default function OrderList({
               )}
             </div>
           </div>
-          {data.status != 1 && (
+          {data.status == 1 && (
             <div class="leverorderlistItem11-33">
               <p
                 class="leverorderlistItem11-34"

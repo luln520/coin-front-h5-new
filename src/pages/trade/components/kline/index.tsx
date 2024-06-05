@@ -202,15 +202,16 @@ export default function MyChartComponent(props) {
     if (container && !chartRef.current) {
       // 初始化图表实例
       const chart = new KLineChartPro({
+        candle: "area",
         container,
         locale: localStorage.getItem("i18n") == "zh" ? "zh-CN" : "en-US",
         watermark: "",
         datafeed: new CustomDatafeed(() => {}),
-        drawingBarVisible:false,
+        drawingBarVisible: false,
         symbol: newSymbol,
         period: { multiplier: 1, timespan: "minute", text: "1m" },
-        mainIndicators: [],
-        subIndicators: ["VOL","MACD"],
+        mainIndicators: ["MA"],
+        subIndicators: ["VOL", "MACD"],
         periods: [
           // { multiplier: 1, timespan: "minute", text: "1m" },
           // { multiplier: 5, timespan: "minute", text: "5m" },
@@ -218,9 +219,33 @@ export default function MyChartComponent(props) {
           // { multiplier: 1, timespan: "hour", text: "H" },
           // { multiplier: 1, timespan: "day", text: "D" },
         ],
+        styles: {
+          candle: {
+            type: "area",
+            area: {
+              lineSize: 1,
+            },
+            point: {
+              show: false,
+            },
+          },
+          indicator: {
+            tooltip: {
+              showType: "rect",
+              // showRule: "follow_cross",
+            },
+          },
+          // yAxis: {
+          //   inside: true,
+          // },
+          xAxis:{
+            // size:"100px"
+          }
+        },
       });
       // chartRef.current.setPriceVolumePrecision(()=>{});
-      chart.setTheme("light");
+      chart.setTheme("dark");
+      // chart.setTimezone();
       chartRef.current = chart;
     }
   }, [props.nowTab]);
@@ -229,6 +254,10 @@ export default function MyChartComponent(props) {
     const toolsSpan = document.querySelectorAll(".tools>span");
     const tools = document.querySelectorAll(".tools");
     const rows = document.querySelectorAll(".row");
+    const klinechartsbar = document.querySelector(
+      ".klinecharts-pro-period-bar"
+    );
+
     let row1 =
       rows[14]?.querySelector("span").innerText == "BRAR(情绪指标)"
         ? rows[14]?.remove()
@@ -240,6 +269,7 @@ export default function MyChartComponent(props) {
     tools[2]?.remove();
     tools[3]?.remove();
     tools[4]?.remove();
+    klinechartsbar?.remove();
     for (const tool of toolsSpan) {
       tool.remove();
     }
@@ -255,7 +285,7 @@ export default function MyChartComponent(props) {
   }, []);
   return (
     <div>
-      <div id="container" style={{ height: "500px", width: "100%" }}></div>
+      <div id="container" style={{ height: "580px", width: "100%" }}></div>
       <div
         style={{
           height: "70px",

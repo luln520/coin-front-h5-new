@@ -146,7 +146,6 @@ export default function BottomBar({ index }) {
           </div>
         </div>
       </div>
-      <div className="bottomBar-29"></div>
     </div>
   );
 }

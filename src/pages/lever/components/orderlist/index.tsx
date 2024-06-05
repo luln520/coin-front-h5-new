@@ -103,6 +103,16 @@ export default function OrderList({
               </div>
               <div class="leverorderlistItem11-23">
                 <div class="leverorderlistItem11-24">
+                  <p class="leverorderlistItem11-25">方向</p>
+                  <p
+                    class={
+                      data.hyzd == 1
+                        ? "leverorderlistItem11-32"
+                        : "leverorderlistItem11-32-1"
+                    }
+                  >
+                    {data.hyzd == 1 ? "買多" : "買空"}
+                  </p>
                   <p class="leverorderlistItem11-25">止損價</p>
                   <p class="leverorderlistItem11-26">{data.lossPrice}</p>
                   <p class="leverorderlistItem11-27">止盈價</p>
@@ -114,12 +124,28 @@ export default function OrderList({
               {data.status == 1 && (
                 <div class="leverorderlistItem11-30">
                   <p class="leverorderlistItem11-31">預期收益</p>
-                  <p class="leverorderlistItem11-32">
+                  <p
+                    class={
+                      (
+                        data.num *
+                        data.fold *
+                        ((data.buyprice -
+                          coinListData[
+                            data.coinname.replace("/USDT", "").toLowerCase()
+                          ]?.close) /
+                          data.buyprice)
+                      ).toFixed(2) > 0
+                        ? "leverorderlistItem11-32"
+                        : "leverorderlistItem11-32-1"
+                    }
+                  >
                     {(
                       data.num *
-                      (coinListData[
-                        data.coinname.replace("/USDT", "").toLowerCase()
-                      ]?.close -
+                      data.fold *
+                      ((data.buyprice -
+                        coinListData[
+                          data.coinname.replace("/USDT", "").toLowerCase()
+                        ]?.close) /
                         data.buyprice)
                     ).toFixed(2)}
                   </p>

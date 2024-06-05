@@ -123,7 +123,9 @@ export default function OrderPopup({
   }, [leverage]);
 
   useEffect(() => {
-    setbsNum(leverage[leverageIndex - 1]?.num);
+    if (leverageIndex) {
+      setbsNum(leverage[leverageIndex - 1]?.num);
+    }
   }, [leverageIndex]);
 
   useEffect(() => {
@@ -231,7 +233,9 @@ export default function OrderPopup({
                                   <span
                                     class="leverOrderPopup-85"
                                     onClick={() => {
-                                      setNum(num - 0.1);
+                                      if (num && num > 0.1) {
+                                        setNum(num - 0.1);
+                                      }
                                     }}
                                   >
                                     -
@@ -260,7 +264,11 @@ export default function OrderPopup({
                                   <span
                                     class="leverOrderPopup-92"
                                     onClick={() => {
-                                      setNum(num + 0.1);
+                                      if (num) {
+                                        setNum(num + 0.1);
+                                      } else {
+                                        setNum(0.1);
+                                      }
                                     }}
                                   >
                                     +
@@ -342,7 +350,9 @@ export default function OrderPopup({
                                     <span
                                       class="leverOrderPopup-71"
                                       onClick={() => {
-                                        setbsNum(bsnum - 1);
+                                        if (bsnum && bsnum > 1) {
+                                          setbsNum(bsnum - 1);
+                                        }
                                       }}
                                     >
                                       -
@@ -390,7 +400,9 @@ export default function OrderPopup({
                                     <span
                                       class="leverOrderPopup-71"
                                       onClick={() => {
-                                        setlossPrice(lossPrice - 0.1);
+                                        if (lossPrice && lossPrice > 0.1) {
+                                          setlossPrice(lossPrice - 0.1);
+                                        }
                                       }}
                                     >
                                       -
@@ -419,7 +431,11 @@ export default function OrderPopup({
                                     <span
                                       class="leverOrderPopup-78"
                                       onClick={() => {
-                                        setlossPrice(lossPrice + 0.1);
+                                        if (lossPrice) {
+                                          setlossPrice(lossPrice + 0.1);
+                                        } else {
+                                          setlossPrice(0.1);
+                                        }
                                       }}
                                     >
                                       +
@@ -438,7 +454,9 @@ export default function OrderPopup({
                                     <span
                                       class="leverOrderPopup-85"
                                       onClick={() => {
-                                        setwinPrice(winPrice - 0.1);
+                                        if (winPrice && winPrice > 0.1) {
+                                          setwinPrice(winPrice - 0.1);
+                                        }
                                       }}
                                     >
                                       -
@@ -466,7 +484,11 @@ export default function OrderPopup({
                                     <span
                                       class="leverOrderPopup-92"
                                       onClick={() => {
-                                        setwinPrice(winPrice + 0.1);
+                                        if (winPrice) {
+                                          setwinPrice(winPrice + 0.1);
+                                        } else {
+                                          setwinPrice(0.1);
+                                        }
                                       }}
                                     >
                                       +
@@ -563,11 +585,7 @@ export default function OrderPopup({
                     fold: bsnum,
                     hyzd: type,
                     num: num,
-                    ploss:
-                      leverSet2[type2 - 1]?.num *
-                      bsnum *
-                      num *
-                      0.01,
+                    ploss: leverSet2[type2 - 1]?.num * bsnum * num * 0.01,
                     premium: hysetInfo?.hySxf,
                     lossPrice,
                     winPrice,

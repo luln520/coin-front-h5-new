@@ -26,12 +26,18 @@ export default function KineCenter({ timeindex, settimeindex }) {
     }
     return nodes;
   };
+
+
+  //渲染k
+
   return (
     <div class="kinecenter-1">
       <ul class="kinecenter-2">{getTimesArray()}</ul>
       <div class="kinecenter-11">
         {/* k线图 */}
-        <div id="kline" class="kinecenter-12"></div>
+        <div id="kline" class="kinecenter-12">
+          
+        </div>
       </div>
       {/* <div class="kinecenter-13">
         <div class="kinecenter-14">實时數據</div>

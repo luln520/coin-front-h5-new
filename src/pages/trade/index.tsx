@@ -209,7 +209,15 @@ export default function Trade() {
         nowTab={nowTab}
         coinListData={coinListData}
       />
-      <KineCenter timeindex={timeindex} settimeindex={settimeindex} />
+      {nowTab && (
+        <KineCenter
+          nowTab={nowTab}
+          setIndex={setIndex}
+          setType={setType}
+          timeindex={timeindex}
+          settimeindex={settimeindex}
+        />
+      )}
 
       <TopBuy setIsShowOrder={setIsShowOrder} setType={setType} />
       <div

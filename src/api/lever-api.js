@@ -35,9 +35,27 @@ export const leverApi = {
     return getRequest('/api/pc/leverorder/creatorder', param);
   },
   /**
- * 建仓
+ * 建仓新
  */
   creatorderNew: (param) => {
     return getRequest('/api/pc/leverorder/creatorderNew', param);
+  },
+  /**
+* 加仓
+*/
+  addnum: (param) => {
+    return getRequest('/api/pc/leverorder/addnum', param);
+  },
+  /**
+* 减仓
+*/
+  strutcnum: (param) => {
+    return getRequest('/api/pc/leverorder/strutcnum', param);
+  },
+  /*
+ * 设置亏盈
+*/
+  editLossWin: (param) => {
+    return getRequest('/api/pc/leverorder/editLossWin', param);
   },
 };

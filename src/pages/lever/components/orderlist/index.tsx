@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { Dialog } from "react-vant";
 import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
 export default function OrderList({
   closeorder,
+  addnumFun,
+  strutcnumFun,
+  editLossWinFun,
   coinListData,
   orderindex,
   setorderindex,
@@ -16,6 +20,16 @@ export default function OrderList({
   const navigate = useNavigate();
   const tab = nowTab.toUpperCase() + "/USDT";
   const { t: translate } = useTranslation();
+  //加 减 改
+  const [tempData, settempData] = useState({} as any);
+  const [addnum, setaddnum] = useState("");
+  const [addnumVisible, setaddnumVisible] = useState(false);
+  const [strutcnum, setstrutcnum] = useState("");
+  const [strutcnumVisible, setstrutcnumVisible] = useState(false);
+  const [lossnum, setlossnum] = useState("");
+  const [winnum, setwinnum] = useState("");
+  const [editLossWinVisible, seteditLossWinVisible] = useState(false);
+
   const getArray = () => {
     const nodes = [];
     leverorders = leverorders.filter((data) => data.coinname === tab);
@@ -50,27 +64,27 @@ export default function OrderList({
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];
       const node = (
-        <li
-          class="leverorderlistItem11-4"
-          onClick={() => {
-            const sendData = {
-              orderNo: data.orderNo,
-              coinname: data.coinname,
-              num: data.num,
-              ploss: data.ploss,
-              buytime: data.buytime,
-              status: data.status,
-              isWin: data.isWin,
-            };
-            if (data.status == 1) {
-              return;
-            }
-            navigate(
-              `/marketOrderInfo/${data.id}?data=${JSON.stringify(sendData)}`
-            );
-          }}
-        >
-          <div class="leverorderlistItem11-5">
+        <li class="leverorderlistItem11-4">
+          <div
+            class="leverorderlistItem11-5"
+            onClick={() => {
+              const sendData = {
+                orderNo: data.orderNo,
+                coinname: data.coinname,
+                num: data.num,
+                ploss: data.ploss,
+                buytime: data.buytime,
+                status: data.status,
+                isWin: data.isWin,
+              };
+              if (data.status == 1) {
+                return;
+              }
+              navigate(
+                `/marketOrderInfo/${data.id}?data=${JSON.stringify(sendData)}`
+              );
+            }}
+          >
             <div class="leverorderlistItem11-6">
               <div class="leverorderlistItem11-7">
                 <div class="leverorderlistItem11-8">
@@ -168,19 +182,53 @@ export default function OrderList({
               )}
             </div>
           </div>
-          {data.status == 1 && (
+          {data.status != 1 && (
             <div class="leverorderlistItem11-33">
               <p
                 class="leverorderlistItem11-34"
                 onClick={(e) => {
-                  closeorder(data.id);
-                  e.stopPropagation();
+                  Dialog.confirm({
+                    title: "提示",
+                    message: "是否确认平仓？",
+                    onConfirm: () => {
+                      closeorder(data.id);
+                    },
+                  });
                 }}
               >
                 平倉
               </p>
-              <p class="leverorderlistItem11-35">追單</p>
-              <p class="leverorderlistItem11-36">設定止盈止損</p>
+              <p
+                class="leverorderlistItem11-35"
+                onClick={() => {
+                  settempData(data);
+                  setaddnumVisible(true);
+                  setaddnum("");
+                }}
+              >
+                加仓
+              </p>
+              <p
+                class="leverorderlistItem11-35"
+                onClick={() => {
+                  settempData(data);
+                  setstrutcnumVisible(true);
+                  setstrutcnum("");
+                }}
+              >
+                减仓
+              </p>
+              <p
+                class="leverorderlistItem11-36"
+                onClick={() => {
+                  settempData(data);
+                  seteditLossWinVisible(true);
+                  setlossnum(data?.lossPrice);
+                  setwinnum(data?.winPrice);
+                }}
+              >
+                設定止盈止損
+              </p>
             </div>
           )}
           {data.status == 1 && (
@@ -238,6 +286,284 @@ export default function OrderList({
         {getNode1()}
         <div style={{ height: "10px" }}></div>
       </div>
+      {/* 加仓 */}
+      <Dialog
+        visible={addnumVisible}
+        title="加仓"
+        showCancelButton
+        onConfirm={() => {
+          //调取
+          addnumFun({
+            orderNo: tempData?.orderNo,
+            num: addnum,
+            boomPrice: 0,
+          });
+          setaddnumVisible(false);
+        }}
+        onCancel={() => setaddnumVisible(false)}
+      >
+        <div
+          style={{
+            padding: "0 20px",
+          }}
+        >
+          订单号：{tempData?.orderNo}
+          <div class="leverOrderPopup-80">{translate(getText("数量"))}：</div>
+          <div class="leverOrderPopup-81">
+            <div class="leverOrderPopup-82">
+              <div class="leverOrderPopup-83">
+                <div class="leverOrderPopup-84">
+                  <span
+                    class="leverOrderPopup-85"
+                    onClick={() => {
+                      if (addnum && addnum > 0.1) {
+                        setaddnum(addnum - 0.1);
+                      }
+                    }}
+                  >
+                    -
+                  </span>
+                </div>
+              </div>
+              <div class="leverOrderPopup-86">
+                <div class="leverOrderPopup-87">
+                  <div class="leverOrderPopup-88"></div>
+                  <input
+                    maxlength="140"
+                    enterkeyhint="done"
+                    autocomplete="off"
+                    type="number"
+                    class="leverOrderPopup-89"
+                    value={addnum}
+                    onChange={(e) => {
+                      setaddnum(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="leverOrderPopup-90">
+                <div class="leverOrderPopup-91">
+                  <span
+                    class="leverOrderPopup-92"
+                    onClick={() => {
+                      if (addnum) {
+                        setaddnum(addnum + 0.1);
+                      } else {
+                        setaddnum(0.1);
+                      }
+                    }}
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Dialog>
+      {/* 减仓 */}
+      <Dialog
+        visible={strutcnumVisible}
+        title="减仓"
+        showCancelButton
+        onConfirm={() => {
+          //调取
+          strutcnumFun({
+            orderNo: tempData?.orderNo,
+            num: strutcnum,
+            boomPrice: 0,
+          });
+          setstrutcnumVisible(false);
+        }}
+        onCancel={() => setstrutcnumVisible(false)}
+      >
+        <div
+          style={{
+            padding: "0 20px",
+          }}
+        >
+          订单号：{tempData?.orderNo}
+          <div class="leverOrderPopup-80">{translate(getText("数量"))}：</div>
+          <div class="leverOrderPopup-81">
+            <div class="leverOrderPopup-82">
+              <div class="leverOrderPopup-83">
+                <div class="leverOrderPopup-84">
+                  <span
+                    class="leverOrderPopup-85"
+                    onClick={() => {
+                      if (strutcnum && strutcnum > 0.1) {
+                        setstrutcnum(strutcnum - 0.1);
+                      }
+                    }}
+                  >
+                    -
+                  </span>
+                </div>
+              </div>
+              <div class="leverOrderPopup-86">
+                <div class="leverOrderPopup-87">
+                  <div class="leverOrderPopup-88"></div>
+                  <input
+                    maxlength="140"
+                    enterkeyhint="done"
+                    autocomplete="off"
+                    type="number"
+                    class="leverOrderPopup-89"
+                    value={strutcnum}
+                    onChange={(e) => {
+                      setstrutcnum(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="leverOrderPopup-90">
+                <div class="leverOrderPopup-91">
+                  <span
+                    class="leverOrderPopup-92"
+                    onClick={() => {
+                      if (strutcnum) {
+                        setstrutcnum(strutcnum + 0.1);
+                      } else {
+                        setstrutcnum(0.1);
+                      }
+                    }}
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Dialog>
+
+      {/* 設定止盈止損 */}
+      <Dialog
+        visible={editLossWinVisible}
+        title="設定止盈止損"
+        showCancelButton
+        onConfirm={() => {
+          //调取
+          editLossWinFun({
+            orderNo: tempData?.orderNo,
+            lossPrice: lossnum,
+            winPrice: winnum,
+            boomPrice: 0,
+          });
+          seteditLossWinVisible(false);
+        }}
+        onCancel={() => seteditLossWinVisible(false)}
+      >
+        <div
+          style={{
+            padding: "0 20px",
+          }}
+        >
+          订单号：{tempData?.orderNo}
+          <div class="leverOrderPopup-80">{translate(getText("止盈"))}：</div>
+          <div class="leverOrderPopup-81">
+            <div class="leverOrderPopup-82">
+              <div class="leverOrderPopup-83">
+                <div class="leverOrderPopup-84">
+                  <span
+                    class="leverOrderPopup-85"
+                    onClick={() => {
+                      if (winnum && winnum > 0.1) {
+                        setwinnum(winnum - 0.1);
+                      }
+                    }}
+                  >
+                    -
+                  </span>
+                </div>
+              </div>
+              <div class="leverOrderPopup-86">
+                <div class="leverOrderPopup-87">
+                  <div class="leverOrderPopup-88"></div>
+                  <input
+                    maxlength="140"
+                    enterkeyhint="done"
+                    autocomplete="off"
+                    type="number"
+                    class="leverOrderPopup-89"
+                    value={winnum}
+                    onChange={(e) => {
+                      setwinnum(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="leverOrderPopup-90">
+                <div class="leverOrderPopup-91">
+                  <span
+                    class="leverOrderPopup-92"
+                    onClick={() => {
+                      if (winnum) {
+                        setwinnum(winnum + 0.1);
+                      } else {
+                        setwinnum(0.1);
+                      }
+                    }}
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leverOrderPopup-80">{translate(getText("止損"))}：</div>
+          <div class="leverOrderPopup-81">
+            <div class="leverOrderPopup-82">
+              <div class="leverOrderPopup-83">
+                <div class="leverOrderPopup-84">
+                  <span
+                    class="leverOrderPopup-85"
+                    onClick={() => {
+                      if (lossnum && lossnum > 0.1) {
+                        setlossnum(lossnum - 0.1);
+                      }
+                    }}
+                  >
+                    -
+                  </span>
+                </div>
+              </div>
+              <div class="leverOrderPopup-86">
+                <div class="leverOrderPopup-87">
+                  <div class="leverOrderPopup-88"></div>
+                  <input
+                    maxlength="140"
+                    enterkeyhint="done"
+                    autocomplete="off"
+                    type="number"
+                    class="leverOrderPopup-89"
+                    value={lossnum}
+                    onChange={(e) => {
+                      setlossnum(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="leverOrderPopup-90">
+                <div class="leverOrderPopup-91">
+                  <span
+                    class="leverOrderPopup-92"
+                    onClick={() => {
+                      if (lossnum) {
+                        setlossnum(lossnum + 0.1);
+                      } else {
+                        setlossnum(0.1);
+                      }
+                    }}
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Dialog>
     </div>
   );
 }

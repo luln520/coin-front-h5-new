@@ -71,6 +71,39 @@ export default function Lever() {
     }
     loadData();
   };
+
+  //加仓
+  const addnum = async (param) => {
+    const data = await leverApi.addnum({uid,...param});
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadData();
+  };
+
+  //减仓
+  const strutcnum = async (param) => {
+    const data = await leverApi.strutcnum({uid,...param});
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadData();
+  };
+
+  //设置亏损盈利值
+  const editLossWin = async (param) => {
+    const data = await leverApi.editLossWin({uid,...param});
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadData();
+  };
   //订单信息
   const loadLeverListData = async () => {
     const data = await leverApi.list({ uid, pageNum: 1, pageSize: 100 });
@@ -294,6 +327,9 @@ export default function Lever() {
       <DataList huobigetHistory={huobigetHistory} />
       <OrderList
         closeorder={closeorder}
+        addnumFun={addnum}
+        strutcnumFun={strutcnum}
+        editLossWinFun={editLossWin}
         coinListData={coinListData}
         orderindex={orderindex}
         setorderindex={setorderindex}

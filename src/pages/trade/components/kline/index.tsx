@@ -210,13 +210,13 @@ export default function MyChartComponent(props) {
         symbol: newSymbol,
         period: { multiplier: 1, timespan: "minute", text: "1m" },
         mainIndicators: [],
-        // subIndicators: [],
+        subIndicators: ["VOL","MACD"],
         periods: [
-          { multiplier: 1, timespan: "minute", text: "1m" },
-          { multiplier: 5, timespan: "minute", text: "5m" },
-          { multiplier: 15, timespan: "minute", text: "15m" },
-          { multiplier: 1, timespan: "hour", text: "H" },
-          { multiplier: 1, timespan: "day", text: "D" },
+          // { multiplier: 1, timespan: "minute", text: "1m" },
+          // { multiplier: 5, timespan: "minute", text: "5m" },
+          // { multiplier: 15, timespan: "minute", text: "15m" },
+          // { multiplier: 1, timespan: "hour", text: "H" },
+          // { multiplier: 1, timespan: "day", text: "D" },
         ],
       });
       // chartRef.current.setPriceVolumePrecision(()=>{});

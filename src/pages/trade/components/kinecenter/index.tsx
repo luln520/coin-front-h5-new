@@ -3,12 +3,19 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
+import KLine from "../kline";
 import "./index.css";
 
-export default function KineCenter({ timeindex, settimeindex }) {
+export default function KineCenter({
+  nowTab,
+  setIndex,
+  setType,
+  timeindex,
+  settimeindex,
+}) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const times = ["Time", "1M", "5M", "15M", "30M", "1H", "1D", "1D"];
+  const times = ["Time", "1M", "5M", "15M", "30M", "1H", "1D", "7D"];
   const getTimesArray = () => {
     const nodes = [];
     for (const i in times) {
@@ -27,7 +34,6 @@ export default function KineCenter({ timeindex, settimeindex }) {
     return nodes;
   };
 
-
   //渲染k
 
   return (
@@ -36,7 +42,13 @@ export default function KineCenter({ timeindex, settimeindex }) {
       <div class="kinecenter-11">
         {/* k线图 */}
         <div id="kline" class="kinecenter-12">
-          
+          <KLine
+            nowTab={nowTab}
+            setIndex={setIndex}
+            setType={setType}
+            timeindex={timeindex}
+            settimeindex={settimeindex}
+          />
         </div>
       </div>
       {/* <div class="kinecenter-13">

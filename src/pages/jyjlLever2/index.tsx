@@ -33,6 +33,39 @@ export default function JYJLLever2() {
     }
     loadLeverListData();
   };
+
+  //加仓
+  const addnum = async (param) => {
+    const data = await leverApi.addnum({ uid, ...param });
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadLeverListData();
+  };
+
+  //减仓
+  const strutcnum = async (param) => {
+    const data = await leverApi.strutcnum({ uid, ...param });
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadLeverListData();
+  };
+
+  //设置亏损盈利值
+  const editLossWin = async (param) => {
+    const data = await leverApi.editLossWin({ uid, ...param });
+    if (data.ok) {
+      Toast.show({ content: data.msg });
+    } else {
+      Toast.show({ content: data.msg });
+    }
+    loadLeverListData();
+  };
   useEffect(() => {
     loadLeverListData();
   }, []);
@@ -44,7 +77,15 @@ export default function JYJLLever2() {
       }}
     >
       <TopBar title={translate(getText("槓桿持仓"))} isBack={true} />
-      <CenterPage coinListData={coinListData} leverorders={leverorders} closeorder={closeorder} />
+      <CenterPage
+        coinListData={coinListData}
+        leverorders={leverorders}
+        closeorder={closeorder}
+        closeorder={closeorder}
+        addnumFun={addnum}
+        strutcnumFun={strutcnum}
+        editLossWinFun={editLossWin}
+      />
     </div>
   );
 }

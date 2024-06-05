@@ -32,7 +32,7 @@ export default function CenterPage({
   const getNode1 = () => {
     const nodes = [];
     const leverorderstemp = leverorders.filter(
-      (data) => data.status === (index == 1 ? 2 : 2)
+      (data) => data.status === (index == 1 ? 1 : 2)
     );
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];

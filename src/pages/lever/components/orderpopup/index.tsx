@@ -254,7 +254,7 @@ export default function OrderPopup({
                                     class="leverOrderPopup-89"
                                     value={num}
                                     onChange={(e) => {
-                                      setNum(parseInt(e.target.value));
+                                      setNum(e.target.value);
                                     }}
                                   />
                                 </div>

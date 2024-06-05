@@ -63,6 +63,14 @@ export default function OrderList({
     );
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];
+      const priceyd = (
+        data.num *
+        data.fold *
+        ((data.buyprice -
+          coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
+            ?.close) /
+          data.buyprice)
+      ).toFixed(2);
       const node = (
         <li class="leverorderlistItem11-4">
           <div
@@ -140,28 +148,16 @@ export default function OrderList({
                   <p class="leverorderlistItem11-31">預期收益</p>
                   <p
                     class={
-                      (
-                        data.num *
-                        data.fold *
-                        ((data.buyprice -
-                          coinListData[
-                            data.coinname.replace("/USDT", "").toLowerCase()
-                          ]?.close) /
-                          data.buyprice)
-                      ).toFixed(2) > 0
+                      (priceyd > 0 && data.hyzd == 1) ||
+                      (priceyd < 0 && data.hyzd == 2)
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {(
-                      data.num *
-                      data.fold *
-                      ((data.buyprice -
-                        coinListData[
-                          data.coinname.replace("/USDT", "").toLowerCase()
-                        ]?.close) /
-                        data.buyprice)
-                    ).toFixed(2)}
+                    {(priceyd > 0 && data.hyzd == 1) ||
+                    (priceyd < 0 && data.hyzd == 2)
+                      ? Math.abs(priceyd)
+                      : priceyd}
                   </p>
                 </div>
               )}

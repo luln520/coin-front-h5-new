@@ -27,8 +27,10 @@ export default function OrderPopup({
   leverSet1.sort((a, b) => a.num - b.num);
   leverSet2.sort((a, b) => a.num - b.num);
   leverage.sort((a, b) => a.num - b.num);
-  const [type1, setType1] = useState(1);
-  const [type2, setType2] = useState(1);
+  const [zyNum, setzyNum] = useState(0);
+  const [type1, setType1] = useState(0);
+  const [zsNum, setzsNum] = useState(0);
+  const [type2, setType2] = useState(0);
   const [leverageIndex, setLeverageIndex] = useState(1);
   const [num, setNum] = useState("");
   const [bsnum, setbsNum] = useState("");
@@ -54,6 +56,7 @@ export default function OrderPopup({
           }
           onClick={() => {
             setType2(index + 1);
+            setzyNum(data.num);
           }}
         >
           {data.num}%
@@ -76,6 +79,7 @@ export default function OrderPopup({
           }
           onClick={() => {
             setType1(index + 1);
+            setzsNum(data.num);
           }}
         >
           {data.num}%
@@ -109,6 +113,20 @@ export default function OrderPopup({
       nodes.push(node);
     }
     return nodes;
+  };
+
+  const getchangeNum = () => {
+    const openprice = coinListData[nowTab]?.open;
+    const type1num = zsNum;
+    const type2num = zyNum;
+    console.info(openprice, type1num, type2num);
+    if (type == 1) {
+      setlossPrice(openprice * (1 - type1num * 0.01));
+      setwinPrice(openprice * (1 + type2num * 0.01));
+    } else {
+      setwinPrice(openprice * (1 - type1num * 0.01));
+      setlossPrice(openprice * (1 + type2num * 0.01));
+    }
   };
 
   useEffect(() => {
@@ -151,18 +169,44 @@ export default function OrderPopup({
     }
   }, [bsnum]);
 
-  // useEffect(() => {
-  //   const openprice = coinListData[nowTab]?.open;
-  //   const type1num = leverSet1[type1 - 1]?.num;
-  //   const type2num = leverSet2[type2 - 1]?.num;
-  //   if (type == 1) {
-  //     setlossPrice(openprice * (1 - type1num * 0.01));
-  //     setwinPrice(openprice * (1 + type2num * 0.01));
-  //   } else {
-  //     setwinPrice(openprice * (1 - type1num * 0.01));
-  //     setlossPrice(openprice * (1 + type2num * 0.01));
-  //   }
-  // }, [type, type1, type2, num]);
+  useEffect(() => {
+    getchangeNum();
+    //判断下标
+    let ishave1 = false;
+    let ishave2 = false;
+    for (let index = 0; index < leverSet1.length; index++) {
+      let data = leverSet1[index];
+      if (data.num == zsNum) {
+        ishave1 = true;
+        setType1(index + 1);
+      }
+    }
+    for (let index = 0; index < leverSet2.length; index++) {
+      let data = leverSet2[index];
+      if (data.num == zyNum) {
+        ishave2 = true;
+        setType2(index + 1);
+      }
+    }
+    //判断是否有
+    if (!ishave1) {
+      setType1(0);
+    }
+    if (!ishave2) {
+      setType2(0);
+    }
+  }, [type, type1, type2, num, zyNum, zsNum, coinListData[nowTab]?.open]);
+
+  useEffect(() => {
+    if (leverSet1) {
+      setType1(1);
+      setzsNum(leverSet1[0]?.num);
+    }
+    if (leverSet2) {
+      setType2(1);
+      setzyNum(leverSet2[0]?.num);
+    }
+  }, [leverSet1, leverSet2]);
 
   return (
     <Popup
@@ -292,6 +336,57 @@ export default function OrderPopup({
                               </div>
                             </div>
                           </div>
+                          <div class="leverOrderPopup-81">
+                            <div class="leverOrderPopup-82">
+                              <div class="leverOrderPopup-83">
+                                <div class="leverOrderPopup-84">
+                                  <span
+                                    class="leverOrderPopup-85"
+                                    onClick={() => {
+                                      if (zyNum && zyNum > 1) {
+                                        setzyNum(zyNum - 1);
+                                      }
+                                    }}
+                                  >
+                                    -
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="leverOrderPopup-86">
+                                <div class="leverOrderPopup-87">
+                                  <div class="leverOrderPopup-88"></div>
+                                  <input
+                                    maxlength="140"
+                                    enterkeyhint="done"
+                                    autocomplete="off"
+                                    type="number"
+                                    class="leverOrderPopup-89"
+                                    value={zyNum}
+                                    onChange={(e) => {
+                                      setzyNum(e.target.value);
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                              <div class="leverOrderPopup-90">
+                                <div class="leverOrderPopup-91">
+                                  <span
+                                    class="leverOrderPopup-92"
+                                    onClick={() => {
+                                      if (zyNum) {
+                                        setzyNum(zyNum + 1);
+                                      } else {
+                                        setzyNum(1);
+                                      }
+                                    }}
+                                  >
+                                    +
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {/*  */}
                           <div class="leverOrderPopup-53">
                             <div class="leverOrderPopup-54">
                               {translate(getText("止损"))}
@@ -304,6 +399,56 @@ export default function OrderPopup({
                             <div class="leverOrderPopup-58">
                               <div class="leverOrderPopup-59">
                                 {leverSet1 && getLeverSet1Nodes()}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="leverOrderPopup-81">
+                            <div class="leverOrderPopup-82">
+                              <div class="leverOrderPopup-83">
+                                <div class="leverOrderPopup-84">
+                                  <span
+                                    class="leverOrderPopup-85"
+                                    onClick={() => {
+                                      if (zsNum && zsNum > 1) {
+                                        setzsNum(zsNum - 1);
+                                      }
+                                    }}
+                                  >
+                                    -
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="leverOrderPopup-86">
+                                <div class="leverOrderPopup-87">
+                                  <div class="leverOrderPopup-88"></div>
+                                  <input
+                                    maxlength="140"
+                                    enterkeyhint="done"
+                                    autocomplete="off"
+                                    type="number"
+                                    class="leverOrderPopup-89"
+                                    value={zsNum}
+                                    onChange={(e) => {
+                                      setzsNum(e.target.value);
+                                    }}
+                                  />
+                                </div>
+                              </div>
+                              <div class="leverOrderPopup-90">
+                                <div class="leverOrderPopup-91">
+                                  <span
+                                    class="leverOrderPopup-92"
+                                    onClick={() => {
+                                      if (zsNum) {
+                                        setzsNum(zsNum + 1);
+                                      } else {
+                                        setzsNum(1);
+                                      }
+                                    }}
+                                  >
+                                    +
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -580,12 +725,12 @@ export default function OrderPopup({
                 onClick={() => {
                   buyCoin({
                     ccoinname: `${nowTab.toUpperCase()}/USDT`,
-                    win: leverSet2[type2 - 1]?.num,
-                    loss: leverSet1[type1 - 1]?.num,
+                    win: zyNum,
+                    loss: zsNum,
                     fold: bsnum,
                     hyzd: type,
                     num: num,
-                    ploss: leverSet2[type2 - 1]?.num * bsnum * num * 0.01,
+                    ploss: zyNum * bsnum * num * 0.01,
                     premium: hysetInfo?.hySxf,
                     lossPrice,
                     winPrice,

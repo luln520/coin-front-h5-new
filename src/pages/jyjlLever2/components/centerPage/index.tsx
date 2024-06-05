@@ -29,6 +29,21 @@ export default function CenterPage({
   const [winnum, setwinnum] = useState("");
   const [editLossWinVisible, seteditLossWinVisible] = useState(false);
 
+
+  
+  const getboomPrice = (type,bsnum) => {
+    const openPrice = coinListData[nowTab]?.close;
+    let price = 0;
+    if (type == 1) {
+      price = openPrice * (1 - 1 / bsnum + 0.005);
+    }
+    if (type == 2) {
+      price = openPrice * (1 + 1 / bsnum - 0.005);
+    }
+    return price;
+  };
+  
+
   const getNode1 = () => {
     const nodes = [];
     const leverorderstemp = leverorders.filter(
@@ -383,7 +398,7 @@ export default function CenterPage({
           addnumFun({
             orderNo: tempData?.orderNo,
             num: addnum,
-            boomPrice: 0,
+            boomPrice: getboomPrice(tempData?.hyzd,tempData?.fold),
           });
           setaddnumVisible(false);
         }}
@@ -458,7 +473,7 @@ export default function CenterPage({
           strutcnumFun({
             orderNo: tempData?.orderNo,
             num: strutcnum,
-            boomPrice: 0,
+            boomPrice:  getboomPrice(tempData?.hyzd,tempData?.fold),
           });
           setstrutcnumVisible(false);
         }}
@@ -535,7 +550,7 @@ export default function CenterPage({
             orderNo: tempData?.orderNo,
             lossPrice: lossnum,
             winPrice: winnum,
-            boomPrice: 0,
+            boomPrice:  getboomPrice(tempData?.hyzd,tempData?.fold),
           });
           seteditLossWinVisible(false);
         }}

@@ -30,6 +30,18 @@ export default function OrderList({
   const [winnum, setwinnum] = useState("");
   const [editLossWinVisible, seteditLossWinVisible] = useState(false);
 
+  const getboomPrice = (type, bsnum) => {
+    const openPrice = coinListData[nowTab]?.close;
+    let price = 0;
+    if (type == 1) {
+      price = openPrice * (1 - 1 / bsnum + 0.005);
+    }
+    if (type == 2) {
+      price = openPrice * (1 + 1 / bsnum - 0.005);
+    }
+    return price;
+  };
+
   const getArray = () => {
     const nodes = [];
     leverorders = leverorders.filter((data) => data.coinname === tab);
@@ -70,7 +82,7 @@ export default function OrderList({
           coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
             ?.close) /
           data.buyprice)
-      ).toFixed(2);
+      ).toFixed(4);
       const node = (
         <li class="leverorderlistItem11-4">
           <div
@@ -148,16 +160,16 @@ export default function OrderList({
                   <p class="leverorderlistItem11-31">預期收益</p>
                   <p
                     class={
-                      (priceyd > 0 && data.hyzd == 1) ||
-                      (priceyd < 0 && data.hyzd == 2)
+                      (priceyd < 0 && data.hyzd == 1) ||
+                      (priceyd > 0 && data.hyzd == 2)
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {(priceyd > 0 && data.hyzd == 1) ||
-                    (priceyd < 0 && data.hyzd == 2)
+                    {(priceyd < 0 && data.hyzd == 1) ||
+                    (priceyd > 0 && data.hyzd == 2)
                       ? Math.abs(priceyd)
-                      : priceyd}
+                      : -Math.abs(priceyd)}
                   </p>
                 </div>
               )}
@@ -292,7 +304,7 @@ export default function OrderList({
           addnumFun({
             orderNo: tempData?.orderNo,
             num: addnum,
-            boomPrice: 0,
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           setaddnumVisible(false);
         }}
@@ -367,7 +379,7 @@ export default function OrderList({
           strutcnumFun({
             orderNo: tempData?.orderNo,
             num: strutcnum,
-            boomPrice: 0,
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           setstrutcnumVisible(false);
         }}
@@ -444,7 +456,7 @@ export default function OrderList({
             orderNo: tempData?.orderNo,
             lossPrice: lossnum,
             winPrice: winnum,
-            boomPrice: 0,
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           seteditLossWinVisible(false);
         }}

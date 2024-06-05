@@ -116,7 +116,7 @@ export default function OrderPopup({
   };
 
   const getchangeNum = () => {
-    const openprice = coinListData[nowTab]?.open;
+    const openprice = coinListData[nowTab]?.close;
     const type1num = zsNum;
     const type2num = zyNum;
     console.info(openprice, type1num, type2num);
@@ -127,6 +127,20 @@ export default function OrderPopup({
       setwinPrice(openprice * (1 - type1num * 0.01));
       setlossPrice(openprice * (1 + type2num * 0.01));
     }
+  };
+
+  const getboomPrice = () => {
+    const openPrice = coinListData[nowTab]?.close;
+    let price = 0;
+    if (type == 1) {
+      price = openPrice * (1 - 1 / bsnum + 0.005);
+      setboomPrice(price);
+    }
+    if (type == 2) {
+      price = openPrice * (1 + 1 / bsnum - 0.005);
+      setboomPrice(price);
+    }
+    return price;
   };
 
   useEffect(() => {
@@ -145,6 +159,10 @@ export default function OrderPopup({
       setbsNum(leverage[leverageIndex - 1]?.num);
     }
   }, [leverageIndex]);
+
+  useEffect(() => {
+    getboomPrice();
+  }, [bsnum,type, coinListData[nowTab]?.close]);
 
   useEffect(() => {
     //判断下标
@@ -195,7 +213,7 @@ export default function OrderPopup({
     if (!ishave2) {
       setType2(0);
     }
-  }, [type, type1, type2, num, zyNum, zsNum, coinListData[nowTab]?.open]);
+  }, [type, type1, type2, num, zyNum, zsNum, coinListData[nowTab]?.close]);
 
   useEffect(() => {
     if (leverSet1) {
@@ -454,10 +472,16 @@ export default function OrderPopup({
                           </div>
                           <div class="leverOrderPopup-41">
                             <div class="leverOrderPopup-42">
-                              <div class="leverOrderPopup-46">
+                              {/* <div class="leverOrderPopup-46">
                                 <div class="leverOrderPopup-47">手續費:</div>
                                 <div class="leverOrderPopup-48">
                                   {hysetInfo?.hySxf}
+                                </div>
+                              </div> */}
+                              <div class="leverOrderPopup-46">
+                                <div class="leverOrderPopup-47">强平价格:</div>
+                                <div class="leverOrderPopup-48">
+                                  {boomPrice}
                                 </div>
                               </div>
                               <div class="leverOrderPopup-49">
@@ -470,7 +494,9 @@ export default function OrderPopup({
                                 <div class="leverOrderPopup-50">
                                   {translate(getText("最低投資額"))}:
                                 </div>
-                                <div class="leverOrderPopup-51">{minNum}</div>
+                                <div class="leverOrderPopup-51">
+                                  10{/*  {minNum}*/}
+                                </div>
                               </div>
                             </div>
                           </div>

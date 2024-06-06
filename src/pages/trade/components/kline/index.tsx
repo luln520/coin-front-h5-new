@@ -238,14 +238,14 @@ export default function MyChartComponent(props) {
           // yAxis: {
           //   inside: true,
           // },
-          xAxis:{
+          xAxis: {
             // size:"100px"
-          }
+          },
         },
       });
       // chartRef.current.setPriceVolumePrecision(()=>{});
       chart.setTheme("dark");
-      // chart.setTimezone();
+      // chart.setOffsetRightDistance(1);
       chartRef.current = chart;
     }
   }, [props.nowTab]);

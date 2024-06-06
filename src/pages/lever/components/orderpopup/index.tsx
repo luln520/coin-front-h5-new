@@ -162,7 +162,7 @@ export default function OrderPopup({
 
   useEffect(() => {
     getboomPrice();
-  }, [bsnum,type, coinListData[nowTab]?.close]);
+  }, [bsnum, type, coinListData[nowTab]?.close]);
 
   useEffect(() => {
     //判断下标
@@ -472,22 +472,22 @@ export default function OrderPopup({
                           </div>
                           <div class="leverOrderPopup-41">
                             <div class="leverOrderPopup-42">
-                              {/* <div class="leverOrderPopup-46">
+                              <div class="leverOrderPopup-46">
                                 <div class="leverOrderPopup-47">手續費:</div>
                                 <div class="leverOrderPopup-48">
                                   {hysetInfo?.hySxf}
                                 </div>
-                              </div> */}
-                              <div class="leverOrderPopup-46">
+                              </div>
+                              {/* <div class="leverOrderPopup-46">
                                 <div class="leverOrderPopup-47">强平价格:</div>
                                 <div class="leverOrderPopup-48">
                                   {boomPrice}
                                 </div>
-                              </div>
+                              </div> */}
                               <div class="leverOrderPopup-49">
                                 <div class="leverOrderPopup-50">可用餘額:</div>
                                 <div class="leverOrderPopup-51">
-                                  {userInfo?.usdt} USDT
+                                  {userInfo?.usdt?.toFixed(2)} USDT
                                 </div>
                               </div>
                               <div class="leverOrderPopup-49">
@@ -590,7 +590,7 @@ export default function OrderPopup({
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-75"
-                                      value={lossPrice}
+                                      value={lossPrice?.toFixed(2)}
                                       onChange={(e) => {
                                         setlossPrice(e.target.value);
                                       }}
@@ -643,7 +643,7 @@ export default function OrderPopup({
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-89"
-                                      value={winPrice}
+                                      value={winPrice?.toFixed(2)}
                                       onChange={(e) => {
                                         setwinPrice(e.target.value);
                                       }}

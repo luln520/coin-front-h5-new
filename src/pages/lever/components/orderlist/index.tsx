@@ -82,7 +82,7 @@ export default function OrderList({
           coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
             ?.close) /
           data.buyprice)
-      ).toFixed(4);
+      ).toFixed(2);
       const node = (
         <li class="leverorderlistItem11-4">
           <div
@@ -111,7 +111,7 @@ export default function OrderList({
                   <p class="leverorderlistItem11-9">交易品種</p>
                   <p class="leverorderlistItem11-10">{data.coinname}</p>
                   <p class="leverorderlistItem11-11">交易數</p>
-                  <p class="leverorderlistItem11-12">{data.num}</p>
+                  <p class="leverorderlistItem11-12">{data.num?.toFixed(2)}</p>
                   <p class="leverorderlistItem11-13">倍数</p>
                   <p class="leverorderlistItem11-14">{data.fold}</p>
                 </div>
@@ -119,7 +119,7 @@ export default function OrderList({
               <div class="leverorderlistItem11-15">
                 <div class="leverorderlistItem11-16">
                   <p class="leverorderlistItem11-17">開倉價</p>
-                  <p class="leverorderlistItem11-18">{data.buyprice}</p>
+                  <p class="leverorderlistItem11-18">{data.buyprice?.toFixed(2)}</p>
                   <p class="leverorderlistItem11-19">
                     {data.status == 1 ? "現價" : "结算價"}
                   </p>
@@ -131,8 +131,8 @@ export default function OrderList({
                     {data.status != 1 && data.sellprice}
                     &nbsp;
                   </p>
-                  <p class="leverorderlistItem11-21">手續費</p>
-                  <p class="leverorderlistItem11-22">{data.premium}</p>
+                  <p class="leverorderlistItem11-21">强平价格</p>
+                  <p class="leverorderlistItem11-22">{data.boomPrice?.toFixed(2)}</p>
                 </div>
               </div>
               <div class="leverorderlistItem11-23">
@@ -148,9 +148,9 @@ export default function OrderList({
                     {data.hyzd == 1 ? "買多" : "買空"}
                   </p>
                   <p class="leverorderlistItem11-25">止損價</p>
-                  <p class="leverorderlistItem11-26">{data.lossPrice}</p>
+                  <p class="leverorderlistItem11-26">{data.lossPrice?.toFixed(2)}</p>
                   <p class="leverorderlistItem11-27">止盈價</p>
-                  <p class="leverorderlistItem11-28">{data.winPrice}</p>
+                  <p class="leverorderlistItem11-28">{data.winPrice?.toFixed(2)}</p>
                 </div>
               </div>
             </div>

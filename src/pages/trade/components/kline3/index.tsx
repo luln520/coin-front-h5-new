@@ -81,7 +81,14 @@ export default function MyChartComponent({
     setkchart(chart);
     chart.setStyles({
       grid: {
-        show: false,
+        horizontal: {
+          size: 0.1,
+          style: "solid",
+        },
+        vertical: {
+          size: 0.1,
+          style: "solid",
+        },
       },
       candle: {
         type: timeindex == 1 ? "area" : "candle_solid",
@@ -104,6 +111,21 @@ export default function MyChartComponent({
             size: 9,
           },
         },
+      },
+      yAxis: {
+        // position: "left",
+        axisLine: {
+          size: 0.5,
+        },
+      },
+      xAxis: {
+        axisLine: {
+          size: 0.5,
+        },
+      },
+      separator: {
+        size: 0.5,
+        color:"#3E444D"
       },
     });
     chart.setOffsetRightDistance(0);

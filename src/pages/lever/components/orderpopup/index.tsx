@@ -119,7 +119,6 @@ export default function OrderPopup({
     const openprice = coinListData[nowTab]?.close;
     const type1num = zsNum;
     const type2num = zyNum;
-    console.info(openprice, type1num, type2num);
     if (type == 1) {
       setlossPrice(openprice * (1 - type1num * 0.01));
       setwinPrice(openprice * (1 + type2num * 0.01));

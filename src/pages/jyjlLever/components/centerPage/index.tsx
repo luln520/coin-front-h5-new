@@ -6,7 +6,7 @@ import { newsApi } from "../../../../api/news-api";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function CenterPage({ leverorders, closeorder }) {
+export default function CenterPage({ leverorders, closeorder, coinListData }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");

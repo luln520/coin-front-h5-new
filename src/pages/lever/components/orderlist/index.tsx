@@ -119,7 +119,9 @@ export default function OrderList({
               <div class="leverorderlistItem11-15">
                 <div class="leverorderlistItem11-16">
                   <p class="leverorderlistItem11-17">開倉價</p>
-                  <p class="leverorderlistItem11-18">{data.buyprice?.toFixed(2)}</p>
+                  <p class="leverorderlistItem11-18">
+                    {data.buyprice?.toFixed(2)}
+                  </p>
                   <p class="leverorderlistItem11-19">
                     {data.status == 1 ? "現價" : "结算價"}
                   </p>
@@ -132,7 +134,9 @@ export default function OrderList({
                     &nbsp;
                   </p>
                   <p class="leverorderlistItem11-21">强平价格</p>
-                  <p class="leverorderlistItem11-22">{data.boomPrice?.toFixed(2)}</p>
+                  <p class="leverorderlistItem11-22">
+                    {data.boomPrice?.toFixed(2)}
+                  </p>
                 </div>
               </div>
               <div class="leverorderlistItem11-23">
@@ -148,9 +152,13 @@ export default function OrderList({
                     {data.hyzd == 1 ? "買多" : "買空"}
                   </p>
                   <p class="leverorderlistItem11-25">止損價</p>
-                  <p class="leverorderlistItem11-26">{data.lossPrice?.toFixed(2)}</p>
+                  <p class="leverorderlistItem11-26">
+                    {data.lossPrice?.toFixed(2)}
+                  </p>
                   <p class="leverorderlistItem11-27">止盈價</p>
-                  <p class="leverorderlistItem11-28">{data.winPrice?.toFixed(2)}</p>
+                  <p class="leverorderlistItem11-28">
+                    {data.winPrice?.toFixed(2)}
+                  </p>
                 </div>
               </div>
             </div>
@@ -199,7 +207,7 @@ export default function OrderList({
                     title: "提示",
                     message: "是否确认平仓？",
                     onConfirm: () => {
-                      closeorder(data.id);
+                      closeorder(data.id, data?.num, priceyd);
                     },
                   });
                 }}

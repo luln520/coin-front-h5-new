@@ -55,6 +55,7 @@ import Lever from "../pages/lever";
 import JYJLLever2 from "../pages/jyjlLever2";
 //全局
 export const WSContext = createContext([] as any[]);
+export const WSMinContext = createContext([] as any[]);
 export const LoginContext = createContext([] as any[]);
 export const LoginMsgContext = createContext([] as any[]);
 export const NoLoginMsgContext = createContext([] as any[]);
@@ -68,15 +69,21 @@ export default function AppRouter() {
   let WS = null;
   let timer: any;
   const [coinListData, setCoinListData] = useState({} as any);
+  const [coinListMinData, setCoinListMinData] = useState({} as any);
   let coinListDataMap = {} as any;
-  const postKData = {};
+  let coinListDataMinMap = {} as any;
+  const postKDataDay = {};
+  const postKDataMin = {};
   //开始链接 wss
   const startWS = () => {
     WS = new WebSocket("wss://api.huobi.pro/ws");
     WS.onopen = () => {
       console.info("链接打开");
-      for (const key in postKData) {
-        WS.send(JSON.stringify(postKData[key])); //实时
+      for (const key in postKDataDay) {
+        WS.send(JSON.stringify(postKDataDay[key])); //实时
+      }
+      for (const key in postKDataMin) {
+        WS.send(JSON.stringify(postKDataMin[key])); //实时
       }
     };
     WS.onclose = () => {
@@ -118,11 +125,18 @@ export default function AppRouter() {
     } else {
       //eos/bch/eth
       const datat = data.tick;
-      for (let key in postKData) {
+      for (let key in postKDataDay) {
         key = key.substring(0, key.length - 1);
         if (data.ch === `market.${key}usdt.kline.1day`) {
           coinListDataMap = { ...coinListDataMap, [key]: datat };
           setCoinListData(coinListDataMap);
+        }
+      }
+      for (let key in postKDataMin) {
+        key = key.substring(0, key.length - 1);
+        if (data.ch === `market.${key}usdt.kline.1min`) {
+          coinListDataMinMap = { ...coinListDataMinMap, [key]: datat };
+          setCoinListMinData(coinListDataMinMap);
         }
       }
     }
@@ -134,13 +148,18 @@ export default function AppRouter() {
       setCtmarketlist(data.data.records);
       const list = data.data.records;
       list.sort((d, e) => d.sort - e.sort);
-      let postKDataTemp = {};
+      let postKDataDayTemp = {};
+      let postKDataMinTemp = {};
       for (const ctmarket of list) {
         if (ctmarket.status == 1) {
           coinListDataMap[ctmarket.coinname] = {};
-          postKData[ctmarket.coinname + "K"] = {
+          postKDataDay[ctmarket.coinname + "K"] = {
             name: ctmarket.coinname,
             sub: `market.${ctmarket.coinname}usdt.kline.1day`,
+          };
+          postKDataMin[ctmarket.coinname + "K"] = {
+            name: ctmarket.coinname,
+            sub: `market.${ctmarket.coinname}usdt.kline.1min`,
           };
         }
       }
@@ -202,173 +221,181 @@ export default function AppRouter() {
   }, []);
   return (
     <WSContext.Provider value={[coinListData, setCoinListData]}>
-      <LoginContext.Provider value={[login, setLogin]}>
-        <LoginMsgContext.Provider value={[loginmsg, setloginmsg]}>
-          <NoLoginMsgContext.Provider value={[nologinmsg, setnologinmsg]}>
-            <BrowserRouter>
-              <ScrollToTop>
-                <Routes>
-                  <Route path="/login" element={<Login />}></Route>
-                  <Route path="/register" element={<Register />}></Route>
-                  <Route path="/homecenter" element={<HomeCenter />}></Route>
-                  <Route path="/mycenter" element={getElement(<My />)}></Route>
-                  <Route path="/changeline" element={<ChangeLine />}></Route>
-                  <Route
-                    path="/propertycenter"
-                    element={getElement(<Property />)}
-                  ></Route>
-                  <Route
-                    path="/changelanguage"
-                    element={<ChangeLanguage />}
-                  ></Route>
-                  <Route path="/chatcenter" element={<ChatCenter />}></Route>
-                  <Route path="/chat" element={getElement(<Chat />)}></Route>
-                  <Route path="/murmurchat" element={<MurmurChat />}></Route>
-                  <Route
-                    path="/securitycenter"
-                    element={getElement(<SecurityCenter />)}
-                  ></Route>
-                  <Route
-                    path="/changePassword"
-                    element={getElement(<ChangePassword />)}
-                  ></Route>
-                  <Route
-                    path="/noiceInfo"
-                    element={getElement(<NoiceInfo />)}
-                  ></Route>
-                  <Route
-                    path="/extractlist"
-                    element={getElement(<ExtractList />)}
-                  ></Route>
-                  <Route
-                    path="/extractorderlist"
-                    element={getElement(<ExtractOrderList />)}
-                  ></Route>
-                  <Route
-                    path="/extract/:id"
-                    element={getElement(<Extract />)}
-                  ></Route>
-                  <Route
-                    path="/rechargelist"
-                    element={getElement(<RechargeList />)}
-                  ></Route>
-                  <Route
-                    path="/rechargeorderlist"
-                    element={getElement(<RechargeOrderList />)}
-                  ></Route>
-                  <Route
-                    path="/setting"
-                    element={getElement(<Setting />)}
-                  ></Route>
-                  <Route
-                    path="/recharge/:id"
-                    element={getElement(<Recharge />)}
-                  ></Route>
-                  <Route
-                    path="/helplist"
-                    element={getElement(<HelpList />)}
-                  ></Route>
-                  <Route
-                    path="/helpinfo/:id"
-                    element={getElement(<HelpInfo />)}
-                  ></Route>
-                  <Route
-                    path="/lockUpCenter"
-                    element={getElement(<LockUpCenter />)}
-                  ></Route>
-                  <Route
-                    path="/lockUp"
-                    element={getElement(<LockUp />)}
-                  ></Route>
-                  <Route
-                    path="/lockUpInfo/:id"
-                    element={getElement(<LockUpInfo />)}
-                  ></Route>
-                  <Route
-                    path="/lockUpOrder"
-                    element={getElement(<LockUpOrder />)}
-                  ></Route>
-                  <Route
-                    path="/quotation"
-                    element={getElement(<QuotationCenter />)}
-                  ></Route>
-                  <Route
-                    path="/trade/:name"
-                    element={getElement(<Trade />)}
-                  ></Route>
-                  <Route
-                    path="/borrowmoney"
-                    element={getElement(<JieKuan />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckcenter"
-                    element={getElement(<C2CckCenter />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckList"
-                    element={getElement(<C2CckList />)}
-                  ></Route>
-                  <Route
-                    path="/c2ctkList"
-                    element={getElement(<C2CtkList />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckinfo/:orderNo"
-                    element={getElement(<C2CckInfo />)}
-                  ></Route>
-                  <Route
-                    path="/c2cckimage/:orderNo"
-                    element={getElement(<C2CckImage />)}
-                  ></Route>
-                  <Route
-                    path="/c2ctx/:currencyId"
-                    element={getElement(<C2Ctx />)}
-                  ></Route>
-                  <Route
-                    path="/idcard"
-                    element={getElement(<IdCard />)}
-                  ></Route>
-                  <Route path="/jyjl" element={getElement(<JYJL />)}></Route>
-                  <Route
-                    path="/jyjlLever"
-                    element={getElement(<JYJLLever />)}
-                  ></Route>
-                  <Route
-                    path="/jyjlLever2"
-                    element={getElement(<JYJLLever2 />)}
-                  ></Route>
-                  <Route
-                    path="/jyjlTrade"
-                    element={getElement(<JYJLTrade />)}
-                  ></Route>
-                  <Route
-                    path="/marketOrderInfo/:id"
-                    element={getElement(<MarketOrderInfo />)}
-                  ></Route>
-                  <Route path="/noice" element={getElement(<Noice />)}></Route>
-                  <Route
-                    path="/addressadd"
-                    element={getElement(<AddressAdd />)}
-                  ></Route>
-                  <Route
-                    path="/addresslist"
-                    element={getElement(<AddressList />)}
-                  ></Route>
-                  <Route
-                    path="/lever/:name"
-                    element={getElement(<Lever />)}
-                  ></Route>
-                  {/* 404 */}
-                  <Route
-                    path="*"
-                    element={<Navigate to="/homecenter" />}
-                  ></Route>
-                </Routes>
-              </ScrollToTop>
-            </BrowserRouter>
-          </NoLoginMsgContext.Provider>
-        </LoginMsgContext.Provider>
-      </LoginContext.Provider>
+      <WSMinContext.Provider value={[coinListMinData, setCoinListMinData]}>
+        <LoginContext.Provider value={[login, setLogin]}>
+          <LoginMsgContext.Provider value={[loginmsg, setloginmsg]}>
+            <NoLoginMsgContext.Provider value={[nologinmsg, setnologinmsg]}>
+              <BrowserRouter>
+                <ScrollToTop>
+                  <Routes>
+                    <Route path="/login" element={<Login />}></Route>
+                    <Route path="/register" element={<Register />}></Route>
+                    <Route path="/homecenter" element={<HomeCenter />}></Route>
+                    <Route
+                      path="/mycenter"
+                      element={getElement(<My />)}
+                    ></Route>
+                    <Route path="/changeline" element={<ChangeLine />}></Route>
+                    <Route
+                      path="/propertycenter"
+                      element={getElement(<Property />)}
+                    ></Route>
+                    <Route
+                      path="/changelanguage"
+                      element={<ChangeLanguage />}
+                    ></Route>
+                    <Route path="/chatcenter" element={<ChatCenter />}></Route>
+                    <Route path="/chat" element={getElement(<Chat />)}></Route>
+                    <Route path="/murmurchat" element={<MurmurChat />}></Route>
+                    <Route
+                      path="/securitycenter"
+                      element={getElement(<SecurityCenter />)}
+                    ></Route>
+                    <Route
+                      path="/changePassword"
+                      element={getElement(<ChangePassword />)}
+                    ></Route>
+                    <Route
+                      path="/noiceInfo"
+                      element={getElement(<NoiceInfo />)}
+                    ></Route>
+                    <Route
+                      path="/extractlist"
+                      element={getElement(<ExtractList />)}
+                    ></Route>
+                    <Route
+                      path="/extractorderlist"
+                      element={getElement(<ExtractOrderList />)}
+                    ></Route>
+                    <Route
+                      path="/extract/:id"
+                      element={getElement(<Extract />)}
+                    ></Route>
+                    <Route
+                      path="/rechargelist"
+                      element={getElement(<RechargeList />)}
+                    ></Route>
+                    <Route
+                      path="/rechargeorderlist"
+                      element={getElement(<RechargeOrderList />)}
+                    ></Route>
+                    <Route
+                      path="/setting"
+                      element={getElement(<Setting />)}
+                    ></Route>
+                    <Route
+                      path="/recharge/:id"
+                      element={getElement(<Recharge />)}
+                    ></Route>
+                    <Route
+                      path="/helplist"
+                      element={getElement(<HelpList />)}
+                    ></Route>
+                    <Route
+                      path="/helpinfo/:id"
+                      element={getElement(<HelpInfo />)}
+                    ></Route>
+                    <Route
+                      path="/lockUpCenter"
+                      element={getElement(<LockUpCenter />)}
+                    ></Route>
+                    <Route
+                      path="/lockUp"
+                      element={getElement(<LockUp />)}
+                    ></Route>
+                    <Route
+                      path="/lockUpInfo/:id"
+                      element={getElement(<LockUpInfo />)}
+                    ></Route>
+                    <Route
+                      path="/lockUpOrder"
+                      element={getElement(<LockUpOrder />)}
+                    ></Route>
+                    <Route
+                      path="/quotation"
+                      element={getElement(<QuotationCenter />)}
+                    ></Route>
+                    <Route
+                      path="/trade/:name"
+                      element={getElement(<Trade />)}
+                    ></Route>
+                    <Route
+                      path="/borrowmoney"
+                      element={getElement(<JieKuan />)}
+                    ></Route>
+                    <Route
+                      path="/c2cckcenter"
+                      element={getElement(<C2CckCenter />)}
+                    ></Route>
+                    <Route
+                      path="/c2cckList"
+                      element={getElement(<C2CckList />)}
+                    ></Route>
+                    <Route
+                      path="/c2ctkList"
+                      element={getElement(<C2CtkList />)}
+                    ></Route>
+                    <Route
+                      path="/c2cckinfo/:orderNo"
+                      element={getElement(<C2CckInfo />)}
+                    ></Route>
+                    <Route
+                      path="/c2cckimage/:orderNo"
+                      element={getElement(<C2CckImage />)}
+                    ></Route>
+                    <Route
+                      path="/c2ctx/:currencyId"
+                      element={getElement(<C2Ctx />)}
+                    ></Route>
+                    <Route
+                      path="/idcard"
+                      element={getElement(<IdCard />)}
+                    ></Route>
+                    <Route path="/jyjl" element={getElement(<JYJL />)}></Route>
+                    <Route
+                      path="/jyjlLever"
+                      element={getElement(<JYJLLever />)}
+                    ></Route>
+                    <Route
+                      path="/jyjlLever2"
+                      element={getElement(<JYJLLever2 />)}
+                    ></Route>
+                    <Route
+                      path="/jyjlTrade"
+                      element={getElement(<JYJLTrade />)}
+                    ></Route>
+                    <Route
+                      path="/marketOrderInfo/:id"
+                      element={getElement(<MarketOrderInfo />)}
+                    ></Route>
+                    <Route
+                      path="/noice"
+                      element={getElement(<Noice />)}
+                    ></Route>
+                    <Route
+                      path="/addressadd"
+                      element={getElement(<AddressAdd />)}
+                    ></Route>
+                    <Route
+                      path="/addresslist"
+                      element={getElement(<AddressList />)}
+                    ></Route>
+                    <Route
+                      path="/lever/:name"
+                      element={getElement(<Lever />)}
+                    ></Route>
+                    {/* 404 */}
+                    <Route
+                      path="*"
+                      element={<Navigate to="/homecenter" />}
+                    ></Route>
+                  </Routes>
+                </ScrollToTop>
+              </BrowserRouter>
+            </NoLoginMsgContext.Provider>
+          </LoginMsgContext.Provider>
+        </LoginContext.Provider>
+      </WSMinContext.Provider>
     </WSContext.Provider>
   );
 }

@@ -62,8 +62,8 @@ export default function Lever() {
   };
 
   //平仓
-  const closeorder = async (lid) => {
-    const data = await leverApi.closeorder({ uid, lid });
+  const closeorder = async (lid, num, priceyd) => {
+    const data = await leverApi.closeorder({ uid, lid, num, priceyd });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {
@@ -74,7 +74,7 @@ export default function Lever() {
 
   //加仓
   const addnum = async (param) => {
-    const data = await leverApi.addnum({uid,...param});
+    const data = await leverApi.addnum({ uid, ...param });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {
@@ -85,7 +85,7 @@ export default function Lever() {
 
   //减仓
   const strutcnum = async (param) => {
-    const data = await leverApi.strutcnum({uid,...param});
+    const data = await leverApi.strutcnum({ uid, ...param });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {
@@ -96,7 +96,7 @@ export default function Lever() {
 
   //设置亏损盈利值
   const editLossWin = async (param) => {
-    const data = await leverApi.editLossWin({uid,...param});
+    const data = await leverApi.editLossWin({ uid, ...param });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {

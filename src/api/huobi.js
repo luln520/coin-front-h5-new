@@ -32,5 +32,17 @@ export const huobiApi = {
     }).then((res) => {
       return res?.data;
     });
+  },
+  /**
+ * 火币交易历史
+ */
+  getHistoryK: async (ticker, period) => {
+    return await smartAxios.request({
+      method: 'get',
+      url: `/market/history/kline?symbol=${ticker}&period=${period}&size=2000`,
+      params: {},
+    }).then((res) => {
+      return res?.data;
+    });
   }
 };

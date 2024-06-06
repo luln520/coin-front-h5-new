@@ -286,7 +286,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-80">
-                            {translate(getText("数量"))}
+                            {translate(getText("保证金"))}
                           </div>
                           <div class="leverOrderPopup-81">
                             <div class="leverOrderPopup-82">
@@ -725,7 +725,7 @@ export default function OrderPopup({
                 <p class="orderconfim-8">名稱</p>
                 <p class="orderconfim-9">方向</p>
                 <p class="orderconfim-10">現價</p>
-                <p class="orderconfim-11">数量</p>
+                <p class="orderconfim-11">保证金</p>
               </div>
               <div class="orderconfim-12">
                 <p class="orderconfim-13">

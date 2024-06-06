@@ -24,8 +24,8 @@ export default function JYJLLever2() {
   };
 
   //平仓
-  const closeorder = async (lid) => {
-    const data = await leverApi.closeorder({ uid, lid });
+  const closeorder = async (lid, num, ploss) => {
+    const data = await leverApi.closeorderNew({ uid, lid, num, ploss });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {
@@ -80,7 +80,6 @@ export default function JYJLLever2() {
       <CenterPage
         coinListData={coinListData}
         leverorders={leverorders}
-        closeorder={closeorder}
         closeorder={closeorder}
         addnumFun={addnum}
         strutcnumFun={strutcnum}

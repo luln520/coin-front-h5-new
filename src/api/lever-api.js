@@ -29,6 +29,12 @@ export const leverApi = {
     return getRequest('/api/pc/leverorder/closeorder', param);
   },
   /**
+  * 平仓
+  */
+  closeorderNew: (param) => {
+    return getRequest('/api/pc/leverorder/closeorderNew', param);
+  },
+  /**
   * 建仓
   */
   creatorder: (param) => {

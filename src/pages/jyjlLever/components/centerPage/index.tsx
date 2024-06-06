@@ -73,6 +73,14 @@ export default function CenterPage({ leverorders, closeorder }) {
     const nodes = [];
     for (let index = 0; index < leverorders.length; index++) {
       const data = leverorders[index];
+      const priceyd = (
+        data.num *
+        data.fold *
+        ((data.buyprice -
+          coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
+            ?.close) /
+          data.buyprice)
+      ).toFixed(2);
       const node = (
         <li
           className="hyjyjl-2"
@@ -150,7 +158,14 @@ export default function CenterPage({ leverorders, closeorder }) {
                     <button
                       className="pingcang"
                       onClick={(e) => {
-                        closeorder(data.id);
+                        closeorder(
+                          data.id,
+                          data?.num,
+                          (priceyd < 0 && data.hyzd == 1) ||
+                            (priceyd > 0 && data.hyzd == 2)
+                            ? Math.abs(priceyd)
+                            : -Math.abs(priceyd)
+                        );
                         e.stopPropagation();
                       }}
                     >

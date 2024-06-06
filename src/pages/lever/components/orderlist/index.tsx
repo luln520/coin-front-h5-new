@@ -207,7 +207,14 @@ export default function OrderList({
                     title: "提示",
                     message: "是否确认平仓？",
                     onConfirm: () => {
-                      closeorder(data.id, data?.num, priceyd);
+                      closeorder(
+                        data.id,
+                        data?.num,
+                        (priceyd < 0 && data.hyzd == 1) ||
+                          (priceyd > 0 && data.hyzd == 2)
+                          ? Math.abs(priceyd)
+                          : -Math.abs(priceyd)
+                      );
                     },
                   });
                 }}

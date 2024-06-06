@@ -29,9 +29,7 @@ export default function CenterPage({
   const [winnum, setwinnum] = useState("");
   const [editLossWinVisible, seteditLossWinVisible] = useState(false);
 
-
-  
-  const getboomPrice = (type,bsnum) => {
+  const getboomPrice = (type, bsnum) => {
     const openPrice = coinListData[nowTab]?.close;
     let price = 0;
     if (type == 1) {
@@ -42,7 +40,6 @@ export default function CenterPage({
     }
     return price;
   };
-  
 
   const getNode1 = () => {
     const nodes = [];
@@ -51,6 +48,14 @@ export default function CenterPage({
     );
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];
+      const priceyd = (
+        data.num *
+        data.fold *
+        ((data.buyprice -
+          coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
+            ?.close) /
+          data.buyprice)
+      ).toFixed(2);
       const node = (
         <li class="leverorderlistItem11-4-1">
           <div
@@ -99,8 +104,8 @@ export default function CenterPage({
                     {data.status != 1 && data.sellprice}
                     &nbsp;
                   </p>
-                  <p class="leverorderlistItem1-21">手續費</p>
-                  <p class="leverorderlistItem1-22">{data.premium}</p>
+                  <p class="leverorderlistItem1-21">强平价格</p>
+                  <p class="leverorderlistItem1-22">{data.boomPrice?.toFixed(2)}</p>
                 </div>
               </div>
               <div class="leverorderlistItem1-23">
@@ -128,28 +133,16 @@ export default function CenterPage({
                   <p class="leverorderlistItem1-31">預期收益</p>
                   <p
                     class={
-                      (
-                        data.num *
-                        data.fold *
-                        ((data.buyprice -
-                          coinListData[
-                            data.coinname.replace("/USDT", "").toLowerCase()
-                          ]?.close) /
-                          data.buyprice)
-                      ).toFixed(2) > 0
+                      (priceyd < 0 && data.hyzd == 1) ||
+                      (priceyd > 0 && data.hyzd == 2)
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {(
-                      data.num *
-                      data.fold *
-                      ((data.buyprice -
-                        coinListData[
-                          data.coinname.replace("/USDT", "").toLowerCase()
-                        ]?.close) /
-                        data.buyprice)
-                    ).toFixed(2)}
+                    {(priceyd < 0 && data.hyzd == 1) ||
+                    (priceyd > 0 && data.hyzd == 2)
+                      ? Math.abs(priceyd)
+                      : -Math.abs(priceyd)}
                   </p>
                 </div>
               )}
@@ -182,7 +175,14 @@ export default function CenterPage({
                     title: "提示",
                     message: "是否确认平仓？",
                     onConfirm: () => {
-                      closeorder(data.id);
+                      closeorder(
+                        data.id,
+                        data?.num,
+                        (priceyd < 0 && data.hyzd == 1) ||
+                          (priceyd > 0 && data.hyzd == 2)
+                          ? Math.abs(priceyd)
+                          : -Math.abs(priceyd)
+                      );
                     },
                   });
                 }}
@@ -247,6 +247,14 @@ export default function CenterPage({
     );
     for (let index = 0; index < leverorderstemp.length; index++) {
       const data = leverorderstemp[index];
+      const priceyd = (
+        data.num *
+        data.fold *
+        ((data.buyprice -
+          coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
+            ?.close) /
+          data.buyprice)
+      ).toFixed(2);
       const node = (
         <li
           className="hyjyjl-2"
@@ -324,7 +332,14 @@ export default function CenterPage({
                     <button
                       className="pingcang"
                       onClick={(e) => {
-                        closeorder(data.id);
+                        closeorder(
+                          data.id,
+                          data?.num,
+                          (priceyd < 0 && data.hyzd == 1) ||
+                            (priceyd > 0 && data.hyzd == 2)
+                            ? Math.abs(priceyd)
+                            : -Math.abs(priceyd)
+                        );
                         e.stopPropagation();
                       }}
                     >
@@ -398,7 +413,7 @@ export default function CenterPage({
           addnumFun({
             orderNo: tempData?.orderNo,
             num: addnum,
-            boomPrice: getboomPrice(tempData?.hyzd,tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           setaddnumVisible(false);
         }}
@@ -473,7 +488,7 @@ export default function CenterPage({
           strutcnumFun({
             orderNo: tempData?.orderNo,
             num: strutcnum,
-            boomPrice:  getboomPrice(tempData?.hyzd,tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           setstrutcnumVisible(false);
         }}
@@ -550,7 +565,7 @@ export default function CenterPage({
             orderNo: tempData?.orderNo,
             lossPrice: lossnum,
             winPrice: winnum,
-            boomPrice:  getboomPrice(tempData?.hyzd,tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
           });
           seteditLossWinVisible(false);
         }}

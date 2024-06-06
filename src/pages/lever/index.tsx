@@ -62,8 +62,8 @@ export default function Lever() {
   };
 
   //平仓
-  const closeorder = async (lid, num, priceyd) => {
-    const data = await leverApi.closeorder({ uid, lid, num, priceyd });
+  const closeorder = async (lid, num, ploss) => {
+    const data = await leverApi.closeorderNew({ uid, lid, num, ploss });
     if (data.ok) {
       Toast.show({ content: data.msg });
     } else {

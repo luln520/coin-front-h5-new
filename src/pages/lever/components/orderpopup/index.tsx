@@ -590,7 +590,7 @@ export default function OrderPopup({
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-75"
-                                      value={lossPrice?.toFixed(2)}
+                                      value={lossPrice}
                                       onChange={(e) => {
                                         setlossPrice(e.target.value);
                                       }}
@@ -643,7 +643,7 @@ export default function OrderPopup({
                                       autocomplete="off"
                                       type="number"
                                       class="leverOrderPopup-89"
-                                      value={winPrice?.toFixed(2)}
+                                      value={winPrice}
                                       onChange={(e) => {
                                         setwinPrice(e.target.value);
                                       }}

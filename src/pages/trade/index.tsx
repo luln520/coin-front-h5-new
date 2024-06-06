@@ -35,6 +35,7 @@ export default function Trade() {
   const [hysetInfo, setHysetInfo] = useState({});
   const [userInfo, setuserInfo] = useState([] as any[]);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
+  const [collectlist, setcollectlist] = useState([] as any[]);
   const param = useParams();
   const [coinListData, setCoinListData] = useContext(WSContext);
   const [userInfoData, setUserInfoData] = useState({});
@@ -79,6 +80,12 @@ export default function Trade() {
     }
   };
 
+  const loadcollectlistData = async () => {
+    const data = await collectApi.list({ uid, pageNum: 1, pageSize: 100 });
+    if (data.ok) {
+      setcollectlist(data.data);
+    }
+  };
   const loadiscollectData = async () => {
     const data = await collectApi.sel({ uid, coinname: param.name });
     if (data.ok) {
@@ -161,6 +168,7 @@ export default function Trade() {
   };
 
   const loadData = async () => {
+    loadcollectlistData();
     loadUserCoinData();
     loadhyorderData();
     loadiscollectData();
@@ -231,7 +239,8 @@ export default function Trade() {
         setIsShowCoin={setIsShowCoin}
         coinListData={coinListData}
         ctmarketlist={ctmarketlist}
-        index={1}
+        collectlist={collectlist}
+        index={2}
       />
       {/* 订单底部弹框 */}
       <OrderPopup

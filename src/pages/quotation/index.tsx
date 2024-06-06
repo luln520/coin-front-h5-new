@@ -31,9 +31,23 @@ export default function QuotationCenter() {
     }
   };
 
+  //去重
+  function uniqueBySet(arr, key) {
+    const uniqueSet = new Set();
+    const uniqueArray = [];
+    for (const item of arr) {
+      const keyValue = item[key];
+      if (!uniqueSet.has(keyValue)) {
+        uniqueArray.push(item);
+        uniqueSet.add(keyValue);
+      }
+    }
+    return uniqueArray;
+  }
   const loadcollectlistData = async () => {
     const data = await collectApi.list({ uid, pageNum: 1, pageSize: 100 });
     if (data.ok) {
+      data.data = uniqueBySet(data.data, "coinname");
       setcollectlist(data.data);
     }
   };

@@ -13,16 +13,31 @@ export default function CoinPopup({
   coinListData,
   index,
   ctmarketlist,
+  collectlist,
 }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const [popIndex, setPopIndex] = useState(index);
   const [name, setName] = useState("");
   const toPage = (name) => {
-    const uri = popIndex == 1 ? "trade" : "lever";
+    const uri = "trade";
     navigate(`/${uri}/${name}`);
     setIsShowCoin(false);
   };
+
+  //去重
+  function uniqueBySet(arr, key) {
+    const uniqueSet = new Set();
+    const uniqueArray = [];
+    for (const item of arr) {
+      const keyValue = item[key];
+      if (!uniqueSet.has(keyValue)) {
+        uniqueArray.push(item);
+        uniqueSet.add(keyValue);
+      }
+    }
+    return uniqueArray;
+  }
   const getNodes = () => {
     const nodes = [];
     let coinListDataTemp = coinListData;
@@ -64,6 +79,48 @@ export default function CoinPopup({
     return nodes;
   };
 
+  const getNodes1 = () => {
+    const nodes = [];
+    collectlist = uniqueBySet(collectlist, "coinname");
+    for (const collect of collectlist) {
+      if (name) {
+        if (name.toLowerCase() !== collect.coinname) {
+          continue;
+        }
+      }
+      nodes.push(
+        <li
+          class="coinPopupTopTitle-30"
+          onClick={() => {
+            toPage(collect.coinname);
+          }}
+        >
+          <div class="coinPopupTopTitle-31">
+            <div class="coinPopupTopTitle-32">
+              <span class="coinPopupTopTitle-33">
+                {collect.coinname?.toUpperCase()}
+                <small class="coinPopupTopTitle-34">/USDT</small>
+              </span>
+            </div>
+          </div>
+          <div class="coinPopupTopTitle-35">
+            <span
+              class={
+                coinListData[collect.coinname]?.close >
+                coinListData[collect.coinname]?.open
+                  ? "coinPopupTopTitle-36"
+                  : "coinPopupTopTitle-78"
+              }
+            >
+              {coinListData[collect.coinname]?.close}
+            </span>
+          </div>
+        </li>
+      );
+    }
+    return nodes;
+  };
+
   const getLogo = (name) => {
     let logo = "";
     for (const ctmarket of ctmarketlist) {
@@ -89,8 +146,26 @@ export default function CoinPopup({
         </div>
         <div class="coinPopupTopTitle-4">
           <ul class="coinPopupTopTitle-5">
-            <li class="coinPopupTopTitle-6">自選</li>
-            <li class="coinPopupTopTitle-7">USDT</li>
+            <li
+              class={
+                popIndex == 1 ? "coinPopupTopTitle-7" : "coinPopupTopTitle-6"
+              }
+              onClick={() => {
+                setPopIndex(1);
+              }}
+            >
+              自選
+            </li>
+            <li
+              class={
+                popIndex == 2 ? "coinPopupTopTitle-7" : "coinPopupTopTitle-6"
+              }
+              onClick={() => {
+                setPopIndex(2);
+              }}
+            >
+              USDT
+            </li>
           </ul>
         </div>
         <div class="coinPopupTopTitle-8">
@@ -132,7 +207,10 @@ export default function CoinPopup({
                     <div class="coinPopupTopTitle-26">
                       <div class="coinPopupTopTitle-27">
                         <div class="coinPopupTopTitle-28">
-                          <ul class="coinPopupTopTitle-29">{getNodes()}</ul>
+                          <ul class="coinPopupTopTitle-29">
+                            {popIndex == 2 && getNodes()}
+                            {popIndex == 1 && getNodes1()}
+                          </ul>
                         </div>
                       </div>
                     </div>

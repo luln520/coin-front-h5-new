@@ -41,6 +41,7 @@ export default function Lever() {
   const [userInfo, setuserInfo] = useState([] as any[]);
   const [huobigetHistory, sethuobigetHistory] = useState([] as any[]);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
+  const [collectlist, setcollectlist] = useState([] as any[]);
   const [leverorders, setleverorders] = useState([] as any[]);
   const [leverSet1, setLeverSet1] = useState([] as any[]);
   const [leverSet2, setLeverSet2] = useState([] as any[]);
@@ -72,6 +73,12 @@ export default function Lever() {
     loadData();
   };
 
+  const loadcollectlistData = async () => {
+    const data = await collectApi.list({ uid, pageNum: 1, pageSize: 100 });
+    if (data.ok) {
+      setcollectlist(data.data);
+    }
+  };
   //加仓
   const addnum = async (param) => {
     const data = await leverApi.addnum({ uid, ...param });
@@ -218,6 +225,7 @@ export default function Lever() {
   };
 
   const loadData = async () => {
+    loadcollectlistData();
     loadUserCoinData();
     loadLeverListData();
   };
@@ -349,6 +357,7 @@ export default function Lever() {
         setIsShowCoin={setIsShowCoin}
         coinListData={coinListData}
         ctmarketlist={ctmarketlist}
+        collectlist={collectlist}
         index={2}
       />
       {/* 订单底部弹框 */}

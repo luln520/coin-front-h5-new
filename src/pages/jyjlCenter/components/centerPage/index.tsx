@@ -28,7 +28,7 @@ export default function CenterPage() {
         role="button"
         className="help-2"
         onClick={() => {
-          navigate(`/jyjlLever`);
+          navigate(`/jyjlLever2`);
         }}
       >
         <div className="help-3">

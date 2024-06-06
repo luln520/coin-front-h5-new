@@ -80,6 +80,9 @@ export default function MyChartComponent({
     const chart = init("k-line-chart");
     setkchart(chart);
     chart.setStyles({
+      grid: {
+        show: false,
+      },
       candle: {
         type: timeindex == 1 ? "area" : "candle_solid",
         area: {

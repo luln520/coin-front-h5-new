@@ -91,10 +91,18 @@ export default function MyChartComponent({
         point: {
           show: false,
         },
+        tooltip: {
+          text: {
+            size: 10,
+          },
+        },
       },
       indicator: {
         tooltip: {
-          showType: "rect",
+          // showType: "rect",
+          text: {
+            size: 9,
+          },
         },
       },
     });

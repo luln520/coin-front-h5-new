@@ -13,7 +13,7 @@ export default function CenterPage({
   const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const { t: translate } = useTranslation();
-  const [type, setType] = useState(1);
+  const [type, setType] = useState(2);
   const getUSDTNodes = () => {
     const nodes = [];
     let coinListDataTemp = coinListData;

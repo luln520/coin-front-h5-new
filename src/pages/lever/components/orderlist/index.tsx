@@ -110,7 +110,7 @@ export default function OrderList({
                 <div class="leverorderlistItem11-8">
                   <p class="leverorderlistItem11-9">交易品種</p>
                   <p class="leverorderlistItem11-10">{data.coinname}</p>
-                  <p class="leverorderlistItem11-11">交易數</p>
+                  <p class="leverorderlistItem11-11">保证金</p>
                   <p class="leverorderlistItem11-12">{data.num?.toFixed(2)}</p>
                   <p class="leverorderlistItem11-13">倍数</p>
                   <p class="leverorderlistItem11-14">{data.fold}</p>
@@ -186,12 +186,12 @@ export default function OrderList({
                   <p class="leverorderlistItem11-31">收益</p>
                   <p
                     class={
-                      data.isWin == 1
+                      data.ploss > 0
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {data.isWin == 1 ? "+" : "-"}
+                    {data.ploss > 0 ? "+" : ""}
                     {data.ploss}
                   </p>
                 </div>

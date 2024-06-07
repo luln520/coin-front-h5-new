@@ -83,8 +83,8 @@ export default function CenterPage({
                 <div class="leverorderlistItem11-8">
                   <p class="leverorderlistItem1-9">交易品種</p>
                   <p class="leverorderlistItem1-10">{data.coinname}</p>
-                  <p class="leverorderlistItem1-11">交易數</p>
-                  <p class="leverorderlistItem1-12">{data.num}</p>
+                  <p class="leverorderlistItem1-11">保证金</p>
+                  <p class="leverorderlistItem1-12">{data.num?.toFixed(2)}</p>
                   <p class="leverorderlistItem1-13">倍数</p>
                   <p class="leverorderlistItem1-14">{data.fold}</p>
                 </div>
@@ -105,7 +105,9 @@ export default function CenterPage({
                     &nbsp;
                   </p>
                   <p class="leverorderlistItem1-21">强平价格</p>
-                  <p class="leverorderlistItem1-22">{data.boomPrice?.toFixed(2)}</p>
+                  <p class="leverorderlistItem1-22">
+                    {data.boomPrice?.toFixed(2)}
+                  </p>
                 </div>
               </div>
               <div class="leverorderlistItem1-23">
@@ -151,7 +153,7 @@ export default function CenterPage({
                   <p class="leverorderlistItem11-3">收益</p>
                   <p
                     class={
-                      data.isWin == 1
+                      data.ploss > 0
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
@@ -159,7 +161,7 @@ export default function CenterPage({
                       padding: "0 0 0 10px",
                     }}
                   >
-                    {data.isWin == 1 ? "+" : "-"}
+                    {data.ploss > 0 ? "+" : ""}
                     {data.ploss}
                   </p>
                 </div>

@@ -102,6 +102,8 @@ export default function MyChartComponent({
           text: {
             size: 10,
           },
+          //清空头部
+          custom: [],
         },
       },
       indicator: {
@@ -125,7 +127,7 @@ export default function MyChartComponent({
       },
       separator: {
         size: 0.5,
-        color:"#3E444D"
+        color: "#3E444D",
       },
     });
     chart.setOffsetRightDistance(0);

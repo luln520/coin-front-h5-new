@@ -29,7 +29,8 @@ export default function CenterPage({
   const [winnum, setwinnum] = useState("");
   const [editLossWinVisible, seteditLossWinVisible] = useState(false);
 
-  const getboomPrice = (type, bsnum) => {
+  const getboomPrice = (type, bsnum,nowTab) => {
+    nowTab=nowTab?.replace("/USDT","")?.toLowerCase();
     const openPrice = coinListData[nowTab]?.close;
     let price = 0;
     if (type == 1) {
@@ -55,7 +56,7 @@ export default function CenterPage({
           coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
             ?.close) /
           data.buyprice)
-      ).toFixed(2);
+      ).toFixed(4);
       const node = (
         <li class="leverorderlistItem11-4-1">
           <div
@@ -84,7 +85,7 @@ export default function CenterPage({
                   <p class="leverorderlistItem1-9">交易品種</p>
                   <p class="leverorderlistItem1-10">{data.coinname}</p>
                   <p class="leverorderlistItem1-11">保证金</p>
-                  <p class="leverorderlistItem1-12">{data.num?.toFixed(2)}</p>
+                  <p class="leverorderlistItem1-12">{data.num?.toFixed(4)}</p>
                   <p class="leverorderlistItem1-13">倍数</p>
                   <p class="leverorderlistItem1-14">{data.fold}</p>
                 </div>
@@ -92,7 +93,7 @@ export default function CenterPage({
               <div class="leverorderlistItem11-15">
                 <div class="leverorderlistItem11-16">
                   <p class="leverorderlistItem1-17">開倉價</p>
-                  <p class="leverorderlistItem1-18">{data.buyprice}</p>
+                  <p class="leverorderlistItem1-18">{data.buyprice?.toFixed(4)}</p>
                   <p class="leverorderlistItem1-19">
                     {data.status == 1 ? "現價" : "结算價"}
                   </p>
@@ -106,7 +107,7 @@ export default function CenterPage({
                   </p>
                   <p class="leverorderlistItem1-21">强平价格</p>
                   <p class="leverorderlistItem1-22">
-                    {data.boomPrice?.toFixed(2)}
+                    {data.boomPrice?.toFixed(4)}
                   </p>
                 </div>
               </div>
@@ -256,7 +257,7 @@ export default function CenterPage({
           coinListData[data.coinname.replace("/USDT", "").toLowerCase()]
             ?.close) /
           data.buyprice)
-      ).toFixed(2);
+      ).toFixed(4);
       const node = (
         <li
           className="hyjyjl-2"
@@ -294,7 +295,7 @@ export default function CenterPage({
               <div className="hyjyjl-9">
                 <span className="hyjyjl-10">
                   <span className="hyjyjl-11">
-                    {data.num.toFixed(2)}
+                    {data.num.toFixed(4)}
                     <span className="hyjyjl-12">
                       <span className="hyjyjl-13">USDT</span>
                     </span>
@@ -415,7 +416,7 @@ export default function CenterPage({
           addnumFun({
             orderNo: tempData?.orderNo,
             num: addnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
           });
           setaddnumVisible(false);
         }}
@@ -490,7 +491,7 @@ export default function CenterPage({
           strutcnumFun({
             orderNo: tempData?.orderNo,
             num: strutcnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
           });
           setstrutcnumVisible(false);
         }}
@@ -567,7 +568,7 @@ export default function CenterPage({
             orderNo: tempData?.orderNo,
             lossPrice: lossnum,
             winPrice: winnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold),
+            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
           });
           seteditLossWinVisible(false);
         }}

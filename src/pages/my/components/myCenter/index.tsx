@@ -115,6 +115,35 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
           <div className="mycenter-40"></div>
         </div>
         <div
+          className="mycenter-30"
+          onClick={() => {
+            if (userInfo?.rzstatus === 2) {
+              return;
+            }
+            navigate("/gjidcard");
+          }}
+        >
+          <div className="mycenter-31">
+            <div className="mycenter-32">
+              <img
+                src="data:image/png;base64,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"
+                className="mycenter-34"
+              />
+            </div>
+            <p className="mycenter-35">高级認證</p>
+          </div>
+          <p className="mycenter-36">
+            {userInfo?.rzstatus === 2 ? "已認證" : "未認證"}
+          </p>
+          <div className="mycenter-37">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAYAAACXOioTAAAD1UlEQVRIx+2WX0ybVRjGn/e09CsUKA6yZWYkkkkWVgS7AM0m/kGjRpNl0SmLu9LFyMWCGokmM8FhcOrF4h+YRjNjYoI3GJdddVtCAtOtwoQxtgEZzRIznXGCkzIY7df2PN5Y+Vo2LP289Lk6+d7k/M7znPec7wgsCobDRsl89DUQ7QCuK6jHAv7NkyJC2JQjNegfHy8sjCbeAvE6gAIAxZr6wavXpifK16+7MjAwYAumUoOCeWVA85m/IQAAEdlM4tOHt2+vtuvoH1AgUPVHTJyPApgAoC31KocYx78bGanp6OhQuYIk88OpsxfqhOxWShpIWCcOQ0nrL1MTfc3NzcmcHaV0n796hEn9oiYn01YkshGa3Xdu3FRvKzrLhGxsuHfc1MZDoIwCSAIASQWgUok6Gjp3zr/aGGWl4qkfxzaJUl0ieMTaoSSuKFGt0cjvwaampkROjqxqrK+dMiF7SYymu0Y5RX/oKl7zwH/iKKW+ocnSfGfiuAj86c44TZEn+/zVZztEtG0QAPwwOnkXdaILgicAOC2laxC2XkiaR1vq6uI5RWfVVn/VT6KcLwM4nVFaC6qD94jxOEmx7Sil78+fv0PFJQiwXkSWYoTMgMldVy9fOnmrc7bqk35/Tc2fXIzvFFFHAMSXVswygRzZcHfV88Fg0LANAoDGxi2/xhNsA6Qv4xB6AbzrXb/hud7eXoet6KzqHx0tcWnHMREJWOciMKvA3Vu31Byz5SglY7EsBiK0rEAamtJgOzoACIVC+eKe7YSSvRluYlCqm4t5H9iOLhQK5dNd3CbgmwDyLU4SoHzlydOv1NbWLtgCDQ8PF5jK3Q6wFYDHUlrQQFeRQx/IhCDjhGcFiSvjIMA9AKwtfBPE2ypWcqh2W/mirZthbOw3j6nc7QQyIVEAH8fmCru33QaSdXQnxsY8RQlHJ4Qt1jcFiBsUOSBRb9dKkLRX0EpOJBn9BMI9ANyW7poXcJ/B2KFAoCr2b/OsuEeD4XDxfGT6HVHYDSDPuvEg3ve6HYd9vtvf2FmB+vvHCzkXe08UXkiHyByI/eYaz2e+igoz2z2+JWhwMFysXbEvCO4A4LJCSP3qRZo9LRXV8dV0rFrewpfKmBf9HODTVogAERD7L9LsWekHl1XXDQ1NlmpX4iNCngVpbeEIgX1ri9xfVlZWxnK5TdSSk8vepDP5NYldGZBZUeolMzJzOFdIGuimirgouhSgNc7rFHnj56nxb7N9VmUVXd/g4LoCw9MF8ilCFgSqzWugx+fzmbCpZTfDyTNnyvOc7k5q+ca8MXPCrpP/ZVt/ATeohyQqj8W7AAAAAElFTkSuQmCC"
+              className="mycenter-39"
+            />
+          </div>
+          <div className="mycenter-40"></div>
+        </div>
+        <div
           className="mycenter-52"
           onClick={() => {
             navigate("/jyjl");

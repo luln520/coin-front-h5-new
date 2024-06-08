@@ -29,8 +29,8 @@ export default function CenterPage({
   const [winnum, setwinnum] = useState("");
   const [editLossWinVisible, seteditLossWinVisible] = useState(false);
 
-  const getboomPrice = (type, bsnum,nowTab) => {
-    nowTab=nowTab?.replace("/USDT","")?.toLowerCase();
+  const getboomPrice = (type, bsnum, nowTab) => {
+    nowTab = nowTab?.replace("/USDT", "")?.toLowerCase();
     const openPrice = coinListData[nowTab]?.close;
     let price = 0;
     if (type == 1) {
@@ -82,20 +82,30 @@ export default function CenterPage({
             <div class="leverorderlistItem11-6">
               <div class="leverorderlistItem11-7">
                 <div class="leverorderlistItem11-8">
-                  <p class="leverorderlistItem1-9">交易品種</p>
+                  <p class="leverorderlistItem1-9">
+                    {translate(getText("交易品種"))}
+                  </p>
                   <p class="leverorderlistItem1-10">{data.coinname}</p>
-                  <p class="leverorderlistItem1-11">保证金</p>
+                  <p class="leverorderlistItem1-11">
+                    {translate(getText("保证金"))}
+                  </p>
                   <p class="leverorderlistItem1-12">{data.num?.toFixed(4)}</p>
-                  <p class="leverorderlistItem1-13">倍数</p>
+                  <p class="leverorderlistItem1-13">
+                    {translate(getText("倍数"))}
+                  </p>
                   <p class="leverorderlistItem1-14">{data.fold}</p>
                 </div>
               </div>
               <div class="leverorderlistItem11-15">
                 <div class="leverorderlistItem11-16">
-                  <p class="leverorderlistItem1-17">開倉價</p>
-                  <p class="leverorderlistItem1-18">{data.buyprice?.toFixed(4)}</p>
+                  <p class="leverorderlistItem1-17">
+                    {translate(getText("開倉價"))}
+                  </p>
+                  <p class="leverorderlistItem1-18">
+                    {data.buyprice?.toFixed(4)}
+                  </p>
                   <p class="leverorderlistItem1-19">
-                    {data.status == 1 ? "現價" : "结算價"}
+                    {translate(getText(data.status == 1 ? "現價" : "结算價"))}
                   </p>
                   <p class="leverorderlistItem1-20">
                     {data.status == 1 &&
@@ -105,7 +115,9 @@ export default function CenterPage({
                     {data.status != 1 && data.sellprice}
                     &nbsp;
                   </p>
-                  <p class="leverorderlistItem1-21">强平价格</p>
+                  <p class="leverorderlistItem1-21">
+                    {translate(getText("强平价格"))}
+                  </p>
                   <p class="leverorderlistItem1-22">
                     {data.boomPrice?.toFixed(4)}
                   </p>
@@ -113,7 +125,9 @@ export default function CenterPage({
               </div>
               <div class="leverorderlistItem1-23">
                 <div class="leverorderlistItem1-24">
-                  <p class="leverorderlistItem1-25">方向</p>
+                  <p class="leverorderlistItem1-25">
+                    {translate(getText("方向"))}
+                  </p>
                   <p
                     class={
                       data.hyzd == 1
@@ -121,11 +135,15 @@ export default function CenterPage({
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {data.hyzd == 1 ? "買多" : "買空"}
+                    {translate(getText(data.hyzd == 1 ? "買多" : "買空"))}
                   </p>
-                  <p class="leverorderlistItem1-25">止損價</p>
+                  <p class="leverorderlistItem1-25">
+                    {translate(getText("止損價"))}
+                  </p>
                   <p class="leverorderlistItem1-26">{data.lossPrice}</p>
-                  <p class="leverorderlistItem1-27">止盈價</p>
+                  <p class="leverorderlistItem1-27">
+                    {translate(getText("止盈價"))}
+                  </p>
                   <p class="leverorderlistItem1-28">{data.winPrice}</p>
                 </div>
               </div>
@@ -133,7 +151,9 @@ export default function CenterPage({
             <div class="leverorderlistItem11-29">
               {data.status == 1 && (
                 <div class="leverorderlistItem11-30">
-                  <p class="leverorderlistItem1-31">預期收益</p>
+                  <p class="leverorderlistItem1-31">
+                    {translate(getText("預期收益"))}
+                  </p>
                   <p
                     class={
                       (priceyd < 0 && data.hyzd == 1) ||
@@ -151,7 +171,9 @@ export default function CenterPage({
               )}
               {data.status == 2 && (
                 <div class="leverorderlistItem11-30">
-                  <p class="leverorderlistItem11-3">收益</p>
+                  <p class="leverorderlistItem11-3">
+                    {translate(getText("收益"))}
+                  </p>
                   <p
                     class={
                       data.ploss > 0
@@ -175,8 +197,8 @@ export default function CenterPage({
                 class="leverorderlistItem11-34"
                 onClick={(e) => {
                   Dialog.confirm({
-                    title: "提示",
-                    message: "是否确认平仓？",
+                    title: ranslate(getText("提示")),
+                    message: translate(getText("是否确认平仓？")),
                     onConfirm: () => {
                       closeorder(
                         data.id,
@@ -190,7 +212,7 @@ export default function CenterPage({
                   });
                 }}
               >
-                平倉
+                {translate(getText("平倉"))}
               </p>
               <p
                 class="leverorderlistItem11-35"
@@ -200,7 +222,7 @@ export default function CenterPage({
                   setaddnum("");
                 }}
               >
-                加仓
+                {translate(getText("加仓"))}
               </p>
               <p
                 class="leverorderlistItem11-35"
@@ -210,7 +232,7 @@ export default function CenterPage({
                   setstrutcnum("");
                 }}
               >
-                减仓
+                {translate(getText("减仓"))}
               </p>
               <p
                 class="leverorderlistItem11-36"
@@ -221,7 +243,7 @@ export default function CenterPage({
                   setwinnum(data?.winPrice);
                 }}
               >
-                設定止盈止損
+                {translate(getText("設定止盈止損"))}
               </p>
             </div>
           )}
@@ -376,7 +398,7 @@ export default function CenterPage({
             setindex(1);
           }}
         >
-          在持
+          {translate(getText("在持"))}
         </div>
         <div
           class={
@@ -386,7 +408,7 @@ export default function CenterPage({
             setindex(2);
           }}
         >
-          已成交
+          {translate(getText("已成交"))}
         </div>
         <div
           class={
@@ -396,7 +418,7 @@ export default function CenterPage({
             setindex(3);
           }}
         >
-          已平倉
+          {translate(getText("已平倉"))}
         </div>
       </div>
       {/* 列表 */}
@@ -416,7 +438,11 @@ export default function CenterPage({
           addnumFun({
             orderNo: tempData?.orderNo,
             num: addnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
+            boomPrice: getboomPrice(
+              tempData?.hyzd,
+              tempData?.fold,
+              tempData?.coinname
+            ),
           });
           setaddnumVisible(false);
         }}
@@ -427,7 +453,7 @@ export default function CenterPage({
             padding: "0 20px",
           }}
         >
-          订单号：{tempData?.orderNo}
+          {translate(getText("订单号"))}：{tempData?.orderNo}
           <div class="leverOrderPopup-80">{translate(getText("数量"))}：</div>
           <div class="leverOrderPopup-81">
             <div class="leverOrderPopup-82">
@@ -484,14 +510,18 @@ export default function CenterPage({
       {/* 减仓 */}
       <Dialog
         visible={strutcnumVisible}
-        title="减仓"
+        title={translate(getText("减仓"))}
         showCancelButton
         onConfirm={() => {
           //调取
           strutcnumFun({
             orderNo: tempData?.orderNo,
             num: strutcnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
+            boomPrice: getboomPrice(
+              tempData?.hyzd,
+              tempData?.fold,
+              tempData?.coinname
+            ),
           });
           setstrutcnumVisible(false);
         }}
@@ -502,7 +532,7 @@ export default function CenterPage({
             padding: "0 20px",
           }}
         >
-          订单号：{tempData?.orderNo}
+          {translate(getText("订单号"))}：{tempData?.orderNo}
           <div class="leverOrderPopup-80">{translate(getText("数量"))}：</div>
           <div class="leverOrderPopup-81">
             <div class="leverOrderPopup-82">
@@ -560,7 +590,7 @@ export default function CenterPage({
       {/* 設定止盈止損 */}
       <Dialog
         visible={editLossWinVisible}
-        title="設定止盈止損"
+        title={translate(getText("設定止盈止損"))}
         showCancelButton
         onConfirm={() => {
           //调取
@@ -568,7 +598,11 @@ export default function CenterPage({
             orderNo: tempData?.orderNo,
             lossPrice: lossnum,
             winPrice: winnum,
-            boomPrice: getboomPrice(tempData?.hyzd, tempData?.fold,tempData?.coinname),
+            boomPrice: getboomPrice(
+              tempData?.hyzd,
+              tempData?.fold,
+              tempData?.coinname
+            ),
           });
           seteditLossWinVisible(false);
         }}
@@ -579,7 +613,7 @@ export default function CenterPage({
             padding: "0 20px",
           }}
         >
-          订单号：{tempData?.orderNo}
+          {translate(getText("订单号"))}：{tempData?.orderNo}
           <div class="leverOrderPopup-80">{translate(getText("止盈"))}：</div>
           <div class="leverOrderPopup-81">
             <div class="leverOrderPopup-82">

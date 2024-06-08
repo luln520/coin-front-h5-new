@@ -13,7 +13,7 @@ export default function SettingPage({ userInfo }) {
           <div class="setting-4">
             <div class="setting-5">
               <div class="setting-6">
-                <p class="setting-7">暱稱</p>
+                <p class="setting-7">{translate(getText("暱稱"))}</p>
               </div>
               <div class="setting-8">
                 <p class="setting-9">{userInfo?.userCode}</p>
@@ -29,7 +29,7 @@ export default function SettingPage({ userInfo }) {
             </div>
             <div class="setting-13">
               <div class="setting-14">
-                <p class="setting-15">賬號</p>
+                <p class="setting-15">{translate(getText("賬號"))}</p>
               </div>
               <div class="setting-16">
                 <p class="setting-17">{userInfo?.username}</p>
@@ -89,7 +89,7 @@ export default function SettingPage({ userInfo }) {
               }}
             >
               <div class="setting-41">
-                <p class="setting-42">語言切換</p>
+                <p class="setting-42">{translate(getText("語言切換"))}</p>
               </div>
               <div class="setting-43">
                 {/* <p class="setting-44">中文繁體</p> */}
@@ -111,7 +111,7 @@ export default function SettingPage({ userInfo }) {
               }}
             >
               <div class="setting-50">
-                <p class="setting-51">切換線路</p>
+                <p class="setting-51">{translate(getText("切換線路"))}</p>
               </div>
               <div class="setting-52">
                 {/* <p class="setting-53">線路1</p> */}
@@ -138,7 +138,7 @@ export default function SettingPage({ userInfo }) {
                 navigate("/login");
               }}
             >
-              退出登錄
+              {translate(getText("退出登錄"))}
             </div>
           </div>
         </div>

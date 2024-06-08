@@ -235,7 +235,7 @@ export default function CenterPage({ sendMsg, listData }) {
                     src="https://static.aichat.net/image/favicon.ico"
                     class="servererCenterInfo-52"
                   />
-                  <span class="servererCenterInfo-53"> by aichat.net</span>
+                  <span class="servererCenterInfo-53"> by aichat</span>
                 </div>
               </div>
             </div>

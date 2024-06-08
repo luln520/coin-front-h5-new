@@ -137,7 +137,7 @@ export default function ExtractList() {
       <TopBar2
         title={translate(getText("出金"))}
         isBack={true}
-        mini={"提现明细"}
+        mini={translate(getText("提现明细"))}
         miniClick={() => {
           navigate("/extractorderlist");
         }}

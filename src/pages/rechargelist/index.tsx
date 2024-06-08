@@ -47,7 +47,7 @@ export default function RechargeList() {
       <TopBar2
         title={translate(getText("入金"))}
         isBack={true}
-        mini={"充值明细"}
+        mini={translate(getText("充值明细"))}
         miniClick={() => {
           navigate("/rechargeorderlist");
         }}

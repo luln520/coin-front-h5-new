@@ -79,7 +79,7 @@ export default function OrderPopup({
     >
       <div class="orderPopup-1">
         <div class="orderPopup-2">
-          <p class="orderPopup-3">訂單確認</p>
+          <p class="orderPopup-3">{translate(getText("訂單確認"))}</p>
           <div
             class="orderPopup-4"
             onClick={() => {
@@ -90,18 +90,18 @@ export default function OrderPopup({
         <div class="orderPopup-5">
           <div class="orderPopup-6">
             <div class="orderPopup-7">
-              <p class="orderPopup-8">名稱</p>
+              <p class="orderPopup-8">{translate(getText("名稱"))}</p>
               <p class="orderPopup-9">
                 {nowTab?.toUpperCase()}
                 <span class="orderPopup-10">/USDT</span>
               </p>
             </div>
             <div class="orderPopup-11">
-              <p class="orderPopup-12">方向</p>
-              <p class={type==1?"orderPopup-13":"orderPopup-13-1"} >{type == 1 ? "買多" : "買空"}</p>
+              <p class="orderPopup-12">{translate(getText("方向"))}</p>
+              <p class={type==1?"orderPopup-13":"orderPopup-13-1"} >{translate(getText(type == 1 ? "買多" : "買空"))}</p>
             </div>
             <div class="orderPopup-14">
-              <p class="orderPopup-15">現價</p>
+              <p class="orderPopup-15">{translate(getText("現價"))}</p>
               <p class="orderPopup-16">{coinListData[nowTab]?.close}</p>
             </div>
           </div>
@@ -117,13 +117,13 @@ export default function OrderPopup({
           <div class="orderPopup-37">
             <div class="orderPopup-38">
               <div class="orderPopup-39">
-                <p class="orderPopup-40">買入數量</p>
+                <p class="orderPopup-40">{translate(getText("買入數量"))}</p>
               </div>
             </div>
             <div class="orderPopup-41">
               <div class="orderPopup-42">
                 <input
-                  placeholder="最少10起買"
+                  placeholder={translate(getText("最少10起買"))}
                   class="orderPopup-44"
                   type="number"
                   min={minNum}
@@ -143,7 +143,7 @@ export default function OrderPopup({
               </div>
             </div>
             <div class="orderPopup-45">
-              <p class="orderPopup-46">可用餘額:{userInfo?.usdt}</p>
+              <p class="orderPopup-46">{translate(getText("可用餘額"))}:{userInfo?.usdt}</p>
               {/* <p class="orderPopup-47">手續費:0%</p> */}
             </div>
           </div>
@@ -173,7 +173,7 @@ export default function OrderPopup({
                 });
               }}
             >
-              確認下單
+              {translate(getText("確認下單"))}
             </div>
           </div>
         </div>

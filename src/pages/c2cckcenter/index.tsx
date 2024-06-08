@@ -115,11 +115,11 @@ export default function C2CckCenter() {
   }, []);
 
   return (
-    <div className="page" >
+    <div className="page">
       <TopBar2
         title={translate(getText("C2C充值"))}
         isBack={true}
-        mini={"C2C充值明细"}
+        mini={translate(getText("C2C充值明细"))}
         miniClick={() => {
           navigate("/c2ccklist");
         }}

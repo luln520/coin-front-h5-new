@@ -66,7 +66,7 @@ export default function PageLogin({
               </div>
               <div className="loginboxnew-14">
                 <div className="loginboxnew-15">
-                  <div className="loginboxnew-16">賬號</div>
+                  <div className="loginboxnew-16">{translate(getText("賬號"))}</div>
                   <div className="loginboxnew-17">
                     <div className="loginboxnew-18">
                       <div className="loginboxnew-19">
@@ -87,7 +87,7 @@ export default function PageLogin({
                   </div>
                 </div>
                 <div className="loginboxnew-22">
-                  <div className="loginboxnew-23">密碼</div>
+                  <div className="loginboxnew-23">{translate(getText("密碼"))}</div>
                   <div className="loginboxnew-24">
                     <div className="loginboxnew-25">
                       <div className="loginboxnew-26">
@@ -114,7 +114,7 @@ export default function PageLogin({
                       navigate("/chatcenter");
                     }}
                   >
-                    忘記密碼?
+                    {translate(getText("忘記密碼?"))}
                   </div>
                 </div>
                 <div className="loginboxnew-31">{loginmsg}</div>
@@ -124,7 +124,7 @@ export default function PageLogin({
                     doLogin(loginData);
                   }}
                 >
-                  <div className="loginboxnew-33">登錄</div>
+                  <div className="loginboxnew-33">{translate(getText("登錄"))}</div>
                 </div>
                 <div className="loginboxnew-34">
                   <div className="loginboxnew-35">
@@ -134,7 +134,7 @@ export default function PageLogin({
                         navigate("/register");
                       }}
                     >
-                      立即註冊
+                      {translate(getText("立即註冊"))}
                     </div>
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function PageLogin({
                       navigate("/changeline");
                     }}
                   >
-                    切換線路
+                    {translate(getText("切換線路"))}
                   </div>
                   <div className="loginboxnew-40">
                     <span className="loginboxnew-41">/</span>
@@ -158,7 +158,7 @@ export default function PageLogin({
                       navigate("/changelanguage");
                     }}
                   >
-                    切換語言
+                    {translate(getText("切換語言"))}
                   </div>
                 </div>
               </div>

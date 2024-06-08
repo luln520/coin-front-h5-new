@@ -80,11 +80,11 @@ export default function CenterPage({
           </div>
         </div>
         <div class="recharge-7">
-          <div class="recharge-8">保存二維碼</div>
+          <div class="recharge-8">{translate(getText("保存二維碼"))}</div>
         </div>
         <div class="recharge-9">
           <div class="recharge-10">
-            <h1 class="recharge-11">充幣地址</h1>
+            <h1 class="recharge-11">{translate(getText("充幣地址"))}</h1>
             <p class="recharge-12">
               <br class="recharge-13" />
             </p>
@@ -96,14 +96,14 @@ export default function CenterPage({
               handleCopy(use?.czaddress);
             }}
           >
-            <div class="recharge-16">複製地址</div>
+            <div class="recharge-16">{translate(getText("複製地址"))}</div>
           </div>
         </div>
         <div class="recharge-17">
           <div class="recharge-18">
             <ul class="recharge-19">
               <li class="recharge-20">
-                <p class="recharge-21">充幣數量({use?.name?.toUpperCase()})</p>
+                <p class="recharge-21">{translate(getText("充幣數量"))}({use?.name?.toUpperCase()})</p>
                 <div class="recharge-22">
                   <div class="recharge-23">
                     <div class="recharge-24"></div>
@@ -147,7 +147,7 @@ export default function CenterPage({
                     />
                   </div>
                   <li class="recharge-20">
-                    <p class="recharge-21">转化數量(USDT)</p>
+                    <p class="recharge-21">{translate(getText("转化數量"))}(USDT)</p>
                     <div class="recharge-22">
                       <div class="recharge-23">
                         <input
@@ -179,7 +179,7 @@ export default function CenterPage({
                 </>
               )}
               <li class="recharge-26">
-                <p class="recharge-27">上傳支付詳情截圖</p>
+                <p class="recharge-27">{translate(getText("上傳支付詳情截圖"))}</p>
                 <div class="">
                   <Upload
                     name="file"
@@ -205,7 +205,7 @@ export default function CenterPage({
                       class="recharge-31"
                     />
                   </div>
-                  <p class="recharge-32">點擊上傳圖片</p> */}
+                  <p class="recharge-32">{translate(getText("點擊上傳圖片"))}</p> */}
                 </div>
               </li>
             </ul>
@@ -237,7 +237,7 @@ export default function CenterPage({
                 setImg("");
               }}
             >
-              <div class="recharge-34">提交</div>
+              <div class="recharge-34">{translate(getText("提交"))}</div>
             </div>
           </div>
         </div>

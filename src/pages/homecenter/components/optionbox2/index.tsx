@@ -19,9 +19,9 @@ export default function Optionbox2({ loginmsg }) {
         }}
       >
         <div className="optionbox2-3">
-          <span className="optionbox2-4">快捷充幣</span>
-          <p className="optionbox2-5">支持</p>
-          <p className="optionbox2-6">BTC,USDT,ETH等</p>
+          <span className="optionbox2-4">{translate(getText("快捷充幣"))}</span>
+          <p className="optionbox2-5">{translate(getText("支持"))}</p>
+          <p className="optionbox2-6">BTC,USDT,ETH{translate(getText("等"))}</p>
         </div>
       </div>
       <div className="optionbox2-7">
@@ -37,7 +37,7 @@ export default function Optionbox2({ loginmsg }) {
               className="optionbox2-11"
             />
           </div>
-          <p className="optionbox2-12">期貨交易</p>
+          <p className="optionbox2-12">{translate(getText("期貨交易"))}</p>
         </div>
         <div
           className="optionbox2-13"
@@ -52,7 +52,7 @@ export default function Optionbox2({ loginmsg }) {
               className="optionbox2-16"
             />
           </div>
-          <p className="optionbox2-17">幫助中心</p>
+          <p className="optionbox2-17">{translate(getText("幫助中心"))}</p>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function ListPage({ addressList, delAddress, coinList }) {
             </div>
             <div class="addresslist-10">
               <p class="addresslist-11">
-                幣種：
+                {translate(getText("幣種："))}
                 <br class="addresslist-12" />
                 <div class="addresslist-13">
                   <span class="addresslist-14">{`${data?.name.toUpperCase()}${
@@ -34,14 +34,15 @@ export default function ListPage({ addressList, delAddress, coinList }) {
                 </div>
               </p>
               <p class="addresslist-15">
-                地址：
+                {translate(getText("地址："))}
                 <br class="addresslist-16" />
                 <div class="addresslist-17">
                   <span class="addresslist-18">{data.addr}</span>
                 </div>
               </p>
               <p class="addresslist-19">
-                日期：
+                {translate(getText("日期："))}
+
                 <br class="addresslist-20" />
                 <div class="addresslist-21">
                   <span class="addresslist-22">{data?.addtime}</span>
@@ -85,9 +86,14 @@ export default function ListPage({ addressList, delAddress, coinList }) {
         <div class="addresslist-3">
           <div class="addresslist-4">
             {getAddressNodes()}
-            <div class="addresslist-41" onClick={()=>{
-              navigate("/addressadd");
-            }}>添加錢包地址</div>
+            <div
+              class="addresslist-41"
+              onClick={() => {
+                navigate("/addressadd");
+              }}
+            >
+              {translate(getText("添加錢包地址"))}
+            </div>
           </div>
         </div>
       </div>

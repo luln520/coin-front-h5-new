@@ -17,7 +17,7 @@ export default function CenterPage() {
     <>
       <div className="chatcenter-16">
         <div className="chatcenter-17">
-          <span className="chatcenter-18">在線客服</span>
+          <span className="chatcenter-18">{translate(getText("在線客服"))}</span>
         </div>
       </div>
       <div className="chatcenter-19">
@@ -34,7 +34,7 @@ export default function CenterPage() {
               }}
             >
               <div className="chatcenter-23">
-                <span className="chatcenter-24">在線客服</span>
+                <span className="chatcenter-24">{translate(getText("在線客服"))}</span>
               </div>
             </div>
           </div>

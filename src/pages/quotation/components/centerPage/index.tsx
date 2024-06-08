@@ -38,7 +38,7 @@ export default function CenterPage({
                 <small class="quotationcenter-45">/USDT</small>
               </span>
               <p class="quotationcenter-46">
-                量：{(coinListData[key]?.vol / 10000).toFixed(2)}萬
+                {translate(getText("量"))}：{(coinListData[key]?.vol / 10000).toFixed(2)}{translate(getText("萬"))}
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function CenterPage({
                 <small class="quotationcenter-45">/USDT</small>
               </span>
               <p class="quotationcenter-46">
-                量：{(coinListData[key]?.vol / 10000).toFixed(2)}萬
+                {translate(getText("量"))}：{(coinListData[key]?.vol / 10000).toFixed(2)}{translate(getText("萬"))}
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function CenterPage({
                 setType(1);
               }}
             >
-              自選
+              {translate(getText("自選"))}
             </li>
             <li
               class={type == 2 ? "quotationcenter-6" : "quotationcenter-5"}

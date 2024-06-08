@@ -52,22 +52,22 @@ export default function TopText({ setIsShowCoin, nowTab, coinListData }) {
       <div class="marketTopText-11">
         <ul class="marketTopText-12">
           <li class="marketTopText-13">
-            <p class="marketTopText-14">開盤</p>
+            <p class="marketTopText-14">{translate(getText("開盤"))}</p>
             <div class="marketTopText-15">{coinListData[nowTab]?.open}</div>
           </li>
           <li class="marketTopText-13">
-            <p class="marketTopText-14">成交量</p>
+            <p class="marketTopText-14">{translate(getText("成交量"))}</p>
             <div class="marketTopText-15">
               {" "}
-              {(coinListData[nowTab]?.vol / 10000).toFixed(2)}萬
+              {(coinListData[nowTab]?.vol / 10000).toFixed(2)}{translate(getText("萬"))}
             </div>
           </li>
           <li class="marketTopText-13">
-            <p class="marketTopText-14">最低</p>
+            <p class="marketTopText-14">{translate(getText("最低"))}</p>
             <div class="marketTopText-15">{coinListData[nowTab]?.low}</div>
           </li>
           <li class="marketTopText-13">
-            <p class="marketTopText-14">最高</p>
+            <p class="marketTopText-14">{translate(getText("最高"))}</p>
             <div class="marketTopText-15">
               {JSON.stringify(coinListData[nowTab]?.high)}
             </div>

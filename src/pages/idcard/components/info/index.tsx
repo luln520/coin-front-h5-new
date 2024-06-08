@@ -63,7 +63,7 @@ export default function Info({ userInfo, sendAuth }) {
           <div class="idcard-4">
             <ul class="idcard-5">
               <div class="idcard-6">
-                <div class="idcard-7">證件類型：</div>
+                <div class="idcard-7">{translate(getText("證件類型："))}</div>
                 <Select
                   defaultValue={rztype}
                   value={rztype}
@@ -80,7 +80,7 @@ export default function Info({ userInfo, sendAuth }) {
                 />
               </div>
               <li class="idcard-19">
-                <p class="idcard-20">姓名</p>
+                <p class="idcard-20">{translate(getText("姓名"))}</p>
                 <div class="idcard-21">
                   <div class="idcard-22">
                     <input
@@ -96,7 +96,7 @@ export default function Info({ userInfo, sendAuth }) {
                 </div>
               </li>
               <li class="idcard-19">
-                <p class="idcard-20">聯繫電話</p>
+                <p class="idcard-20">{translate(getText("聯繫電話"))}</p>
                 <div class="idcard-21">
                   <div class="idcard-22">
                     <input
@@ -111,7 +111,7 @@ export default function Info({ userInfo, sendAuth }) {
                   </div>
                 </div>
               </li>
-              <p class="idcard-25">證件照</p>
+              <p class="idcard-25">{translate(getText("證件照"))}</p>
               <li class="idcard-26">
                 <Upload
                   name="file"
@@ -142,7 +142,11 @@ export default function Info({ userInfo, sendAuth }) {
                         /> */}
                       </div>
                     )}
-                    {!cardzm && <p class="idcard-31">證件正面照片</p>}
+                    {!cardzm && (
+                      <p class="idcard-31">
+                        {translate(getText("證件正面照片"))}
+                      </p>
+                    )}
                   </div>
                 </Upload>
               </li>
@@ -176,7 +180,11 @@ export default function Info({ userInfo, sendAuth }) {
                         /> */}
                       </div>
                     )}
-                    {!cardfm && <p class="idcard-31">證件反面照片</p>}
+                    {!cardfm && (
+                      <p class="idcard-31">
+                        {translate(getText("證件反面照片"))}
+                      </p>
+                    )}
                   </div>
                 </Upload>
               </li>
@@ -212,7 +220,7 @@ export default function Info({ userInfo, sendAuth }) {
                   reloadData();
                 }}
               >
-                提交
+                {translate(getText("提交"))}
               </div>
             </div>
           </div>
@@ -223,21 +231,24 @@ export default function Info({ userInfo, sendAuth }) {
               <div id="rtf475" class="idcard-49">
                 <div class="idcard-50">
                   <p class="idcard-51">
-                    提交身份證正反面
-                    、手持人臉識別必要清晰、照片符合標準JPG格式。系統採用曠視，證合一，避免了用戶身份信息被盜用等人工干預的情況，平臺務必保管用戶交易賬戶資金的安全性。溫馨提示：
+                    {translate(
+                      getText(
+                        "提交身份證正反面、手持人臉識別必要清晰、照片符合標準JPG格式。系統採用曠視，證合一，避免了用戶身份信息被盜用等人工干預的情況，平臺務必保管用戶交易賬戶資金的安全性。溫馨提示："
+                      )
+                    )}
                   </p>
                   <p class="idcard-52">
-                    1.在驗證期間請確保網絡通暢
+                    1.{translate(getText("在驗證期間請確保網絡通暢"))}
                     <br class="idcard-53" />
-                    2.確保不會被安全軟件攔截
+                    2.{translate(getText("確保不會被安全軟件攔截"))}
                     <br class="idcard-54" />
-                    3.同步手機時間，確保時間與當地時區一致
+                    3.{translate(getText("同步手機時間，確保時間與當地時區一致"))}
                     <br class="idcard-55" />
-                    4.請勿佩戴眼鏡、帽子
+                    4.{translate(getText("請勿佩戴眼鏡、帽子"))}
                     <br class="idcard-56" />
-                    5.請在光線充足的環境進行驗證
+                    5.{translate(getText("請在光線充足的環境進行驗證"))}
                     <br class="idcard-57" />
-                    6.使用手機驗證請關閉手機的美顏、修圖等功能
+                    6.{translate(getText("使用手機驗證請關閉手機的美顏、修圖等功能"))}
                   </p>
                   <p class="idcard-58"></p>
                 </div>

@@ -50,13 +50,13 @@ export default function CenterPage({
                   {`${data.name.toUpperCase()}${
                     data.czline ? `(${data.czline})`.toUpperCase() : ""
                   }`}
-                  提現
+                  {translate(getText("提現"))}
                 </span>
               </div>
             </div>
             <div class="extractlist-13">
               <span class="extractlist-14">
-                <span class="extractlist-15">提現</span>
+                <span class="extractlist-15">{translate(getText("提現"))}</span>
               </span>
               <i class="extractlist-16"></i>
             </div>
@@ -92,12 +92,12 @@ export default function CenterPage({
                     />
                   </div>
                   <div class="extractlist-11">
-                    <span class="extractlist-12">C2C提現</span>
+                    <span class="extractlist-12">{translate(getText("C2C提現"))}</span>
                   </div>
                 </div>
                 <div class="extractlist-13">
                   <span class="extractlist-14">
-                    <span class="extractlist-15">提現</span>
+                    <span class="extractlist-15">{translate(getText("提現"))}</span>
                   </span>
                   <i class="extractlist-16"></i>
                 </div>

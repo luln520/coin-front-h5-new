@@ -86,7 +86,8 @@ export default function CoinList({ coinListData, ctmarketlist }) {
           </h1>
           <p class="jiaoyiliang-9">{coinListData[key]?.close}</p>
           <p class="jiaoyiliang-10">
-            {(coinListData[key]?.vol / 10000).toFixed(2)}萬
+            {(coinListData[key]?.vol / 10000).toFixed(2)}
+            {translate(getText("萬"))}
           </p>
         </div>
       );
@@ -113,7 +114,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
             setType(1);
           }}
         >
-          漲幅榜
+          {translate(getText("漲幅榜"))}
         </div>
         <div
           className={type == 2 ? "homecoinlist-3" : "homecoinlist-4"}
@@ -121,7 +122,7 @@ export default function CoinList({ coinListData, ctmarketlist }) {
             setType(2);
           }}
         >
-          成交量
+          {translate(getText("成交量"))}
         </div>
       </div>
       {type == 1 && <div className="homecoinlist-5">{getZFNodes()}</div>}

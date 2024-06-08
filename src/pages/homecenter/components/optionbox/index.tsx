@@ -26,7 +26,7 @@ export default function Optionbox({ loginmsg }) {
             className="optionbox-5"
           />
         </div>
-        <p className="optionbox-6">在線客服</p>
+        <p className="optionbox-6">{translate(getText("在線客服"))}</p>
       </div>
       <div
         className="optionbox-7"
@@ -42,7 +42,7 @@ export default function Optionbox({ loginmsg }) {
             className="optionbox-10"
           />
         </div>
-        <p className="optionbox-11">語言切換</p>
+        <p className="optionbox-11">{translate(getText("語言切換"))}</p>
       </div>
     </div>
   );

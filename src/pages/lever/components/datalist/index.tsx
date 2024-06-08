@@ -54,10 +54,10 @@ export default function DataList({ huobigetHistory }) {
       <div class="leverDataBox-2">
         <div class="leverDataBox-3">
           <div class="leverDataBox-4">
-            <span class="leverDataBox-5">數量</span>
+            <span class="leverDataBox-5">{translate(getText("數量"))}</span>
           </div>
           <div class="leverDataBox-6">
-            <span class="leverDataBox-7">價格</span>
+            <span class="leverDataBox-7">{translate(getText("價格"))}</span>
           </div>
         </div>
         <div class="leverDataBox-8">{getArray1()}</div>
@@ -65,10 +65,10 @@ export default function DataList({ huobigetHistory }) {
       <div class="leverDataBox-59">
         <div class="leverDataBox-60">
           <div class="leverDataBox-61">
-            <span class="leverDataBox-62">價格</span>
+            <span class="leverDataBox-62">{translate(getText("價格"))}</span>
           </div>
           <div class="leverDataBox-63">
-            <span class="leverDataBox-64">數量</span>
+            <span class="leverDataBox-64">{translate(getText("數量"))}</span>
           </div>
         </div>
         <div class="leverDataBox-65">{getArray2()}</div>

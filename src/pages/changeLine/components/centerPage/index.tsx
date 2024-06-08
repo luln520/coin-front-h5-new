@@ -25,7 +25,7 @@ export default function CenterPage() {
           changeline(1);
         }}
       >
-        線路 1[926ms]
+        {translate(getText("線路"))} 1[926ms]
       </div>
       <div
         className={line == 2 ? "xhxl-2" : "xhxl-5"}
@@ -33,7 +33,7 @@ export default function CenterPage() {
           changeline(2);
         }}
       >
-        線路 2[-ms]
+        {translate(getText("線路"))} 2[-ms]
       </div>
     </div>
   );

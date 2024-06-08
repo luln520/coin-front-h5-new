@@ -79,7 +79,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 {`${userInfo?.username}`.replace("undefined", "").split("@")[0]}
               </div>
               <div className="mycenter-27">ID:{userInfo?.userCode}</div>
-              <div className="mycenter-28">信用分:{userInfo?.jifen}</div>
+              <div className="mycenter-28">{translate(getText("信用分"))}:{userInfo?.jifen}</div>
             </div>
           </div>
         </div>
@@ -101,10 +101,10 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-34"
               />
             </div>
-            <p className="mycenter-35">身份認證</p>
+            <p className="mycenter-35">{translate(getText("身份認證"))}</p>
           </div>
           <p className="mycenter-36">
-            {userInfo?.rzstatus === 2 ? "已認證" : "未認證"}
+            {translate(getText(userInfo?.rzstatus === 2 ? "已認證" : "未認證"))}
           </p>
           <div className="mycenter-37">
             <img
@@ -130,10 +130,10 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-34"
               />
             </div>
-            <p className="mycenter-35">高级認證</p>
+            <p className="mycenter-35">{translate(getText("高级認證"))}</p>
           </div>
           <p className="mycenter-36">
-            {userInfo?.rzstatus === 2 ? "已認證" : "未認證"}
+            {translate(getText(userInfo?.rzstatus === 2 ? "已認證" : "未認證"))}
           </p>
           <div className="mycenter-37">
             <img
@@ -156,7 +156,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-56"
               />
             </div>
-            <p className="mycenter-57">交易記錄</p>
+            <p className="mycenter-57">{translate(getText("交易記錄"))}</p>
           </div>
           <div className="mycenter-58">
             <img
@@ -179,7 +179,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-56"
               />
             </div>
-            <p className="mycenter-57">C2C充值記錄</p>
+            <p className="mycenter-57">{translate(getText("C2C充值記錄"))}</p>
           </div>
           <div className="mycenter-58">
             <img
@@ -203,7 +203,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                   className="mycenter-56"
                 />
               </div>
-              <p className="mycenter-57">C2C提现記錄</p>
+              <p className="mycenter-57">{translate(getText("C2C提现記錄"))}</p>
             </div>
             <div className="mycenter-58">
               <img
@@ -227,7 +227,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-45"
               />
             </div>
-            <p className="mycenter-46">安全中心</p>
+            <p className="mycenter-46">{translate(getText("安全中心"))}</p>
           </div>
           <div className="mycenter-48">
             <img
@@ -252,7 +252,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
               />
             </div>
             <p className="mycenter-117">
-              留言列表
+              {translate(getText("留言列表"))}
               <Badge
                 count={loginmsg?.noticeCount ? loginmsg?.noticeCount : 0}
                 offset={[8, 0]}
@@ -310,7 +310,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-126"
               />
             </div>
-            <p className="mycenter-127">幫助中心</p>
+            <p className="mycenter-127">{translate(getText("幫助中心"))}</p>
           </div>
           <div className="mycenter-128">
             <img
@@ -333,7 +333,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-135"
               />
             </div>
-            <p className="mycenter-136">设置</p>
+            <p className="mycenter-136">{translate(getText("设置"))}</p>
           </div>
           <div className="mycenter-137">
             <img
@@ -356,7 +356,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-96"
               />
             </div>
-            <p className="mycenter-97">借款</p>
+            <p className="mycenter-97">{translate(getText("借款"))}</p>
           </div>
           <div className="mycenter-98">
             <div className="mycenter-99"></div>

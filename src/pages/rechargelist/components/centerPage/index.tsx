@@ -51,7 +51,7 @@ export default function CenterPage({ coinList }) {
             </div>
             <div class="rechargelist-24">
               <span class="rechargelist-25">
-                <span class="rechargelist-26">前往購買</span>
+                <span class="rechargelist-26">{translate(getText("前往購買"))}</span>
               </span>
               <i class="rechargelist-27"></i>
             </div>
@@ -72,14 +72,14 @@ export default function CenterPage({ coinList }) {
               <div data-v-01dfbd2e="" id="rtf41" class="rechargelist-6">
                 <div class="rechargelist-7">
                   <p class="rechargelist-8">
-                    請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響充值進度。
+                    {translate(getText("請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響充值進度。"))}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <p class="rechargelist-9">請選擇以下充值通道</p>
+        <p class="rechargelist-9">{translate(getText("請選擇以下充值通道"))}</p>
         <div class="rechargelist-10">
           {getNode()}
           <div
@@ -105,12 +105,12 @@ export default function CenterPage({ coinList }) {
                   </div>
                 </div>
                 <div class="rechargelist-22">
-                  <span class="rechargelist-23">C2C充值</span>
+                  <span class="rechargelist-23">{translate(getText("C2C充值"))}</span>
                 </div>
               </div>
               <div class="rechargelist-24">
                 <span class="rechargelist-25">
-                  <span class="rechargelist-26">前往購買</span>
+                  <span class="rechargelist-26">{translate(getText("前往購買"))}</span>
                 </span>
                 <i class="rechargelist-27"></i>
               </div>

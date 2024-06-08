@@ -40,7 +40,8 @@ export default function CenterPage({
                 </div>
               </div>
             </div>
-            {lan == "zh" ? item.name : item.currency}充值
+            {lan == "zh" ? item.name : item.currency}
+            {translate(getText("充值"))}
           </div>
           <i class="c2cckcenter-15"></i>
         </div>
@@ -54,7 +55,7 @@ export default function CenterPage({
       <div class="c2cckcenter-1">
         <div class="c2cckcenter-2">
           <div id="mylist" class="c2cckcenter-3">
-            <p class="c2cckcenter-4">請選擇充值通道</p>
+            <p class="c2cckcenter-4">{translate(getText("請選擇充值通道"))}</p>
             {getArray()}
           </div>
           <div class="c2cckcenter-93"></div>

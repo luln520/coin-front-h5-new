@@ -25,21 +25,21 @@ export default function CenterPage() {
         />
         <FieldTimeOutlined className="jiekuanTopHeadRight" />
       </div>
-      <div className="jiekuanTopHeadTopFont">借款</div>
+      <div className="jiekuanTopHeadTopFont">{translate(getText("借款"))}</div>
       {/* 输入框 */}
       <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
-          <b>借币类型</b>
+          <b>{translate(getText("借币类型"))}</b>
         </div>
         <div className="jiekuanInputBorderDiv">
-          <span className="jiekuanInputFont">活期利率</span>
-          <span className="jiekuanInputTagFont">低利率</span>
+          <span className="jiekuanInputFont">{translate(getText("活期利率"))}</span>
+          <span className="jiekuanInputTagFont">{translate(getText("低利率"))}</span>
           <RightOutlined className="jiekuanInputicon" />
         </div>
       </div>
       <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
-          <b>我想要借</b>
+          <b>{translate(getText("我想要借"))}</b>
         </div>
         <div className="jiekuanInputBorderDiv">
           <img
@@ -56,7 +56,7 @@ export default function CenterPage() {
       </div>
       <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
-          <b>抵押物数量</b>
+          <b>{translate(getText("抵押物数量"))}</b>
         </div>
         <div className="jiekuanInputBorderDiv">
           <img
@@ -70,7 +70,7 @@ export default function CenterPage() {
             <b>0.21976</b>
           </span>
           <span className="jiekuanInputcenterFontnumMax">
-            <b>最大</b>
+            <b>{translate(getText("最大"))}</b>
           </span>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default function CenterPage() {
         }}
       >
         <div className="jiekuanzcDiv">
-          <b>您的资产仅有0BNB</b>
+          <b>{translate(getText("您的资产仅有"))}0BNB</b>
         </div>
       </div>
       <div
@@ -90,7 +90,7 @@ export default function CenterPage() {
         }}
       >
         <div className="jiekuantsDiv">
-          <b>已抵押的BNB收益池资产将无法获得Launchpool奖励。</b>
+          <b>{translate(getText("已抵押的BNB收益池资产将无法获得Launchpool奖励。"))}</b>
         </div>
       </div>
       {/* 明细 */}
@@ -104,7 +104,7 @@ export default function CenterPage() {
           padding: "0 6px",
         }}
       >
-        <b className="jiekuanmxleftDiv">年利率</b>
+        <b className="jiekuanmxleftDiv">{translate(getText("年利率"))}</b>
         <b className="jiekuanmxrightDiv">11.05%</b>
       </div>
       <div
@@ -112,7 +112,7 @@ export default function CenterPage() {
           padding: "0 6px",
         }}
       >
-        <b className="jiekuanmxleftDiv">净年化利率</b>
+        <b className="jiekuanmxleftDiv">{translate(getText("净年化利率"))}</b>
         <b className="jiekuanmxrightDiv">11%</b>
       </div>
       <div
@@ -120,7 +120,7 @@ export default function CenterPage() {
           padding: "0 6px",
         }}
       >
-        <b className="jiekuanmxleftDiv">预估小时利率</b>
+        <b className="jiekuanmxleftDiv">{translate(getText("预估小时利率"))}</b>
         <b className="jiekuanmxrightDiv">0.00126226 USDT</b>
       </div>
       <div
@@ -128,7 +128,7 @@ export default function CenterPage() {
           padding: "0 6px",
         }}
       >
-        <b className="jiekuanmxleftDiv">初始质押率</b>
+        <b className="jiekuanmxleftDiv">{translate(getText("初始质押率"))}</b>
         <b className="jiekuanmxrightDiv">78%</b>
       </div>
       <div
@@ -136,7 +136,7 @@ export default function CenterPage() {
           padding: "0 6px",
         }}
       >
-        <b className="jiekuanmxleftDiv">借贷后质押率</b>
+        <b className="jiekuanmxleftDiv">{translate(getText("借贷后质押率"))}</b>
         <b className="jiekuanmxrightDiv">78%</b>
       </div>
       <div
@@ -156,15 +156,15 @@ export default function CenterPage() {
             ></i>
           </div>
           <div className="jiekuanbottomCenteragreeDiv">
-            <b>您已阅读并同意</b>
+            <b>{translate(getText("您已阅读并同意"))}</b>
           </div>
           <div className="jiekuanbottomCenteragreexyDiv">
-            <b>- 币安借币服务协议。</b>
+            <b>- {translate(getText("币安借币服务协议。"))}</b>
           </div>
           <div className="jiekuanbottomCenteragreexyDiv">
-            <b>- 币安赚币服务协议。</b>
+            <b>- {translate(getText("币安赚币服务协议。"))}</b>
           </div>
-          <div className="jiekuanbottomCenteragreeqrDiv">确认</div>
+          <div className="jiekuanbottomCenteragreeqrDiv">{translate(getText("确认"))}</div>
         </div>
       </div>
     </div>

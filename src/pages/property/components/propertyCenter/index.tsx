@@ -22,7 +22,7 @@ export default function PropertyCenter({
       <div className="propertycenter-2">
         <div className="propertycenter-3">
           <div data-v-5bb30e94="" className="propertycenter-4"></div>
-          <p className="propertycenter-5">資產</p>
+          <p className="propertycenter-5">{translate(getText("資產"))}</p>
           <h1 className="propertycenter-6">
             {userInfo?.usdt?.toFixed(2)}
             <span className="propertycenter-7">USDT</span>
@@ -53,7 +53,7 @@ export default function PropertyCenter({
             </div>
           </div>
           <p className="propertycenter-19">
-            <div className="propertycenter-20">入金</div>
+            <div className="propertycenter-20">{translate(getText("入金"))}</div>
           </p>
         </div>
         <div
@@ -78,7 +78,7 @@ export default function PropertyCenter({
             </div>
           </div>
           <p className="propertycenter-30">
-            <div className="propertycenter-31">出金</div>
+            <div className="propertycenter-31">{translate(getText("出金"))}</div>
           </p>
         </div>
         <div className="propertycenter-32" onClick={()=>{
@@ -100,7 +100,7 @@ export default function PropertyCenter({
             </div>
           </div>
           <p className="propertycenter-41">
-            <div className="propertycenter-42">地址</div>
+            <div className="propertycenter-42">{translate(getText("地址"))}</div>
           </p>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function PropertyCenter({
                   <div className="propertycenter-49">
                     <div className="propertycenter-50">
                       <div id="u-tab-item-0" className="propertycenter-51">
-                        賬戶資產
+                        {translate(getText("賬戶資產"))}
                       </div>
                       {/* <div className="propertycenter-52">幣幣資產</div> */}
                       <div className="propertycenter-53"></div>
@@ -132,9 +132,9 @@ export default function PropertyCenter({
           </div>
           <div className="propertycenter-58">
             <div className="propertycenter-59">
-              <div className="propertycenter-60">可用(USDT)</div>
-              <div className="propertycenter-61">處理中(USDT)</div>
-              <div className="propertycenter-62">折合(USDT)</div>
+              <div className="propertycenter-60">{translate(getText("可用"))}(USDT)</div>
+              <div className="propertycenter-61">{translate(getText("處理中"))}(USDT)</div>
+              <div className="propertycenter-62">{translate(getText("折合"))}(USDT)</div>
             </div>
             <div className="propertycenter-63">
               <div className="propertycenter-64">{userInfo?.usdt?.toFixed(2)}</div>

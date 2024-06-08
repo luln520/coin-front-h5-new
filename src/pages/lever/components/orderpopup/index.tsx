@@ -240,7 +240,7 @@ export default function OrderPopup({
           <div class="leverOrderPopup-3">
             <div class="leverOrderPopup-4">
               <div class="leverOrderPopup-5">
-                <p class="leverOrderPopup-6">訂單確認</p>
+                <p class="leverOrderPopup-6">{translate(getText("訂單確認"))}</p>
                 <div
                   class="leverOrderPopup-7"
                   onClick={() => {
@@ -255,7 +255,7 @@ export default function OrderPopup({
                       <div class="leverOrderPopup-12">
                         <div class="leverOrderPopup-13">
                           <div class="leverOrderPopup-14">
-                            <div class="leverOrderPopup-15">市價</div>
+                            <div class="leverOrderPopup-15">{translate(getText("市價"))}</div>
                             {/* <div class="leverOrderPopup-16">掛單</div> */}
                           </div>
                           <div class="leverOrderPopup-17">
@@ -269,7 +269,7 @@ export default function OrderPopup({
                                 setType(1);
                               }}
                             >
-                              買多
+                              {translate(getText("買多"))}
                             </div>
                             <div
                               class={
@@ -281,7 +281,7 @@ export default function OrderPopup({
                                 setType(2);
                               }}
                             >
-                              買空
+                              {translate(getText("買空"))}
                             </div>
                           </div>
                           <div class="leverOrderPopup-80">
@@ -472,7 +472,7 @@ export default function OrderPopup({
                           <div class="leverOrderPopup-41">
                             <div class="leverOrderPopup-42">
                               <div class="leverOrderPopup-46">
-                                <div class="leverOrderPopup-47">手續費:</div>
+                                <div class="leverOrderPopup-47">{translate(getText("手續費"))}:</div>
                                 <div class="leverOrderPopup-48">
                                   {hysetInfo?.hySxf}
                                 </div>
@@ -484,7 +484,7 @@ export default function OrderPopup({
                                 </div>
                               </div> */}
                               <div class="leverOrderPopup-49">
-                                <div class="leverOrderPopup-50">可用餘額:</div>
+                                <div class="leverOrderPopup-50">{translate(getText("可用餘額"))}:</div>
                                 <div class="leverOrderPopup-51">
                                   {userInfo?.usdt?.toFixed(2)} USDT
                                 </div>
@@ -500,7 +500,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-53">
-                            <div class="leverOrderPopup-54">杠杆倍數</div>
+                            <div class="leverOrderPopup-54">{translate(getText("杠杆倍數"))}</div>
                             <div class="leverOrderPopup-55">
                               <div class="leverOrderPopup-56"></div>
                             </div>
@@ -562,7 +562,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-65">
-                            <div class="leverOrderPopup-66">止損價</div>
+                            <div class="leverOrderPopup-66">{translate(getText("止損價"))}</div>
                             <div class="leverOrderPopup-67">
                               <div class="leverOrderPopup-68">
                                 <div class="leverOrderPopup-69">
@@ -616,7 +616,7 @@ export default function OrderPopup({
                             </div>
                           </div>
                           <div class="leverOrderPopup-79">
-                            <div class="leverOrderPopup-80">止盈價</div>
+                            <div class="leverOrderPopup-80">{translate(getText("止盈價"))}</div>
                             <div class="leverOrderPopup-81">
                               <div class="leverOrderPopup-82">
                                 <div class="leverOrderPopup-83">
@@ -694,7 +694,7 @@ export default function OrderPopup({
                             setVisible(true);
                           }}
                         >
-                          {type == 1 ? "買多" : "買空"}
+                          {translate(getText(type == 1 ? "買多" : "買空"))}
                         </div>
                       </div>
                     </div>
@@ -715,16 +715,16 @@ export default function OrderPopup({
       >
         <div class="orderconfim-1">
           <div class="orderconfim-2">
-            <p class="orderconfim-3">訂單確認</p>
+            <p class="orderconfim-3">{translate(getText("訂單確認"))}</p>
             <div class="orderconfim-4"></div>
           </div>
           <div class="orderconfim-5">
             <div class="orderconfim-6">
               <div class="orderconfim-7">
-                <p class="orderconfim-8">名稱</p>
-                <p class="orderconfim-9">方向</p>
-                <p class="orderconfim-10">現價</p>
-                <p class="orderconfim-11">保证金</p>
+                <p class="orderconfim-8">{translate(getText("名稱"))}</p>
+                <p class="orderconfim-9">{translate(getText("方向"))}</p>
+                <p class="orderconfim-10">{translate(getText("現價"))}</p>
+                <p class="orderconfim-11">{translate(getText("保证金"))}</p>
               </div>
               <div class="orderconfim-12">
                 <p class="orderconfim-13">
@@ -732,7 +732,7 @@ export default function OrderPopup({
                   <span class="orderconfim-14">/USDT</span>
                 </p>
                 <p class={type == 1 ? "orderconfim-15" : "orderconfim-15-1"}>
-                  {type == 1 ? "買多" : "買空"}
+                  {translate(getText(type == 1 ? "買多" : "買空"))}
                 </p>
                 <p class="orderconfim-16">{coinListData[nowTab]?.close}</p>
                 <p class="orderconfim-17">{num}</p>
@@ -740,8 +740,8 @@ export default function OrderPopup({
             </div>
             <div class="orderconfim-18">
               <div class="orderconfim-19">
-                <p class="orderconfim-20">可用餘額:{userInfo?.usdt}</p>
-                <p class="orderconfim-21">手續費:{hysetInfo?.hySxf}</p>
+                <p class="orderconfim-20">{translate(getText("可用餘額"))}:{userInfo?.usdt}</p>
+                <p class="orderconfim-21">{translate(getText("手續費"))}:{hysetInfo?.hySxf}</p>
               </div>
             </div>
             <div class="orderconfim-22">
@@ -766,7 +766,7 @@ export default function OrderPopup({
                   }, 1000);
                 }}
               >
-                確認下單
+                {translate(getText("確認下單"))}
               </div>
             </div>
           </div>

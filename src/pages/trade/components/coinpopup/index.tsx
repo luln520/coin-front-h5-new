@@ -142,7 +142,7 @@ export default function CoinPopup({
     >
       <div class="coinPopupTopTitle-1">
         <div class="coinPopupTopTitle-2">
-          <p class="coinPopupTopTitle-3">貨幣行情</p>
+          <p class="coinPopupTopTitle-3">{translate(getText("貨幣行情"))}</p>
         </div>
         <div class="coinPopupTopTitle-4">
           <ul class="coinPopupTopTitle-5">
@@ -154,7 +154,7 @@ export default function CoinPopup({
                 setPopIndex(1);
               }}
             >
-              自選
+              {translate(getText("自選"))}
             </li>
             <li
               class={
@@ -173,7 +173,7 @@ export default function CoinPopup({
           <div class="coinPopupTopTitle-10">
             <div class="coinPopupTopTitle-11">
               <input
-                placeholder="搜索幣種"
+                placeholder={translate(getText("搜索幣種"))}
                 maxlength="140"
                 step=""
                 enterkeyhint="done"

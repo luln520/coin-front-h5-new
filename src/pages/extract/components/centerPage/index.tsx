@@ -81,7 +81,7 @@ export default function CenterPage({
                     </div>
                   </div>
                 </div>
-                <p class="extract-15">{use?.name?.toUpperCase()}提現</p>
+                <p class="extract-15">{use?.name?.toUpperCase()}{translate(getText("提現"))}</p>
               </li>
               {/* <li class="extract-16">
                 <p class="extract-17">鏈地址</p>
@@ -99,12 +99,12 @@ export default function CenterPage({
                 </div>
               </li> */}
               <li class="extract-25">
-                <p class="extract-26">提幣地址</p>
+                <p class="extract-26">{translate(getText("提幣地址"))}</p>
                 <div class="extract-27">
                   <div class="extract-28">
                     <input
                       class="extract-30"
-                      placeholder="請輸入提幣地址"
+                      placeholder={translate(getText("請輸入提幣地址"))}
                       value={address}
                       onChange={(e) => {
                         setAddress(e.target.value);
@@ -114,13 +114,13 @@ export default function CenterPage({
                 </div>
               </li>
               <li class="extract-31">
-                <p class="extract-32">提幣數量(USDT)</p>
+                <p class="extract-32">{translate(getText("提幣數量"))}(USDT)</p>
                 <div class="extract-33">
                   <div class="extract-34">
                     <input
                       type="number"
                       class="extract-36"
-                      placeholder="請輸入提幣數量"
+                      placeholder={translate(getText("請輸入提幣數量"))}
                       type="number"
                       id="usdtmoney"
                       name="usdtmoney"
@@ -141,13 +141,13 @@ export default function CenterPage({
                   </div>
                 </div>
                 <div class="extract-37">
-                  <span class="extract-38">可用:{userInfo?.usdt} USDT</span>
+                  <span class="extract-38">{translate(getText("可用:"))}{userInfo?.usdt} USDT</span>
                 </div>
               </li>
             </ul>
             <div class="extract-50">
               <div class="extract-51">
-                預計到賬數量：
+              {translate(getText("預計到賬數量："))}
                 {`${num / coinPriceData?.close}` == "NaN"
                   ? num
                   : (num / coinPriceData?.close).toFixed(6)}{" "}
@@ -159,7 +159,7 @@ export default function CenterPage({
                   callBack();
                 }}
               >
-                提交
+               {translate(getText("提交"))} 
               </div>
             </div>
           </div>

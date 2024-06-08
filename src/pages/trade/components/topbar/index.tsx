@@ -23,7 +23,7 @@ export default function TopBar({
             navigate(`/trade/${coinname}`);
           }}
         >
-          合約
+          {translate(getText("合約"))}
         </div>
         <div
           class="marketTopBar-4"
@@ -31,7 +31,7 @@ export default function TopBar({
             navigate(`/lever/${coinname}`);
           }}
         >
-          杠杆
+          {translate(getText("杠杆"))}
         </div>
       </div>
       <div class="marketTopBar-6">
@@ -43,7 +43,7 @@ export default function TopBar({
               navigate("/jyjlTrade");
             }}
           >
-            持倉
+            {translate(getText("持倉"))}
           </span>
         </div>
         <div class="marketTopBar-10">

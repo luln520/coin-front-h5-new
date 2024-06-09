@@ -79,7 +79,9 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 {`${userInfo?.username}`.replace("undefined", "").split("@")[0]}
               </div>
               <div className="mycenter-27">ID:{userInfo?.userCode}</div>
-              <div className="mycenter-28">{translate(getText("信用分"))}:{userInfo?.jifen}</div>
+              <div className="mycenter-28">
+                {translate(getText("信用分"))}:{userInfo?.jifen}
+              </div>
             </div>
           </div>
         </div>
@@ -282,10 +284,9 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
                 className="mycenter-116"
               />
             </div>
-            <p className="mycenter-117">
-              <Badge count={loginmsg?.userCount} offset={[10, 0]}>
-                {translate(getText("在線客服"))}&nbsp;&nbsp;
-              </Badge>
+            <p className="mycenter-127">
+              {translate(getText("在線客服"))}
+              <Badge count={loginmsg?.userCount} offset={[0, -15]}></Badge>
             </p>
           </div>
           <div className="mycenter-118">

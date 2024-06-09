@@ -197,8 +197,10 @@ export default function CenterPage({
                 class="leverorderlistItem11-34"
                 onClick={(e) => {
                   Dialog.confirm({
-                    title: ranslate(getText("提示")),
+                    title: translate(getText("提示")),
                     message: translate(getText("是否确认平仓？")),
+                    cancelButtonText:translate(getText("取消")),
+                    confirmButtonText:translate(getText("确认")),
                     onConfirm: () => {
                       closeorder(
                         data.id,
@@ -433,6 +435,8 @@ export default function CenterPage({
         visible={addnumVisible}
         title="加仓"
         showCancelButton
+        confirmButtonText={translate(getText("确认"))}
+        cancelButtonText={translate(getText("取消"))}
         onConfirm={() => {
           //调取
           addnumFun({
@@ -511,6 +515,8 @@ export default function CenterPage({
       <Dialog
         visible={strutcnumVisible}
         title={translate(getText("减仓"))}
+        confirmButtonText={translate(getText("确认"))}
+        cancelButtonText={translate(getText("取消"))}
         showCancelButton
         onConfirm={() => {
           //调取
@@ -591,6 +597,8 @@ export default function CenterPage({
       <Dialog
         visible={editLossWinVisible}
         title={translate(getText("設定止盈止損"))}
+        confirmButtonText={translate(getText("确认"))}
+        cancelButtonText={translate(getText("取消"))}
         showCancelButton
         onConfirm={() => {
           //调取

@@ -406,7 +406,7 @@ export default function OrderPopup({
                           {/*  */}
                           <div class="leverOrderPopup-53">
                             <div class="leverOrderPopup-54">
-                              {translate(getText("止损"))}
+                              {translate(getText("止損"))}
                             </div>
                             <div class="leverOrderPopup-55">
                               <div class="leverOrderPopup-56"></div>

@@ -679,11 +679,11 @@
     "失敗": "Échouer",
     "帮助详情": "Détails d'aide",
     "帮助中心": "Centre d'aide",
-    "萬": "dix mille",
+    "萬": "M",
     "市場名稱": "Nom de marché",
     "最新價格": "Dernier prix",
     "暂无更多了": "Pas plus",
-    "等": "attendez",
+    "等":  "...",
     "身份驗證": "Authentification",
     "證件類型：": "Type de certificat:",
     "护照": "passeport",
@@ -817,5 +817,9 @@
     "开": "ouvrir",
     "收": "recevoir",
     "高": "haut",
-    "低": "Faible"
+    "低": "Faible",
+    "100%25資金安全保障": "Garantie de sécurité à 100% des fonds",
+    "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Si vous souhaitez transférer le capital non préparé, il y aura des dommages-intérêts liquidés, des dommages-intérêts liquidés = Ratio de règlement par défaut * Le nombre de jours restants * Le nombre d'entrepôts de verrouillage.<br> Exemple: Le rapport de règlement de l'exploitation de serrure -Up est de 0,4%, les 3 jours restants expirent et le nombre de verrous est de 1000, puis les dommages de verrouillage -Up = 0,4% * 3 * 1000 = 12U.Les dommages liquidés seront déduits directement du principal.</br>",
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Les membres verrouillent 10 000u sur la plate-forme, et le cycle est de 5 jours, et le produit de gestion de patrimoine à 0,3% de Nissan du montant de verrouillage-bloc est produit comme suit: <br> 10000UX0,3% = 30U </br> C'est 5 Quelques jours après cela, vous pouvez obtenir un revenu 150U."
+
 }

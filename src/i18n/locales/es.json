@@ -679,11 +679,11 @@
     "失敗": "Fallar",
     "帮助详情": "Detalles de ayuda",
     "帮助中心": "Centro de ayuda",
-    "萬": "diez mil",
+    "萬": "M",
     "市場名稱": "Nombre del mercado",
     "最新價格": "Último precio",
     "暂无更多了": "No más",
-    "等": "esperar",
+    "等":  "...",
     "身份驗證": "Autenticación",
     "證件類型：": "Tipo de certificado:",
     "护照": "pasaporte",
@@ -817,5 +817,8 @@
     "开": "abierto",
     "收": "recibir",
     "高": "alto",
-    "低": "Bajo"
+    "低": "Bajo",
+    "100%25資金安全保障": "Garantía de seguridad de fondos 100%",
+    "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Si desea transferir el principal no preparado, habrá daños liquidados, daños liquidados = relación predeterminada de liquidación*El número de días restantes*El número de almacenes de bloqueo.<br> Ejemplo: la relación de liquidación de la minería de bloqueo es 0.4%, los 3 días restantes expiran y el número de bloqueos es de 1000, luego el bloqueo de bloqueo = 0.4%*3*1000 = 12u.El daño liquidado se deducirá directamente del director.</br>",
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Los miembros bloquean 10,000u en la plataforma, y el ciclo es de 5 días, y el producto de gestión de patrimonio de Nissan de la cantidad de bloqueo de bloqueo se produce de la siguiente manera: <br> 10000ux0.3%= 30u </br> Es decir 5 Días después de eso, puede obtener un ingreso de 150U."
 }

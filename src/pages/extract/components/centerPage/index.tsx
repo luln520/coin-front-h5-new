@@ -81,7 +81,7 @@ export default function CenterPage({
                     </div>
                   </div>
                 </div>
-                <p class="extract-15">{use?.name?.toUpperCase()}{translate(getText("提現"))}</p>
+                <p class="extract-15">{use?.name?.toUpperCase()}{" "}{translate(getText("提現"))}</p>
               </li>
               {/* <li class="extract-16">
                 <p class="extract-17">鏈地址</p>

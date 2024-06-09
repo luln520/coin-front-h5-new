@@ -42,7 +42,7 @@ export default function DataList({ huobigetHistory }) {
             <span class="leverDataBox-68">{data.price}</span>
           </div>
           <div class="leverDataBox-69">
-            <span class="leverDataBox-70">{data.amount}</span>
+            <span class="leverDataBox-70">{data.amount?.toFixed(5)}</span>
           </div>
         </div>
       );

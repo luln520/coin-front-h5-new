@@ -50,7 +50,8 @@ export default function CenterPage({
                   {`${data.name.toUpperCase()}${
                     data.czline ? `(${data.czline})`.toUpperCase() : ""
                   }`}
-                  {translate(getText("提現"))}
+                  {lan=="zh"&&translate(getText("提現"))}
+                  {lan!="zh"&&<div>{translate(getText("提現"))}</div>}
                 </span>
               </div>
             </div>

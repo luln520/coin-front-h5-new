@@ -44,17 +44,17 @@ export default function CenterPage({ sendMsg, listData }) {
     for (const data of listData) {
       const node =
         data.type === 1 ? (
-          <div class="servererCenterInfo-22">
-            <div class="servererCenterInfo-23">
-              <div class="servererCenterInfo-24">
+          <div class="murservererCenterInfo-22">
+            <div class="murservererCenterInfo-23">
+              <div class="murservererCenterInfo-24">
                 <img
                   src="https://static.aichat.net/avatar/202311/80b12be3-46df-4489-aa71-4bf784752950.jpg"
-                  class="servererCenterInfo-25"
+                  class="murservererCenterInfo-25"
                 />
               </div>
-              <div class="servererCenterInfo-26">
-                <div class="servererCenterInfo-27">
-                  <div class="servererCenterInfo-28">
+              <div class="murservererCenterInfo-26">
+                <div class="murservererCenterInfo-27">
+                  <div class="murservererCenterInfo-28">
                     {data.content.startsWith("image:") ? (
                       <div
                         style={{
@@ -89,11 +89,11 @@ export default function CenterPage({ sendMsg, listData }) {
             </div>
           </div>
         ) : (
-          <div class="servererCenterInfo-30">
-            <div class="servererCenterInfo-31">
-              <div class="servererCenterInfo-32">
-                <div class="servererCenterInfo-33">
-                  <div class="servererCenterInfo-34">
+          <div class="murservererCenterInfo-30">
+            <div class="murservererCenterInfo-31">
+              <div class="murservererCenterInfo-32">
+                <div class="murservererCenterInfo-33">
+                  <div class="murservererCenterInfo-34">
                     {data.content.startsWith("image:") ? (
                       <div
                         style={{
@@ -141,62 +141,62 @@ export default function CenterPage({ sendMsg, listData }) {
   };
 
   return (
-    <div class="servererCenterInfo-1">
-      <div class="servererCenterInfo-2">
-        <div id="aichat-container" class="servererCenterInfo-3">
-          <div data-reactroot="" class="servererCenterInfo-4">
-            <h3 class="servererCenterInfo-5">
-              <div class="servererCenterInfo-6">
+    <div class="murservererCenterInfo-1">
+      <div class="murservererCenterInfo-2">
+        <div id="aichat-container" class="murservererCenterInfo-3">
+          <div data-reactroot="" class="murservererCenterInfo-4">
+            <h3 class="murservererCenterInfo-5">
+              <div class="murservererCenterInfo-6">
                 <img
                   src="https://static.aichat.net/avatar/202311/80b12be3-46df-4489-aa71-4bf784752950.jpg"
-                  class="servererCenterInfo-7"
+                  class="murservererCenterInfo-7"
                 />
               </div>
-              <div class="servererCenterInfo-8">
+              <div class="murservererCenterInfo-8">
                 Lorna
-                <p class="servererCenterInfo-9">
-                  <span width="0" class="servererCenterInfo-10">
-                    <span class="servererCenterInfo-11">
-                      <span class="servererCenterInfo-12">
-                        <span class="servererCenterInfo-13">
+                <p class="murservererCenterInfo-9">
+                  <span width="0" class="murservererCenterInfo-10">
+                    <span class="murservererCenterInfo-11">
+                      <span class="murservererCenterInfo-12">
+                        <span class="murservererCenterInfo-13">
                           {translate(
                             getText("请直接提交您的问题,等待客服回复即可")
                           )}
                         </span>
                       </span>
                     </span>
-                    <span class="servererCenterInfo-14">…</span>
+                    <span class="murservererCenterInfo-14">…</span>
                   </span>
                 </p>
               </div>
             </h3>
-            <div class="servererCenterInfo-15">
-              <div class="servererCenterInfo-16">
-                <div class="servererCenterInfo-17">
-                  <div class="servererCenterInfo-18">
-                    <div class="servererCenterInfo-19">
-                      <div class="servererCenterInfo-20"></div>
-                      <div class="servererCenterInfo-21" ref={messagesRef}>
+            <div class="murservererCenterInfo-15">
+              <div class="murservererCenterInfo-16">
+                <div class="murservererCenterInfo-17">
+                  <div class="murservererCenterInfo-18">
+                    <div class="murservererCenterInfo-19">
+                      <div class="murservererCenterInfo-20"></div>
+                      <div class="murservererCenterInfo-21" ref={messagesRef}>
                         {getNodes()}
                       </div>
                     </div>
                   </div>
-                  <div class="servererCenterInfo-36">
-                    <div class="servererCenterInfo-37"></div>
+                  <div class="murservererCenterInfo-36">
+                    <div class="murservererCenterInfo-37"></div>
                   </div>
-                  <div class="servererCenterInfo-38">
-                    <div class="servererCenterInfo-39"></div>
+                  <div class="murservererCenterInfo-38">
+                    <div class="murservererCenterInfo-39"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="servererCenterInfo-40">
-              <div class="servererCenterInfo-41">
-                <div class="servererCenterInfo-42">
+            <div class="murservererCenterInfo-40">
+              <div class="murservererCenterInfo-41">
+                <div class="murservererCenterInfo-42">
                   <textarea
                     type="textarea"
                     placeholder="Message"
-                    class="servererCenterInfo-43"
+                    class="murservererCenterInfo-43"
                     id="content"
                     name="content"
                     value={content}
@@ -205,8 +205,8 @@ export default function CenterPage({ sendMsg, listData }) {
                     }}
                   ></textarea>
                 </div>
-                <div class="servererCenterInfo-44">
-                  <div class="servererCenterInfo-45">
+                <div class="murservererCenterInfo-44">
+                  <div class="murservererCenterInfo-45">
                     <Upload
                       name="file"
                       accept="image/*"
@@ -214,12 +214,12 @@ export default function CenterPage({ sendMsg, listData }) {
                       action={imageConfig.uploadUrl}
                       onChange={handleChange}
                     >
-                      <i class="servererCenterInfo-46"></i>
+                      <i class="murservererCenterInfo-46"></i>
                     </Upload>
                   </div>
-                  <div class="servererCenterInfo-47">
+                  <div class="murservererCenterInfo-47">
                     <i
-                      class="servererCenterInfo-48"
+                      class="murservererCenterInfo-48"
                       onClick={() => {
                         setContent("");
                         sendMsg(content);
@@ -228,21 +228,21 @@ export default function CenterPage({ sendMsg, listData }) {
                   </div>
                 </div>
               </div>
-              <div class="servererCenterInfo-49">
-                <div class="servererCenterInfo-50">
-                  <span class="servererCenterInfo-51">Chat </span>
+              <div class="murservererCenterInfo-49">
+                <div class="murservererCenterInfo-50">
+                  <span class="murservererCenterInfo-51">Chat </span>
                   <img
                     src="https://static.aichat.net/image/favicon.ico"
-                    class="servererCenterInfo-52"
+                    class="murservererCenterInfo-52"
                   />
-                  <span class="servererCenterInfo-53"> by aichat</span>
+                  <span class="murservererCenterInfo-53"> by aichat</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <textarea class="servererCenterInfo-54"></textarea>
-        <div id="automa-palette" class="servererCenterInfo-55"></div>
+        <textarea class="murservererCenterInfo-54"></textarea>
+        <div id="automa-palette" class="murservererCenterInfo-55"></div>
       </div>
     </div>
   );

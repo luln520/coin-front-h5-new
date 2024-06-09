@@ -20,7 +20,7 @@
   right: 0px;
   top: 0px;
   z-index: 980;
-  background: rgb(41, 121, 255);
+  background: var(--boutton-background-color);
   color: rgb(255, 255, 255);
 }
 

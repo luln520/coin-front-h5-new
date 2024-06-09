@@ -86,7 +86,7 @@
     -webkit-box-align: center;
     align-items: center;
     margin-bottom: 0px;
-    background-color: rgb(41, 111, 167);
+    background-color: var(--boutton-background-color);
 }
 
 .servererCenterInfo-6 {
@@ -379,7 +379,7 @@
     white-space: normal;
     overflow-wrap: break-word;
     color: rgb(255, 255, 255);
-    background-color: rgb(41, 111, 167);
+    background-color: var(--boutton-background-color);
     max-width: 276px;
 }
 
@@ -617,7 +617,7 @@
     cursor: pointer;
     font-size: 24px;
     background: none;
-    color: rgb(41, 111, 167);
+    color: var(--boutton-background-color);
 }
 
 .servererCenterInfo-48:before {

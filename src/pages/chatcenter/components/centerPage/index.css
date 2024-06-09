@@ -233,7 +233,7 @@
   line-height: inherit;
   box-sizing: border-box;
   height: 150px;
-  background-color: rgb(88, 141, 247);
+  background-color: var(--boutton-background-color);
   background-image: url("https://www.btexure.vip/static/img/1.b8af9232.png");
   position: absolute;
   background-size: 100% 100%;

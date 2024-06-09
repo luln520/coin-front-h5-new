@@ -29,7 +29,7 @@
   font-size: 14px;
   margin-right: 1px;
   width: 46px !important;
-  background-image: linear-gradient(45deg, rgb(69, 71, 254), rgb(82, 115, 254)),
+  background-image: linear-gradient(45deg,var(--boutton-background-color), var(--boutton-background-color)),
     linear-gradient(rgb(43, 49, 57), rgb(43, 49, 57));
   background-blend-mode: normal, normal;
 }

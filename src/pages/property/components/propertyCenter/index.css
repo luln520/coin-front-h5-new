@@ -500,7 +500,7 @@
   transition-duration: 0.5s;
   flex: 1 1 0%;
   width: auto;
-  color: rgb(41, 121, 255);
+  color: var(--boutton-background-color);
   font-weight: bold;
 }
 
@@ -536,7 +536,7 @@
   width: 30px;
   transform: translate(calc((100vw - 30px)/2));
   transition-duration: 0.5s;
-  background-color: rgb(41, 121, 255);
+  background-color: var(--boutton-background-color);
   height: 3px;
   border-radius: 3px;
 }

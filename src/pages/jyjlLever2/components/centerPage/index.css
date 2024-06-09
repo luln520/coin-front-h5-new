@@ -28,7 +28,7 @@
   flex: 1 1 auto;
   width: auto;
   font-weight: bold;
-  color: rgb(41, 121, 255);
+  color: var(--boutton-background-color);
 }
 
 .leverorderlistTopBar-3 {
@@ -148,7 +148,7 @@
   width: 22px;
   transform: translate(21px, -100%);
   transition-duration: 0.5s;
-  background-color: rgb(41, 121, 255);
+  background-color: var(--boutton-background-color);
   height: 3px;
   border-radius: 3px;
 }

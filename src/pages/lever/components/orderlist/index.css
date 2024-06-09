@@ -57,7 +57,7 @@
   font-size: 13px;
   text-align: center;
   line-height: 27px;
-  background-image: linear-gradient(45deg, rgb(69, 71, 254), rgb(82, 115, 254)),
+  background-image: linear-gradient(45deg,var(--boutton-background-color), var(--boutton-background-color)),
     linear-gradient(rgb(43, 49, 57), rgb(43, 49, 57));
   background-blend-mode: normal, normal;
 }
@@ -773,7 +773,7 @@
   flex: 1 1 auto;
   width: auto;
   font-weight: bold;
-  color: rgb(41, 121, 255);
+  color: var(--boutton-background-color);
 }
 
 .leverorderlistTopBar-3 {
@@ -893,7 +893,7 @@
   width: 22px;
   transform: translate(21px, -100%);
   transition-duration: 0.5s;
-  background-color: rgb(41, 121, 255);
+  background-color: var(--boutton-background-color);
   height: 3px;
   border-radius: 3px;
 }

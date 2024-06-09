@@ -10,7 +10,7 @@ export default function TopPage({ kjprofitSum }) {
     <div className="lockupKJ-1">
       <div className="lockupKJ-2">
         <span className="lockupKJ-3">
-          {translate(getText("正在託管的資金"))}
+          {translate(getText("託管的資金"))}
         </span>
       </div>
       <div className="lockupKJ-4">

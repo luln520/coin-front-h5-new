@@ -19,7 +19,7 @@ export default function C2CCKTS({}) {
         <div  className="overlay-content-6"></div>
       </div>
       <p  className="overlay-content-7">
-        {translate(getText("正在匹配C2C商家，請您耐心等待1-5分鐘"))}
+        {translate(getText("匹配C2C商家中，請您耐心等待1-5分鐘"))}
         ...
       </p>
     </div>

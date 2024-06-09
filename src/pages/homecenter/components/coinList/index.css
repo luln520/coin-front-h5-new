@@ -18,8 +18,8 @@
   width: 50%;
   text-align: center;
   font-size: 14px;
-  color: rgb(88, 139, 247);
-  border-bottom: 2px solid rgb(52, 137, 248);
+  color: var(--boutton-background-color);
+  border-bottom: 2px solid var(--boutton-background-color);
   margin: 0px 10px;
   font-weight: 700;
 }

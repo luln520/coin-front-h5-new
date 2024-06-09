@@ -349,7 +349,7 @@
   font-size: 12px;
   line-height: inherit;
   box-sizing: border-box;
-  color: rgb(0, 102, 255) !important;
+  color: var(--boutton-background-color) !important;
   text-align: right;
 }
 
@@ -454,7 +454,7 @@
   display: block;
   line-height: inherit;
   box-sizing: border-box;
-  color: rgb(0, 102, 255) !important;
+  color: var(--boutton-background-color) !important;
   font-size: 13px;
 }
 
@@ -621,7 +621,7 @@
   box-sizing: border-box;
   position: relative;
   text-align: center;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
   font-size: 10px;
   line-height: normal;
   margin-top: 0px;
@@ -1142,7 +1142,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
   cursor: pointer;
-  color: rgb(0, 122, 255);
+  color: var(--boutton-background-color);
 }
 
 .loginboxnew-87:active {

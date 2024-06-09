@@ -577,7 +577,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-58 {
@@ -727,7 +727,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-71 {
@@ -877,7 +877,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-84 {
@@ -1027,7 +1027,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-97 {
@@ -1177,7 +1177,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-110 {
@@ -1327,7 +1327,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-123 {
@@ -1477,7 +1477,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-136 {
@@ -1627,7 +1627,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-149 {
@@ -1777,7 +1777,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-162 {
@@ -1927,7 +1927,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-175 {
@@ -2077,7 +2077,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-188 {
@@ -2227,7 +2227,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-left: 10px;
-  color: rgb(52, 137, 248);
+  color: var(--boutton-background-color);
 }
 
 .propertycenter-201 {

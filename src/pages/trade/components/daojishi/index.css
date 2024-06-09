@@ -77,7 +77,7 @@
   width: 264px;
   padding: 10px 0px 30px;
   text-align: center;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
 }
 
 .daojishi-7 {
@@ -287,7 +287,7 @@
   -webkit-tap-highlight-color: transparent;
   text-align: center;
   width: 100%;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
   font-size: 14px;
 }
 
@@ -308,7 +308,7 @@
   height: 38px;
   line-height: 38px;
   padding: 0px 10px;
-  background: rgb(88, 139, 247);
+  background: var(--boutton-background-color);
   color: rgb(255, 255, 255);
   border: none;
   font-size: 14px;

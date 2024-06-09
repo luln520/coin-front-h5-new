@@ -61,11 +61,11 @@
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
   text-align: center;
   line-height: 40px;
   font-size: 16px !important;
-  border-bottom: 3px solid rgb(88, 139, 247) !important;
+  border-bottom: 3px solid var(--boutton-background-color) !important;
 }
 
 .coinPopupTopTitle-8 {

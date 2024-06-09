@@ -1458,7 +1458,7 @@
   -webkit-tap-highlight-color: transparent;
   text-align: center;
   width: 100%;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
   font-size: 14px;
 }
 
@@ -1481,7 +1481,7 @@
   line-height: 38px;
   width: 70%;
   padding: 0px 10px;
-  background: rgb(88, 139, 247);
+  background: var(--boutton-background-color);
   color: rgb(255, 255, 255);
   border: none;
   font-size: 14px;

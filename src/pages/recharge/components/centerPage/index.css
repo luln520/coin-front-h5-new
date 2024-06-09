@@ -399,7 +399,7 @@
   border-radius: 5px;
   -webkit-tap-highlight-color: transparent;
   width: 100%;
-  background: rgb(52, 137, 248) !important;
+  background: var(--boutton-background-color) !important;
   appearance: none;
   white-space: nowrap;
   text-overflow: ellipsis;

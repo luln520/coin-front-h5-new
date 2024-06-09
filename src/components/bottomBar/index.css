@@ -98,7 +98,7 @@
   box-sizing: border-box;
   position: relative;
   text-align: center;
-  color: rgb(88, 139, 247);
+  color: var(--boutton-background-color);
   font-size: 10px;
   line-height: normal;
   margin-top: 0px;

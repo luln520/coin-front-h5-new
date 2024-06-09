@@ -576,7 +576,7 @@
   margin: 20px 0px;
   height: 40px;
   line-height: 40px;
-  background: rgb(52, 137, 248) !important;
+  background: var(--boutton-background-color) !important;
   border: none !important;
   color: rgb(255, 255, 255) !important;
 }

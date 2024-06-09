@@ -116,7 +116,7 @@
   -webkit-box-flex: 1;
   flex: 1 1 0%;
   font-size: 15px;
-  color: rgb(61, 41, 209);
+  color: var(--boutton-background-color);
   text-align: center;
 }
 
@@ -176,7 +176,7 @@
   -webkit-box-flex: 1;
   flex: 1 1 0%;
   font-size: 15px;
-  color: rgb(61, 41, 209);
+  color: var(--boutton-background-color);
   text-align: center;
   box-sizing: border-box;
 }

@@ -56,6 +56,22 @@ async function getUserInfo() {
   }
 }
 
+// 定义一个函数来替换文本中的 NaN 为 空格
+function replaceNaNWithSpace(element) {
+  // 如果当前元素是文本节点，且包含 NaN 字符串，则替换为 空格
+  if (
+    element.nodeType === Node.TEXT_NODE &&
+    element.nodeValue.includes("NaN")
+  ) {
+    element.nodeValue = element.nodeValue.replace(/NaN/g, " ");
+  }
+  // 如果当前元素是元素节点，则递归遍历其子节点
+  else if (element.nodeType === Node.ELEMENT_NODE) {
+    for (var i = 0; i < element.childNodes.length; i++) {
+      replaceNaNWithSpace(element.childNodes[i]);
+    }
+  }
+}
 //公司 记载完成后再渲染页面
 initCompany()
   .then(() => {
@@ -71,3 +87,8 @@ getUserInfo();
 setInterval(() => {
   getUserInfo();
 }, 30000);
+
+//替换 NaN
+setInterval(() => {
+  replaceNaNWithSpace(document.body);
+}, 1000);

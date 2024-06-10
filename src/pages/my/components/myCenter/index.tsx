@@ -349,7 +349,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             />
           </div>
         </div>
-        <div
+        {/* <div
           className="mycenter-92"
           onClick={() => {
             navigate("/borrowmoney");
@@ -373,7 +373,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             />
           </div>
           <div className="mycenter-101"></div>
-        </div>
+        </div> */}
       </div>
       <div className="mycenter-140"></div>
     </div>

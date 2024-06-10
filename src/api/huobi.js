@@ -36,10 +36,10 @@ export const huobiApi = {
   /**
  * 火币交易历史
  */
-  getHistoryK: async (ticker, period) => {
+  getHistoryK: async (ticker, period, size) => {
     return await smartAxios.request({
       method: 'get',
-      url: `/market/history/kline?symbol=${ticker}&period=${period}&size=2000`,
+      url: `/market/history/kline?symbol=${ticker}&period=${period}&size=${size}`,
       params: {},
     }).then((res) => {
       return res?.data;

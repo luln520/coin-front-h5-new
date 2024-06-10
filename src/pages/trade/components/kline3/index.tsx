@@ -33,10 +33,10 @@ export default function MyChartComponent({
   const getHistoryKLineData = async (symbol, period) => {
     const baseUrl = "https://api.huobi.pro";
     const huobiPeriod = mapPeriodToHuobi(period);
-    const url = `${baseUrl}/market/history/kline?symbol=${symbol.ticker.toLowerCase()}&period=${huobiPeriod}&size=2000`;
     const data = await huobiApi.getHistoryK(
       symbol.ticker.toLowerCase(),
-      huobiPeriod
+      huobiPeriod,
+      2
     );
     let kLineData = data.data.map((item) => ({
       timestamp: item.id * 1000,
@@ -135,28 +135,32 @@ export default function MyChartComponent({
     chart.createIndicator("MA", true, { id: "candle_pane" });
     chart.createIndicator("VOL");
     chart.createIndicator("MACD");
-    const data = await getHistoryKLineData(
+    const datas = await getHistoryKLineData(
       {
         ticker: `${nowTab.toUpperCase()}USDT`,
         name: `${nowTab.toUpperCase()}USDT`,
       },
       klinePeriod[timeindex - 1]
     );
-    chart.applyNewData(data);
+    chart.applyNewData(datas);
   };
   //监控变化
   useEffect(() => {
     const item = coinListData[nowTab];
     const item1 = coinListMinData[nowTab];
-    if (kchart && item && item1) {
-      kchart.updateData({
+    if (kchart && item1) {
+      const data = {
         timestamp: item1.id * 1000,
         open: item1.open,
-        close: item.close,
+        close: item1.close,
         high: item1.high,
         low: item1.low,
         volume: item1.vol,
-      });
+      };
+      console.info(kchart.getDataList());
+      console.info(data);
+      console.info("--------");
+      kchart.updateData(data);
     }
   }, [coinListMinData[nowTab]?.close, coinListData[nowTab]?.close]);
   useEffect(() => {

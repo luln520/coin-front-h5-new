@@ -23,6 +23,12 @@ export const userApi = {
     return postRequest('/api/pc/user/auth', param);
   },
   /**
+   * 用户高级认证
+   */
+   cardsc: (param) => {
+    return getRequest('/api/pc/user/cardsc', param);
+  },
+  /**
    *修改密码
    */
   editpassword: (param) => {

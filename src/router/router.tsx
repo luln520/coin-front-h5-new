@@ -53,6 +53,7 @@ import AddressAdd from "../pages/addressAdd";
 import AddressList from "../pages/addresslist";
 import Lever from "../pages/lever";
 import JYJLLever2 from "../pages/jyjlLever2";
+import GJIdCard from "../pages/gjidcard";
 //全局
 export const WSContext = createContext([] as any[]);
 export const WSMinContext = createContext([] as any[]);
@@ -350,6 +351,10 @@ export default function AppRouter() {
                     <Route
                       path="/idcard"
                       element={getElement(<IdCard />)}
+                    ></Route>
+                    <Route
+                      path="/gjidcard"
+                      element={getElement(<GJIdCard />)}
                     ></Route>
                     <Route path="/jyjl" element={getElement(<JYJL />)}></Route>
                     <Route

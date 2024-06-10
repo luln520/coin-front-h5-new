@@ -19,6 +19,12 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
       Toast.show({ content: translate(getText("成功")) });
     }
   };
+  const types=[
+    "未認證",
+    "審核中",
+    "已認證",
+    "審核拒絕"
+  ]
   return (
     <div className="mycenter-1">
       <div className="mycenter-2">
@@ -106,7 +112,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             <p className="mycenter-35">{translate(getText("身份認證"))}</p>
           </div>
           <p className="mycenter-36">
-            {translate(getText(userInfo?.rzstatus === 2 ? "已認證" : "未認證"))}
+            {translate(getText(types[userInfo?.rzstatus]))}
           </p>
           <div className="mycenter-37">
             <img
@@ -135,7 +141,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             <p className="mycenter-35">{translate(getText("高级認證"))}</p>
           </div>
           <p className="mycenter-36">
-            {translate(getText(userInfo?.rzstatus === 2 ? "已認證" : "未認證"))}
+            {translate(getText(types[userInfo?.rzstatus]))}
           </p>
           <div className="mycenter-37">
             <img

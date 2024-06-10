@@ -27,7 +27,7 @@ export default function CenterPage({
           <div class="c2cckcenter-6">
             <div class="c2cckcenter-7">
               <img
-                src="https://kmadmin.lpyrmgck.online/costIco/20220324033547378184.png"
+                src="/costIco/20220324033547378184.png"
                 draggable="true"
                 class="c2cckcenter-9"
               />

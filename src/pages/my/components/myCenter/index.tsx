@@ -66,7 +66,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
               </div>
               <div className="mycenter-17">
                 <img
-                  src="https://kmadmin.lpyrmgck.online/level/1.png"
+                  src="/level/1.png"
                   className="mycenter-19"
                 />
                 <div className="mycenter-20">

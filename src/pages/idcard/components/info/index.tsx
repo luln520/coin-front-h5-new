@@ -137,7 +137,7 @@ export default function Info({ userInfo, sendAuth }) {
                     {!cardzm && (
                       <div class="idcard-28">
                         {/* <img
-                          src="https://www.btexure.vip/static/img/img-add.png"
+                          src="/img/img-add.png"
                           class="idcard-30"
                         /> */}
                       </div>
@@ -175,7 +175,7 @@ export default function Info({ userInfo, sendAuth }) {
                     {!cardfm && (
                       <div class="idcard-28">
                         {/* <img
-                          src="https://www.btexure.vip/static/img/img-add.png"
+                          src="/img/img-add.png"
                           class="idcard-30"
                         /> */}
                       </div>
@@ -193,7 +193,7 @@ export default function Info({ userInfo, sendAuth }) {
                   <div class="idcard-40">
                     <div class="idcard-41"></div>
                     <img
-                      src="https://www.btexure.vip/static/img/img-add.png"
+                      src="/img/img-add.png"
                       draggable="true"
                       class="idcard-42"
                     />

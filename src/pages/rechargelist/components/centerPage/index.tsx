@@ -92,7 +92,7 @@ export default function CenterPage({ coinList }) {
               <div class="rechargelist-13">
                 <div class="rechargelist-14">
                   <img
-                    src="https://kmadmin.lpyrmgck.online/costIco/20220324033547378184.png"
+                    src="/costIco/20220324033547378184.png"
                     class="rechargelist-16"
                   />
                   <div class="rechargelist-17">

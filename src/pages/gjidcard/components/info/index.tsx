@@ -75,7 +75,7 @@ export default function Info({ userInfo, sendCardsc }) {
                     {!cardsc && (
                       <div class="idcard-28">
                         {/* <img
-                          src="https://www.btexure.vip/static/img/img-add.png"
+                          src="/img/img-add.png"
                           class="idcard-30"
                         /> */}
                       </div>
@@ -93,7 +93,7 @@ export default function Info({ userInfo, sendCardsc }) {
                   <div class="idcard-40">
                     <div class="idcard-41"></div>
                     <img
-                      src="https://www.btexure.vip/static/img/img-add.png"
+                      src="/img/img-add.png"
                       draggable="true"
                       class="idcard-42"
                     />

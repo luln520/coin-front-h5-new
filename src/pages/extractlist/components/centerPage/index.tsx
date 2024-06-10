@@ -88,7 +88,7 @@ export default function CenterPage({
                 <div class="extractlist-7">
                   <div class="extractlist-8">
                     <img
-                      src="https://kmadmin.lpyrmgck.online/banner/20240216074328978161.png"
+                      src="/level/20240216074328978161.png"
                       class="extractlist-10"
                     />
                   </div>

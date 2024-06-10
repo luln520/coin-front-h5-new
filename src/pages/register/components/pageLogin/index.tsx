@@ -129,7 +129,7 @@ export default function PageRegister({
             }}
           >
             <img
-              src="https://www.btexure.vip/static/img/kf.png"
+              src="/img/kf.png"
               class="registercenter-13"
             />
           </div>
@@ -207,8 +207,8 @@ export default function PageRegister({
                       }}
                       src={
                         passwordType1
-                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                          ? "/img/login_btn_eye_close.png"
+                          : "/img/login_btn_eye_open.png"
                       }
                       class="registercenter-42"
                     />
@@ -234,8 +234,8 @@ export default function PageRegister({
                       }}
                       src={
                         passwordType2
-                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                          ? "/img/login_btn_eye_close.png"
+                          : "/img/login_btn_eye_open.png"
                       }
                       class="registercenter-42"
                     />
@@ -389,8 +389,8 @@ export default function PageRegister({
                       }}
                       src={
                         passwordType3
-                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                          ? "/img/login_btn_eye_close.png"
+                          : "/img/login_btn_eye_open.png"
                       }
                       class="registercenter-42"
                     />
@@ -416,8 +416,8 @@ export default function PageRegister({
                       }}
                       src={
                         passwordType4
-                          ? "https://www.btexure.vip/static/img/login_btn_eye_close.png"
-                          : "https://www.btexure.vip/static/img/login_btn_eye_open.png"
+                          ? "/img/login_btn_eye_close.png"
+                          : "/img/login_btn_eye_open.png"
                       }
                       class="registercenter-42"
                     />

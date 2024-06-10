@@ -43,7 +43,7 @@
     -webkit-tap-highlight-color: transparent;
     width: 100%;
     height: 100%;
-    background-image: url("https://www.btexure.vip/static/ICON/1.png");
+    background-image: url(/public/ICON/1.png);
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -98,7 +98,7 @@
     -webkit-tap-highlight-color: transparent;
     width: 100%;
     height: 100%;
-    background-image: url("https://www.btexure.vip/static/ICON/3.png");
+    background-image: url(/public/ICON/3.png);
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;

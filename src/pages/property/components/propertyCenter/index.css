@@ -26,7 +26,7 @@
   align-items: center;
   color: rgb(255, 255, 255);
   height: 170px;
-  background-image: url("https://www.btexure.vip/static/ICON/25.png");
+  background-image: url(/public/ICON/25.png);
   background-size: 100% 100%;
 }
 
@@ -115,7 +115,7 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.btexure.vip/static/ICON/20.png");
+  background-image: url(/public/ICON/20.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -222,7 +222,7 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.btexure.vip/static/ICON/21.png");
+  background-image: url(/public/ICON/21.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -325,7 +325,7 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.btexure.vip/static/ICON/22.png");
+  background-image: url(/public/ICON/22.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }

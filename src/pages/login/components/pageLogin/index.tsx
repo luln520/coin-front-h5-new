@@ -58,7 +58,7 @@ export default function PageLogin({
                 >
                   <div className="loginboxnew-12"></div>
                   <img
-                    src="https://www.btexure.vip/static/img/kf.png"
+                    src="/img/kf.png"
                     
                     className="loginboxnew-13"
                   />

@@ -23,7 +23,7 @@ export default function Noice({ content }) {
       <div className="homenotice-2">
         <div className="homenotice-3">
           <img
-            src="https://www.btexure.vip/static/ICON/4.png"
+            src="/ICON/4.png"
             className="homenotice-5"
           />
         </div>

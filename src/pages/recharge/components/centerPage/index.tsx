@@ -201,7 +201,7 @@ export default function CenterPage({
                   </Upload>
                   {/* <div class="recharge-29">
                     <img
-                      src="https://www.btexure.vip/static/img/img-add.png"
+                      src="/img/img-add.png"
                       class="recharge-31"
                     />
                   </div>

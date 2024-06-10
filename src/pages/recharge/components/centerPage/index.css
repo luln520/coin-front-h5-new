@@ -42,7 +42,6 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://kmadmin.lpyrmgck.online/banner/20240326190254593292.png");
   background-position: 0% 0%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -359,7 +358,7 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.btexure.vip/static/img/img-add.png");
+  background-image: url(/public/img/img-add.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

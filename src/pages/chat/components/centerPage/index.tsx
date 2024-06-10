@@ -48,7 +48,7 @@ export default function CenterPage({ sendMsg, listData }) {
             <div class="servererCenterInfo-23">
               <div class="servererCenterInfo-24">
                 <img
-                  src="https://static.aichat.net/avatar/202311/80b12be3-46df-4489-aa71-4bf784752950.jpg"
+                  src="/aichat/80b12be3-46df-4489-aa71-4bf784752950.jpg"
                   class="servererCenterInfo-25"
                 />
               </div>
@@ -148,7 +148,7 @@ export default function CenterPage({ sendMsg, listData }) {
             <h3 class="servererCenterInfo-5">
               <div class="servererCenterInfo-6">
                 <img
-                  src="https://static.aichat.net/avatar/202311/80b12be3-46df-4489-aa71-4bf784752950.jpg"
+                  src="/aichat/80b12be3-46df-4489-aa71-4bf784752950.jpg"
                   class="servererCenterInfo-7"
                 />
               </div>
@@ -232,7 +232,7 @@ export default function CenterPage({ sendMsg, listData }) {
                 <div class="servererCenterInfo-50">
                   <span class="servererCenterInfo-51">Chat </span>
                   <img
-                    src="https://static.aichat.net/image/favicon.ico"
+                    src="/aichat/favicon.ico"
                     class="servererCenterInfo-52"
                   />
                   <span class="servererCenterInfo-53"> by aichat.net</span>

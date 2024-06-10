@@ -16,7 +16,7 @@
   position: relative;
   overflow: hidden;
   height: 208px;
-  background-image: url("https://www.btexure.vip/static/ICON/31.png");
+  background-image: url(/public/ICON/31.png);
   background-size: 100% 100%;
 }
 
@@ -157,7 +157,6 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.lpyrmgck.online/logo/logo.png?time=0");
   background-position: 0% 0%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -194,7 +193,7 @@
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   height: 100%;
-  background-image: url("https://kmadmin.lpyrmgck.online/level/1.png");
+  background-image: url(/public/level/1.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }

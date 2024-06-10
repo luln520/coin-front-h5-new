@@ -234,7 +234,7 @@
   box-sizing: border-box;
   height: 150px;
   background-color: var(--boutton-background-color);
-  background-image: url("https://www.btexure.vip/static/img/1.b8af9232.png");
+  background-image: url(/public/img/1.b8af9232.png);
   position: absolute;
   background-size: 100% 100%;
   width: 100%;
@@ -293,7 +293,7 @@
   border-radius: 16px;
   margin-top: 15px;
   padding: 20px 0px 19px 19px;
-  background-image: url("https://www.btexure.vip/static/img/3.90d0ec1c.png");
+  background-image: url(/public/img/3.90d0ec1c.png);
 }
 
 .chatcenter-23 {

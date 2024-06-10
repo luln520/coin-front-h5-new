@@ -36,7 +36,7 @@ export default function MyChartComponent({
     const data = await huobiApi.getHistoryK(
       symbol.ticker.toLowerCase(),
       huobiPeriod,
-      2
+      2000
     );
     let kLineData = data.data.map((item) => ({
       timestamp: item.id * 1000,
@@ -117,16 +117,18 @@ export default function MyChartComponent({
       yAxis: {
         // position: "left",
         axisLine: {
-          size: 0.5,
+          size: 1,
+          color: "#3E444D",
         },
       },
       xAxis: {
         axisLine: {
-          size: 0.5,
+          size: 1,
+          color: "#3E444D",
         },
       },
       separator: {
-        size: 0.5,
+        size: 1,
         color: "#3E444D",
       },
     });
@@ -135,32 +137,28 @@ export default function MyChartComponent({
     chart.createIndicator("MA", true, { id: "candle_pane" });
     chart.createIndicator("VOL");
     chart.createIndicator("MACD");
-    const datas = await getHistoryKLineData(
+    const data = await getHistoryKLineData(
       {
         ticker: `${nowTab.toUpperCase()}USDT`,
         name: `${nowTab.toUpperCase()}USDT`,
       },
       klinePeriod[timeindex - 1]
     );
-    chart.applyNewData(datas);
+    chart.applyNewData(data);
   };
   //监控变化
   useEffect(() => {
     const item = coinListData[nowTab];
     const item1 = coinListMinData[nowTab];
-    if (kchart && item1) {
-      const data = {
+    if (kchart && item && item1) {
+      kchart.updateData({
         timestamp: item1.id * 1000,
         open: item1.open,
-        close: item1.close,
+        close: item.close,
         high: item1.high,
         low: item1.low,
         volume: item1.vol,
-      };
-      console.info(kchart.getDataList());
-      console.info(data);
-      console.info("--------");
-      kchart.updateData(data);
+      });
     }
   }, [coinListMinData[nowTab]?.close, coinListData[nowTab]?.close]);
   useEffect(() => {

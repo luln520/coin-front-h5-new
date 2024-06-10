@@ -25,13 +25,13 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-6">
               {index == 1 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/2.png"
+                  src="/home/2.png"
                   className="bottomBar-7"
                 />
               )}
               {index != 1 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/1.png"
+                  src="/home/1.png"
                   className="bottomBar-7"
                 />
               )}
@@ -51,13 +51,13 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-11">
               {index == 2 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/4.png"
+                  src="/home/4.png"
                   className="bottomBar-7"
                 />
               )}
               {index != 2 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/3.png"
+                  src="/home/3.png"
                   className="bottomBar-12"
                 />
               )}
@@ -77,13 +77,13 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-16">
               {index == 3 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/6.png"
+                  src="/home/6.png"
                   className="bottomBar-17"
                 />
               )}
               {index != 3 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/5.png"
+                  src="/home/5.png"
                   className="bottomBar-17"
                 />
               )}
@@ -103,13 +103,13 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-21">
               {index == 4 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/16.png"
+                  src="/home/16.png"
                   className="bottomBar-17"
                 />
               )}
               {index != 4 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/15.png"
+                  src="/home/15.png"
                   className="bottomBar-17"
                 />
               )}
@@ -129,13 +129,13 @@ export default function BottomBar({ index }) {
             <div className="bottomBar-26">
               {index == 5 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/10.png"
+                  src="/home/10.png"
                   className="bottomBar-17"
                 />
               )}
               {index != 5 && (
                 <img
-                  src="https://www.btexure.vip/static/ICON/home/9.png"
+                  src="/home/9.png"
                   className="bottomBar-27"
                 />
               )}

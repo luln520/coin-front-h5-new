@@ -382,7 +382,7 @@
   border-radius: 10px;
   width: 182px;
   height: 128px;
-  background-image: url("https://www.btexure.vip/static/ICON/center/1.png");
+  background-image: url(/public/center/1.png);
   background-size: 100% 100%;
 }
 
@@ -449,7 +449,7 @@
   text-align: center;
   border-radius: 10px;
   width: 182px;
-  background-image: url("https://www.btexure.vip/static/ICON/center/1.png");
+  background-image: url(/public/center/1.png);
   background-size: 100% 100%;
 }
 
@@ -516,7 +516,7 @@
   text-align: center;
   border-radius: 10px;
   width: 182px;
-  background-image: url("https://www.btexure.vip/static/ICON/center/1.png");
+  background-image: url(/public/center/1.png);
   background-size: 100% 100%;
 }
 

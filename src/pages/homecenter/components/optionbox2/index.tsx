@@ -33,7 +33,7 @@ export default function Optionbox2({ loginmsg }) {
         >
           <div className="optionbox2-9">
             <img
-              src="https://www.btexure.vip/static/ICON/home/13.png"
+              src="/home/13.png"
               className="optionbox2-11"
             />
           </div>
@@ -48,7 +48,7 @@ export default function Optionbox2({ loginmsg }) {
           <div className="optionbox2-14">
             <div className="optionbox2-15"></div>
             <img
-              src="https://www.btexure.vip/static/ICON/home/14.png"
+              src="/home/14.png"
               className="optionbox2-16"
             />
           </div>

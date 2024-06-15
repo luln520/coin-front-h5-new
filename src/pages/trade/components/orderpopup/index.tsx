@@ -123,7 +123,7 @@ export default function OrderPopup({
             <div class="orderPopup-41">
               <div class="orderPopup-42">
                 <input
-                  placeholder={translate(getText("最少10起買"))}
+                  placeholder={translate(getText("最少10起買")).replace("10",minNum)}
                   class="orderPopup-44"
                   type="number"
                   min={minNum}

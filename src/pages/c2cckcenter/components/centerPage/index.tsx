@@ -40,7 +40,7 @@ export default function CenterPage({
                 </div>
               </div>
             </div>
-            {lan == "zh" ? item.name : item.currency}
+            {lan == "zh" ? item.name : item.currency+" "}
             {translate(getText("充值"))}
           </div>
           <i class="c2cckcenter-15"></i>

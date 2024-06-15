@@ -118,22 +118,6 @@ export default function Zixunlist({ coinListData, ctmarketlist }) {
         <div className="zixunlist-3">
           <div className="zixunlist-4">
             {getNodes()}
-            <div className="zixunlist-5">
-              <h1 className="zixunlist-6">
-                BTC
-                <span className="zixunlist-7">/USDT</span>
-              </h1>
-              <h1 className="zixunlist-8">64064.54</h1>
-              <small className="zixunlist-9">+3.71%</small>
-            </div>
-            <div className="zixunlist-35">
-              <h1 className="zixunlist-36">
-                CRO
-                <span className="zixunlist-37">/USDT</span>
-              </h1>
-              <h1 className="zixunlist-38">0.063696</h1>
-              <small className="zixunlist-39">-1.87%</small>
-            </div>
           </div>
         </div>
       </div>

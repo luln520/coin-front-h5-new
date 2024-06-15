@@ -67,7 +67,8 @@ export default function AppRouter() {
   const [nologinmsg, setnologinmsg] = useState({} as any);
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
   const reader = new FileReader();
-  let WS = null;
+  let WS1 = null;
+  let WS2 = null;
   let timer: any;
   const [coinListData, setCoinListData] = useState({} as any);
   const [coinListMinData, setCoinListMinData] = useState({} as any);
@@ -75,52 +76,87 @@ export default function AppRouter() {
   let coinListDataMinMap = {} as any;
   const postKDataDay = {};
   const postKDataMin = {};
-  //开始链接 wss
-  const startWS = () => {
-    WS = new WebSocket("wss://api.huobi.pro/ws");
-    WS.onopen = () => {
+  // 定义一个延时函数
+  function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  //开始链接 wss1
+  const startWS1 = () => {
+    WS1 = new WebSocket("wss://api.huobi.pro/ws");
+    WS1.onopen = async () => {
       console.info("链接打开");
       for (const key in postKDataDay) {
-        WS.send(JSON.stringify(postKDataDay[key])); //实时
-      }
-      for (const key in postKDataMin) {
-        WS.send(JSON.stringify(postKDataMin[key])); //实时
+        WS1.send(JSON.stringify(postKDataDay[key])); //实时
+        await delay(200); // 等待1秒钟
       }
     };
-    WS.onclose = () => {
+    WS1.onclose = () => {
       console.info("链接关闭");
     };
-    WS.onmessage = async (event) => {
+    WS1.onmessage = async (event) => {
       reader.onload = (e) => {
         let ploydata = new Uint8Array(e.target?.result as ArrayBufferLike);
         let msg = pako.inflate(ploydata, { to: "string" });
-        handleData(msg);
+        handleData(msg, WS1);
       };
       try {
         reader.readAsArrayBuffer(event.data);
       } catch (e) {}
     };
-    WS.onerror = () => {
+    WS1.onerror = () => {
+      console.info("链接失败");
+    };
+  };
+
+  //开始链接 wss2
+  const startWS2 = () => {
+    WS2 = new WebSocket("wss://api.huobi.pro/ws");
+    WS2.onopen = async () => {
+      console.info("链接打开");
+      for (const key in postKDataMin) {
+        WS2.send(JSON.stringify(postKDataMin[key])); //实时
+        await delay(200); // 等待1秒钟
+      }
+    };
+    WS2.onclose = () => {
+      console.info("链接关闭");
+    };
+    WS2.onmessage = async (event) => {
+      reader.onload = (e) => {
+        let ploydata = new Uint8Array(e.target?.result as ArrayBufferLike);
+        let msg = pako.inflate(ploydata, { to: "string" });
+        handleData(msg, WS2);
+      };
+      try {
+        reader.readAsArrayBuffer(event.data);
+      } catch (e) {}
+    };
+    WS2.onerror = () => {
       console.info("链接失败");
     };
   };
 
   // 发送响应信息
-  const sendHeartMessage = (ping) => {
+  const sendHeartMessage = (ping, WS) => {
     WS?.send(JSON.stringify({ pong: ping }));
   };
 
-  //关闭WSS
-  const closeWS = () => {
-    WS?.close();
+  //关闭WSS1
+  const closeWS1 = () => {
+    WS1?.close();
+  };
+
+  //关闭WSS2
+  const closeWS2 = () => {
+    WS2?.close();
   };
 
   //处理响应数据
-  const handleData = (msg: string) => {
+  const handleData = (msg: string, WS) => {
     let data = JSON.parse(msg);
     if (data.ping) {
       // 如果是 ping 消息
-      sendHeartMessage(data.ping);
+      sendHeartMessage(data.ping, WS);
     } else if (data.status === "ok") {
       //历史数据
     } else {
@@ -208,10 +244,12 @@ export default function AppRouter() {
   }, []);
   useEffect(() => {
     loadctmarketlistData().then(() => {
-      startWS();
+      startWS1();
+      startWS2();
     });
     return () => {
-      closeWS();
+      closeWS1();
+      closeWS2();
     };
   }, []);
   useEffect(() => {

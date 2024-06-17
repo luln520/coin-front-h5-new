@@ -106,10 +106,7 @@ export default function Info({ userInfo, sendCardsc }) {
               <div
                 class="idcard-45"
                 onClick={() => {
-                  if (userInfo?.rzstatus === 2) {
-                    return;
-                  }
-                  if(!cardsc){
+                  if (!cardsc) {
                     return;
                   }
                   sendCardsc({
@@ -141,13 +138,17 @@ export default function Info({ userInfo, sendCardsc }) {
                     <br class="idcard-53" />
                     2.{translate(getText("確保不會被安全軟件攔截"))}
                     <br class="idcard-54" />
-                    3.{translate(getText("同步手機時間，確保時間與當地時區一致"))}
+                    3.
+                    {translate(getText("同步手機時間，確保時間與當地時區一致"))}
                     <br class="idcard-55" />
                     4.{translate(getText("請勿佩戴眼鏡、帽子"))}
                     <br class="idcard-56" />
                     5.{translate(getText("請在光線充足的環境進行驗證"))}
                     <br class="idcard-57" />
-                    6.{translate(getText("使用手機驗證請關閉手機的美顏、修圖等功能"))}
+                    6.
+                    {translate(
+                      getText("使用手機驗證請關閉手機的美顏、修圖等功能")
+                    )}
                   </p>
                   <p class="idcard-58"></p>
                 </div>

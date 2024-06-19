@@ -6,9 +6,11 @@ import "./index.css";
 
 export default function CenterPage({
   list,
+  isShowZF,
   setVisibleCK,
   setcurrencyId,
   currencyId,
+  setVisibleCKTS2
 }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
@@ -20,6 +22,10 @@ export default function CenterPage({
         <div
           class="c2cckcenter-5"
           onClick={() => {
+            if(isShowZF){
+              setVisibleCKTS2(true);
+              return
+            }
             setVisibleCK(true);
             setcurrencyId(item?.id);
           }}

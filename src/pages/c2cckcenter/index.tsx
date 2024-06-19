@@ -99,6 +99,10 @@ export default function C2CckCenter() {
       setbankType(0);
       setcurrencyIdCK(0);
       setVisibleCKTS(true);
+      //延时关闭
+      setTimeout(() => {
+        setVisibleCKTS(false);
+      }, 5000);
     } else {
       Toast.show({ content: data.msg });
     }
@@ -125,8 +129,10 @@ export default function C2CckCenter() {
         }}
       />
       <CenterPage
+        isShowZF={isShowZF}
         list={currencylist}
         setVisibleCK={setVisibleCK}
+        setVisibleCKTS2={setVisibleCKTS2}
         setcurrencyId={setcurrencyIdCK}
         currencyId={currencyIdCK}
       />

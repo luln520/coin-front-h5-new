@@ -439,13 +439,9 @@
   font-size: 12px;
   line-height: inherit;
   box-sizing: border-box;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
   padding: 15px 0px;
   margin-top: 15px;
+  color: var(--boutton-background-color) 
 }
 
 .loginboxnew-35 {

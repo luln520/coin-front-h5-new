@@ -44,7 +44,6 @@ export default function PageLogin({
                     src={
                       imageConfig.baseImageUrl + companyData?.companyLogoName
                     }
-                    
                     className="loginboxnew-9"
                   />
                 </div>
@@ -57,16 +56,14 @@ export default function PageLogin({
                   }}
                 >
                   <div className="loginboxnew-12"></div>
-                  <img
-                    src="/img/kf.png"
-                    
-                    className="loginboxnew-13"
-                  />
+                  <img src="/img/kf.png" className="loginboxnew-13" />
                 </div>
               </div>
               <div className="loginboxnew-14">
                 <div className="loginboxnew-15">
-                  <div className="loginboxnew-16">{translate(getText("賬號"))}</div>
+                  <div className="loginboxnew-16">
+                    {translate(getText("賬號"))}
+                  </div>
                   <div className="loginboxnew-17">
                     <div className="loginboxnew-18">
                       <div className="loginboxnew-19">
@@ -87,7 +84,9 @@ export default function PageLogin({
                   </div>
                 </div>
                 <div className="loginboxnew-22">
-                  <div className="loginboxnew-23">{translate(getText("密碼"))}</div>
+                  <div className="loginboxnew-23">
+                    {translate(getText("密碼"))}
+                  </div>
                   <div className="loginboxnew-24">
                     <div className="loginboxnew-25">
                       <div className="loginboxnew-26">
@@ -124,19 +123,27 @@ export default function PageLogin({
                     doLogin(loginData);
                   }}
                 >
-                  <div className="loginboxnew-33">{translate(getText("登錄"))}</div>
+                  <div className="loginboxnew-33">
+                    {translate(getText("登錄"))}
+                  </div>
                 </div>
                 <div className="loginboxnew-34">
-                  <div className="loginboxnew-35">
-                    <div
-                      className="loginboxnew-36"
-                      onClick={() => {
-                        navigate("/register");
-                      }}
-                    >
-                      {translate(getText("立即註冊"))}
-                    </div>
-                  </div>
+                  <span
+                    style={{ float: "left" }}
+                    onClick={() => {
+                      navigate("/register");
+                    }}
+                  >
+                    {translate(getText("立即註冊"))}
+                  </span>
+                  <span
+                    style={{ float: "right" }}
+                    onClick={() => {
+                      navigate("/download");
+                    }}
+                  >
+                    App{(lan == "zh" ? "" : " ") + translate(getText("下載"))}
+                  </span>
                 </div>
               </div>
               <div className="loginboxnew-37">

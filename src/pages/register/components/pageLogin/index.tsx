@@ -106,7 +106,9 @@ export default function PageRegister({
                 changeType(2);
               }}
             >
-              <span class="registercenter-9">{translate(getText("郵箱註冊"))}</span>
+              <span class="registercenter-9">
+                {translate(getText("郵箱註冊"))}
+              </span>
             </div>
             <div
               class={isPhone ? "registercenter-6" : "registercenter-8"}
@@ -119,7 +121,9 @@ export default function PageRegister({
                 changeType(1);
               }}
             >
-              <span class="registercenter-7">{translate(getText("手機註冊"))}</span>
+              <span class="registercenter-7">
+                {translate(getText("手機註冊"))}
+              </span>
             </div>
           </div>
           <div
@@ -128,10 +132,7 @@ export default function PageRegister({
               navigate("/chatcenter");
             }}
           >
-            <img
-              src="/img/kf.png"
-              class="registercenter-13"
-            />
+            <img src="/img/kf.png" class="registercenter-13" />
           </div>
           {/* 邮箱 */}
           {!isPhone && (
@@ -470,6 +471,25 @@ export default function PageRegister({
                 </div>
               </li>
             </ul>
+          </div>
+          {/* app下载 */}
+          <div className="loginboxnew-34">
+            {/* <span
+              style={{ float: "left" }}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              {translate(getText("登錄"))}?
+            </span> */}
+            <span
+              style={{ float: "right" }}
+              onClick={() => {
+                navigate("/download");
+              }}
+            >
+              App{(lan == "zh" ? "" : " ") + translate(getText("下載"))}
+            </span>
           </div>
         </div>
       </div>

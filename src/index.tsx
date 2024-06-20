@@ -49,7 +49,7 @@ async function fingerMake() {
 
 //验证token是否失效
 async function getUserInfo() {
-  let res = await kuangjiApi.pcList({ pageNum: 1, pageSize: 200 });
+  let res = await kuangjiApi.pcList({ pageNum: 1, pageSize: 1 });
   if (res.code != 0) {
     Toast.show({ content: "Please login" });
     localClear();
@@ -86,7 +86,7 @@ fingerMake();
 getUserInfo();
 setInterval(() => {
   getUserInfo();
-}, 1000*60*10);
+}, 1000*60*60);
 
 //替换 NaN
 setInterval(() => {

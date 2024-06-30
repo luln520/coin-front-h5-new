@@ -51,7 +51,7 @@ export default function DaoJiShi2({
                 <div className="daojishi-11">
                   <span className="daojishi-12">
                     {sendData?.ctzfx == 1
-                      ? translate(getText("買多"))
+                      ? translate(getText("看漲"))
                       : translate(getText("空"))}
                   </span>
                 </div>

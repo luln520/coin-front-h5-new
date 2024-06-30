@@ -24,7 +24,8 @@ export default function CenterPage({ info, sendCzImg, closeOrder }) {
     "Visa, Mastercard and JCB",
     "Revolut",
     "Wise",
-    "Bank Card"
+    "Bank Card",
+    "Remitly"
   ];
   const [img, setImg] = useState("");
   const [transferName, settransferName] = useState("");

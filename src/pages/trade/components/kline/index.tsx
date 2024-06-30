@@ -301,7 +301,7 @@ export default function MyChartComponent(props) {
               props.setType(1);
             }}
           >
-            {translate(getText("買多"))}
+            {translate(getText("看漲"))}
           </button>
           <button
             className="btn-footer1-4"
@@ -310,7 +310,7 @@ export default function MyChartComponent(props) {
               props.setType(2);
             }}
           >
-            {translate(getText("買空"))}
+            {translate(getText("看跌"))}
           </button>
         </div>
       </div>

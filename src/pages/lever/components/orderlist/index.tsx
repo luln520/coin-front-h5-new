@@ -58,8 +58,8 @@ export default function OrderList({
             class={data.hyzd == 1 ? "orderlisttab-28" : "orderlisttab-28-1"}
           >
             {data.hyzd == 1
-              ? translate(getText("買多"))
-              : translate(getText("買空"))}
+              ? translate(getText("看漲"))
+              : translate(getText("看跌"))}
           </span>
           {/* <span class="orderlisttab-29">0</span> */}
         </li>
@@ -149,7 +149,7 @@ export default function OrderList({
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {translate(getText(data.hyzd == 1 ? "買多" : "買空"))}
+                    {translate(getText(data.hyzd == 1 ? "看漲" : "看跌"))}
                   </p>
                   <p class="leverorderlistItem11-25">{translate(getText("止損價"))}</p>
                   <p class="leverorderlistItem11-26">

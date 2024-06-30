@@ -46,6 +46,9 @@ export default function C2CCK({
     {
       value: 3,
       label: "Wise",
+    },{
+      value: 5,
+      label: "Remitly",
     },
   ];
 

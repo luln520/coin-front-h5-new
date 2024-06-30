@@ -135,7 +135,7 @@ export default function CenterPage({
                         : "leverorderlistItem11-32-1"
                     }
                   >
-                    {translate(getText(data.hyzd == 1 ? "買多" : "買空"))}
+                    {translate(getText(data.hyzd == 1 ? "看漲" : "看跌"))}
                   </p>
                   <p class="leverorderlistItem1-25">
                     {translate(getText("止損價"))}
@@ -309,8 +309,8 @@ export default function CenterPage({
                 {data.coinname}
                 <div className={data.hyzd == 1 ? "hyjyjl-32" : "hyjyjl-6"}>
                   {data.hyzd == 1
-                    ? translate(getText("買多"))
-                    : translate(getText("買空"))}
+                    ? translate(getText("看漲"))
+                    : translate(getText("看跌"))}
                 </div>
               </div>
               <div className="hyjyjl-7">{data.buytime?.substring(0, 16)}</div>

@@ -269,7 +269,7 @@ export default function OrderPopup({
                                 setType(1);
                               }}
                             >
-                              {translate(getText("買多"))}
+                              {translate(getText("看漲"))}
                             </div>
                             <div
                               class={
@@ -281,7 +281,7 @@ export default function OrderPopup({
                                 setType(2);
                               }}
                             >
-                              {translate(getText("買空"))}
+                              {translate(getText("看跌"))}
                             </div>
                           </div>
                           <div class="leverOrderPopup-80">
@@ -694,7 +694,7 @@ export default function OrderPopup({
                             setVisible(true);
                           }}
                         >
-                          {translate(getText(type == 1 ? "買多" : "買空"))}
+                          {translate(getText(type == 1 ? "看漲" : "看跌"))}
                         </div>
                       </div>
                     </div>
@@ -732,7 +732,7 @@ export default function OrderPopup({
                   <span class="orderconfim-14">/USDT</span>
                 </p>
                 <p class={type == 1 ? "orderconfim-15" : "orderconfim-15-1"}>
-                  {translate(getText(type == 1 ? "買多" : "買空"))}
+                  {translate(getText(type == 1 ? "看漲" : "看跌"))}
                 </p>
                 <p class="orderconfim-16">{coinListData[nowTab]?.close}</p>
                 <p class="orderconfim-17">{num}</p>

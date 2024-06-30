@@ -97,7 +97,7 @@ export default function MaoYi({
                           setType(1);
                         }}
                       >
-                        {translate(getText("買多"))}
+                        {translate(getText("看漲"))}
                       </span>
                       <span
                         className={type === 2 ? "maoyi-47" : "maoyi-48"}
@@ -105,7 +105,7 @@ export default function MaoYi({
                           setType(2);
                         }}
                       >
-                        {translate(getText("買空"))}
+                        {translate(getText("看跌"))}
                       </span>
                     </div>
                   </div>

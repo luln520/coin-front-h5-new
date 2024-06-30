@@ -19,7 +19,7 @@ export default function TopBuy({ setIsShowOrder, setType }) {
             setType(1);
           }}
         >
-          {translate(getText("買多"))}
+          {translate(getText("看漲"))}
         </div>
         <div
           class="marketbuydiv-4"
@@ -28,7 +28,7 @@ export default function TopBuy({ setIsShowOrder, setType }) {
             setType(2);
           }}
         >
-          {translate(getText("買空"))}
+          {translate(getText("看跌"))}
         </div>
       </div>
     </div>

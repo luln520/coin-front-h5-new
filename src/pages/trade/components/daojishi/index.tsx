@@ -252,8 +252,8 @@ export default function DaoJiShi({
             <p className="popover-box-28">&nbsp;{orderInfo?.buyprice}</p>
             <p className="popover-box-27">
               {orderInfo?.hyzd == 1
-                ? translate(getText("買多"))
-                : translate(getText("買空"))}
+                ? translate(getText("看漲"))
+                : translate(getText("看跌"))}
             </p>
             <p className="popover-box-28">{orderInfo?.num} USDT</p>
             {orderInfo?.status == 2 && (

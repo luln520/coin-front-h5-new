@@ -31,7 +31,8 @@ export default function CenterPage({ info, closeOrder }) {
     "Visa, Mastercard and JCB",
     "Revolut",
     "Wise",
-    "Bank Card"
+    "Bank Card",
+    "Remitly"
   ];
   const handleCopy = (value) => {
     if (copy(value)) {

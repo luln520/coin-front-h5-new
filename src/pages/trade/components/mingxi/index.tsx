@@ -106,8 +106,8 @@ export default function MingXi({ hyorders, nowTab }) {
   //           <div className="listTitleCell-3">
   //             <span className="listTitleCell-4">
   //               {data.hyzd === 1
-  //                 ? translate(getText("買多"))
-  //                 : translate(getText("買空"))}
+  //                 ? translate(getText("看漲"))
+  //                 : translate(getText("看跌"))}
   //               /{data.buyprice}
   //             </span>
   //             <span className="listTitleCell-5">{data.num.toFixed(4)}</span>
@@ -171,8 +171,8 @@ export default function MingXi({ hyorders, nowTab }) {
                 {data.coinname}
                 <div className={data.hyzd == 1 ? "hyjyjl-32" : "hyjyjl-6"}>
                   {data.hyzd == 1
-                    ? translate(getText("買多"))
-                    : translate(getText("買空"))}
+                    ? translate(getText("看漲"))
+                    : translate(getText("看跌"))}
                 </div>
               </div>
               <div className="hyjyjl-7">{data.buytime?.substring(0, 16)}</div>

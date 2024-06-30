@@ -98,7 +98,7 @@ export default function OrderPopup({
             </div>
             <div class="orderPopup-11">
               <p class="orderPopup-12">{translate(getText("方向"))}</p>
-              <p class={type==1?"orderPopup-13":"orderPopup-13-1"} >{translate(getText(type == 1 ? "買多" : "買空"))}</p>
+              <p class={type==1?"orderPopup-13":"orderPopup-13-1"} >{translate(getText(type == 1 ? "看漲" : "看跌"))}</p>
             </div>
             <div class="orderPopup-14">
               <p class="orderPopup-15">{translate(getText("現價"))}</p>

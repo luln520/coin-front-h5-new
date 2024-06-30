@@ -14,6 +14,9 @@ export default function TopBar({
   const navigate = useNavigate();
   const [num, setNum] = useState(1);
   const { t: translate } = useTranslation();
+  //杠杆隐藏
+  const companyId = localStorage.getItem("companyId");
+  const removeCompanyId = 1417666558;
   return (
     <div class="marketTopBar-1">
       <div class="marketTopBar-2">
@@ -27,8 +30,13 @@ export default function TopBar({
         </div>
         <div
           class="marketTopBar-4"
+          style={{
+            opacity: companyId != removeCompanyId ? 1 : 0,
+          }}
           onClick={() => {
-            navigate(`/lever/${coinname}`);
+            if (companyId != removeCompanyId) {
+              navigate(`/lever/${coinname}`);
+            }
           }}
         >
           {translate(getText("杠杆"))}

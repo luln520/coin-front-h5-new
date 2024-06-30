@@ -10,6 +10,9 @@ export default function CenterPage() {
   const { t: translate } = useTranslation();
   const [index, setIndex] = useState(1);
   const lan = localStorage.getItem("i18n");
+  //杠杆隐藏
+  const companyId = localStorage.getItem("companyId");
+  const removeCompanyId = 1417666558;
   return (
     <div className="help-1">
       <div
@@ -24,18 +27,20 @@ export default function CenterPage() {
         </div>
         <i className="help-5"></i>
       </div>
-      <div
-        role="button"
-        className="help-2"
-        onClick={() => {
-          navigate(`/jyjlLever2`);
-        }}
-      >
-        <div className="help-3">
-          <span className="help-4">{translate(getText("槓桿"))}</span>
+      {companyId != removeCompanyId && (
+        <div
+          role="button"
+          className="help-2"
+          onClick={() => {
+            navigate(`/jyjlLever2`);
+          }}
+        >
+          <div className="help-3">
+            <span className="help-4">{translate(getText("槓桿"))}</span>
+          </div>
+          <i className="help-5"></i>
         </div>
-        <i className="help-5"></i>
-      </div>
+      )}
       <div
         role="button"
         className="help-2"

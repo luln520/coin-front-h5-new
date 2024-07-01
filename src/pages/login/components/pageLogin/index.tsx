@@ -110,7 +110,7 @@ export default function PageLogin({
                   <div
                     className="loginboxnew-30"
                     onClick={() => {
-                      navigate("/chatcenter");
+                      navigate("/reloadPassword");
                     }}
                   >
                     {translate(getText("忘記密碼?"))}

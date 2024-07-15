@@ -33,6 +33,33 @@ export default function Swipper({ companyData }) {
             className="swipe-5"
           />
         </Swiper.Item>
+        {companyData?.logo4 && (
+          <Swiper.Item key={4}>
+            <img
+              alt=""
+              src={imageConfig.baseImageUrl + companyData?.logo4}
+              className="swipe-5"
+            />
+          </Swiper.Item>
+        )}
+        {companyData?.logo5 && (
+          <Swiper.Item key={5}>
+            <img
+              alt=""
+              src={imageConfig.baseImageUrl + companyData?.logo5}
+              className="swipe-5"
+            />
+          </Swiper.Item>
+        )}
+        {companyData?.logo6 && (
+          <Swiper.Item key={6}>
+            <img
+              alt=""
+              src={imageConfig.baseImageUrl + companyData?.logo6}
+              className="swipe-5"
+            />
+          </Swiper.Item>
+        )}
       </Swiper>
     </div>
   );

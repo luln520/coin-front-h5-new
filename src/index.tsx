@@ -27,6 +27,7 @@ async function initCompany() {
     localStorage.setItem("companySkin", res.data?.companySkin);
     localStorage.setItem("appStatus", res.data?.appStatus);
     localStorage.setItem("c2ctxStatus", res.data?.c2ctxStatus);
+    localStorage.setItem("c2cczStatus", res.data?.c2cczStatus);
     changeCompanyData(res.data);
   }
 }

@@ -13,6 +13,8 @@ export default function CenterPage({ coinList }) {
   const navigate = useNavigate();
   const lan = localStorage.getItem("i18n");
   const c2ctxStatus = localStorage.getItem("c2ctxStatus");
+  const c2cczStatus = localStorage.getItem("c2cczStatus");
+
   const { t: translate } = useTranslation();
   const companySkin = localStorage.getItem("companySkin");
 
@@ -51,7 +53,9 @@ export default function CenterPage({ coinList }) {
             </div>
             <div class="rechargelist-24">
               <span class="rechargelist-25">
-                <span class="rechargelist-26">{translate(getText("前往購買"))}</span>
+                <span class="rechargelist-26">
+                  {translate(getText("前往購買"))}
+                </span>
               </span>
               <i class="rechargelist-27"></i>
             </div>
@@ -72,7 +76,11 @@ export default function CenterPage({ coinList }) {
               <div data-v-01dfbd2e="" id="rtf41" class="rechargelist-6">
                 <div class="rechargelist-7">
                   <p class="rechargelist-8">
-                    {translate(getText("請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響充值進度。"))}
+                    {translate(
+                      getText(
+                        "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響充值進度。"
+                      )
+                    )}
                   </p>
                 </div>
               </div>
@@ -82,40 +90,46 @@ export default function CenterPage({ coinList }) {
         <p class="rechargelist-9">{translate(getText("請選擇以下充值通道"))}</p>
         <div class="rechargelist-10">
           {getNode()}
-          <div
-            class="rechargelist-11"
-            onClick={() => {
-              navigate("/c2cckcenter");
-            }}
-          >
-            <div class="rechargelist-12">
-              <div class="rechargelist-13">
-                <div class="rechargelist-14">
-                  <img
-                    src="/costIco/20220324033547378184.png"
-                    class="rechargelist-16"
-                  />
-                  <div class="rechargelist-17">
-                    <div class="rechargelist-18">
-                      <div class="rechargelist-19"></div>
-                    </div>
-                    <div class="rechargelist-20">
-                      <div class="rechargelist-21"></div>
+          {c2cczStatus == 1 && (
+            <div
+              class="rechargelist-11"
+              onClick={() => {
+                navigate("/c2cckcenter");
+              }}
+            >
+              <div class="rechargelist-12">
+                <div class="rechargelist-13">
+                  <div class="rechargelist-14">
+                    <img
+                      src="/costIco/20220324033547378184.png"
+                      class="rechargelist-16"
+                    />
+                    <div class="rechargelist-17">
+                      <div class="rechargelist-18">
+                        <div class="rechargelist-19"></div>
+                      </div>
+                      <div class="rechargelist-20">
+                        <div class="rechargelist-21"></div>
+                      </div>
                     </div>
                   </div>
+                  <div class="rechargelist-22">
+                    <span class="rechargelist-23">
+                      {translate(getText("C2C充值"))}
+                    </span>
+                  </div>
                 </div>
-                <div class="rechargelist-22">
-                  <span class="rechargelist-23">{translate(getText("C2C充值"))}</span>
+                <div class="rechargelist-24">
+                  <span class="rechargelist-25">
+                    <span class="rechargelist-26">
+                      {translate(getText("前往購買"))}
+                    </span>
+                  </span>
+                  <i class="rechargelist-27"></i>
                 </div>
-              </div>
-              <div class="rechargelist-24">
-                <span class="rechargelist-25">
-                  <span class="rechargelist-26">{translate(getText("前往購買"))}</span>
-                </span>
-                <i class="rechargelist-27"></i>
               </div>
             </div>
-          </div>
+          )}
         </div>
         <div class="rechargelist-96"></div>
       </div>

@@ -176,7 +176,7 @@ export default function CenterPage({
                   </p>
                   <p
                     class={
-                      data.ploss > 0
+                      data.isWin == 1
                         ? "leverorderlistItem11-32"
                         : "leverorderlistItem11-32-1"
                     }
@@ -184,8 +184,8 @@ export default function CenterPage({
                       padding: "0 0 0 10px",
                     }}
                   >
-                    {data.ploss > 0 ? "+" : ""}
-                    {data.ploss}
+                    {data.isWin == 1 ? "+" : "-"}
+                    {Math.abs(data.ploss)}
                   </p>
                 </div>
               )}
@@ -332,7 +332,7 @@ export default function CenterPage({
                   <span className={data.isWin == 1 ? "hyjyjl-41" : "hyjyjl-15"}>
                     <span className="hyjyjl-16">
                       {data.isWin == 1 ? "+" : "-"}
-                      {data.ploss}
+                      {Math.abs(data.ploss)}
                     </span>
                   </span>
                 )}

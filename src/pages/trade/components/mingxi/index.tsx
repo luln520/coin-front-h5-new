@@ -194,7 +194,7 @@ export default function MingXi({ hyorders, nowTab }) {
                   {data.status != 1 && (
                     <span className="hyjyjl-16">
                       {data.isWin == 1 ? "+" : "-"}
-                      {data.ploss}
+                      {Math.abs(data.ploss)}
                     </span>
                   )}
                   {data.status == 1 && <span className="hyjyjl-16">--</span>}

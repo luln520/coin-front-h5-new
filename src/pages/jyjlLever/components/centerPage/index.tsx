@@ -131,7 +131,7 @@ export default function CenterPage({ leverorders, closeorder, coinListData }) {
                   <span className={data.isWin == 1 ? "hyjyjl-41" : "hyjyjl-15"}>
                     <span className="hyjyjl-16">
                       {data.isWin == 1 ? "+" : "-"}
-                      {data.ploss}
+                      {Math.abs(data.ploss)}
                     </span>
                   </span>
                 )}

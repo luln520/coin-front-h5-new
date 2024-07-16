@@ -41,8 +41,8 @@ export default function CenterPage({ data }) {
             color: data?.isWin == 2 ? "rgb(205, 78, 101)" : "rgb(28, 173, 144)",
           }}
         >
-          {data?.isWin == 2 ? "-" : ""}
-          {data?.ploss}
+          {data?.isWin == 2 ? "-" : "+"}
+          {Math.abs(data?.ploss)}
         </span>
       </div>
       <div className="orderInfo-14">

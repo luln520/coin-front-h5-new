@@ -37,7 +37,7 @@
   position: relative;
   display: inline-block;
   text-align: center;
-  height: 34px;
+  min-height: 40px;
   margin: 0px;
   place-self: center;
   width: 126px;

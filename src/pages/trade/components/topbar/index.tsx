@@ -16,7 +16,8 @@ export default function TopBar({
   const { t: translate } = useTranslation();
   //杠杆隐藏
   const companyId = localStorage.getItem("companyId");
-  const removeCompanyId = 1417666558;
+  //先取消隐藏
+  const removeCompanyId = -1;
   return (
     <div class="marketTopBar-1">
       <div class="marketTopBar-2">

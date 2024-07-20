@@ -12,7 +12,8 @@ export default function CenterPage() {
   const lan = localStorage.getItem("i18n");
   //杠杆隐藏
   const companyId = localStorage.getItem("companyId");
-  const removeCompanyId = 1417666558;
+  //先取消隐藏
+  const removeCompanyId = -1;
   return (
     <div className="help-1">
       <div

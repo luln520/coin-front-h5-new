@@ -1,6 +1,7 @@
 import { Empty } from "antd-mobile";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { imageConfig } from "../../../../config/config";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
@@ -18,7 +19,7 @@ export default function RunList({ userkjList }) {
               <div className="lockUpRuning-4">
                 <img
                   alt=""
-                  src="/lockUpRuning/656af96c028d3.png"
+                  src={imageConfig.baseImageUrl+data.imgs}
                   className="lockUpRuning-5"
                 />
                 <span className="lockUpRuning-6">{data.kjtitle}</span>

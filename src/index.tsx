@@ -23,7 +23,7 @@ async function initCompany() {
     //公司id
     localStorage.setItem("companyId", res.data.id);
     localStorage.setItem("title", res.data.companyName);
-    localStorage.setItem("inviteType", res.data.inviteType);
+    localStorage.setItem("inviteType", res.data?.inviteType);
     localStorage.setItem("companySkin", res.data?.companySkin);
     localStorage.setItem("appStatus", res.data?.appStatus);
     localStorage.setItem("c2ctxStatus", res.data?.c2ctxStatus);

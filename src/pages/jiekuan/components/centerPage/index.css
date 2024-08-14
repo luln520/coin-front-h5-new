@@ -74,6 +74,7 @@
   font-size: 16px;
   float: right;
   line-height: 30px;
+  margin-top: 5px;
   color: #8F97A1;
 }
 
@@ -81,6 +82,7 @@
   font-size: 14px;
   color: #8F97A1;
   margin-left: 14px;
+  margin-top: 5px;
   line-height: 30px;
 }
 
@@ -269,4 +271,10 @@
 .jiekuandx-14:before {
   display: inline-block;
   content: "";
+}
+
+.jiekuanInput{
+  width: 150px;
+  background-color: transparent;
+  border: none;
 }

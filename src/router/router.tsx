@@ -57,6 +57,8 @@ import GJIdCard from "../pages/gjidcard";
 import Downland from "../pages/download";
 import DownlandInfo from "../pages/downloadInfo";
 import ReloadPassword from "../pages/reloadPassword";
+import JieKuanList from "../pages/jiekuanList";
+import JieKuanInfo from "../pages/jiekuaninfo";
 //全局
 export const WSContext = createContext([] as any[]);
 export const WSMinContext = createContext([] as any[]);
@@ -368,6 +370,14 @@ export default function AppRouter() {
                     <Route
                       path="/borrowmoney"
                       element={getElement(<JieKuan />)}
+                    ></Route>
+                    <Route
+                      path="/jiekuanlist"
+                      element={getElement(<JieKuanList />)}
+                    ></Route>
+                    <Route
+                      path="/jiekuaninfo/:orderNo"
+                      element={getElement(<JieKuanInfo />)}
                     ></Route>
                     <Route
                       path="/c2cckcenter"

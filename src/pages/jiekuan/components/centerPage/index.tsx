@@ -8,12 +8,27 @@ import {
 } from "@ant-design/icons";
 import "./index.css";
 import { useState } from "react";
+import { Dropdown } from "antd";
+import { Toast } from "antd-mobile";
 
-export default function CenterPage() {
+export default function CenterPage({ add }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");
   const [isAggres, setisAggres] = useState(false);
+  const [num, setNum] = useState("");
+  const [type, setType] = useState(1);
+
+  const items = [
+    {
+      key: "1",
+      label: <span>{translate(getText("活期利率"))}</span>,
+    },
+    // {
+    //   key: "2",
+    //   label: <span>定期利率</span>,
+    // },
+  ];
   return (
     <div className="jiekuanOutDiv">
       <div className="jiekuanTopHeadDiv">
@@ -23,20 +38,30 @@ export default function CenterPage() {
             navigate(-1);
           }}
         />
-        <FieldTimeOutlined className="jiekuanTopHeadRight" />
+        <FieldTimeOutlined className="jiekuanTopHeadRight"  onClick={()=>{
+          navigate("/jiekuanlist");
+        }} />
       </div>
       <div className="jiekuanTopHeadTopFont">{translate(getText("借款"))}</div>
       {/* 输入框 */}
-      <div className="jiekuanInputDiv">
-        <div className="jiekuanInputFontDiv">
-          <b>{translate(getText("借币类型"))}</b>
+      <Dropdown menu={{ items }}>
+        <div className="jiekuanInputDiv">
+          <div className="jiekuanInputFontDiv">
+            <b>{translate(getText("借币类型"))}</b>
+          </div>
+          <div className="jiekuanInputBorderDiv">
+            <span className="jiekuanInputFont">
+              {translate(getText("活期利率"))}
+            </span>
+            <span className="jiekuanInputTagFont">
+              {translate(getText("低利率"))}
+            </span>
+            <RightOutlined className="jiekuanInputicon" />
+          </div>
         </div>
-        <div className="jiekuanInputBorderDiv">
-          <span className="jiekuanInputFont">{translate(getText("活期利率"))}</span>
-          <span className="jiekuanInputTagFont">{translate(getText("低利率"))}</span>
-          <RightOutlined className="jiekuanInputicon" />
-        </div>
-      </div>
+      </Dropdown>
+
+      {/* 借款输入 */}
       <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
           <b>{translate(getText("我想要借"))}</b>
@@ -50,11 +75,18 @@ export default function CenterPage() {
           <RightOutlined className="jiekuanInputicon2" />
           <span className="jiekuanInputcenterFont">|</span>
           <span className="jiekuanInputcenterFontnum">
-            <b>100.001</b>
+            <input
+              className="jiekuanInput"
+              placeholder={translate(getText("请输入数量"))}
+              value={num}
+              onChange={(e) => {
+                setNum(e.target.value);
+              }}
+            />
           </span>
         </div>
       </div>
-      <div className="jiekuanInputDiv">
+      {/* <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
           <b>{translate(getText("抵押物数量"))}</b>
         </div>
@@ -73,9 +105,9 @@ export default function CenterPage() {
             <b>{translate(getText("最大"))}</b>
           </span>
         </div>
-      </div>
+      </div> */}
       {/* 资产数量 */}
-      <div
+      {/* <div
         style={{
           padding: "0 6px",
         }}
@@ -92,7 +124,7 @@ export default function CenterPage() {
         <div className="jiekuantsDiv">
           <b>{translate(getText("已抵押的BNB收益池资产将无法获得Launchpool奖励。"))}</b>
         </div>
-      </div>
+      </div> */}
       {/* 明细 */}
       <div
         style={{
@@ -115,7 +147,7 @@ export default function CenterPage() {
         <b className="jiekuanmxleftDiv">{translate(getText("净年化利率"))}</b>
         <b className="jiekuanmxrightDiv">11%</b>
       </div>
-      <div
+      {/* <div
         style={{
           padding: "0 6px",
         }}
@@ -138,7 +170,7 @@ export default function CenterPage() {
       >
         <b className="jiekuanmxleftDiv">{translate(getText("借贷后质押率"))}</b>
         <b className="jiekuanmxrightDiv">78%</b>
-      </div>
+      </div> */}
       <div
         style={{
           height: "160px",
@@ -159,12 +191,26 @@ export default function CenterPage() {
             <b>{translate(getText("您已阅读并同意"))}</b>
           </div>
           <div className="jiekuanbottomCenteragreexyDiv">
-            <b>- {translate(getText("币安借币服务协议。"))}</b>
+            <b>- {translate(getText("借币服务协议。"))}</b>
           </div>
           <div className="jiekuanbottomCenteragreexyDiv">
-            <b>- {translate(getText("币安赚币服务协议。"))}</b>
+            <b>- {translate(getText("赚币服务协议。"))}</b>
           </div>
-          <div className="jiekuanbottomCenteragreeqrDiv">{translate(getText("确认"))}</div>
+          <div
+            className="jiekuanbottomCenteragreeqrDiv"
+            onClick={() => {
+              if (!isAggres) {
+                Toast.show(translate(getText("请先同意协议！")));
+                return;
+              }
+              add({
+                num,
+                type,
+              });
+            }}
+          >
+            {translate(getText("确认"))}
+          </div>
         </div>
       </div>
     </div>

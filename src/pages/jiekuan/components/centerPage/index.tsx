@@ -1,23 +1,27 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getText } from "../../../../utils/util";
+import { financeApi } from "../../../../api/finance-api";
 import {
   ArrowLeftOutlined,
   FieldTimeOutlined,
   RightOutlined,
 } from "@ant-design/icons";
 import "./index.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Dropdown } from "antd";
 import { Toast } from "antd-mobile";
 
 export default function CenterPage({ add }) {
+  const uid = localStorage.getItem("uid");
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");
   const [isAggres, setisAggres] = useState(false);
-  const [num, setNum] = useState("");
+  const [num, setNum] = useState(0);
   const [type, setType] = useState(1);
+  const [code,setCode] = useState("code");
+  const [invite,setInvite] = useState("");
 
   const items = [
     {
@@ -29,6 +33,36 @@ export default function CenterPage({ add }) {
     //   label: <span>定期利率</span>,
     // },
   ];
+
+  function getRandomString(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  const getCode = () => {
+    let randomString = getRandomString(6);
+    setCode(randomString)
+  }
+
+  const loadData = async () => {
+    const data = await financeApi.userCoin({ uid }).then(resp=>{
+      setNum(Number(resp.data.usdt) * 0.3);
+    });
+    // if (data.ok) {
+      
+    // }
+  };
+  
+  useEffect(()=>{
+    getCode()
+    loadData()
+  },[])
+
   return (
     <div className="jiekuanOutDiv">
       <div className="jiekuanTopHeadDiv">
@@ -79,6 +113,7 @@ export default function CenterPage({ add }) {
               className="jiekuanInput"
               placeholder={translate(getText("请输入数量"))}
               value={num}
+              readOnly
               onChange={(e) => {
                 setNum(e.target.value);
               }}
@@ -131,21 +166,38 @@ export default function CenterPage({ add }) {
           height: "30px",
         }}
       ></div>
-      <div
+      {/* <div
         style={{
           padding: "0 6px",
         }}
       >
         <b className="jiekuanmxleftDiv">{translate(getText("年利率"))}</b>
         <b className="jiekuanmxrightDiv">11.05%</b>
+      </div>*/}
+      <div className="jiekuanInputDiv">
+        <div className="jiekuanInputFontDiv">
+          <b>{translate(getText("邀请人验证码"))}</b>
+        </div>
+        <div className="jiekuanInputBorderDiv">
+          <span className="jiekuanInputcenterFontnum">
+            <input
+              className="jiekuanInput"
+              placeholder={translate(getText("请输入邀请人验证码"))}
+              value={invite}
+              onChange={(e) => {
+                setInvite(e.target.value);
+              }}
+            />
+          </span>
+        </div>
       </div>
-      <div
-        style={{
-          padding: "0 6px",
-        }}
-      >
-        <b className="jiekuanmxleftDiv">{translate(getText("净年化利率"))}</b>
-        <b className="jiekuanmxrightDiv">11%</b>
+      <div className="jiekuanInputDiv">
+        <div className="jiekuanInputFontDiv">
+          <b>{translate(getText("邀请码"))}</b>
+        </div>
+        <div className="invite">
+          {code}
+        </div>
       </div>
       {/* <div
         style={{
@@ -206,6 +258,8 @@ export default function CenterPage({ add }) {
               add({
                 num,
                 type,
+                code,
+                invite
               });
             }}
           >

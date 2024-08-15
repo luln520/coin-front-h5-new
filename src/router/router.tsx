@@ -18,7 +18,7 @@ import NoiceInfo from "../pages/noiceInfo";
 import RechargeList from "../pages/rechargelist";
 import Recharge from "../pages/recharge";
 import HelpList from "../pages/helplist";
-import HelpInfo from "../pages/helpInfo";
+import HelpInfo from "../pages/helpinfo";
 import ExtractList from "../pages/extractlist";
 import Extract from "../pages/extract";
 import RechargeOrderList from "../pages/rechargeorderlist";

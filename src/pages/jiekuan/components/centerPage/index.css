@@ -278,3 +278,10 @@
   background-color: transparent;
   border: none;
 }
+
+.invite{
+  font-size: 40px;
+  color:var(--boutton-background-color);
+  padding:20px 40px;
+  text-align: center;
+}

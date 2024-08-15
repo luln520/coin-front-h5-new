@@ -16,8 +16,15 @@ export default function JieKuan() {
 
   //申请
   const add = async (sendData) => {
+    console.log(sendData)
     const data = await jiekuanApi.add({ ...sendData, uid });
-    Toast.show({ content: data.msg });
+    Toast.show({ 
+      content: data.msg,
+      duration:1000,
+      afterClose(){
+        navigate("/mycenter");
+      }
+    });
   };
   return (
     <div

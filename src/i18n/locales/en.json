@@ -837,5 +837,14 @@
     "作為一家公司": "As a company, we emphasize long-term security, reliability, and convenience. Our main products and services reflect this vision. Advanced trading platform, lower costs, safer and more efficient protection; we make it easy for everyone to own and trade assets.",
     "100%25資金安全保障": "100%fund security guarantee",
     "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "If you want to transfer the unprepared principal, there will be liquidated damages, liquidated damages = default settlement ratio*The number of remaining days*the number of lock warehouses.<br> Example: The settlement ratio of the lock -up mining is 0.4%, the remaining 3 days expires, and the number of locks is 1000, then the lock -up damage = 0.4%*3*1000 = 12U.The liquidated damage will be deducted directly from the principal.</br>",
-    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Members lock up 10,000U on the platform, and the cycle is 5 days, and Nissan's 0.3%wealth management product of the lock -lock amount is produced as follows: <br> 10000UX0.3%= 30U </br> That is 5 daysAfter that, you can get a 150U income. After the lock -up principal expires, the principal income will automatically transfer to your asset account."
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Members lock up 10,000U on the platform, and the cycle is 5 days, and Nissan's 0.3%wealth management product of the lock -lock amount is produced as follows: <br> 10000UX0.3%= 30U </br> That is 5 daysAfter that, you can get a 150U income. After the lock -up principal expires, the principal income will automatically transfer to your asset account.",
+    "還幣": "Return coins",
+    "還幣USDT": "Return USDT",
+    "借幣數量": "Amount of borrowed coins",
+    "邀請人驗證碼": "Inviter verification code",
+    "邀請碼": "Invitation code",
+    "還幣成功": "Coins returned successfully",
+    "還幣數量": "Amount of coins returned",
+    "請輸入還幣數量": "Please enter the amount of coins to return",
+    "預計到帳數量": "Estimated arrival quantity"
 }

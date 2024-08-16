@@ -837,5 +837,14 @@
     "作為一家公司": "Là một công ty, chúng tôi nhấn mạnh sự an toàn, đáng tin cậy và tiện lợi trong dài hạn. Các sản phẩm và dịch vụ chính của chúng tôi phản ánh tầm nhìn này. Nền tảng giao dịch tiên tiến, chi phí thấp hơn, bảo vệ an toàn hiệu quả hơn, chúng tôi cho phép mọi người dễ dàng sở hữu và giao dịch tài sản.",
     "100%25資金安全保障": "Đảm bảo bảo mật quỹ 100%",
     "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Nếu bạn muốn chuyển tiền gốc chưa được chuẩn bị, sẽ có các thiệt hại được thanh lý, các thiệt hại được thanh lý = Tỷ lệ giải quyết mặc định*Số ngày còn lại*Số lượng kho khóa.<br> Ví dụ: Tỷ lệ giải quyết của khai thác khóa là 0,4%, 3 ngày còn lại hết hạn và số lượng khóa là 1000, sau đó là thiệt hại khóa -up = 0,4%*3*1000 = 12U.Thiệt hại thanh lý sẽ được khấu trừ trực tiếp từ hiệu trưởng.</br>",
-    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Các thành viên khóa 10.000U trên nền tảng và chu kỳ là 5 ngày và sản phẩm quản lý tài sản 0,3%của Nissan của số lượng khóa được sản xuất như sau: <br> 10000ux0.3%= 30U </br> Đó là 5 Ngày sau đó, bạn có thể nhận được thu nhập 150U."
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Các thành viên khóa 10.000U trên nền tảng và chu kỳ là 5 ngày và sản phẩm quản lý tài sản 0,3%của Nissan của số lượng khóa được sản xuất như sau: <br> 10000ux0.3%= 30U </br> Đó là 5 Ngày sau đó, bạn có thể nhận được thu nhập 150U.",
+    "還幣": "Trả lại xu",
+    "還幣USDT": "Trả lại USDT",
+    "借幣數量": "Số tiền vay",
+    "邀請人驗證碼": "Mã xác minh người mời",
+    "邀請碼": "Mã mời",
+    "還幣成功": "Tiền được trả lại thành công",
+    "還幣數量": "Số xu được trả lại",
+    "請輸入還幣數量": "Vui lòng nhập số xu muốn trả lại",
+    "預計到帳數量": "Số lượng nhập dự kiến"
 }

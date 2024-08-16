@@ -837,5 +837,14 @@
     "作為一家公司": "Como empresa, enfatizamos segurança, confiabilidade e conveniência a longo prazo.",
     "100%25資金安全保障": "Garantia de segurança de fundo 100%",
     "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Se você deseja transferir o principal despreparado, haverá danos liquidados, danos liquidados = taxa de liquidação padrão*o número de dias restantes*o número de armazéns de bloqueio.<br> Exemplo: a taxa de liquidação da mineração de bloqueio é 0,4%, os 3 dias restantes expiraram e o número de bloqueios é de 1000; em seguida, o dano de trava -up = 0,4%*3*1000 = 12U.Os danos liquidados serão deduzidos diretamente do principal.</br>",
-    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Os membros travam 10.000u na plataforma e o ciclo é de 5 dias, e o produto de gerenciamento de patrimônio de 0,3%da Nissan da quantidade de bloqueio é produzido da seguinte forma: <br> 10000ux0,3%= 30U </br> Ou seja 5 Dias depois disso, você pode obter uma renda 150U. Após o vencimento do principal bloqueio, a renda principal transferirá automaticamente para sua conta de ativo."
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Os membros travam 10.000u na plataforma e o ciclo é de 5 dias, e o produto de gerenciamento de patrimônio de 0,3%da Nissan da quantidade de bloqueio é produzido da seguinte forma: <br> 10000ux0,3%= 30U </br> Ou seja 5 Dias depois disso, você pode obter uma renda 150U. Após o vencimento do principal bloqueio, a renda principal transferirá automaticamente para sua conta de ativo.",
+    "還幣": "Devolver moedas",
+    "還幣USDT": "Retornar USDT",
+    "借幣數量": "Quantidade de moedas emprestadas",
+    "邀請人驗證碼": "Código de verificação do convidador",
+    "邀請碼": "Código de convite",
+    "還幣成功": "Moedas devolvidas com sucesso",
+    "還幣數量": "Quantidade de moedas devolvidas",
+    "請輸入還幣數量": "Por favor, insira a quantidade de moedas a serem devolvidas",
+    "預計到帳數量": "Quantidade estimada de chegada"
 }

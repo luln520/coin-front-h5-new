@@ -837,5 +837,14 @@
     "作為一家公司": "Als Unternehmen betonen wir langfristige Sicherheit, Zuverlässigkeit und Bequemlichkeit.",
     "100%25資金安全保障": "100%Fondssicherheitsgarantie",
     "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Wenn Sie den unvorbereiteten Auftraggeber übertragen möchten, gibt es potenzielle Schäden, schädigte Schäden = Ausfallabrechnungsverhältnis*Die Anzahl der verbleibenden Tage*Die Anzahl der Sperrlager.<br> Beispiel: Das Abwicklungsverhältnis des Lock -UP -Minings beträgt 0,4%, die verbleibenden 3 Tage läuft ab und die Anzahl der Schlösser 1000, dann der Lock -up -Schaden = 0,4%*3*1000 = 12U.Die liquide Schädigung wird direkt vom Auftraggeber abgezogen.</br>",
-    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Die Mitglieder sperren 10.000 U auf der Plattform, und der Zyklus beträgt 5 Tage, und das 0,3%ige Vermögensverwaltungsprodukt des Lock -Blocks wird wie folgt hergestellt: <br> 10000ux0.3%= 30U </br> Das ist 5 Tagen danach können Sie nach Ablauf des Lock -up -Kapitals ein Einkommen von 150U erzielen. Das Haupteinkommen wird automatisch auf Ihr Vermögenskonto übertragen."
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "Die Mitglieder sperren 10.000 U auf der Plattform, und der Zyklus beträgt 5 Tage, und das 0,3%ige Vermögensverwaltungsprodukt des Lock -Blocks wird wie folgt hergestellt: <br> 10000ux0.3%= 30U </br> Das ist 5 Tagen danach können Sie nach Ablauf des Lock -up -Kapitals ein Einkommen von 150U erzielen. Das Haupteinkommen wird automatisch auf Ihr Vermögenskonto übertragen.",
+    "還幣": "Münzen zurückgeben",
+    "還幣USDT": "Geben Sie USDT zurück",
+    "借幣數量": "Betrag der geliehenen Münzen",
+    "邀請人驗證碼": "Bestätigungscode des Einladenden",
+    "邀請碼": "Einladungscode",
+    "還幣成功": "Münzen wurden erfolgreich zurückgegeben",
+    "還幣數量": "Anzahl der zurückgegebenen Münzen",
+    "請輸入還幣數量": "Bitte geben Sie den Betrag der zurückzugebenden Münzen ein",
+    "預計到帳數量": "Geschätzte Ankunftsmenge"
 }

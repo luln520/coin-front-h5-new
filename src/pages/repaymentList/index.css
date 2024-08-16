@@ -1,0 +1,28 @@
+.container{
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    padding: 15px;
+    border-radius: 10px;
+}
+.item-number{
+    font-weight: bold;
+    font-size: 16px;
+}
+.item-time{
+    margin-top: 10px;
+    color: #999999;
+}
+.loading{
+    text-align: center;
+    padding: 20px;
+}
+.item-status{
+    color: var(--boutton-background-color);
+}

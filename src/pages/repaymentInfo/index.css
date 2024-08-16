@@ -1,0 +1,11 @@
+.item-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 4;
+    padding: 0 15px;
+    border-bottom: solid 1px #f9f9f9;
+}
+.item-info label{
+    color: #999999;
+}

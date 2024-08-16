@@ -54,6 +54,18 @@ export default function CenterPage() {
         </div>
         <i className="help-5"></i>
       </div>
+      <div
+        role="button"
+        className="help-2"
+        onClick={() => {
+          navigate(`/repaymentList`);
+        }}
+      >
+        <div className="help-3">
+          <span className="help-4">{translate(getText("還幣"))}</span>
+        </div>
+        <i className="help-5"></i>
+      </div>
     </div>
   );
 }

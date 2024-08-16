@@ -1,0 +1,62 @@
+.container-content{
+    padding: 0 15px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #eef1f8;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.search-box img{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: auto 5px;
+}
+.search-box>span{
+    margin-left: 5px;
+}
+.form-item{
+    margin-top: 20px;
+}
+.form-item-input{
+    margin-top: 10px;
+    border: solid 1px #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 35px;
+    border-radius: 5px;
+}
+.form-item-input>input{
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    border: none;
+}
+.form-item-input>input::placeholder{
+    color: #bbbbbb;
+}
+.balance{
+    line-height: 3;
+    font-weight: bold;
+}
+.expect-fee{
+    text-align: center;
+    line-height: 3;
+    color: var(--boutton-background-color);
+}
+.btn{
+    background: var(--boutton-background-color);
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    border-radius: 3px;
+}

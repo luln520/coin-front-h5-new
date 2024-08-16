@@ -59,6 +59,9 @@ import DownlandInfo from "../pages/downloadInfo";
 import ReloadPassword from "../pages/reloadPassword";
 import JieKuanList from "../pages/jiekuanList";
 import JieKuanInfo from "../pages/jiekuaninfo";
+import Repayment from '../pages/repayment'
+import RepaymentList from '../pages/repaymentList'
+import RepaymentInfo from '../pages/repaymentInfo'
 //全局
 export const WSContext = createContext([] as any[]);
 export const WSMinContext = createContext([] as any[]);
@@ -448,6 +451,18 @@ export default function AppRouter() {
                     <Route
                       path="/lever/:name"
                       element={getElement(<Lever />)}
+                    ></Route>
+                    <Route 
+                      path="/repayment/:id/:num"
+                      element={getElement(<Repayment />)}
+                    ></Route>
+                    <Route 
+                      path="/repaymentList"
+                      element={getElement(<RepaymentList />)}
+                    ></Route>
+                    <Route 
+                      path="/repaymentInfo/:id"
+                      element={getElement(<RepaymentInfo />)}
                     ></Route>
                     {/* 404 */}
                     <Route

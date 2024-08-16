@@ -1,0 +1,11 @@
+import { getRequest, postRequest } from '../lib/axios';
+
+export function pledgeList(data){
+    return getRequest('/api/pc/pledge/pledgeList',data)
+}
+export function pledgeBack(data){
+    return postRequest('/api/pc/pledge/backpledge',data)
+}
+export function pledgeInfo(data){
+    return getRequest('/api/pc/pledge/info',data)
+}

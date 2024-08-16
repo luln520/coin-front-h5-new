@@ -837,5 +837,14 @@
     "作為一家公司": "Come azienda, enfatizziamo la sicurezza, l'affidabilità e la convenienza a lungo termine.",
     "100%25資金安全保障": "Garanzia di sicurezza al 100%del fondo",
     "若您希望轉出未到期的本金，則會產生違約金，違約金=違約結算比例*剩餘天數*鎖倉數量。<br>舉例該": "Se si desidera trasferire il principio impreparato, ci saranno danni liquidati, danni liquidati = rapporto di regolamento predefinito*Il numero di giorni rimanenti*il numero di magazzini di blocco.<br> Esempio: il rapporto di regolamento del mining di blocco -up è dello 0,4%, i restanti 3 giorni scadono e il numero di blocchi è 1000, quindi il danno blocco -up = 0,4%*3*1000 = 12U.Il danno liquidato verrà detratto direttamente dal preside.</br>",
-    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "I membri bloccano 10.000u sulla piattaforma e il ciclo è di 5 giorni e il prodotto di gestione patrimoniale dello 0,3%di Nissan dell'importo del blocco viene prodotto come segue: <br> 10000ux0,3%= 30u </br> Cioè 5 Giorni dopo, è possibile ottenere un reddito 150U."
+    "會員在平台鎖倉10000U，選擇了周期為5天，日產出為鎖倉金額的0.3%25的理財產品，則每天產出如": "I membri bloccano 10.000u sulla piattaforma e il ciclo è di 5 giorni e il prodotto di gestione patrimoniale dello 0,3%di Nissan dell'importo del blocco viene prodotto come segue: <br> 10000ux0,3%= 30u </br> Cioè 5 Giorni dopo, è possibile ottenere un reddito 150U.",
+    "還幣": "Restituire le monete",
+    "還幣USDT": "Restituisci USDT",
+    "借幣數量": "Importo delle monete prese in prestito",
+    "邀請人驗證碼": "Codice di verifica dell'invitante",
+    "邀請碼": "Codice invito",
+    "還幣成功": "Le monete sono state restituite con successo",
+    "還幣數量": "Importo delle monete restituite",
+    "請輸入還幣數量": "Inserisci la quantità di monete da restituire",
+    "預計到帳數量": "Quantità di arrivo stimata"
 }

@@ -32,23 +32,23 @@ export default function repaymentList() {
     }, [])
     return (
         <div className='page'>
-            <TopBar title={translate(getText("還幣明细"))} isBack={true} />
+            <TopBar title={translate(getText("借幣明細"))} isBack={true} />
             <div className='container'>
                 
                 {dataList.length > 0 ? dataList.map((item,index)=>(
                     <div className="item" key={index} onClick={()=>{navigate("/repaymentInfo/"+item.orderNo)}}>
                         <div>
-                            <div className='item-number'>{item.num} USDT</div>
+                            <div className='item-number'>{item.status == 5 && '-'}{item.num} USDT</div>
                             <div className='item-time'>{item.createTime}</div>
                         </div>
                         <div className='item-status'>{translate(getText(getLabel(PledgeListStatus,item.status)))}</div>
                     </div>
                 )) : null }
-                {loading && (
+                {loading ? (
                 <div className='loading'>
                     <DotLoading />
                 </div>
-                ) }
+                ) : <div className="c2ccell-18">{translate(getText("没有更多数据了"))}</div> }
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ import { getText } from "../../../../utils/util";
 import { imageConfig } from "../../../../config/config";
 import { Badge } from "antd";
 
-export default function MyCenter({ userInfo, companyData, loginmsg }) {
+export default function MyCenter({ userInfo, companyData, loginmsg, pledgeStatus }) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const inviteType = localStorage.getItem("inviteType");
@@ -21,6 +21,8 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
     }
   };
   const types = ["未認證", "審核中", "已認證", "審核拒絕"];
+
+  
   return (
     <div className="mycenter-1">
       <div className="mycenter-2">
@@ -150,6 +152,34 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             <div className="mycenter-40"></div>
           </div>
         )}
+
+{pledgeStatus == 1 && (
+        <div
+          className="mycenter-92"
+          onClick={() => {
+            navigate("/borrowmoney");
+          }}
+        >
+          <div className="mycenter-93">
+            <div className="mycenter-94">
+              <div className="mycenter-95"></div>
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkwQUZBQjczRTA5OTExRUI5RkIwQjE0RTNERkQ5RTlDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkwQUZBQjc0RTA5OTExRUI5RkIwQjE0RTNERkQ5RTlDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTBBRkFCNzFFMDk5MTFFQjlGQjBCMTRFM0RGRDlFOUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTBBRkFCNzJFMDk5MTFFQjlGQjBCMTRFM0RGRDlFOUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7pBcC4AAAER0lEQVR42uSbXUgUURTHz66mBGtalJT2gQ9BIhGVJJXWaipW+qD5AfqeUBG9CNVTBBWoUCQl+SxFRfkgRUrlR5YVBkZKb9mnkWRutj0ouds5zlnTbdm5szuzM3f9wx/CZu49v70z9+PcO7ac9NdgkBLRO9GZ6Ax0GjoVnYR28DVutAs9in6HHkYPoPvRP40IKlbn8taiq9Bl6Cx0jMr1Djbdt2Pe32fQL9B30bfRH/UK0K5TOXvQ7ej36Eb0LgHYYIrhMhq55ansvVYAdqJ70T3o4jAhg8FT2d1cl9MM4DXoVnQXOgcipxyus5VjiAhwBfotugbMUw3HUGEkcBy6CX2Le2CzlcixUEzxegMnoO+jj4H1RDF1olfoBbyK35t9YF3RKPGYYw0LmB6bB+jtYH1tQXeovW52lXeWBv5tII+2csxxoQBfROeBfMrj2DUBU3d/BOQVxV4pCkwT/BaQX9d4jq4K3MQrGtlFDJfVgHPRpRA9KvUfTv2Xh2dFSjl9YR0UliwHu91cGo8HZxztE3D+1Kdgl51BPwrUwjR4Z4tUVFCcBDabF7xec00xUCwqyma2/1q4TvSXtdkAK7TGM0uxCKiOl5ZzwMnoItFKvB6vbO9yETOO+R7pai3pHrMfZX8LprKq57fwIW2dhXQt7GO8FAv/sougpYUlFDEmErDmhFt356SMwLOJwdhQVkPnTn6RdSKSSZ3WZlg8yiDgtEUEnEaPdIrWu1pubrAUxeGqD6KXpsaGsjJKXh0jawsvI2CH9km7V1bghJA20zwz0gJPE7BbaytL3MJuAnYtIuBfBDwaKPcTHNgjK/A3Ah6BhZvR0dzCIwQ8BMquvSU6rSsNEzA0OBXw/0rKHXCg1BFO8cME/ErrXUYmACbGZ+C3O/Ar4570hFv3AAE/A+VMRYwVHmmvyrI0jLqJsZ+A6bQMnZrJtgJw1u54SEkN/NtvTF8STt3E6PJNPO5oATYyAeAsXGpU3cQ4l+K5jm4AwbyWhL30H2acAxwDZW/1oNktbJA6mHFBi9aLAtOwJJgPNlyCv3297x/zdx4oUd0ncvfzvqnZbQ6qzExTDBSLivqYbVY2v7OWtPH0MMqyHAXzmfy3w2jTqS2KYNv8GzDQ/t9xXkHJLhezgBrwZ3RtFADXMosqMIlOuDVLDNvMDCAKTDoByglW2dTLsYNW4Gl0OfqNRLAUaxnHrhmYNI7ORw9KApvPMUOowL5pJ51G77Iw7BNQDo6PqV0oeiyFtgv3U0LCgrBXeXLxQ+RiLedwaA5HR3UrwaAvTjRqkmM5yrGB3sA+0Vcm6b7llkm6gd7EsWhSqCetvoJyDD9XdMGhk56Ccni0mmOASAH7RON0DncY92jlaACkh8t2clYmrM5Trw+1etjr+b2isZBy3aFuM1LC7SUoZ59pxqTbh1q2CH2KR6cMaON9JQT+FO87KBsCNJYa+ineXwEGAGlsG3gPemWtAAAAAElFTkSuQmCC"
+                className="mycenter-96"
+              />
+            </div>
+            <p className="mycenter-97">{translate(getText("借款"))}</p>
+          </div>
+          <div className="mycenter-98">
+            <div className="mycenter-99"></div>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAYAAACXOioTAAAD1UlEQVRIx+2WX0ybVRjGn/e09CsUKA6yZWYkkkkWVgS7AM0m/kGjRpNl0SmLu9LFyMWCGokmM8FhcOrF4h+YRjNjYoI3GJdddVtCAtOtwoQxtgEZzRIznXGCkzIY7df2PN5Y+Vo2LP289Lk6+d7k/M7znPec7wgsCobDRsl89DUQ7QCuK6jHAv7NkyJC2JQjNegfHy8sjCbeAvE6gAIAxZr6wavXpifK16+7MjAwYAumUoOCeWVA85m/IQAAEdlM4tOHt2+vtuvoH1AgUPVHTJyPApgAoC31KocYx78bGanp6OhQuYIk88OpsxfqhOxWShpIWCcOQ0nrL1MTfc3NzcmcHaV0n796hEn9oiYn01YkshGa3Xdu3FRvKzrLhGxsuHfc1MZDoIwCSAIASQWgUok6Gjp3zr/aGGWl4qkfxzaJUl0ieMTaoSSuKFGt0cjvwaampkROjqxqrK+dMiF7SYymu0Y5RX/oKl7zwH/iKKW+ocnSfGfiuAj86c44TZEn+/zVZztEtG0QAPwwOnkXdaILgicAOC2laxC2XkiaR1vq6uI5RWfVVn/VT6KcLwM4nVFaC6qD94jxOEmx7Sil78+fv0PFJQiwXkSWYoTMgMldVy9fOnmrc7bqk35/Tc2fXIzvFFFHAMSXVswygRzZcHfV88Fg0LANAoDGxi2/xhNsA6Qv4xB6AbzrXb/hud7eXoet6KzqHx0tcWnHMREJWOciMKvA3Vu31Byz5SglY7EsBiK0rEAamtJgOzoACIVC+eKe7YSSvRluYlCqm4t5H9iOLhQK5dNd3CbgmwDyLU4SoHzlydOv1NbWLtgCDQ8PF5jK3Q6wFYDHUlrQQFeRQx/IhCDjhGcFiSvjIMA9AKwtfBPE2ypWcqh2W/mirZthbOw3j6nc7QQyIVEAH8fmCru33QaSdXQnxsY8RQlHJ4Qt1jcFiBsUOSBRb9dKkLRX0EpOJBn9BMI9ANyW7poXcJ/B2KFAoCr2b/OsuEeD4XDxfGT6HVHYDSDPuvEg3ve6HYd9vtvf2FmB+vvHCzkXe08UXkiHyByI/eYaz2e+igoz2z2+JWhwMFysXbEvCO4A4LJCSP3qRZo9LRXV8dV0rFrewpfKmBf9HODTVogAERD7L9LsWekHl1XXDQ1NlmpX4iNCngVpbeEIgX1ri9xfVlZWxnK5TdSSk8vepDP5NYldGZBZUeolMzJzOFdIGuimirgouhSgNc7rFHnj56nxb7N9VmUVXd/g4LoCw9MF8ilCFgSqzWugx+fzmbCpZTfDyTNnyvOc7k5q+ca8MXPCrpP/ZVt/ATeohyQqj8W7AAAAAElFTkSuQmCC"
+              className="mycenter-100"
+            />
+          </div>
+          <div className="mycenter-101"></div>
+        </div>
+)}
         <div
           className="mycenter-52"
           onClick={() => {
@@ -350,31 +380,7 @@ export default function MyCenter({ userInfo, companyData, loginmsg }) {
             />
           </div>
         </div>
-        <div
-          className="mycenter-92"
-          onClick={() => {
-            navigate("/borrowmoney");
-          }}
-        >
-          <div className="mycenter-93">
-            <div className="mycenter-94">
-              <div className="mycenter-95"></div>
-              <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkwQUZBQjczRTA5OTExRUI5RkIwQjE0RTNERkQ5RTlDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkwQUZBQjc0RTA5OTExRUI5RkIwQjE0RTNERkQ5RTlDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTBBRkFCNzFFMDk5MTFFQjlGQjBCMTRFM0RGRDlFOUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTBBRkFCNzJFMDk5MTFFQjlGQjBCMTRFM0RGRDlFOUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7pBcC4AAAER0lEQVR42uSbXUgUURTHz66mBGtalJT2gQ9BIhGVJJXWaipW+qD5AfqeUBG9CNVTBBWoUCQl+SxFRfkgRUrlR5YVBkZKb9mnkWRutj0ouds5zlnTbdm5szuzM3f9wx/CZu49v70z9+PcO7ac9NdgkBLRO9GZ6Ax0GjoVnYR28DVutAs9in6HHkYPoPvRP40IKlbn8taiq9Bl6Cx0jMr1Djbdt2Pe32fQL9B30bfRH/UK0K5TOXvQ7ej36Eb0LgHYYIrhMhq55ansvVYAdqJ70T3o4jAhg8FT2d1cl9MM4DXoVnQXOgcipxyus5VjiAhwBfotugbMUw3HUGEkcBy6CX2Le2CzlcixUEzxegMnoO+jj4H1RDF1olfoBbyK35t9YF3RKPGYYw0LmB6bB+jtYH1tQXeovW52lXeWBv5tII+2csxxoQBfROeBfMrj2DUBU3d/BOQVxV4pCkwT/BaQX9d4jq4K3MQrGtlFDJfVgHPRpRA9KvUfTv2Xh2dFSjl9YR0UliwHu91cGo8HZxztE3D+1Kdgl51BPwrUwjR4Z4tUVFCcBDabF7xec00xUCwqyma2/1q4TvSXtdkAK7TGM0uxCKiOl5ZzwMnoItFKvB6vbO9yETOO+R7pai3pHrMfZX8LprKq57fwIW2dhXQt7GO8FAv/sougpYUlFDEmErDmhFt356SMwLOJwdhQVkPnTn6RdSKSSZ3WZlg8yiDgtEUEnEaPdIrWu1pubrAUxeGqD6KXpsaGsjJKXh0jawsvI2CH9km7V1bghJA20zwz0gJPE7BbaytL3MJuAnYtIuBfBDwaKPcTHNgjK/A3Ah6BhZvR0dzCIwQ8BMquvSU6rSsNEzA0OBXw/0rKHXCg1BFO8cME/ErrXUYmACbGZ+C3O/Ar4570hFv3AAE/A+VMRYwVHmmvyrI0jLqJsZ+A6bQMnZrJtgJw1u54SEkN/NtvTF8STt3E6PJNPO5oATYyAeAsXGpU3cQ4l+K5jm4AwbyWhL30H2acAxwDZW/1oNktbJA6mHFBi9aLAtOwJJgPNlyCv3297x/zdx4oUd0ncvfzvqnZbQ6qzExTDBSLivqYbVY2v7OWtPH0MMqyHAXzmfy3w2jTqS2KYNv8GzDQ/t9xXkHJLhezgBrwZ3RtFADXMosqMIlOuDVLDNvMDCAKTDoByglW2dTLsYNW4Gl0OfqNRLAUaxnHrhmYNI7ORw9KApvPMUOowL5pJ51G77Iw7BNQDo6PqV0oeiyFtgv3U0LCgrBXeXLxQ+RiLedwaA5HR3UrwaAvTjRqkmM5yrGB3sA+0Vcm6b7llkm6gd7EsWhSqCetvoJyDD9XdMGhk56Ccni0mmOASAH7RON0DncY92jlaACkh8t2clYmrM5Trw+1etjr+b2isZBy3aFuM1LC7SUoZ59pxqTbh1q2CH2KR6cMaON9JQT+FO87KBsCNJYa+ineXwEGAGlsG3gPemWtAAAAAElFTkSuQmCC"
-                className="mycenter-96"
-              />
-            </div>
-            <p className="mycenter-97">{translate(getText("借款"))}</p>
-          </div>
-          <div className="mycenter-98">
-            <div className="mycenter-99"></div>
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAkCAYAAACXOioTAAAD1UlEQVRIx+2WX0ybVRjGn/e09CsUKA6yZWYkkkkWVgS7AM0m/kGjRpNl0SmLu9LFyMWCGokmM8FhcOrF4h+YRjNjYoI3GJdddVtCAtOtwoQxtgEZzRIznXGCkzIY7df2PN5Y+Vo2LP289Lk6+d7k/M7znPec7wgsCobDRsl89DUQ7QCuK6jHAv7NkyJC2JQjNegfHy8sjCbeAvE6gAIAxZr6wavXpifK16+7MjAwYAumUoOCeWVA85m/IQAAEdlM4tOHt2+vtuvoH1AgUPVHTJyPApgAoC31KocYx78bGanp6OhQuYIk88OpsxfqhOxWShpIWCcOQ0nrL1MTfc3NzcmcHaV0n796hEn9oiYn01YkshGa3Xdu3FRvKzrLhGxsuHfc1MZDoIwCSAIASQWgUok6Gjp3zr/aGGWl4qkfxzaJUl0ieMTaoSSuKFGt0cjvwaampkROjqxqrK+dMiF7SYymu0Y5RX/oKl7zwH/iKKW+ocnSfGfiuAj86c44TZEn+/zVZztEtG0QAPwwOnkXdaILgicAOC2laxC2XkiaR1vq6uI5RWfVVn/VT6KcLwM4nVFaC6qD94jxOEmx7Sil78+fv0PFJQiwXkSWYoTMgMldVy9fOnmrc7bqk35/Tc2fXIzvFFFHAMSXVswygRzZcHfV88Fg0LANAoDGxi2/xhNsA6Qv4xB6AbzrXb/hud7eXoet6KzqHx0tcWnHMREJWOciMKvA3Vu31Byz5SglY7EsBiK0rEAamtJgOzoACIVC+eKe7YSSvRluYlCqm4t5H9iOLhQK5dNd3CbgmwDyLU4SoHzlydOv1NbWLtgCDQ8PF5jK3Q6wFYDHUlrQQFeRQx/IhCDjhGcFiSvjIMA9AKwtfBPE2ypWcqh2W/mirZthbOw3j6nc7QQyIVEAH8fmCru33QaSdXQnxsY8RQlHJ4Qt1jcFiBsUOSBRb9dKkLRX0EpOJBn9BMI9ANyW7poXcJ/B2KFAoCr2b/OsuEeD4XDxfGT6HVHYDSDPuvEg3ve6HYd9vtvf2FmB+vvHCzkXe08UXkiHyByI/eYaz2e+igoz2z2+JWhwMFysXbEvCO4A4LJCSP3qRZo9LRXV8dV0rFrewpfKmBf9HODTVogAERD7L9LsWekHl1XXDQ1NlmpX4iNCngVpbeEIgX1ri9xfVlZWxnK5TdSSk8vepDP5NYldGZBZUeolMzJzOFdIGuimirgouhSgNc7rFHnj56nxb7N9VmUVXd/g4LoCw9MF8ilCFgSqzWugx+fzmbCpZTfDyTNnyvOc7k5q+ca8MXPCrpP/ZVt/ATeohyQqj8W7AAAAAElFTkSuQmCC"
-              className="mycenter-100"
-            />
-          </div>
-          <div className="mycenter-101"></div>
-        </div>
+        
       </div>
       <div className="mycenter-140"></div>
     </div>

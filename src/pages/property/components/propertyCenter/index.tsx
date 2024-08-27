@@ -6,11 +6,12 @@ import "./index.css";
 export default function PropertyCenter({
   userInfo,
   qbSum,
-  setVisible,
   setVisibleTK,
   setVisibleTK2,
   setVisibleCK,
   isShowZF,
+  loanAmount,
+  pledgeStatus
 }) {
   const c2ctxStatus = localStorage.getItem("c2ctxStatus");
   const navigate = useNavigate();
@@ -103,7 +104,35 @@ export default function PropertyCenter({
             <div className="propertycenter-42">{translate(getText("地址"))}</div>
           </p>
         </div>
+        {pledgeStatus==1 && (
+        <div
+          className="propertycenter-10"
+          onClick={() => {
+            navigate("/pledgeBack");
+          }}
+        >
+          <div className="propertycenter-11">
+            <div className="propertycenter-12"></div>
+            <img
+              src="/ICON/20.png"
+              className="propertycenter-13"
+            />
+            <div className="propertycenter-14">
+              <div className="propertycenter-15">
+                <div className="propertycenter-16"></div>
+              </div>
+              <div className="propertycenter-17">
+                <div className="propertycenter-18"></div>
+              </div>
+            </div>
+          </div>
+          <p className="propertycenter-19">
+            <div className="propertycenter-20">{translate(getText("還款"))}</div>
+          </p>
+        </div>
+        )}
       </div>
+      
       <div className="propertycenter-43">
         <div className="propertycenter-44">
           <div className="propertycenter-45">
@@ -144,6 +173,27 @@ export default function PropertyCenter({
           </div>
         </li>
       </ul>
+      {pledgeStatus==1 && (
+      <ul className="propertycenter-54">
+        <li className="propertycenter-55">
+          <div className="propertycenter-56">
+            <h1 className="propertycenter-57">{translate(getText('借款'))}</h1>
+          </div>
+          <div className="propertycenter-58">
+            <div className="propertycenter-59">
+              <div className="propertycenter-60">{translate(getText("可用"))}(USDT)</div>
+              <div className="propertycenter-61">{translate(getText("處理中"))}(USDT)</div>
+              <div className="propertycenter-62">{translate(getText("借幣金額"))}(USDT)</div>
+            </div>
+            <div className="propertycenter-63">
+              <div className="propertycenter-64">{userInfo?.usdt?.toFixed(2)}</div>
+              <div className="propertycenter-65">0.00</div>
+              <div className="propertycenter-66">{loanAmount.toFixed(2)}</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      )}
     </div>
   );
 }

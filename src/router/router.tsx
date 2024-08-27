@@ -62,6 +62,8 @@ import JieKuanInfo from "../pages/jiekuaninfo";
 import Repayment from '../pages/repayment'
 import RepaymentList from '../pages/repaymentList'
 import RepaymentInfo from '../pages/repaymentInfo'
+import PledgeBack from "../pages/pledgeBack";
+import PledgeConfirm from '../pages/pledgeConfirm'
 //全局
 export const WSContext = createContext([] as any[]);
 export const WSMinContext = createContext([] as any[]);
@@ -278,6 +280,8 @@ export default function AppRouter() {
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/register" element={<Register />}></Route>
                     <Route path="/homecenter" element={<HomeCenter />}></Route>
+                    <Route path="/pledgeBack" element={<PledgeBack />}></Route>
+                    <Route path="/pledgeConfirm/:id" element={<PledgeConfirm />}></Route>
                     <Route
                       path="/mycenter"
                       element={getElement(<My />)}

@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getText } from "../../../../utils/util";
 import "./index.css";
+import { PledgeListStatus,getLabel } from "../../../../utils/dict";
 
 export default function CenterPage({ list }) {
   const navigate = useNavigate();
@@ -12,24 +13,25 @@ export default function CenterPage({ list }) {
     translate(getText("质押成功")),
     translate(getText("质押失败")),
   ];
+
   const getArray = () => {
     const nodes = [];
     for (const item of list) {
       nodes.push(
         <div
           className="c2ccell-2"
-          // onClick={() => {
-          //   navigate(`/c2cckinfo/${item?.orderNo}`);
-          // }}
+          onClick={() => {
+            navigate(`/repaymentInfo/${item?.orderNo}`);
+          }}
         >
           <div className="c2ccell-3">
-            <span className="c2ccell-4">{item?.num||<span>&nbsp;</span>}</span>
+            <span className="c2ccell-4">{item.status == 5 && '-'}{item?.num||<span>&nbsp;</span>}</span>
             <div className="c2ccell-5">
               <span className="c2ccell-6">{item?.createTime}</span>
             </div>
           </div>
           <div className="c2ccell-7">
-            <div className="c2ccell-8">{statusStr[item?.status - 1]}</div>
+            <div className="c2ccell-8">{translate(getText(getLabel(PledgeListStatus,item.status)))}</div>
             <div className="c2ccell-9">{item?.orderNo}</div>
           </div>
         </div>

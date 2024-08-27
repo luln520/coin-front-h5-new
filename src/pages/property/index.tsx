@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import C2CCKTS from "./components/c2cckts";
 import C2CCKTS2 from "./components/c2cckts2";
 import { currencyApi } from "../../api/currency-api";
+import { pledgeLng } from "../../api/pledge";
 
 export default function Property() {
   const uid = localStorage.getItem("uid");
@@ -31,6 +32,9 @@ export default function Property() {
   const [visibleCKTS2, setVisibleCKTS2] = useState(false);
   const [visibleTK, setVisibleTK] = useState(false);
   const [isShowZF, setIsShowZF] = useState(false);
+  const [loanAmount,setLoanAmount] = useState(0)
+  // 是否借币
+  const [pledgeStatus,setPledgeStatus] = useState(0)
 
   //c2c存款
   const [num, setNum] = useState("");
@@ -38,6 +42,7 @@ export default function Property() {
   const [bankType, setbankType] = useState(0);
   //c2c 提款
   const [currencyIdTK, setcurrencyIdTK] = useState(0);
+
 
   //加载数 据
   const loadcklistData = async () => {
@@ -55,8 +60,18 @@ export default function Property() {
     }
   };
 
+  const getpledgeLng = async () => {
+    pledgeLng({uid}).then(resp=>{
+      if(resp.data){
+        setLoanAmount(resp.data.num)
+      }
+    })
+  }
+
   useEffect(() => {
     loadData();
+    getpledgeLng()
+    setPledgeStatus(Number(localStorage.getItem("pledgeStatus")))
   }, []);
   //加载数 据
   const loadData = async () => {
@@ -127,6 +142,8 @@ export default function Property() {
         setVisibleTK={setVisibleTK}
         setVisibleTK2={setVisibleCKTS2}
         isShowZF={isShowZF}
+        loanAmount={loanAmount}
+        pledgeStatus={pledgeStatus}
       />
       <div
         style={{

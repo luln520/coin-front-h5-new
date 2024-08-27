@@ -153,7 +153,7 @@ smartAxios.interceptors.response.use(
         duration: 1000,
       });
     }
-    return Promise.resolve({ error });
+    return Promise.reject({ error });
   }
 );
 

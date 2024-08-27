@@ -846,5 +846,19 @@
     "還幣成功": "Münzen wurden erfolgreich zurückgegeben",
     "還幣數量": "Anzahl der zurückgegebenen Münzen",
     "請輸入還幣數量": "Bitte geben Sie den Betrag der zurückzugebenden Münzen ein",
-    "預計到帳數量": "Geschätzte Ankunftsmenge"
+    "預計到帳數量": "Geschätzte Ankunftsmenge",
+    "借幣金額": "Betrag der geliehenen Währung",
+    "借幣":"Währung leihen",
+    "借幣明細":"Details zur Ausleihwährung",
+    "還款":"Rückzahlung",
+    "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響還款進度。":"Bitte geben Sie den tatsächlichen Überweisungsbetrag wahrheitsgetreu ein, andernfalls kann es sein, dass die Systemüberprüfung fehlschlägt und sich auf den Rückzahlungsfortschritt auswirkt.",
+    "請選擇以下還款通道":"Bitte wählen Sie den folgenden Rückzahlungskanal",
+    "還款明細":"Einzelheiten zur Rückzahlung",
+    "還款地址":"Rückzahlungsadresse",
+    "還款數量":"Rückzahlungsbetrag",
+    "已还款":"Zurückgezahlt",
+    "担保人验证码":"Bestätigungscode des Bürgen",
+    "请输入担保人验证码":"Bitte geben Sie den Bestätigungscode des Bürgen ein",
+    "邀请码":"Einladungscode",
+    "申请额度":"Antragsbetrag"
 }

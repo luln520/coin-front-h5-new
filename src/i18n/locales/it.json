@@ -846,5 +846,19 @@
     "還幣成功": "Le monete sono state restituite con successo",
     "還幣數量": "Importo delle monete restituite",
     "請輸入還幣數量": "Inserisci la quantità di monete da restituire",
-    "預計到帳數量": "Quantità di arrivo stimata"
+    "預計到帳數量": "Quantità di arrivo stimata",
+    "借幣金額": "Importo della valuta presa in prestito",
+    "借幣":"Prendere in prestito valuta",
+    "借幣明細":"Dettagli sulla valuta del prestito",
+    "還款":"rimborso",
+    "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響還款進度。":"Ti preghiamo di inserire l'importo effettivo del trasferimento in modo veritiero, altrimenti la revisione del sistema potrebbe fallire e influenzare l'avanzamento del rimborso.",
+    "請選擇以下還款通道":"Scegli il seguente canale di rimborso",
+    "還款明細":"Dettagli del rimborso",
+    "還款地址":"Indirizzo di rimborso",
+    "還款數量":"Importo del rimborso",
+    "已还款":"Rimborsato",
+    "担保人验证码":"Codice di verifica del garante",
+    "请输入担保人验证码":"Inserisci il codice di verifica del garante",
+    "邀请码":"Codice invito",
+    "申请额度":"Importo della domanda"
 }

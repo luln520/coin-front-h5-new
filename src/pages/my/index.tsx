@@ -10,6 +10,7 @@ export default function My() {
   const [userInfo, setUserInfo] = useState({});
   const [companyData, setCompanyData] = useState({} as any);
   const [loginmsg, setloginmsg] = useContext(LoginMsgContext);
+  const [pledgeStatus,setPledgeStatus] = useState(0);
   const loadUserInfoData = async () => {
     const data = await userApi.userInfo();
     if (data.ok) {
@@ -26,6 +27,7 @@ export default function My() {
   useEffect(() => {
     initCompany();
     loadUserInfoData();
+    setPledgeStatus(Number(localStorage.getItem("pledgeStatus")))
   }, []);
   return (
     <div
@@ -34,7 +36,7 @@ export default function My() {
         backgroundColor: "#fff",
       }}
     >
-      <MyCenter userInfo={userInfo} companyData={companyData} loginmsg={loginmsg}/>
+      <MyCenter userInfo={userInfo} companyData={companyData} loginmsg={loginmsg} pledgeStatus={pledgeStatus}/>
       <div
         style={{
           height: "50px",

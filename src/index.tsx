@@ -28,6 +28,8 @@ async function initCompany() {
     localStorage.setItem("appStatus", res.data?.appStatus);
     localStorage.setItem("c2ctxStatus", res.data?.c2ctxStatus);
     localStorage.setItem("c2cczStatus", res.data?.c2cczStatus);
+    localStorage.setItem('pledgeStatus',res.data.pledgeStatus)
+    localStorage.setItem('pledgeFee',res.data.pledgeFee)
     changeCompanyData(res.data);
   }
 }

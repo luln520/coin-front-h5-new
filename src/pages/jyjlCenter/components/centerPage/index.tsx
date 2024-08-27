@@ -5,7 +5,7 @@ import { newsApi } from "../../../../api/news-api";
 import { getText } from "../../../../utils/util";
 import "./index.css";
 
-export default function CenterPage() {
+export default function CenterPage({pledgeStatus}) {
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
   const [index, setIndex] = useState(1);
@@ -14,6 +14,8 @@ export default function CenterPage() {
   const companyId = localStorage.getItem("companyId");
   //先取消隐藏
   const removeCompanyId = -1;
+
+
   return (
     <div className="help-1">
       <div
@@ -54,6 +56,7 @@ export default function CenterPage() {
         </div>
         <i className="help-5"></i>
       </div>
+      {pledgeStatus == 1 && (
       <div
         role="button"
         className="help-2"
@@ -62,10 +65,11 @@ export default function CenterPage() {
         }}
       >
         <div className="help-3">
-          <span className="help-4">{translate(getText("還幣"))}</span>
+          <span className="help-4">{translate(getText("借幣"))}</span>
         </div>
         <i className="help-5"></i>
       </div>
+)}
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function repaymentList() {
 
     return (
         <div className='page'>
-            <TopBar title={translate(getText("還幣明细"))} isBack={true} />
+            <TopBar title={translate(getText("借幣明細"))} isBack={true} />
             <div className='item-info'>
                 <label>{translate(getText('訂單編號'))}</label>
                 <div>{field?.orderNo}</div>
@@ -58,11 +58,11 @@ export default function repaymentList() {
                 <label></label>
                 <div>{translate(getText(getLabel(PledgeListStatus,field.status)))}</div>
             </div>
-            {field.status == 3 && (
+            {/* {field.status == 3 && (
                 <div className='container' onClick={() => navigate(`/repayment/${field.orderNo}/${field.num}`)}>
                     <div className='btn'>{translate(getText('還幣'))}</div>
                 </div>
-            )}
+            )} */}
         </div>
     )
 }

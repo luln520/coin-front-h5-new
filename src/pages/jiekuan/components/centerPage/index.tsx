@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getText } from "../../../../utils/util";
 import { financeApi } from "../../../../api/finance-api";
+import { SpinLoading } from 'antd-mobile'
 import {
   ArrowLeftOutlined,
   FieldTimeOutlined,
@@ -12,7 +13,7 @@ import { useState,useEffect } from "react";
 import { Dropdown } from "antd";
 import { Toast } from "antd-mobile";
 
-export default function CenterPage({ add }) {
+export default function CenterPage({ add,loading }) {
   const uid = localStorage.getItem("uid");
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
@@ -22,6 +23,7 @@ export default function CenterPage({ add }) {
   const [type, setType] = useState(1);
   const [code,setCode] = useState("code");
   const [invite,setInvite] = useState("");
+  const [applicationAmount,setApplicationAmount] = useState(0)
 
   const items = [
     {
@@ -51,7 +53,8 @@ export default function CenterPage({ add }) {
 
   const loadData = async () => {
     const data = await financeApi.userCoin({ uid }).then(resp=>{
-      setNum(Number(resp.data.usdt) * 0.3);
+      // setNum((Number(resp.data.usdt) * 0.8).toFixed(2));
+      setApplicationAmount((Number(resp.data.usdt) * Number(localStorage.getItem('pledgeFee'))) / 100);
     });
     // if (data.ok) {
       
@@ -113,12 +116,16 @@ export default function CenterPage({ add }) {
               className="jiekuanInput"
               placeholder={translate(getText("请输入数量"))}
               value={num}
-              readOnly
               onChange={(e) => {
                 setNum(e.target.value);
               }}
             />
           </span>
+        </div>
+      </div>
+      <div className="jiekuanInputDiv">
+        <div className="jiekuanInputFontDiv">
+          <b>{translate(getText("申请额度"))}: {applicationAmount} USDT</b>
         </div>
       </div>
       {/* <div className="jiekuanInputDiv">
@@ -163,7 +170,7 @@ export default function CenterPage({ add }) {
       {/* 明细 */}
       <div
         style={{
-          height: "30px",
+          height: "5px",
         }}
       ></div>
       {/* <div
@@ -176,13 +183,13 @@ export default function CenterPage({ add }) {
       </div>*/}
       <div className="jiekuanInputDiv">
         <div className="jiekuanInputFontDiv">
-          <b>{translate(getText("邀请人验证码"))}</b>
+          <b>{translate(getText("担保人验证码"))}</b>
         </div>
         <div className="jiekuanInputBorderDiv">
           <span className="jiekuanInputcenterFontnum">
             <input
               className="jiekuanInput"
-              placeholder={translate(getText("请输入邀请人验证码"))}
+              placeholder={translate(getText("请输入担保人验证码"))}
               value={invite}
               onChange={(e) => {
                 setInvite(e.target.value);
@@ -255,6 +262,12 @@ export default function CenterPage({ add }) {
                 Toast.show(translate(getText("请先同意协议！")));
                 return;
               }
+              if(loading){
+                return
+              }
+              if(num<=0){
+                return
+              }
               add({
                 num,
                 type,
@@ -263,6 +276,9 @@ export default function CenterPage({ add }) {
               });
             }}
           >
+            {loading && (
+            <SpinLoading color="#ffffff" style={{ '--size': '20px',marginTop:'-20px',marginRight:'10px' }}  />
+          )}
             {translate(getText("确认"))}
           </div>
         </div>

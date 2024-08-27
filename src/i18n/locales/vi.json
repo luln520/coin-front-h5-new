@@ -846,5 +846,19 @@
     "還幣成功": "Tiền được trả lại thành công",
     "還幣數量": "Số xu được trả lại",
     "請輸入還幣數量": "Vui lòng nhập số xu muốn trả lại",
-    "預計到帳數量": "Số lượng nhập dự kiến"
+    "預計到帳數量": "Số lượng nhập dự kiến",
+    "借幣金額": "Số tiền vay",
+    "借幣":"Vay tiền tệ",
+    "借幣明細":"Chi tiết đồng tiền vay",
+    "還款":"trả nợ",
+    "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響還款進度。":"Vui lòng điền chính xác số tiền chuyển thực tế, nếu không hệ thống có thể không duyệt được và ảnh hưởng đến tiến độ trả nợ.",
+    "請選擇以下還款通道":"Vui lòng chọn kênh trả nợ sau",
+    "還款明細":"Chi tiết trả nợ",
+    "還款地址":"Địa chỉ trả nợ",
+    "還款數量":"Số tiền hoàn trả",
+    "已还款":"Đã hoàn trả",
+    "担保人验证码":"Mã xác minh người bảo lãnh",
+    "请输入担保人验证码":"Vui lòng nhập mã xác minh người bảo lãnh",
+    "邀请码":"Mã mời",
+    "申请额度":"số tiền ứng dụng"
 }

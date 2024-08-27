@@ -13,15 +13,17 @@ export default function JieKuan() {
   const { t: translate } = useTranslation();
   const lan = localStorage.getItem("i18n");
   const uid = localStorage.getItem("uid");
+  const [loading,setLoading] = useState(false)
 
   //申请
   const add = async (sendData) => {
-    console.log(sendData)
+    setLoading(true)
     const data = await jiekuanApi.add({ ...sendData, uid });
     Toast.show({ 
       content: data.msg,
       duration:1000,
       afterClose(){
+        setLoading(false)
         navigate("/mycenter");
       }
     });
@@ -33,7 +35,7 @@ export default function JieKuan() {
         backgroundColor: "white",
       }}
     >
-      <CenterPage add={add}/>
+      <CenterPage add={add} loading={loading}/>
     </div>
   );
 }

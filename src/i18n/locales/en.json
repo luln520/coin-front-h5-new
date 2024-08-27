@@ -846,5 +846,19 @@
     "還幣成功": "Coins returned successfully",
     "還幣數量": "Amount of coins returned",
     "請輸入還幣數量": "Please enter the amount of coins to return",
-    "預計到帳數量": "Estimated arrival quantity"
+    "預計到帳數量": "Estimated arrival quantity",
+    "借幣金額": "Loan amount",
+    "借幣":"Borrow currency",
+    "借幣明細":"Borrowing currency details",
+    "還款":"repayment",
+    "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響還款進度。":"Please fill in the actual transfer amount truthfully, otherwise it may fail the system review and affect the repayment progress.",
+    "請選擇以下還款通道":"Please choose the following repayment channel",
+    "還款明細":"Repayment details",
+    "還款地址":"Repayment address",
+    "還款數量":"Repayment amount",
+    "已还款":"Repaid",
+    "担保人验证码":"Guarantor verification code",
+    "请输入担保人验证码":"Please enter the guarantor verification code",
+    "邀请码":"Invitation code",
+    "申请额度":"Application amount"
 }

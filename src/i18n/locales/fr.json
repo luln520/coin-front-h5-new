@@ -846,5 +846,19 @@
     "還幣成功": "Pièces retournées avec succès",
     "還幣數量": "Quantité de pièces retournées",
     "請輸入還幣數量": "Veuillez entrer le montant des pièces à retourner",
-    "預計到帳數量": "Quantité estimée à l'arrivée"
+    "預計到帳數量": "Quantité estimée à l'arrivée",
+    "借幣金額": "Montant de la devise empruntée",
+    "借幣":"Emprunter de la devise",
+    "借幣明細":"Détails de la devise d'emprunt",
+    "還款":"remboursement",
+    "請如實填寫實際轉賬金額，否則可能導致系統審核無法通過，影響還款進度。":"Veuillez indiquer le montant réel du transfert de manière véridique, sinon cela pourrait échouer à l'examen du système et affecter la progression du remboursement.",
+    "請選擇以下還款通道":"Veuillez choisir le canal de remboursement suivant",
+    "還款明細":"Détails du remboursement",
+    "還款地址":"Adresse de remboursement",
+    "還款數量":"Montant du remboursement",
+    "已还款":"Remboursé",
+    "担保人验证码":"Code de vérification du garant",
+    "请输入担保人验证码":"Veuillez saisir le code de vérification du garant",
+    "邀请码":"Code d'invitation",
+    "申请额度":"Montant de la demande"
 }

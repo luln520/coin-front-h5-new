@@ -7,6 +7,7 @@ export const PledgeListStatus:any[] = [
     { value: 5, label: "已还款" },
 ]
 
+
 export function getLabel( arr:any[],value:number | string) {
     return arr.find((item:any) => item.value === value)?.label
 }

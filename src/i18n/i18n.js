@@ -9,6 +9,7 @@ import deCnTrans from './locales/de.json'
 import frCnTrans from './locales/fr.json'
 import itCnTrans from './locales/it.json'
 import ptCnTrans from './locales/pt.json'
+import koCnTrans from './locales/ko.json'
 import {
     initReactI18next
 } from 'react-i18next'
@@ -57,7 +58,11 @@ i18n.use(LanguageDetector)
             // 葡萄牙语
             pt: {
                 translation: ptCnTrans
-            }
+            },
+          // 韩语
+          ko: {
+            translation: koCnTrans
+          }
         },
         lng: "en",
         fallbackLng: "en",
@@ -88,7 +93,9 @@ export const languages = {
     // 意大利语
     it: "Italiano",
     // 葡萄牙语
-    pt: "Português"
+    pt: "Português",
+  // 韩语
+  ko: "한국어",
 };
 export const changeLanguage = (language) => {
     i18n.changeLanguage(language);

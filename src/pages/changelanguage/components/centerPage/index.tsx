@@ -20,88 +20,96 @@ export default function CenterPage() {
   };
 
   return (
-    <div className="languagechange-1">
-      <div
-        className={lan == "en" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("en");
-        }}
-      >
-        English
-      </div>
-      <div
-        className={lan == "zh" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("zh");
-        }}
-      >
-        繁体中文
-      </div>
-      <div
-        className={lan == "ar" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("ar");
-        }}
-      >
-        اللغة العربية
-      </div>
-      <div
-        className={lan == "ja" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("ja");
-        }}
-      >
-        日本語
-      </div>
-      <div
-        className={lan == "vi" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("vi");
-        }}
-      >
-        Tiếng Việt
-      </div>
-      <div
-        className={lan == "es" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("es");
-        }}
-      >
-        Español
-      </div>
-      <div
-        className={lan == "de" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("de");
-        }}
-      >
-        Deutsch
-      </div>
-      <div
-        className={lan == "fr" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("fr");
-        }}
-      >
-        Français
-      </div>
+      <div className="languagechange-1">
+        <div
+            className={lan == "en" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("en");
+            }}
+        >
+          English
+        </div>
+        <div
+            className={lan == "zh" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("zh");
+            }}
+        >
+          繁体中文
+        </div>
+        <div
+            className={lan == "ar" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("ar");
+            }}
+        >
+          اللغة العربية
+        </div>
+        <div
+            className={lan == "ja" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("ja");
+            }}
+        >
+          日本語
+        </div>
+        <div
+            className={lan == "vi" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("vi");
+            }}
+        >
+          Tiếng Việt
+        </div>
+        <div
+            className={lan == "es" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("es");
+            }}
+        >
+          Español
+        </div>
+        <div
+            className={lan == "de" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("de");
+            }}
+        >
+          Deutsch
+        </div>
+        <div
+            className={lan == "fr" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("fr");
+            }}
+        >
+          Français
+        </div>
 
-      <div
-        className={lan == "it" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("it");
-        }}
-      >
-        Italiano
+        <div
+            className={lan == "it" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("it");
+            }}
+        >
+          Italiano
+        </div>
+        <div
+            className={lan == "pt" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("pt");
+            }}
+        >
+          Português
+        </div>
+        <div
+            className={lan == "ko" ? "languagechange-3" : "languagechange-2"}
+            onClick={() => {
+              changelan("ko");
+            }}
+        >
+          한국어
+        </div>
       </div>
-      <div
-        className={lan == "pt" ? "languagechange-3" : "languagechange-2"}
-        onClick={() => {
-          changelan("pt");
-        }}
-      >
-        Português
-      </div>
-    </div>
   );
 }

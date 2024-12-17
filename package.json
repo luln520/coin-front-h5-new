@@ -5,6 +5,7 @@
   "dependencies": {
     "@ant-design/plots": "^2.1.15",
     "@klinecharts/pro": "^0.1.1",
+    "@sentry/react": "^8.45.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

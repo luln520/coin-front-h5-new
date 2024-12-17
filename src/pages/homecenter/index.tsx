@@ -1,72 +1,64 @@
-import "./index.css";
-import Optionbox from "./components/optionbox";
-import HomeTopBar from "../../components/homeTopBar";
-import BottomBar from "../../components/bottomBar";
-import Swipper from "./components/swipper";
-import pako from "pako";
-import Noice from "./components/noice";
-import Tabs from "./components/tabs";
-import NewsList from "./components/list";
-import { useContext, useEffect, useState } from "react";
-import { newsApi } from "../../api/news-api";
-import { contentApi } from "../../api/content-api";
-import { homeApi } from "../../api/home-api";
-import Zixunlist from "./components/zixunlist";
-import CoinList from "./components/coinList";
-import { companyApi } from "../../api/company";
-import { LoginMsgContext, WSContext } from "../../router/router";
-import Optionbox2 from "./components/optionbox2";
-import Optionbox3 from "./components/optionbox3";
+import { useContext, useEffect, useState } from 'react'
+import { companyApi } from '../../api/company'
+import { contentApi } from '../../api/content-api'
+import { homeApi } from '../../api/home-api'
+import BottomBar from '../../components/bottomBar'
+import HomeTopBar from '../../components/homeTopBar'
+import { LoginMsgContext, WSContext } from '../../router/router'
+import CoinList from './components/coinList'
+import Noice from './components/noice'
+import Optionbox from './components/optionbox'
+import Optionbox2 from './components/optionbox2'
+import Optionbox3 from './components/optionbox3'
+import Swipper from './components/swipper'
+import Zixunlist from './components/zixunlist'
+import './index.css'
 
 export default function HomeCenter() {
-  const reader = new FileReader();
-  let WS = null;
-  const [content, setContent] = useState({} as any);
-  const [companyData, setCompanyData] = useState(null as any);
-  const [coinListData, setCoinListData] = useContext(WSContext);
-  const [loginmsg, setloginmsg] = useContext(LoginMsgContext);
-  let coinListDataMap = {} as any;
-  const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
+  const [content, setContent] = useState({} as any)
+  const [companyData, setCompanyData] = useState(null as any)
+  const [coinListData, setCoinListData] = useContext(WSContext)
+  const [loginmsg, setloginmsg] = useContext(LoginMsgContext)
+  const [ctmarketlist, setCtmarketlist] = useState([] as any[])
 
   const loadContentList = async () => {
-    let data = await contentApi.list({ pageNum: 1, pageSize: 1 });
+    let data = await contentApi.list({ pageNum: 1, pageSize: 1 })
     if (data.ok) {
-      data = data.data.records;
+      data = data.data.records
       if (data.length >= 1) {
-        setContent(data[0]);
+        setContent(data[0])
       }
     }
-  };
+  }
   const loadctmarketlistData = async () => {
-    const data = await homeApi.ctmarketlist({ pageNum: 1, pageSize: 100 });
+    const data = await homeApi.ctmarketlist({ pageNum: 1, pageSize: 100 })
     if (data.ok) {
-      const list = data.data.records;
-      list.sort((d, e) => d.sort - e.sort);
-      setCtmarketlist(list);
+      const list = data.data.records
+      list.sort((d, e) => d.sort - e.sort)
+      setCtmarketlist(list)
     }
-  };
+  }
 
   //初始化获取公司
   async function initCompany() {
-    const res = await companyApi.domain();
+    const res = await companyApi.domain()
     if (res.ok) {
-      setCompanyData(res.data);
+      setCompanyData(res.data)
     }
   }
   useEffect(() => {
-    initCompany();
-    loadContentList();
-  }, []);
+    initCompany()
+    loadContentList()
+  }, [])
   useEffect(() => {
-    loadctmarketlistData();
-  }, []);
+    loadctmarketlistData()
+  }, [])
   return (
     <div
-      className="page"
+      className='page'
       style={{
-        backgroundColor: "#f2f2fc",
-      }}
-    >
+        backgroundColor: '#f2f2fc'
+      }}>
       <HomeTopBar companyData={companyData} />
       <Swipper companyData={companyData} />
       <Noice content={content} />
@@ -77,10 +69,9 @@ export default function HomeCenter() {
       <CoinList coinListData={coinListData} ctmarketlist={ctmarketlist} />
       <div
         style={{
-          height: "50px",
-        }}
-      ></div>
+          height: '50px'
+        }}></div>
       <BottomBar index={1} />
     </div>
-  );
+  )
 }

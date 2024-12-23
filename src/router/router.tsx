@@ -243,17 +243,25 @@ export default function AppRouter() {
   const loaduserMsgData = async () => {
     let uid = localStorage.getItem('uid')
     uid = uid ? uid : 0
-    const data = await onlineApi.userMsg({ uid })
-    if (data.ok) {
-      setloginmsg(data.data?.data)
+    try {
+      const data = await onlineApi.userMsg({ uid })
+      if (data.ok) {
+        setloginmsg(data.data?.data)
+      }
+    } catch (error) {
+      console.log('faith=============error', error)
     }
   }
   const loaduserUuidMsgData = async () => {
     let uuid = localStorage.getItem('murmur')
     uuid = uuid ? uuid : 0
-    const data = await onlineApi.userUuidMsg({ uuid })
-    if (data.ok) {
-      setnologinmsg(data.data?.data)
+    try {
+      const data = await onlineApi.userUuidMsg({ uuid })
+      if (data.ok) {
+        setnologinmsg(data.data?.data)
+      }
+    } catch (error) {
+      console.log('faith=============error-2', error)
     }
   }
   const getElement = (element) => {

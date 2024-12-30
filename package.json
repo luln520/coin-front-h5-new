@@ -66,13 +66,10 @@
       "last 1 safari version",
       "ie >= 11"
     ]
-<<<<<<< Updated upstream
-=======
   },
   "devDependencies": {
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1",
     "vconsole": "^3.15.1"
->>>>>>> Stashed changes
   }
 }

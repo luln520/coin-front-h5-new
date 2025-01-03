@@ -4,40 +4,45 @@ const path = require('path')
 
 const translations = {
   ar: {
-    '贷款人：': 'المُقرض:'
+    '1. 借款人必须同意平台的条款和条件。': '1. يجب على المقترض الموافقة على شروط وأحكام المنصة.'
   },
   de: {
-    '贷款人：': 'Darlehensgeber:'
+    '1. 借款人必须同意平台的条款和条件。': '1. Der Kreditnehmer muss den Geschäftsbedingungen der Plattform zustimmen.'
   },
   en: {
-    '贷款人：': 'Lender:'
+    '1. 借款人必须同意平台的条款和条件。': "1. The Borrower must agree to the Platform's terms and conditions."
   },
   es: {
-    '贷款人：': 'Prestamista:'
+    '1. 借款人必须同意平台的条款和条件。': '1. El prestatario debe aceptar los términos y condiciones de la Plataforma.'
   },
   fr: {
-    '贷款人：': 'Prêteur:'
+    '1. 借款人必须同意平台的条款和条件。': "1. L'emprunteur doit accepter les termes et conditions de la Plateforme."
   },
   it: {
-    '贷款人：': 'Prestatore:'
+    '1. 借款人必须同意平台的条款和条件。': '1. Il mutuatario deve accettare i termini e le condizioni della Piattaforma.'
   },
   ja: {
-    '贷款人：': '貸主：'
+    '1. 借款人必须同意平台的条款和条件。': '1. 借り手はプラットフォームの利用規約に同意しなければならない。'
+  },
+  ko: {
+    '1. 借款人必须同意平台的条款和条件。': '1. 차용인은 플랫폼의 이용약관에 동의해야 합니다.'
   },
   pt: {
-    '贷款人：': 'Credor:'
+    '1. 借款人必须同意平台的条款和条件。': '1. O mutuário deve concordar com os termos e condições da Plataforma.'
+  },
+  ru: {
+    '1. 借款人必须同意平台的条款和条件。': '1. Заёмщик должен согласиться с условиями и положениями Платформы.'
   },
   tr: {
-    '贷款人：': 'Borç Veren:'
+    '1. 借款人必须同意平台的条款和条件。': "1. Borç alan, Platform'un şart ve koşullarını kabul etmelidir."
   },
   vi: {
-    '贷款人：': 'Bên Cho Vay:'
+    '1. 借款人必须同意平台的条款和条件。': '1. Bên vay phải đồng ý với các điều khoản và điều kiện của Nền tảng.'
   },
   zh: {
-    '贷款人：': '贷款人：'
+    '1. 借款人必须同意平台的条款和条件。': '1. 借款人必须同意平台的条款和条件。'
   }
 }
-
 const LOCALES_DIR = path.join(__dirname, '../i18n/locales')
 
 function addTranslation() {

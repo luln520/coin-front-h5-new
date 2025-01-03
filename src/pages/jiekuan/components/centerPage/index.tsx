@@ -27,7 +27,6 @@ export default function CenterPage({ add, loading }) {
   async function initCompany() {
     const res = await companyApi.domain()
     if (res.ok) {
-      console.log('faith=============res.data', res.data)
       setCompanyData(res.data)
     }
   }
@@ -49,8 +48,8 @@ export default function CenterPage({ add, loading }) {
         title: translate(getText('协议签订方')),
         content: [
           translate(getText('本协议由以下各方签订:')),
-          `${translate(getText('贷款人：'))}${name}${translate(getText('(本平台)'))}`,
-          translate(getText(`借款人：(本平台)-ID${userId}`))
+          `${translate(getText('贷款人'))}：${name}${translate(getText('(本平台)'))}`,
+          translate(getText('借款人')) + '：' + translate(getText('(本平台)')) + '-ID' + userId
         ]
       },
       {
@@ -148,7 +147,10 @@ export default function CenterPage({ add, loading }) {
         {
           key: 'confirm',
           text: translate(getText('我已阅读并同意')),
-          primary: true
+          primary: true,
+          onClick: () => {
+            setisAggres(true) // 设置同意状态为true
+          }
         }
       ]
     })
@@ -362,7 +364,7 @@ export default function CenterPage({ add, loading }) {
             <b>{translate(getText('您已阅读并同意'))}</b>
           </div>
           <div className='jiekuanbottomCenteragreexyDiv' onClick={showLoanAgreement}>
-            <b>- {translate(getText('借币服务协议。'))}</b>
+            <b>- {translate(getText('借币服务协议'))}。</b>
           </div>
           <div className='jiekuanbottomCenteragreexyDiv' onClick={showLoanAgreement}>
             <b>- {translate(getText('赚币服务协议。'))}</b>

@@ -243,17 +243,25 @@ export default function AppRouter() {
   const loaduserMsgData = async () => {
     let uid = localStorage.getItem('uid')
     uid = uid ? uid : 0
-    const data = await onlineApi.userMsg({ uid })
-    if (data.ok) {
-      setloginmsg(data.data?.data)
+    try {
+      const data = await onlineApi.userMsg({ uid })
+      if (data.ok) {
+        setloginmsg(data.data?.data)
+      }
+    } catch (error) {
+      console.log('faith=============error', error)
     }
   }
   const loaduserUuidMsgData = async () => {
     let uuid = localStorage.getItem('murmur')
     uuid = uuid ? uuid : 0
-    const data = await onlineApi.userUuidMsg({ uuid })
-    if (data.ok) {
-      setnologinmsg(data.data?.data)
+    try {
+      const data = await onlineApi.userUuidMsg({ uuid })
+      if (data.ok) {
+        setnologinmsg(data.data?.data)
+      }
+    } catch (error) {
+      console.log('faith=============error-2', error)
     }
   }
   const getElement = (element) => {
@@ -312,7 +320,7 @@ export default function AppRouter() {
                       path='/mycenter'
                       element={
                         <AuthRoute>
-                          (<My />)
+                          <My />
                         </AuthRoute>
                       }></Route>
                     <Route path='/reloadPassword' element={<ReloadPassword />}></Route>
@@ -321,7 +329,7 @@ export default function AppRouter() {
                       path='/propertycenter'
                       element={
                         <AuthRoute>
-                          (<Property />)
+                          <Property />
                         </AuthRoute>
                       }></Route>
                     <Route path='/changelanguage' element={<ChangeLanguage />}></Route>
@@ -330,7 +338,7 @@ export default function AppRouter() {
                       path='/chat'
                       element={
                         <AuthRoute>
-                          (<Chat />)
+                          <Chat />
                         </AuthRoute>
                       }></Route>
                     <Route path='/murmurchat' element={<MurmurChat />}></Route>
@@ -338,119 +346,119 @@ export default function AppRouter() {
                       path='/securitycenter'
                       element={
                         <AuthRoute>
-                          (<SecurityCenter />)
+                          <SecurityCenter />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/changePassword'
                       element={
                         <AuthRoute>
-                          (<ChangePassword />)
+                          <ChangePassword />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/noiceInfo'
                       element={
                         <AuthRoute>
-                          (<NoiceInfo />)
+                          <NoiceInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/extractlist'
                       element={
                         <AuthRoute>
-                          (<ExtractList />)
+                          <ExtractList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/extractorderlist'
                       element={
                         <AuthRoute>
-                          (<ExtractOrderList />)
+                          <ExtractOrderList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/extract/:id'
                       element={
                         <AuthRoute>
-                          (<Extract />)
+                          <Extract />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/rechargelist'
                       element={
                         <AuthRoute>
-                          (<RechargeList />)
+                          <RechargeList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/rechargeorderlist'
                       element={
                         <AuthRoute>
-                          (<RechargeOrderList />)
+                          <RechargeOrderList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/setting'
                       element={
                         <AuthRoute>
-                          (<Setting />)
+                          <Setting />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/recharge/:id'
                       element={
                         <AuthRoute>
-                          (<Recharge />)
+                          <Recharge />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/helplist'
                       element={
                         <AuthRoute>
-                          (<HelpList />)
+                          <HelpList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/helpinfo/:id'
                       element={
                         <AuthRoute>
-                          (<HelpInfo />)
+                          <HelpInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/lockUpCenter'
                       element={
                         <AuthRoute>
-                          (<LockUpCenter />)
+                          <LockUpCenter />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/lockUp'
                       element={
                         <AuthRoute>
-                          (<LockUp />)
+                          <LockUp />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/lockUpInfo/:id'
                       element={
                         <AuthRoute>
-                          (<LockUpInfo />)
+                          <LockUpInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/lockUpOrder'
                       element={
                         <AuthRoute>
-                          (<LockUpOrder />)
+                          <LockUpOrder />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/quotation'
                       element={
                         <AuthRoute>
-                          (<QuotationCenter />)
+                          <QuotationCenter />
                         </AuthRoute>
                       }></Route>
                     <Route
@@ -466,84 +474,84 @@ export default function AppRouter() {
                       path='/borrowmoney'
                       element={
                         <AuthRoute>
-                          (<JieKuan />)
+                          <JieKuan />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/jiekuanlist'
                       element={
                         <AuthRoute>
-                          (<JieKuanList />)
+                          <JieKuanList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/jiekuaninfo/:orderNo'
                       element={
                         <AuthRoute>
-                          (<JieKuanInfo />)
+                          <JieKuanInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2cckcenter'
                       element={
                         <AuthRoute>
-                          (<C2CckCenter />)
+                          <C2CckCenter />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2cckList'
                       element={
                         <AuthRoute>
-                          (<C2CckList />)
+                          <C2CckList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2ctkList'
                       element={
                         <AuthRoute>
-                          (<C2CtkList />)
+                          <C2CtkList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2cckinfo/:orderNo'
                       element={
                         <AuthRoute>
-                          (<C2CckInfo />)
+                          <C2CckInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2cckimage/:orderNo'
                       element={
                         <AuthRoute>
-                          (<C2CckImage />)
+                          <C2CckImage />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/c2ctx/:currencyId'
                       element={
                         <AuthRoute>
-                          (<C2Ctx />)
+                          <C2Ctx />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/idcard'
                       element={
                         <AuthRoute>
-                          (<IdCard />)
+                          <IdCard />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/gjidcard'
                       element={
                         <AuthRoute>
-                          (<GJIdCard />)
+                          <GJIdCard />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/jyjl'
                       element={
                         <AuthRoute>
-                          (<JYJL />)
+                          <JYJL />
                         </AuthRoute>
                       }></Route>
                     <Route path='/download' element={<Downland />}></Route>
@@ -552,77 +560,77 @@ export default function AppRouter() {
                       path='/jyjlLever'
                       element={
                         <AuthRoute>
-                          (<JYJLLever />)
+                          <JYJLLever />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/jyjlLever2'
                       element={
                         <AuthRoute>
-                          (<JYJLLever2 />)
+                          <JYJLLever2 />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/jyjlTrade'
                       element={
                         <AuthRoute>
-                          (<JYJLTrade />)
+                          <JYJLTrade />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/marketOrderInfo/:id'
                       element={
                         <AuthRoute>
-                          (<MarketOrderInfo />)
+                          <MarketOrderInfo />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/noice'
                       element={
                         <AuthRoute>
-                          (<Noice />)
+                          <Noice />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/addressadd'
                       element={
                         <AuthRoute>
-                          (<AddressAdd />)
+                          <AddressAdd />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/addresslist'
                       element={
                         <AuthRoute>
-                          (<AddressList />)
+                          <AddressList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/lever/:name'
                       element={
                         <AuthRoute>
-                          (<Lever />)
+                          <Lever />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/repayment/:id/:num'
                       element={
                         <AuthRoute>
-                          (<Repayment />)
+                          <Repayment />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/repaymentList'
                       element={
                         <AuthRoute>
-                          (<RepaymentList />)
+                          <RepaymentList />
                         </AuthRoute>
                       }></Route>
                     <Route
                       path='/repaymentInfo/:id'
                       element={
                         <AuthRoute>
-                          (<RepaymentInfo />)
+                          <RepaymentInfo />
                         </AuthRoute>
                       }></Route>
                     {/* 404 */}

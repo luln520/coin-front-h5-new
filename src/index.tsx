@@ -14,6 +14,9 @@ import { kuangjiApi } from './api/kuangm-api'
 import { localClear } from './utils/local-util'
 import { Toast } from 'antd-mobile'
 
+// src/index.tsx 中引入
+import { initVConsole } from './utils/debug'
+
 Sentry.init({
   dsn: 'https://f98001269391c4bbabf86c3b78339162@o4508481312063488.ingest.de.sentry.io/4508482496561232',
   integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
@@ -25,6 +28,9 @@ Sentry.init({
   replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
   replaysOnErrorSampleRate: 1.0 // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 })
+
+// 在 Sentry.init 之后调用
+initVConsole()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 //初始化获取公司

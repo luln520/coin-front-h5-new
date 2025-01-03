@@ -63,7 +63,7 @@ export default function Property() {
   const getpledgeLng = async () => {
     pledgeLng({uid}).then(resp=>{
       if(resp.data){
-        setLoanAmount(resp.data.num)
+        setLoanAmount(resp.data.leftNum)
       }
     })
   }

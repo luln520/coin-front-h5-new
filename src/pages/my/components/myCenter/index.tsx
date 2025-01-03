@@ -311,6 +311,9 @@ export default function MyCenter({ userInfo, companyData, loginmsg, pledgeStatus
         <div
           className="mycenter-112"
           onClick={() => {
+            if (userInfo?.black === 1) {
+              return;
+            }
             navigate("/chatcenter");
           }}
         >

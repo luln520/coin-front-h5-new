@@ -7,7 +7,7 @@ import { Cell, Dialog } from "react-vant";
 import "./index.css";
 import { Button, Image, Input, Upload } from "antd";
 import { Toast } from "antd-mobile";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import QRCode from "qrcodejs2";
 import { imageConfig } from "../../../../config/config";
 
@@ -17,13 +17,15 @@ export default function CenterPage({
   use,
   setUse,
   coinPriceData,
-  pledgeNum
+  pledgeNum,
+  leftNum
 }) {
   const navigate = useNavigate();
   const [addrId, setAddrId] = useState(0);
   const [img, setImg] = useState("");
   const [num, setNum] = useState("");
   const { t: translate } = useTranslation();
+  const inputRef = useRef(null);
   let qrcode = null;
 
   //上传
@@ -104,7 +106,7 @@ export default function CenterPage({
           <div className="recharge-18">
             <ul className="recharge-19">
               <li className="recharge-20">
-                <p className="recharge-21">{translate(getText("還款數量"))}(USDT)</p>
+                <p className="recharge-21">{translate(getText("還款數量"))}:{translate(getText("剩餘"))}{leftNum}(USDT)</p>
                 <div className="recharge-22">
                   <div className="recharge-23">
                     <div className="recharge-24"></div>
@@ -117,9 +119,10 @@ export default function CenterPage({
                         height: "43px",
                         width: "70%",
                       }}
-                      readOnly
-                      value={pledgeNum}
+                      //readOnly
+                      //value={pledgeNum}
                       className="recharge-25"
+                      ref={inputRef}
                     />
                   </div>
                 </div>
@@ -220,14 +223,14 @@ export default function CenterPage({
                   coinname: use.name,
                   czaddress: use.czaddress,
                   payimg: img,
-                  zznum: pledgeNum,
+                  zznum: inputRef.current.value,
                   currenyName: use?.name?.toUpperCase(),
                   currenyNum:
-                    `${pledgeNum / coinPriceData?.close}` == "NaN"
-                      ? pledgeNum
-                      : pledgeNum / coinPriceData?.close,
+                    `${inputRef.current.value / coinPriceData?.close}` == "NaN"
+                      ? inputRef.current.value
+                      : inputRef.current.value / coinPriceData?.close,
                   czline: use.czline,
-                  plegdeNum:pledgeNum,
+                  plegdeNum:inputRef.current.value,
                 });
                 setNum("");
                 setImg("");

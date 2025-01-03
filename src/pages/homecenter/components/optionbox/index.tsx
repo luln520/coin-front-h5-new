@@ -3,6 +3,8 @@ import "./index.css";
 import { NoticeBar } from "antd-mobile";
 import { useTranslation } from "react-i18next";
 import { getText } from "../../../../utils/util";
+import { userApi } from "../../../../api/user-api";
+import { useContext, useEffect, useState } from "react";
 import { Badge } from "antd";
 
 export default function Optionbox({ loginmsg }) {
@@ -10,11 +12,24 @@ export default function Optionbox({ loginmsg }) {
   const { t: translate } = useTranslation();
   const la = localStorage.getItem("i18n") ? localStorage.getItem("i18n") : "en";
   const companySkin = localStorage.getItem("companySkin");
+  const [userInfo, setUserInfo] = useState({});
+  const loadUserInfoData = async () => {
+    const data = await userApi.userInfo();
+    if (data.ok) {
+      setUserInfo(data.data);
+    }
+  };
+  useEffect(() => {
+    loadUserInfoData();
+  }, []);
   return (
     <div className="optionbox-1">
       <div
         className="optionbox-2"
         onClick={() => {
+          if (userInfo?.black === 1) {
+            return;
+          }
           navigate("/chatcenter");
         }}
       >

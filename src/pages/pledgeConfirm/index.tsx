@@ -25,6 +25,7 @@ export default function Recharge() {
   const [ctmarketlist, setCtmarketlist] = useState([] as any[]);
   const param = useParams();
   const [pledgeNum, setPledgeNum] = useState(0);
+  const [leftNum, setLeftNum] = useState(0);
   //加载种类
   const loadCoinData = async () => {
     const data = await coinApi.list();
@@ -67,6 +68,7 @@ export default function Recharge() {
     pledgeLng({uid}).then(resp=>{
       if(resp.data){
         setPledgeNum(resp.data.num)
+        setLeftNum(resp.data.leftNum)
       }
     })
   }
@@ -92,6 +94,7 @@ export default function Recharge() {
         setUse={setUse}
         coinPriceData={coinPriceData}
         pledgeNum={pledgeNum}
+        leftNum={leftNum}
       />
     </div>
   );

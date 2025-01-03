@@ -4,37 +4,37 @@ const path = require('path')
 
 const translations = {
   ar: {
-    我已阅读并同意: 'لقد قرأت وأوافق على'
+    '贷款人：': 'المُقرض:'
   },
   de: {
-    我已阅读并同意: 'Ich habe gelesen und stimme zu'
+    '贷款人：': 'Darlehensgeber:'
   },
   en: {
-    我已阅读并同意: 'I have read and agree'
+    '贷款人：': 'Lender:'
   },
   es: {
-    我已阅读并同意: 'He leído y acepto'
+    '贷款人：': 'Prestamista:'
   },
   fr: {
-    我已阅读并同意: "J'ai lu et j'accepte"
+    '贷款人：': 'Prêteur:'
   },
   it: {
-    我已阅读并同意: 'Ho letto e accetto'
+    '贷款人：': 'Prestatore:'
   },
   ja: {
-    我已阅读并同意: '読んで同意しました'
+    '贷款人：': '貸主：'
   },
   pt: {
-    我已阅读并同意: 'Li e concordo'
+    '贷款人：': 'Credor:'
   },
   tr: {
-    我已阅读并同意: 'Okudum ve kabul ediyorum'
+    '贷款人：': 'Borç Veren:'
   },
   vi: {
-    我已阅读并同意: 'Tôi đã đọc và đồng ý'
+    '贷款人：': 'Bên Cho Vay:'
   },
   zh: {
-    我已阅读并同意: '我已阅读并同意'
+    '贷款人：': '贷款人：'
   }
 }
 

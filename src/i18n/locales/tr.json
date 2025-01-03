@@ -658,7 +658,7 @@
   "更改密碼": "Şifre Değiştir",
   "兩次密碼不一致": "Şifreler eşleşmiyor",
   "驗證登錄密碼": "Giriş Şifresini Doğrula",
-  "驗證新密碼": "Yeni Şifreyi Doğrula", 
+  "驗證新密碼": "Yeni Şifreyi Doğrula",
   "修改交易密碼": "İşlem Şifresini Değiştir",
   "請填寫密碼": "Lütfen şifreyi girin",
   "请直接提交您的问题,等待客服回复即可": "Sorunuzu doğrudan gönderin, müşteri hizmetlerinin yanıtını bekleyin",
@@ -670,7 +670,6 @@
   "請輸入提幣地址": "Lütfen çekim adresini girin",
   "出金": "Para çekme",
   "提现明细": "Çekim detayları",
-  "您的C2C交易由系統自動匹配商家": "C2C işleminiz sistem tarafından otomatik olarak satıcılarla eşleştirilir",
   "C2C提現": "C2C para çekme",
   "待審查": "İnceleme bekliyor",
   "已完成": "Tamamlandı",
@@ -818,7 +817,6 @@
   "低": "Düşük",
   "下載": "İndir",
   "年齡": "Yaş",
-  "安全中心": "Güvenlik merkezi",
   "提供安全": "Güvenlik sağla",
   "便捷的買賣方式": "Kolay alım satım yöntemi",
   "介紹": "Tanıtım",
@@ -849,7 +847,6 @@
   "借幣": "Coin ödünç al",
   "借幣明細": "Ödünç coin detayları",
   "還款": "Geri ödeme",
-  "請如實填寫實際轉賬金額": "Lütfen gerçek transfer tutarını doğru girin",
   "請選擇以下還款通道": "Lütfen aşağıdaki geri ödeme kanalını seçin",
   "還款明細": "Geri ödeme detayları",
   "還款地址": "Geri ödeme adresi",
@@ -858,5 +855,7 @@
   "担保人验证码": "Kefil doğrulama kodu",
   "请输入担保人验证码": "Lütfen kefil doğrulama kodunu girin",
   "邀请码": "Davet kodu",
-  "申请额度": "Başvuru limiti"
+  "申请额度": "Başvuru limiti",
+  "借币服务协议": "Kripto Para Ödünç Alma Hizmet Sözleşmesi",
+  "我已阅读并同意": "Okudum ve kabul ediyorum"
 }
